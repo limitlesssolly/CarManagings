@@ -1,0 +1,36 @@
+*
+{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+footer
+{
+    background-color: #4c8bc5;
+    color: white;
+    text-align: center;
+
+}
+.info
+{
+    text-align: center;
+    padding: 1%;
+
+}
+.linking
+{
+    text-align: center;
+    padding: 1%;
+
+}
+.socials
+{
+    padding: 1%;
+    text-align: center;
+
+}
+.copyrights
+{
+    color: white;
+    background-color: #2a4f71;
+    text-align: center;
+    padding: 1%;
+}

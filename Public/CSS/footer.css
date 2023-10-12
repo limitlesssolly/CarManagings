@@ -2,9 +2,10 @@
 footer
 {
     width: 100%;
-    background-color: #4c8bc5;
+    background-color: #4c8bc5; 
     color: white;
     text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .info
 {

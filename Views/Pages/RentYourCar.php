@@ -7,6 +7,19 @@
     <link rel="shortcut icon" type="image/jpg" href="../Images/icons/logodowns.png" />
     <title>Rent Your Car</title>
 </head>
+
+<style>
+*{
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+form{
+    text-align: center;
+}
+</style>
+
 <body>
     <form>
         <input type="text" name="fullname" placeholder="full name"> <br>

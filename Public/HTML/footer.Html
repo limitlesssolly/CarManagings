@@ -12,7 +12,7 @@
             <div class="info">
                 <h1>USEFUL INFO</h1>
                 <ul>Tax Registration Number : 849-934-698</ul>
-                <ul>Main Address: Alexandria - New Miami - Behind Marseilia Company, next to the European Center for Car Maintenance</ul>
+                <ul>Main Address: <br> Alexandria - New Miami - Behind Marseilia Company,<br> next to the European Center for Car Maintenance</ul>
             </div>
             <div class="linking">
                 <h1>SOME LINKS</h1>

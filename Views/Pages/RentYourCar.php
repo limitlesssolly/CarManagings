@@ -5,64 +5,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="../../Public/CSS/rentyourcar.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rent Your Car</title>
 </head>
 
-<style>
-    *{
-    box-sizing: border-box;
-    font-family: 'poppins', sans-serif;
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Ubuntu', sans-serif;
-}
-.title{
-    text-align:center;
-
-}
-.image{
-    float:right;
-}
-form{
-    text-align: center;
-    float: left;
-    position: relative;
-    left:10%;
-    
-}
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}
-
-label {
-  padding: 10px 10px 10px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #4c8bc5;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #2a4f71;
-}
-</style>
 
 <body>
     <div class="title">Rent Your Car</div>
     <div class="image">
-        <img src="" class="carimg" alt="carla">
+        <img src="../../Public/Images/carla.png" class="carimg" alt="carla">
     </div>
     <form action="" method="post">
 
@@ -105,6 +58,9 @@ input[type=submit]:hover {
             <input type="submit" name="submit">
         </div>
     </form>
+    <?php
+       include('../Partials/footer.php');
+    ?>
 
 <!-- <?php
 
@@ -128,7 +84,3 @@ input[type=submit]:hover {
 
 </body>
 </html>
-
-<?php
-//    include('./Partials/footer.php');
- ?>

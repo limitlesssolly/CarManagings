@@ -58,9 +58,9 @@
             <input type="submit" name="submit">
         </div>
     </form>
-    <?php
+    <!-- <?php
        include('../Partials/footer.php');
-    ?>
+    ?> -->
 
 <!-- <?php
 

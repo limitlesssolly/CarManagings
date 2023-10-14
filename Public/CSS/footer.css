@@ -5,7 +5,15 @@
     font-family: 'Ubuntu', sans-serif;
 }
 .logo{
-    position: relative;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 10em;
+    overflow: visible;
+    text-overflow: ellipsis;
+    position: fixed;
+    left:3%;
+    top:55%;
 }
 footer{
     position: fixed;
@@ -34,7 +42,7 @@ a:hover{
     overflow: visible;
     text-overflow: ellipsis;
     position: fixed;
-    right:70%;
+    right:60%;
     top:55%;
 }
 .linking{
@@ -45,7 +53,7 @@ a:hover{
     overflow: visible;
     text-overflow: ellipsis;
     position: fixed;
-    right:40%;
+    right:30%;
     top:55%;
 }
 .socials{

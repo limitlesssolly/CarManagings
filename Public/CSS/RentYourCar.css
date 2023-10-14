@@ -10,10 +10,9 @@
 }
 .image{
   position: absolute;
-  right: 0;
+  right: 50%;
   top: 0;
-  width: 100%;
-  height: auto;
+  width: 5em;
 }
 form{
   text-align: center;

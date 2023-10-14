@@ -12,7 +12,7 @@
 <body>
     
     <footer>
-    <img src="../../Public/Images/whitelogo.png" class="logo" alt="logo">
+            <img src="../../Public/Images/whitelogo.png" class="logo" alt="logo">
             <div class="info">
                 <h2>USEFUL INFO</h2>
                 <ul>Tax Registration Number : 849-934-698<br></ul>

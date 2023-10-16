@@ -33,19 +33,9 @@
                             <td>Bali, Indonesia</td>
                         </tr>
                         <tr>
-                            <td>Hobbies</td>
+                            <td>Phone:</td>
                             <td>:</td>
-                            <td>Diving, Reading Book</td>
-                        </tr>
-                        <tr>
-                            <td>Job</td>
-                            <td>:</td>
-                            <td>Web Developer</td>
-                        </tr>
-                        <tr>
-                            <td>Skill</td>
-                            <td>:</td>
-                            <td>PHP, HTML, CSS, Java</td>
+                            <td>0123456789</td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+
+#sc-edprofile {
+  background: #f0f0f0;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 0px;
+  margin-bottom: 2%;
+  transition: opacity 1s;
+  -webkit-transition: opacity 1s;
+}
+
+#sc-edprofile h1 {
+  background: #3399cc;
+  padding: 20px 0;
+  font-size: 140%;
+  font-weight: 300;
+  text-align: center;
+  color: #fff;
+}
+
+div#sc-edprofile .sc-container {
+  background: #f0f0f0;
+  padding: 6% 4%;
+}
+
+div#sc-edprofile input[type="email"],
+div#sc-edprofile input[type="text"],
+div#sc-edprofile input[type="password"], div#sc-edprofile select, div#sc-edprofile textarea {
+  width: 92%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 95%;
+  color: #555;
+}
+
+div#sc-edprofile select {
+  width: 100%;
+}
+
+div#sc-edprofile textarea {
+  height: 100px;
+}
+
+div#sc-edprofile input[type="submit"] {
+  width: 100%;
+  background: #3399cc;
+  border: 0;
+  padding: 4%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  color: #fff;
+  cursor: pointer;
+  transition: background .3s;
+  -webkit-transition: background .3s;
+}
+
+div#sc-edprofile input[type="submit"]:hover {
+  background: #2288bb;
+}
+.inputstyle{
+    background: rgba(255,255,255,0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 100%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
+}

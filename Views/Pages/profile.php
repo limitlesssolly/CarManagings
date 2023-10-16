@@ -13,12 +13,17 @@
         <h2>PROFILE</h2>
         <div class="card">
             <div class="card-body">
-            <a class="button touch edit" href="../../Views/Pages/editProfile"></a>
+            <a class="button touch edit" href="../../Views/Pages/editprofile.php"></a>
             <a class="button touch delete" href="#"></a>
                 <table>
                     <tbody>
                         <tr>
-                            <td>Name</td>
+                            <td>First Name</td>
+                            <td>:</td>
+                            <td>ImDezCode</td>
+                        </tr>
+                        <tr>
+                            <td>Last Name</td>
                             <td>:</td>
                             <td>ImDezCode</td>
                         </tr>

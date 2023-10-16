@@ -12,22 +12,17 @@
     <body>
                 <nav class="navbar">            
             <div class="navbar-container">
-                <!--logo div-->
                 <div class="navbar-logo-div">
                   
                     <button class="navbar-toggler"><i class='fas fa-solid fa-bars'></i></button>
                 </div>
-
-                <!--search input-->
                 <input type="search" name="search" placeholder="Search..."
                  class="navbar-search" id="search">
               
                 <i id='icon-search' class="fas fa-regular fa-magnifying-glass"></i>
-
-                <!--item list-->
                 <ul class="menu-list">   
                     <li class="menu-item">                        
-                        <a class="menu-link" href="#">    
+                        <a class="menu-link" href="../../Views/Pages/history.php">    
                            <i class="fas fa-history"></i>
                             <span class="menu-link-text">History</span>    
                         </a>

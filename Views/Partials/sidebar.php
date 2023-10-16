@@ -1,10 +1,6 @@
 <html lang="en">
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="../../Public/CSS/sidebar.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" >
@@ -28,7 +24,7 @@
                         </a>
                     </li>
                     <li class="menu-item">                        
-                        <a class="menu-link" href="#">
+                        <a class="menu-link" href="../../Views/Pages/profile.php">
                             <i class="fas fa-solid fa-user"></i>
                             <span class="menu-link-text">Profile</span>    
                         </a>

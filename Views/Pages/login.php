@@ -3,10 +3,28 @@
    <head>
       <meta charset="utf-8">
       <title>Login</title>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="../../Public/CSS/style.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-      <link rel="icon" href="images/fevicon.png" type="image/gif">
+      <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
+      <style>
+   .bg-img {
+    background: url("../../Public/Images/hands-wheel-when-driving-high-speed-from-inside-car.jpg");
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
 
+.bg-img:after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+   </style>
    </head>
    <body>
       <div class="bg-img">
@@ -42,7 +60,7 @@
             </div>
             <div class="signup">
                Don't have account?
-               <a href="../signup.php">Signup Now</a>
+               <a href="../../Views/Pages/signup.php">Signup Now</a>
             </div>
          </div>
       </div>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>      <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -11,8 +12,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> About Us </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="../../Public/CSS/style.css">
+    <link rel="stylesheet" href="../../Public/CSS/bootstrap.min.css">
 
 </head>
 
@@ -20,7 +21,7 @@
     <section class="about-us">
         <div class="about">
                <div class="hero-image">
-                <img style="float: right; margin: 0px 0px 15px 15px;" src="../sweproject1/slider-21.jpg" class="pic" >
+                <img style="float: right; margin: 0px 0px 15px 15px;" src="../../Public/Images/slider-21.jpg" class="pic" >
             </div>
             <div class="text">
                 <div class="body2">

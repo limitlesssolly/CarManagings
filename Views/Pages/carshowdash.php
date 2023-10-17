@@ -49,7 +49,7 @@
                         <td> Sedan </td>
                         <td> 123|ن ص ع </td>
                         <td>
-                            <p class="status delivered"></p>
+                            <p class="status delivered">Delivered</p>
                         </td>
                         <td> <strong> $128.90 </strong></td>
                     </tr>
@@ -57,7 +57,7 @@
                         <td> 2 </td>
                         <td><img src="images/Jeet Saru.jpg" alt=""> Toyota </td>
                     
-                        <td>  </td>
+                        <td> suv </td>
                         <td> 154|ت ص غ </td>
                         <td>
                             <p class="status cancelled">Cancelled</p>
@@ -66,8 +66,8 @@
                     </tr>
                     <tr>
                         <td> 3</td>
-                        <td><img src="images/Sonal Gharti.jpg" alt=""> Sonal Gharti </td>
-                        <td> Tokyo </td>
+                        <td><img src="images/Sonal Gharti.jpg" alt=""> Mitsubishsi </td>
+                        <td> suv </td>
                         <td> 154|ت ص غ </td>
                         <td>
                             <p class="status shipped">Shipped</p>
@@ -76,8 +76,8 @@
                     </tr>
                     <tr>
                         <td> 4</td>
-                        <td><img src="images/Alson GC.jpg" alt=""> Alson GC </td>
-                        <td> New Delhi </td>
+                        <td><img src="images/Alson GC.jpg" alt=""> Hyundai </td>
+                        <td> suv </td>
                         <td> 154|ت ص غ </td>
                         <td>
                             <p class="status delivered">Delivered</p>
@@ -86,8 +86,8 @@
                     </tr>
                     <tr>
                         <td> 5</td>
-                        <td><img src="images/Sarita Limbu.jpg" alt=""> Sarita Limbu </td>
-                        <td> Paris </td>
+                        <td><img src="images/Sarita Limbu.jpg" alt="">Nissan </td>
+                        <td> sedan </td>
                         <td> 154|ت ص غ </td>
                         <td>
                             <p class="status pending">Pending</p>

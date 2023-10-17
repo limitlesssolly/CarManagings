@@ -48,7 +48,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="gallery_box">
-                                <div class="gallery_img"><img src="images/img-2.png"></div>
+                                <div class="gallery_img"><img src="../../Public/Images/img-2.png"></div>
                                 <h3 class="types_text">Toyota car</h3>
                                 <p class="looking_text">Start per day $4500</p>
                                 <div class="read_bt"><a href="#">Book Now</a></div>
@@ -56,7 +56,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="gallery_box">
-                        <div class="gallery_img"><img src="images/img-3.png"></div>
+                        <div class="gallery_img"><img src="../../Public/Images/img-3.png"></div>
                         <h3 class="types_text">Toyota car</h3>
                         <p class="looking_text">Start per day $4500</p>
                         <div class="read_bt"><a href="#">Book Now</a></div>
@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="gallery_box">
-                        <div class="gallery_img"><img src="images/img-1.png"></div>
+                        <div class="gallery_img"><img src="../../Public/Images/img-1.png"></div>
                         <h3 class="types_text">Toyota car</h3>
                         <p class="looking_text">Start per day $4500</p>
                         <div class="read_bt"><a href="#">Book Now</a></div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="gallery_box">
-                        <div class="gallery_img"><img src="images/img-2.png"></div>
+                        <div class="gallery_img"><img src="../../Public/Images/img-2.png"></div>
                         <h3 class="types_text">Toyota car</h3>
                         <p class="looking_text">Start per day $4500</p>
                         <div class="read_bt"><a href="#">Book Now</a></div>
@@ -84,7 +84,7 @@
                 </div>
                   <div class="col-md-4">
                      <div class="gallery_box">
-                         <div class="gallery_img"><img src="images/img-3.png"></div>
+                         <div class="gallery_img"><img src="../../Public/Images/img-3.png"></div>
                          <h3 class="types_text">Toyota car</h3>
                          <p class="looking_text">Start per day $4500</p>
                          <div class="read_bt"><a href="#">Book Now</a></div>

@@ -28,6 +28,9 @@
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
    </head>
     <body>
+    <?php
+       include('../../Views/Partials/navbar.php');
+    ?> 
         <!-- gallery section start -->
         <div class="gallery_section layout_padding">
             <div class="container">

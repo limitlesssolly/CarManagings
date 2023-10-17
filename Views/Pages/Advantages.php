@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    
 <?php
        include('../../Views/Partials/sidebar.php');
     ?> 

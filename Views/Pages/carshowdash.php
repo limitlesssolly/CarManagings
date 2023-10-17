@@ -45,7 +45,7 @@
                 <tbody>
                     <tr>
                         <td> 1 </td>
-                        <td> <img src="images/Zinzu Chan Lee.jpg" alt="">Toyota</td>
+                        <td> <img src="../../Public/Images/carla.png" alt="">Toyota</td>
                         <td> Sedan </td>
                         <td> 123|ن ص ع </td>
                         <td>
@@ -55,7 +55,7 @@
                     </tr>
                     <tr>
                         <td> 2 </td>
-                        <td><img src="images/Jeet Saru.jpg" alt=""> Toyota </td>
+                        <td><img src="../../Public/Images/carla.png" alt=""> Toyota </td>
                     
                         <td> suv </td>
                         <td> 154|ت ص غ </td>
@@ -66,7 +66,7 @@
                     </tr>
                     <tr>
                         <td> 3</td>
-                        <td><img src="images/Sonal Gharti.jpg" alt=""> Mitsubishsi </td>
+                        <td><img src="../../Public/Images/carla.png" alt=""> Mitsubishsi </td>
                         <td> suv </td>
                         <td> 154|ت ص غ </td>
                         <td>
@@ -76,7 +76,7 @@
                     </tr>
                     <tr>
                         <td> 4</td>
-                        <td><img src="images/Alson GC.jpg" alt=""> Hyundai </td>
+                        <td><img src="../../Public/Images/carla.png" alt=""> Hyundai </td>
                         <td> suv </td>
                         <td> 154|ت ص غ </td>
                         <td>
@@ -86,7 +86,7 @@
                     </tr>
                     <tr>
                         <td> 5</td>
-                        <td><img src="images/Sarita Limbu.jpg" alt="">Nissan </td>
+                        <td><img src="../../Public/Images/carla.png" alt="">Nissan </td>
                         <td> sedan </td>
                         <td> 154|ت ص غ </td>
                         <td>
@@ -96,7 +96,7 @@
                     </tr>
                     <tr>
                         <td> 6</td>
-                        <td><img src="images/Alex Gonley.jpg" alt=""> Hai S </td>
+                        <td><img src="../../Public/Images/carla.png" alt=""> Hai S </td>
                         <td> van </td>
                         <td> 154|ت ص غ </td>
                         <td>
@@ -106,7 +106,7 @@
                     </tr>
                     <tr>
                         <td> 7</td>
-                        <td><img src="images/Alson GC.jpg" alt=""> Hyundai </td>
+                        <td><img src="../../Public/Images/carla.png" alt=""> Hyundai </td>
                         <td> sedan </td>
                         <td> 154|ت ص غ </td>
                         <td>
@@ -116,7 +116,7 @@
                     </tr>
                     <tr>
                         <td> 8</td>
-                        <td><img src="images/Sarita Limbu.jpg" alt=""> Nissan </td>
+                        <td><img src="../../Public/Images/carla.png" alt=""> Nissan </td>
                         <td> hatchback </td>
                         <td> 154|ت ص غ </td>
                         <td>
@@ -126,7 +126,7 @@
                     </tr>
                     <tr>
                         <td> 9</td>
-                        <td><img src="images/Alex Gonley.jpg" alt=""> Hyundai </td>
+                        <td><img src="../../Public/Images/carla.png" alt="">Hyundai </td>
                         <td> Suv </td>
                         <td> 154|ت ص غ </td>
                         <td>

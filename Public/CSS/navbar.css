@@ -10,7 +10,7 @@ body {
 }
 
 .navbar {
-    background-color: #007bff; /* Navbar background color */
+    background-color: #5c75f6; /* Navbar background color */
     color: #fff; /* Navbar text color */
     display: flex;
     justify-content: space-between;
@@ -46,5 +46,5 @@ body {
 }
 
 .nav-links a:hover {
-    color: #0056b3; /* Change color on hover */
+    color: #4254af; /* Change color on hover */
 }

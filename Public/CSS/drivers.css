@@ -1,0 +1,187 @@
+body {
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+}
+
+h3
+{
+    font-size: 3vh;
+    cursor: pointer;
+    position: absolute;
+    top: 11%;
+    left: 80%;
+}
+
+h2 {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    color: #0d1516;
+    font-size: 300%;
+}
+
+h1
+{
+    color: #0d1516;
+    text-align: center;
+}
+
+table {
+    position: absolute;
+    left: 7%;
+    top: 30%;
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #5c75f6;
+}
+
+tr:nth-child(even) {
+    background-color: #fff;
+}
+
+th {
+    background-color: #4254af;
+    color: white;
+}
+
+.deleter
+{
+    padding: 0 10px 0 0;
+}
+.deleter:hover
+{
+    color: #5c75f6;
+}
+
+.viewer
+{
+    padding: 0 10px 0 0;
+}
+.viewer:hover
+{
+    color: #5c75f6;
+}
+
+button
+{
+    display: contents;
+    position: absolute;
+    left: 94%;
+    top: 68%;
+    z-index: 10;
+    padding: 5px 5px;
+    margin-right: 5px;
+    outline:none;
+    border: 2px solid #5c75f6;
+    -o-border-radius: 20px;
+    cursor: pointer;
+    color: #5c75f6;
+    background: #fff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
+
+
+.words {
+    font-size: 1.3vw;
+    color: #0d1516;
+    position: absolute;
+    top: 25%;
+    left: 42%;
+}
+
+a
+{
+    outline:none;
+    text-decoration: none;
+    cursor: pointer;
+    color: #0d1516;
+}
+
+.name h4
+{
+    border-bottom: 1px solid #5c75f6;
+    font-size: 200%;
+    position: absolute;
+    left: 10%;
+    top: 10%;
+}
+
+.buts
+{
+    position: absolute;
+    top : 70%;
+    left: 43%;
+}
+
+.buttons
+{
+    margin: 3px;
+    padding: 0 20px 0 20px;
+    font-size: 18px;
+    outline:none;
+    -o-border-radius: 20px;
+    cursor: pointer;
+    color: #d6bd91;
+    background: #ffffff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.delta
+{
+    margin: 3px;
+    padding: 0 20px 0 20px;
+    font-size: 18px;
+    outline:none;
+    -o-border-radius: 20px;
+    cursor: pointer;
+    color: #0d1516;
+    background: #ffffff;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    border-radius: 20px;
+    position: absolute;
+    top: 90%;
+    left: 45%;
+}
+
+.delta:hover
+{
+    color: #d6bd91;
+}
+
+.viewsa .buttons
+{
+    position: absolute;
+    top : 70%;
+    left: 43%;
+}
+
+.foots
+{
+    position: relative;
+    top: 100%;
+}
+
+@media screen and (max-width: 600px) {
+    nav li {
+        float: none;
+    }
+}

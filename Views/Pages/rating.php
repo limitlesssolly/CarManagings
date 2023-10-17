@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="ratings.css">
+    <link rel="stylesheet" href="../../Public/CSS/rating.css">
     <title>Car Rental System Rating</title>
 </head>
 <body>
+<?php
+        include('../Partials/navbar.php');
+        ?>
     <div class="container">
         <h1>Rate Your Car Rental Experience</h1>
         <form>
@@ -37,5 +40,6 @@
             </div>
         </form>
     </div>
+    
 </body>
 </html>

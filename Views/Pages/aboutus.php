@@ -3,9 +3,11 @@
 <head>
     <title> About Us </title>
     <link rel="stylesheet" href="../../Public/CSS/style.css">
+    
 </head>  
 
 <body>
+    
  <?php
        include('../../Views/Partials/sidebar.php');
     ?> 

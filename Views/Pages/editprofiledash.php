@@ -49,7 +49,7 @@
                     </div>
 
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="">Cars</a></li>    
+                        <li><a class="link_name" href="../../Views/Pages/carshowdash.php">Cars</a></li>    
                         <li><a href="">Add</a></li>
                         <li><a href="">Edit</a></li>
                         <li><a href="">Delete</a></li>
@@ -110,8 +110,8 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Settings</a></li>   
-                        <li><a href="">Edit your profile</a></li>
-
+                        <li><a href="../../Views/Pages/editprofiledash.php">Edit your profile</a></li>
+                  
                     </ul>
 
                 </li>  
@@ -186,7 +186,7 @@
                         </div>
                         
                     </form>
-                    <script src="js/contactus.js"></script>
+                    <!-- <script src="js/contactus.js"></script> -->
                 </div>
 <!-- end of form -->
         </section>    

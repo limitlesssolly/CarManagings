@@ -32,7 +32,43 @@
         </section>      
         
         
-        <div class="container3">
+        <div class="container4">
+            <p> Our Cars </p>
+        </div>    
+
+
+        
+         <div class="wrapper">
+            <div class="card">
+                <img src="../../Public/Images/hyundaicar2.jpg" alt="">
+                <div class="info">
+                    <h1>Sedan</h1>
+                    <p>capacity 4 persons-3 bags</p>
+                    <a href="" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../../Public/Images/hyundaicar.jpg" alt="">
+                <div class="info">
+                    <h1>SUV</h1>
+                    <p>capacity 5 persons-4 bags</p>
+                    <a href="" class="btn">Book Now</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../../Public/Images/hi-s.jpg" alt="">
+                <div class="info">
+                    <h1>HI-S</h1>
+                    <p>capacity 10 persons-7 bags</p>
+                    <a href="" class="btn">Book Now</a>
+                </div>
+            </div>
+
+         </div>
+ 
+         <div class="container3">
                <div class="box2">
                     <img src="../../Public/Images/mitsubishilogo.png" alt="">
                 </div>
@@ -45,7 +81,7 @@
                     <img src="../../Public/Images/hyundai-logo.png" alt="">
                 </div>
         </div>
-        
+
         <?php
             include('../Partials/footer2.php');
         ?>

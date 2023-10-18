@@ -1,7 +1,7 @@
 /* footer */
 
 .fcontainer {
-    background-color: #000000;
+    background-color: rgb(1, 5, 28);
     margin: auto;
 }
 
@@ -110,6 +110,47 @@ margin-top: 8px;
 
     color: rgb(41, 124, 233);
 }
+
+/* footer edit css */
+.f-col .social-links a {
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.f-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.f-col .social-links a p {
+    padding: 10px;
+}
+
+.social-links a i{
+
+margin-top: 11px;
+margin-left: -1.5px;
+}
+
+#rights{
+    width: 100%;
+    background-color: rgba(54, 54, 55, 0.199);
+    text-align: center;
+}
+#rights p{
+    font-weight: 400;
+    font-size: 15px;
+}
+
+
+
 
 
 

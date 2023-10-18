@@ -25,7 +25,7 @@
             <img src="../../Public/Images/carbackground.jpg "alt="">
         </div>
         <section id="introo">
-            <div class="intro ">
+            <div class="intro">
             <p class="p1">24Seven limousine for best travelling</p>
             <p class="p2"> Established in 2020 By a Group of <br> Challengers from Different Fields</p>
             </div>
@@ -33,14 +33,15 @@
         
         
         <div class="container4">
-            <p> Our Cars </p>
+            <p class="p1"> Our Cars</p>
+       
         </div>    
 
 
         
          <div class="wrapper">
             <div class="card">
-                <img src="../../Public/Images/hyundaicar2.jpg" alt="">
+                <img src="../../Public/Images/elantra.jpg" alt="">
                 <div class="info">
                     <h1>Sedan</h1>
                     <p>capacity 4 persons-3 bags</p>
@@ -49,7 +50,7 @@
             </div>
 
             <div class="card">
-                <img src="../../Public/Images/hyundaicar.jpg" alt="">
+                <img src="../../Public/Images/tuscon.jpg" alt="">
                 <div class="info">
                     <h1>SUV</h1>
                     <p>capacity 5 persons-4 bags</p>
@@ -58,9 +59,9 @@
             </div>
 
             <div class="card">
-                <img src="../../Public/Images/hi-s.jpg" alt="">
+                <img src="../../Public/Images/hiace.png" alt="">
                 <div class="info">
-                    <h1>HI-S</h1>
+                    <h1>Hiace</h1>
                     <p>capacity 10 persons-7 bags</p>
                     <a href="" class="btn">Book Now</a>
                 </div>

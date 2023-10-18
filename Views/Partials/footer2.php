@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../../Public/CSS/footer2.css">
 <footer class="footer">
     <div class="fcontainer">
       <div class="row">

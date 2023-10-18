@@ -21,56 +21,34 @@
                     <tr>
                         <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                         <th> Name <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Number <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> Status <span class="icon-arrow">&UpArrow;</span></th>
-                        <th> History <span class="icon-arrow">&UpArrow;</span></th>
+                        <th> Action </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td> 1 </td>
                         <td> Anwar </td>
-                        <td> 0100598762</td>
-                        <td>
-                            <p class="status avaliable">avaliable</p>
-                        </td>
-                        <td><a href="#">History</a></td>
+                        <td> <a href="#">Delete</a></td>
                     </tr>
                     <tr>
                         <td> 2 </td>
                         <td> Mohsen </td>
-                        <td> 0123236692</td>
-                        <td>
-                            <p class="status notavaliable">Cancelled</p>
-                        </td>
-                        <td><a href="#">History</a></td>
+                        <td> <a href="#">Delete</a></td>
                     </tr>
                     <tr>
                         <td> 3 </td>
                         <td> Marwan </td>
-                        <td> 0100722462</td>
-                        <td>
-                            <p class="status avaliable">avaliable</p>
-                        </td>
-                        <td><a href="#">History</a></td>
+                        <td> <a href="#">Delete</a></td>
                     </tr>
                     <tr>
                     <td> 4 </td>
                         <td> Loay </td>
-                        <td> 0117934220</td>
-                        <td>
-                            <p class="status avaliable">avaliable</p>
-                        </td>
-                        <td><a href="#">History</a></td>
+                        <td> <a href="#">Delete</a></td>
                     </tr>
                     <tr>
                     <td> 5 </td>
                         <td> Bayoumi </td>
-                        <td> 0128459265</td>
-                        <td>
-                            <p class="status unavaliable">Cancelled</p>
-                        </td>
-                        <td><a href="#">History</a></td>
+                        <td> <a href="#">Delete</a></td>
                     </tr>
                     
                 </tbody>

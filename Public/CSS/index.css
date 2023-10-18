@@ -80,12 +80,11 @@
 
 }
 .container4 p{
-    /* margin-top: 5px; */
+    margin-top: 5px;
     font-weight: 500;
     font-size: 50px;
     color: #fff;
 }
-
 
 /* card start */
 .wrapper{
@@ -106,7 +105,7 @@
     align-items: flex-end;
     box-shadow: 0px 7px 10px rgba(0,0,0,0.5);
     transition: 0.5s ease-in-out;
-
+    
 }
 .card:hover{
     transform: translateY(20px);
@@ -133,6 +132,7 @@
     height: 425px;
     object-fit: cover;
     position: absolute;
+    
     top: 0;
     left: 0;
 }

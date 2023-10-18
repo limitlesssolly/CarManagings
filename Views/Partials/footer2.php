@@ -36,7 +36,7 @@
              </a>
           </div>
           </div>
-          <div class="f-col" style="font-size: 14px;">
+          <div class="f-col" style="font-size: 14px;" id="rights">
             <p>© All Rights Reserved</p>
           </div>
 

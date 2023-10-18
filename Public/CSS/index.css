@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  /* box-sizing: border-box; */
+}
+.bodyimage  img{
+    
+    position: relative;
+    margin-top: -50px;
+    width: 100%;
+    height: auto;
+ }
+
+ #introo {
+    margin-top: -10px;
+    padding-top: 120px;
+    background-color: #002138;
+    padding-bottom: 100px;
+}
+.p1 {
+    margin-top: -20px;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    color: #8ba79b;
+    text-transform: uppercase;
+
+
+}
+.p2 {
+
+    margin-top: -5px;
+    font-size: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    text-align: center;
+    letter-spacing: 1px;
+    color: #a8b0bd;
+}
+
+.container3{
+    margin-top: 20px;
+    background-color: #c5c7cc63;
+    backdrop-filter: blur(20px);
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 150px;
+   
+    margin-bottom: 40px;
+}
+
+.container3 img{
+    /* padding-left: 40px; */
+    width: 80px;
+    animation: 13s;
+}
+
+.container3 img:hover  {
+    position: relative;
+    top: -17px;
+   
+  }
+
+#toyota{
+    margin-top:20px;
+}
+
+
+/* footer edit css */
+.f-col .social-links a {
+    display: inline-block;
+    height: 45px;
+    width: 45px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.f-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.f-col .social-links a p {
+    padding: 10px;
+}
+
+.social-links a i{
+
+margin-top: 11px;
+margin-left: -1.5px;
+}
+
+#rights{
+    width: 100%;
+    background-color: rgba(54, 54, 55, 0.199);
+    text-align: center;
+}
+#rights p{
+    font-weight: 400;
+    font-size: 15px;
+}

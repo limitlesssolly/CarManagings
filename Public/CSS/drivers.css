@@ -54,45 +54,6 @@ th {
     color: white;
 }
 
-.deleter
-{
-    padding: 0 10px 0 0;
-}
-.deleter:hover
-{
-    color: #5c75f6;
-}
-
-.viewer
-{
-    padding: 0 10px 0 0;
-}
-.viewer:hover
-{
-    color: #5c75f6;
-}
-
-button
-{
-    display: contents;
-    position: absolute;
-    left: 94%;
-    top: 68%;
-    z-index: 10;
-    padding: 5px 5px;
-    margin-right: 5px;
-    outline:none;
-    border: 2px solid #5c75f6;
-    -o-border-radius: 20px;
-    cursor: pointer;
-    color: #5c75f6;
-    background: #fff;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    border-radius: 20px;
-}
-
 
 
 .words {
@@ -110,75 +71,39 @@ a
     cursor: pointer;
     color: #0d1516;
 }
+.table__header .input-group {
+    width: 35%;
+    height: 100%;
+    background-color: #fff5;
+    padding: 0 .8rem;
+    border-radius: 2rem;
 
-.name h4
-{
-    border-bottom: 1px solid #5c75f6;
-    font-size: 200%;
-    position: absolute;
-    left: 10%;
-    top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .2s;
 }
 
-.buts
-{
-    position: absolute;
-    top : 70%;
-    left: 43%;
+.table__header .input-group:hover {
+    width: 45%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
 }
 
-.buttons
-{
-    margin: 3px;
-    padding: 0 20px 0 20px;
-    font-size: 18px;
-    outline:none;
-    -o-border-radius: 20px;
-    cursor: pointer;
-    color: #d6bd91;
-    background: #ffffff;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    border-radius: 20px;
+.table__header .input-group img {
+    width: 1.2rem;
+    height: 1.2rem;
 }
 
-.delta
-{
-    margin: 3px;
-    padding: 0 20px 0 20px;
-    font-size: 18px;
-    outline:none;
-    -o-border-radius: 20px;
-    cursor: pointer;
-    color: #0d1516;
-    background: #ffffff;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    border-radius: 20px;
-    position: absolute;
-    top: 90%;
-    left: 45%;
+.table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
 }
 
-.delta:hover
-{
-    color: #d6bd91;
-}
-
-.viewsa .buttons
-{
-    position: absolute;
-    top : 70%;
-    left: 43%;
-}
-
-.foots
-{
-    position: relative;
-    top: 100%;
-}
 
 @media screen and (max-width: 600px) {
     nav li {

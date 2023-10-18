@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="../../Public/CSS/dashboard.css">
 <div class="sidebar ">
             <div class="logo-details">
                 <i class='bx bxs-dashboard'></i>
@@ -18,10 +19,10 @@
                     </div>
 
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="">Drivers</a></li>
-                        <li><a href="">Add</a></li>   
-                        <li><a href="">Edit</a></li>
-                        <li><a href="">Delete</a></li>
+                        <li><a class="link_name" href="../Pages/drivers.php">Drivers</a></li>
+                        <li><a href="../Pages/adddrivers.php">Add</a></li>   
+                        <li><a href="../Pages/editdrivers.php">Edit</a></li>
+                        <li><a href="../Pages/deletedrivers.php">Delete</a></li>
                     </ul>
 
 

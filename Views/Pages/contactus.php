@@ -4,7 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact-us</title>
+    <link rel="stylesheet" href="../../Public/CSS/navbar2.css" />
     <link rel="stylesheet" href="../../Public/CSS/contactus.css" />
+    
     <link rel="stylesheet" href="../../Public/CSS/footer2.css" />
     <script
       src="https://kit.fontawesome.com/64d58efce2.js"
@@ -13,8 +15,10 @@
   </head>
   <body>
 
+         <?php
+          include('../Partials/navbar2.php');
+         ?>
        
-
     <div class="container">
       <span class="big-circle"></span>
       <img src="img/shape.png" class="square" alt="" />

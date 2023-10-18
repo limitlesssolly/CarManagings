@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  overflow-x: hidden;
+}
 
 body,
 input,
@@ -12,8 +15,24 @@ textarea {
   font-family: "Poppins", sans-serif;
 }
 
+/* editnavbar */
+.header{
+  position: relative;
+  background-color: rgba(1, 0, 4, 0.949);
+   
+  z-index: 1000;
+}
+.navbar{
+  position: relative;
+  left: 300px;
+}
+.navbar a{
+  font-size: 1.0rem;
+}
+
 .container {
   position: relative;
+  /* margin-top: 100px; */
   width: 100%;
   min-height: 100vh;
   padding: 2rem;
@@ -383,3 +402,7 @@ textarea.input {
     padding: 0.45rem 1.2rem;
   }
 }
+
+
+
+

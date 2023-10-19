@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../../Public/CSS/sidebar.css">
+        <link rel="stylesheet" href="../../Public/CSS/sideBarr.css">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css" >
   </head>
     <body>
@@ -39,7 +39,9 @@
                         <h3 class="user-name">Username</h3>
                     </div>
                 </div>
+
                 <a class="logout-btn" href="#">
+                    
                     <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
                 </a>
             </div>

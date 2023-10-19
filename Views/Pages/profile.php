@@ -28,7 +28,7 @@
 
             <div class="user_options-forms" id="user_options-forms">
                 <div class="user_forms-login" style="padding: 50px 20px;">
-                    <h2 class="forms_title">Profile Information</h2>
+                    <h2 class="forms_title">Profile Info</h2>
                     <form class="forms_form" >
                         <fieldset class="forms_fieldset">
                             <div class="forms_field">
@@ -58,7 +58,7 @@
                     </form>
                 </div>
                 <div class="user_forms-signup">
-                    <h2 class="forms_title">Update Profile Information</h2>
+                    <h2 class="forms_title">Update Profile Info</h2>
                     <form class="forms_form">
                         <fieldset class="forms_fieldset">
                             <div class="forms_field">

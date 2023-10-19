@@ -110,7 +110,7 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Settings</a></li>   
-                        <li><a href="">Edit your profile</a></li>
+                        <li><a href="../../Views/Pages/editprofiledash.php">Edit your profile</a></li>
 
                     </ul>
 

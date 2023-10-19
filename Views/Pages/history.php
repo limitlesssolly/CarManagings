@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="../../Public/CSS/History.css">
 
 </head>
-<body>
+<body style="background-color: #ffffff;">
 <?php
        include('../../Views/Partials/sidebar.php');
     ?> 

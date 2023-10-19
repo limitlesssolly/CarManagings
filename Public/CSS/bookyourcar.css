@@ -1,0 +1,178 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+ 
+  font-family: 'Poppins', sans-serif;
+}
+body {
+    overflow-x: hidden;
+    font-family: sans-serif;
+    box-sizing: border-box;
+      
+    min-height: 100vh;
+}
+.header{
+    background-color: #100e0e51;
+}
+
+
+
+.form-control:focus{
+    outline: 4px solid rgba(31, 129, 221, 0.278);
+    border: none;
+    
+}
+.form-control{
+    border: 2px solid rgba(128, 128, 128, 0.33);
+    border-radius: 5px;
+    font-size: 18px;
+    text-indent: 13px;
+    color: #24262ba3;
+    text-align:unset;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    justify-content: space-evenly;
+    align-items:  start;
+    padding-left: 50px;
+
+}
+
+.bodyimage  img{
+    position: relative;
+    margin-top: -140px;
+    width: 100%;
+    height: auto;
+ }
+
+ .box-2 input{
+    align-items: center;
+     height: 50px;
+     width: 180px;
+     
+}
+
+.box-2{
+    border-top: 20px solid rgb(22, 22, 66);
+    border-radius: 20px;
+    margin-left: -120px;
+    height: 65vh;
+    width: 30vw;
+     
+}
+.date{
+    margin-top: 50px ;
+    margin-left: 120px;
+    justify-content: center;
+    align-items: center;
+}
+.date label{
+   
+    font-size: 23px;
+    font-weight: 600;
+}
+#datePicker{
+    
+    width: 220px;
+}
+#timePicker{
+    width: 220px;
+}
+.time{
+    margin-top: 50px ;
+    margin-left: 120px;
+    justify-content: center;
+    align-items: center;
+}
+
+.time label{
+    
+    font-size: 23px;
+    font-weight: 600;
+}
+#submit{
+    border-radius: 15px;
+    background-color: transparent ;
+    font-size: 18px;
+    font-weight: 400;
+    border:1px solid rgb(2, 12, 71) ;
+    color: #100e0e;
+    right: -160px;
+    bottom: -125px;
+    position: relative;
+}
+
+#submit:hover{
+    background-color:rgb(2, 25, 80);
+    color: white ;
+    border: none;
+    letter-spacing: 4px;
+    transition: 2s;
+    cursor: pointer;
+}
+/* pagination */
+.pagination ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(2, 12, 71);
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+  }
+  .pagination ul li{
+    color: rgb(2, 12, 71);
+    list-style: none;
+    line-height: 45px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+  }
+  .pagination ul li.numb{
+    list-style: none;
+    height: 45px;
+    width: 45px;
+    margin: 0 3px;
+    line-height: 45px;
+    border-radius: 50%;
+  }
+  .pagination ul li.numb.first{
+    margin: 0px 3px 0 -5px;
+  }
+  .pagination ul li.numb.last{
+    margin: 0px -5px 0 3px;
+  }
+  .pagination ul li.dots{
+    font-size: 22px;
+    cursor: default;
+  }
+  .pagination ul li.btn{
+    padding: 0 20px;
+    border-radius: 50px;
+  }
+  .pagination li.active,
+  .pagination ul li.numb:hover,
+  .pagination ul li:first-child:hover,
+  .pagination ul li:last-child:hover{
+    color: #fff;
+    background: rgb(2, 12, 71);
+  }
+  /* end of pagination */
+
+
+
+

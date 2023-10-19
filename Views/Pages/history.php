@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>      <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
-<link rel="stylesheet" href="../../Public/CSS/history.css">
+<link rel="stylesheet" href="../../Public/CSS/History.css">
 
 </head>
-<body>
+<body style="background-color: #ffffff;">
 <?php
        include('../../Views/Partials/sidebar.php');
     ?> 
@@ -14,7 +14,7 @@
       <div class="image">
         <img src="https://i.discogs.com/Vi5Q2RPLp3QM2zpp6_ANS1wGgB-rfy4J2Aj1KI9ItMs/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTEwOTUy/MTAtMTYzNjE0NTAw/NS0zNzE5LmpwZWc.jpeg" alt="">
         
-        <h4>Driver1</h4>
+        <h4>Driver 1</h4>
       </div>
       
       <div class="text-group">
@@ -37,7 +37,7 @@
       <div class="image">
         <img src="https://i.discogs.com/Vi5Q2RPLp3QM2zpp6_ANS1wGgB-rfy4J2Aj1KI9ItMs/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTEwOTUy/MTAtMTYzNjE0NTAw/NS0zNzE5LmpwZWc.jpeg" alt="">
         
-        <h4>Driver1</h4>
+        <h4>Driver 2</h4>
       </div>
       
       <div class="text-group">
@@ -59,7 +59,7 @@
       <div class="image">
         <img src="https://i.discogs.com/Vi5Q2RPLp3QM2zpp6_ANS1wGgB-rfy4J2Aj1KI9ItMs/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9BLTEwOTUy/MTAtMTYzNjE0NTAw/NS0zNzE5LmpwZWc.jpeg" alt="">
         
-        <h4>Driver1</h4>
+        <h4>Driver 3</h4>
       </div>
       
       <div class="text-group">

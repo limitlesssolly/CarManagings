@@ -1,10 +1,10 @@
 /*css variables*/
 :root {
     --body-bg-color: #dce4e3;
-    --green: #4070f4;
-    --light-green: #9db5f7;
-    --light-grey: #dce4e3;
-    --text-color: #084236;
+    --green: rgb(1, 5, 28);
+    --light-green: #a3b5c0;
+    --light-grey: #a3b5c0;
+    --text-color: #DAD5CF;
 }
 
 /*reset*/
@@ -13,7 +13,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+.navbar-toggler{
+    color: var( --text-color);
 
+}
 
 button {
     border: none;
@@ -158,11 +161,13 @@ body {
 
 /*user information div*/
 .navbar .user-container {
-    background-color: var(--light-green); 
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0.5rem 1rem;
+    color: rgb(1, 5, 28);
+    background-color: var(--light-green);
+
 }
 
 .navbar .user-container .user-info {

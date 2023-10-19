@@ -1,77 +1,52 @@
-*{
+* {
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-family: 'Ubuntu', sans-serif;
 }
-.logo{
-    text-align: center;
-    justify-content: center;
+
+.foots {
+    padding: 20px;
+    display: flex;
+    background-color: #5c75f6;
     align-items: center;
-    width: 10em;
-    overflow: visible;
-    text-overflow: ellipsis;
-    position: fixed;
-    left:3%;
-    top:55%;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
 }
-footer{
-    position: fixed;
-    width: 100%;
-    height: 50%;
-    bottom:0;
-    left:0;
-    background: #5c75f6; 
-    color: white;
+
+.foots>div {
+    margin: 10px;
     text-align: center;
-    font-size: medium;
+    line-height: 15px;
+    font-size: 1rem;
+    align-self: center;
 }
-a{
+
+a {
     text-decoration: none;
     color: #ffffff;
 }
-a:hover{
+
+a:hover {
     text-decoration: underline;
 }
 
-.info{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 20em;
-    overflow: visible;
-    text-overflow: ellipsis;
-    position: fixed;
-    right:60%;
-    top:55%;
-}
-.linking{
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 20em;
-    overflow: visible;
-    text-overflow: ellipsis;
-    position: fixed;
-    right:30%;
-    top:55%;
-}
-.socials{
-    text-align: center;
-    justify-content: center;
-    align-items: center; 
-    position: fixed;
-    right:15%;
-    top:60%;
-}
-.copyrights{
+
+.copyrights {
     color: white;
     background-color: #4254af;
     text-align: center;
     padding: 1%;
     position: fixed;
-    bottom:0;
-    left:0;
-    width:100%;
-    height:7%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+}
+
+@media (max-width: 800px) {
+    .flex-container {
+        flex-direction: column;
+    }
 }

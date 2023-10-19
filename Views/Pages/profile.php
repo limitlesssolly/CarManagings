@@ -1,53 +1,117 @@
 <!DOCTYPE html>
-<head>      <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
-<link rel="stylesheet" href="../../Public/CSS/profile.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
+    <link rel="stylesheet" href="../../Public/CSS/p.css">
 
 <body>
- <?php
-       include('../../Views/Partials/sidebar.php');
-    ?> 
-<div class="main">
-   
+    <?php
+    include('../../Views/Partials/sidebar.php');
+    ?>
     </head>
-        <h2>PROFILE</h2>
-        <div class="card">
-            <div class="card-body">
-            <a class="button touch edit" href="../../Views/Pages/editprofile.php"></a>
-            <a class="button touch delete" href="#"></a>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td>First Name</td>
-                            <td>:</td>
-                            <td>ImDezCode</td>
-                        </tr>
-                        <tr>
-                            <td>Last Name</td>
-                            <td>:</td>
-                            <td>ImDezCode</td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td>:</td>
-                            <td >imdezcode@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td>:</td>
-                            <td>Bali, Indonesia</td>
-                        </tr>
-                        <tr>
-                            <td>Phone:</td>
-                            <td>:</td>
-                            <td>0123456789</td>
-                        </tr>
-                    </tbody>
-                </table>
+    <section class="user">
+        <div class="user_options-container">
+            <div class="user_options-text">
+                <div class="user_options-unregistered">
+                    <h2 class="user_unregistered-title">Update Profile Info?</h2>
+                    <button class="user_unregistered-signup" id="signup-button">Update</button>
+                </div>
+
+                <div class="user_options-registered">
+                    <h2 class="user_registered-title">View Your Profile Info?</h2>
+                    <button class="user_registered-login" id="login-button">View</button>
+                    <button class="user_registered-login" id="login-button">Delete Account</button>
+
+                </div>
+
+            </div>
+
+            <div class="user_options-forms" id="user_options-forms">
+                <div class="user_forms-login" style="padding: 50px 20px;">
+                    <h2 class="forms_title">Profile Info</h2>
+                    <form class="forms_form" >
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                            <div class="forms_field-input">
+                                First Name: Client1
+                            </div>
+                        </div>
+                            <div class="forms_field">
+                            <div class="forms_field-input">
+                                Last Name: Client2
+                            </div>                            </div>
+                            <div class="forms_field">
+                            <div class="forms_field-input">
+                                Email: Client1@gmail.com
+                            </div>                            </div>
+                            <div class="forms_field">
+                            <div class="forms_field-input">
+                                Address: Client1Adrres
+                            </div>                            </div>
+                            <div class="forms_field">
+                            <div class="forms_field-input">
+                               Phone Number: 0123456789
+                            </div>                            </div>
+                          
+                        </fieldset>
+                      
+                    </form>
+                </div>
+                <div class="user_forms-signup">
+                    <h2 class="forms_title">Update Profile Info</h2>
+                    <form class="forms_form">
+                        <fieldset class="forms_fieldset">
+                            <div class="forms_field">
+                                <input type="text" placeholder="First Name" class="forms_field-input"  />
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" placeholder="Last Name" class="forms_field-input"  />
+                            </div>
+                            <div class="forms_field">
+                                <input type="email" placeholder="Email" class="forms_field-input"  />
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" placeholder="Address" class="forms_field-input"  />
+                            </div>
+                            <div class="forms_field">
+                                <input type="text" placeholder="Phone Number" class="forms_field-input"  />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="Password" class="forms_field-input" required />
+                            </div>
+                            <div class="forms_field">
+                                <input type="password" placeholder="New Password" class="forms_field-input"  />
+                            </div>
+                        </fieldset>
+                        <div class="forms_buttons">
+                            <input type="submit" value="Update info" class="forms_buttons-action">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
+    </section>
+    <script>
+        const signupButton = document.getElementById('signup-button'),
+            loginButton = document.getElementById('login-button'),
+            userForms = document.getElementById('user_options-forms')
 
-       
-    </div>
+        /**
+         * Add event listener to the "Sign Up" button
+         */
+        signupButton.addEventListener('click', () => {
+            userForms.classList.remove('bounceRight')
+            userForms.classList.add('bounceLeft')
+        }, false)
+
+        /**
+         * Add event listener to the "Login" button
+         */
+        loginButton.addEventListener('click', () => {
+            userForms.classList.remove('bounceLeft')
+            userForms.classList.add('bounceRight')
+        }, false)
+    </script>
 </body>
+
 </html>

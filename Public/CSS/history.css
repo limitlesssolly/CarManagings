@@ -33,7 +33,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff;
+    color: #DAD5CF;
     width: 90%;
     padding: 1rem 2rem;
     margin: 1rem 0px;
@@ -41,7 +41,7 @@
     box-shadow: 0px 0px 20px #00000020;
     position: relative;
     transition: all .3s ease;
-    background-color: #4070f4;
+    background-color: rgb(1, 5, 28);
   }
   
   .center ul li:hover:before {
@@ -49,7 +49,7 @@
       display: flex;
       width: 8px;
       height: 100%;
-      background-color: #f1f1f1;
+      background-color:  #e5e5e5;
       position: absolute;
       top: 0;
       left: 0;
@@ -128,7 +128,7 @@
 }
 
 #wrapper:after {
-  background: #000 none repeat scroll 0px 0px;
+  background: rgb(1, 5, 28) none repeat scroll 0px 0px;
   border-radius: 50%;
   bottom: -35px;
   content: "";
@@ -153,8 +153,8 @@
 }
 
 .btn.red {
-    background: #aba4a3 none repeat scroll 0% 0%;
-    color: #FFF;
+    background: #DAD5CF none repeat scroll 0% 0%;
+    color: rgb(1, 5, 28);
     transition: opacity 0.2s ease-in-out;
 }
 

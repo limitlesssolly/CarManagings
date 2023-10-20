@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../Public/CSS/aboutus2.css">
     <link rel="stylesheet" href="../../Public/CSS/footer2.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="">
     <title>About-us</title>
@@ -18,8 +19,9 @@
             include('../Partials/navbar2.php');
         ?>
 
+
         <div class="bodyimage">
-            <img src="../../Public/Images/mercedes.jpg"alt="">
+            <img src="../../Public/Images/bgcar.jpg"alt="">
         </div>
 
        
@@ -27,7 +29,7 @@
     <section class="about-us">
         <div class="about">
                <div class="hero-image">
-                <img style="float: right; margin: 0px 0px 15px 15px;" src="../../Public/Images/bg3.jpg" class="pic" >
+                <img style="float: right; margin: 0px 0px 15px 15px;" src="../../Public/Images/bgcar2.jpg" class="pic" >
             </div>
             <div class="text">
                 <div class="body2">
@@ -69,6 +71,38 @@
         hourglass();
         setInterval(hourglass,20000);
         </script>
+             <!-- our advantages -->
+             <h1 id="ouradvantages">Our Advantages</h1>
+        <div class="big">
+       
+        <div class="container">
+            <div class="box">
+                <h2>01</h2>
+                 <h3>Timing</h3>
+                 <p>
+                    Every where Around the Clock and always on time
+                 </p>
+            </div>
+            <div class="box">
+                <h2>02</h2>
+                 <h3>Service One</h3>
+                 <p>
+                     Fastes limousine services booking
+                 </p>
+            </div>
+
+            <div class="box">
+                <h2>03</h2>
+                 <h3>Safety and Speedness</h3>
+                 <p>
+                     Keep your information in safe and safe driving
+                 </p>
+            </div>
+
+        </div>
+  
+        </div>     
+
 
         <?php
             include('../Partials/footer2.php');

@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../Public/CSS/editprofiledash.css">
+    <link rel="stylesheet" href="../../Public/CSS/addCar.css">
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Edit your profile</title>
+    <title>Add Car</title>
 </head>
 <body>
 <div class="sidebar ">
@@ -50,7 +50,7 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="../../Views/Pages/carshowdash.php">Cars</a></li>    
-                        <li><a href="addCar.php">Add</a></li>
+                        <li><a href="">Add</a></li>
                         <li><a href="">Edit</a></li>
                         <li><a href="">Delete</a></li>
                     </ul>
@@ -146,36 +146,30 @@
                     <form  id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name">
-                            <span>Name</span>
+                            <input type="text" name="Type"  id="Type">
+                            <span>Type</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="email">
-                            <span>Email</span>
+                            <input type="text" name="Model" id="Model">
+                            <span>Model</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="address">
-                            <span>Address</span>
+                            <input type="text" name="Plate" id="Plate">
+                            <span>Plate Numbers</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="password" id="password">
-                            <span>Password</span>
+                            <input type="text" name="Colour" id="Color">
+                            <span>Colour</span>
                         </div>
-
                         <div class="inputBox">
-                            <input type="text" name="password" id="confirmpassword">
-                            <span> Confirm Password</span>
+                            <label for="owned">Is the car owned by us?</label>
+                             <input type="checkbox" name="Owned" id="owned">
                         </div>
 
-                        <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
-                            <span>Phone</span>
-                        </div>
 
-              
                      
                         <div id="error"> </div>
 

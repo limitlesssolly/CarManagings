@@ -69,7 +69,7 @@
             }, 2000);
         }
         hourglass();
-        setInterval(hourglass,20000);
+        setInterval(hourglass,30000);
         </script>
              <!-- our advantages -->
              <h1 id="ouradvantages">Our Advantages</h1>

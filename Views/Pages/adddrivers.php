@@ -1,3 +1,7 @@
+<?php
+include_once "../../includes/db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,36 +19,55 @@
     ?>
     <div class="adddrivers">
         <section>
-        <form action="" method="post">
+            <form action="" method="post">
 
-            <div class="name">
-                <label for="fullname">Full Name</label>
-                <input type="text" class="field" name="fullname" placeholder="full name"> <br>
-            </div>
+                <div class="name">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" class="field" name="fullname" placeholder="samy salama"> <br>
+                </div>
 
-            <div class="contactinfo">
-                <label for="contactnumbers">Contact Number</label>
-                <input type="text" class="field" name="contactnumbers" placeholder="contact numbers"> <br>
-            </div>
+                <div class="contactinfo">
+                    <label for="contactnumbers">Contact Number</label>
+                    <input type="text" class="field" name="contactnumbers" placeholder="0123456789"> <br>
+                </div>
 
-            <div class="status">
-                <label for="avaliability">avaliability</label>
-                <input type="text" class="field" name="avaliability" placeholder="avaliable"> <br>
+                <div class="status">
+                    <label for="salary">expected salary</label>
+                    <input type="text" class="field" name="salary" placeholder="50000"> <br>
 
-                <label for="date">date of employment </label>
-                <input type="date" class="field" name="date"> <br>
+                    <label for="date">date of employment </label>
+                    <input type="date" class="field" name="date"> <br>
 
-                <label for="liscenced">liscenced</label>
-                <input type="radio" name="liscenced" placeholder="yes">
-                <input type="radio" name="notliscenced" placeholder="no"> <br>
-            </div>
+                    <label for="liscenced">liscenced</label>
+                    <input type="radio" name="liscenced">
+                    <input type="radio" name="liscenced"> <br>
+                </div>
 
-            <div class="subs">
-                <input type="submit" name="submit" value="add driver">
-            </div>
-        </form>
-    </section>
+                <div class="subs">
+                    <input type="submit" name="submit" value="add driver">
+                </div>
+            </form>
+        </section>
     </div>
+
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $fullname = htmlspecialchars($_POST["fullname"]);
+        $contactnumbers = htmlspecialchars($_POST["contactnumbers"]);
+        $salary = htmlspecialchars($_POST["salary"]);
+        $date = htmlspecialchars($_POST["date"]);
+        $liscenced = htmlspecialchars($_POST["liscenced"]);
+
+        $sql = "insert into drivers(fullname,number,salary,date,liscenced) 
+        values('$fullname','$contactnumbers','$salary','$date', '$liscenced')";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result) {
+            // print("el donia lessa bkheer");
+        }
+    }
+    ?>
+
     <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {

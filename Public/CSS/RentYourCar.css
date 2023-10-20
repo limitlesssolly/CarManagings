@@ -1,49 +1,118 @@
-*{
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
   font-family: 'Roboto', sans-serif;
   font-family: 'Ubuntu', sans-serif;
 }
-.title{
-  text-align:center;
-  font-size: 4rem;
-}
-.carimg{
+
+.title {
   position: absolute;
-  right: 50%;
-  top: 20%;
-  width: 5em;
-}
-form{
+  top: 5%;
+  left: 40%;
   text-align: center;
-  float: left;
+  font-size: 2.5rem;
+}
+
+.carimg {
+  position: absolute;
+  right: 0;
+  top: 20%;
+  width: 55em;
+}
+
+form {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  width: 50%;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  background: white;
+  align-items: center;
+  flex-flow: row wrap;
+  align-content: center;
+}
+
+.container {
+  width: 200px;
+}
+
+.info {
   position: relative;
-  left:10%;
-  
-}
-input[type=text], select, textarea {
-width: 100%;
-padding: 12px;
-border: 1px solid #ccc;
-border-radius: 4px;
-resize: vertical;
+  height: 50px;
+  line-height: 50px;
+  margin: 30px;
 }
 
-label {
-padding: 10px 10px 10px 0;
-display: inline-block;
+input[type=text] {
+  position: absolute;
+  width: 60%;
+  outline: none;
+  font-size: 1em;
+  padding: 0 10px;
+  line-height: 50px;
+  border-radius: 10px;
+  border: 3px solid #c5c7cc63;
+  background: transparent;
+  transition: 0.1s ease;
+  z-index: 1111;
 }
 
-input[type=submit] {
-background-color: #4c8bc5;
-color: white;
-padding: 12px 20px;
-border: none;
-border-radius: 4px;
-cursor: pointer;
-float: right;
+.labella {
+  position: absolute;
+  font-size: 1.3em;
+  color: #c5c7cc63;
+  padding: 0 12px;
+  margin: 0 20px;
+  background-color: white;
+  transition: 0.2s ease;
 }
 
-input[type=submit]:hover {
-background-color: #2a4f71;
+input[type=text]:focus,
+input[type=text]:valid {
+  color: #002138;
+  border: 3px solid #002138;
+}
+
+input[type=text]:focus+.labella,
+input[type=text]:valid+.labella {
+  color: #002138;
+  height: 30px;
+  line-height: 30px;
+  transform: translate(-15px, -16px) scale(0.88);
+  z-index: 1111;
+}
+
+.subs {
+  background-color: #002138;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  position: relative;
+  left: 25%;
+}
+
+.subs {
+  background-color: white; 
+  color: black; 
+  border: 3px solid #002138;
+}
+
+.subs:hover {
+  background-color: #002138;
+  color: white;
 }

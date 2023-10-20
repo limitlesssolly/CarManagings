@@ -16,6 +16,7 @@
         <a href="../../views/pages/ourCars.php" id="ourservices"> Rent your car</a>
         
         <a href="../../Views/Pages/aboutus2.php" id="ourclients">About Us</a>
+        <a href="../../Views/Pages/ratings.php" id="ourclients">Ratings</a>
         <a href="../../Views/Pages/contactus.php" id="contactus">Contact Us</a>
         <a href=""  id="fb" target="_blank"> <i class='fa fa-user-circle' style="font-size:22px"></i> </a>
     </nav>

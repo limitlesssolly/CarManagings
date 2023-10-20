@@ -9,7 +9,7 @@
       rel="stylesheet">
     <link rel="stylesheet" href="../../Public/CSS/navbar2.css">
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
-
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>                      
 
    
@@ -115,10 +115,46 @@
                     <img src="../../Public/Images/hyundai-logo.png" alt="">
                 </div>
         </div>
+        <div class="popup">
+  <span class="close">&times;</span>
+  <h2>Contact Us</h2>
+  <div class="icons">
+    <a href="https://api.whatsapp.com/send?phone=1234567890" target="_blank" id=whatsapp>
+      <i class="fa fa-whatsapp"></i>
+    </a>
+    <a href="tel:1234567890">
+      <i class="fa fa-phone" id="phone"></i>
+    </a>
+  </div>
+</div>
+
+<div>
+  
+</div>
+
+<button id="messageButton"><i class="fa fa-comment"></i></button>
 
         <?php
             include('../Partials/footer2.php');
         ?>
+        <script>
+          // Open the popup when the button is clicked
+document.getElementById("messageButton").addEventListener("click", function() {
+  document.querySelector(".popup").style.display = "block";
+});
+
+// Close the popup when the close button is clicked
+document.querySelector(".popup .close").addEventListener("click", function() {
+  document.querySelector(".popup").style.display = "none";
+});
+
+// Close the popup when clicking outside the popup
+window.addEventListener("click", function(event) {
+  if (event.target.classList.contains("popup")) {
+    document.querySelector(".popup").style.display = "none";
+  }
+});
+        </script>
 
 
 </body>

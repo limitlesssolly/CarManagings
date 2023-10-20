@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 * {
   margin: 0;
   padding: 0;
@@ -474,4 +474,70 @@ margin-left: -1.5px;
 #rights p{
     font-weight: 400;
     font-size: 15px;
+}
+
+/* Pop-up styles */
+.popup {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup .icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.popup .icons a {
+  display: inline-block;
+  margin: 10px;
+  color: #000;
+  font-size: 24px;
+}
+
+.popup .icons a:hover {
+  color: #0e79aa;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+/* Button Styles */
+#messageButton {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #0e79aa;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#messageButton:hover {
+  background-color: #096b98;
+}
+
+#messageButton.active {
+  background-color: #ff0000;
 }

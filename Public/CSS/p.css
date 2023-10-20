@@ -246,9 +246,9 @@ input::placeholder {
   top: 50%;
   left: 30px;
   width: calc(50% - 30px);
-  min-height:550px;
-  background-color: #c8d2d9;
-  border-radius: 15px;
+  min-height: 615px;
+  background-color: #b8c9d4;
+  border-radius: 3px;
   box-shadow: 2px 0 15px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   -webkit-transform: translate3d(100%, -50%, 0);

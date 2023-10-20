@@ -26,7 +26,7 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
   <link rel="stylesheet" href="style.css">
 
-  <title>Google Maps Clone</title>
+  <title>Book Your Car</title>
   <style>
     body {
       margin: 0;

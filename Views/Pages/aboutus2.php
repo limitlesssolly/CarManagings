@@ -67,7 +67,7 @@
             }, 2000);
         }
         hourglass();
-        setInterval(hourglass,3000);
+        setInterval(hourglass,20000);
         </script>
 
         <?php

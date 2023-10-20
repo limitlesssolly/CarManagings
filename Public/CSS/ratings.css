@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins',sans-serif;
+  /* box-sizing: border-box; */
+}
+.bodyimage  img{
+    position: relative;
+    margin-top: -370px;
+    width: 100%;
+    height: auto;
+ }
+
+ /* editing navbar */
+ .navbar a{
+    font-size: 16px;
+ }
+
+ body {
+    font-family: Arial, sans-serif;
+    background-color: #fff; 
+    color: #333333; 
+}
+
+.container {
+    max-width: 400px;
+    margin-left: 37%;
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    padding: 20px 40px;
+
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.container h1 {
+    text-align: center;
+    color: rgb(6, 4, 55);
+    margin-bottom: 20px;
+}
+
+.user-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.user-info label,
+.rating label,
+.review label {
+    margin-bottom: 5px;
+    color: #555555; 
+}
+
+.user-info input[type="text"],
+.user-info input[type="email"],
+.rating input[type="radio"],
+.review textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #cccccc; 
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+.rating input[type="radio"] {
+    display: none;
+}
+
+.rating label {
+    cursor: pointer;
+    color: #cccccc; 
+    margin: 0 5px;
+}
+
+.rating label:before {
+    content: '\2605';
+    font-size: 30px;
+    color: #ffd700; 
+}
+
+.rating input[type="radio"]:checked ~ label {
+    color: #ffd700;
+}
+
+.review textarea {
+    resize: vertical;
+}
+
+.submit-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.submit-button button {
+    padding: 10px 20px;
+    background-color: transparent; 
+    border: 1px solid black;
+    background-color: rgb(6, 4, 55); 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition:  all 0.6s;
+}
+
+.submit-button button:hover {
+    background-color: rgba(6, 4, 55, 0.499); 
+    letter-spacing: 1px;
+} 
+

@@ -50,7 +50,7 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Cars</a></li>    
-                        <li><a href="">Add</a></li>
+                        <li><a href="addCar.php">Add</a></li>
                         <li><a href="">Edit</a></li>
                         <li><a href="">Delete</a></li>
                     </ul>

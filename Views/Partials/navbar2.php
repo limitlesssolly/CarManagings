@@ -13,7 +13,7 @@
     <nav class="navbar">
         <a href="/../../Views/Pages/index.php" id="home">Home</a>
         <a href="../../Views/Pages/bookyourcar.php" id="aboutus">Book your ride</a>
-        <a href="/ourservices" id="ourservices"> Rent your car</a>
+        <a href="../../views/pages/ourCars.php" id="ourservices"> Rent your car</a>
         
         <a href="/ourclients" id="ourclients">About Us</a>
         <a href="../../Views/Pages/contactus.php" id="contactus">Contact Us</a>

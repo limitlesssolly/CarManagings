@@ -1,6 +1,6 @@
-<!-- <?php
-// include_once "includes/db.php";
-?> -->
+<?php
+include_once "../../includes/db.php";
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,21 +9,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/jpg" href="../../Public/Images/logodowns.png" />
-    <link rel="stylesheet" href="../../Public/CSS/rentyourcar.css">
+    <!-- <link rel="stylesheet" href="../../Public/CSS/rentyourcar.css"> -->
     <title>Rent Your Car</title>
 </head>
 
 
 <body>
     <?php
-    include('../Partials/navbar.php');
+    // include('../Partials/navbar.php');
     ?>
     <?php
     // include('../Partials/footer.php');
     ?>
     <div class="title">Rent Your Car</div>
     <div class="image">
-        <img src="../../Public/Images/carla.png" class="carimg" alt="carla">
+        <!-- <img src="../../Public/Images/carla.png" class="carimg" alt="carla"> -->
     </div>
     <div class="components">
 
@@ -71,24 +71,23 @@
         </form>
     </div>
 
-    <!-- <?php
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     $fullname = htmlspecialchars($_POST["fullname"]);
-    //     $contactnumbers = htmlspecialchars($_POST["contactnumbers"]);
-    //     $homeaddress = htmlspecialchars($_POST["homeaddress"]);
-    //     $cartype = htmlspecialchars($_POST["cartype"]);
-    //     $mileage = htmlspecialchars($_POST["mileage"]);
-    //     $expectedmonthlyrent = htmlspecialchars($_POST["expectedmonthlyrent"]);
+    <?php
+    if($_SERVER["REQUEST_METHOD"]=="POST"){ 
+        $fullname=htmlspecialchars($_POST["fullname"]);
+        $contactnumbers=htmlspecialchars($_POST["contactnumbers"]);
+        $homeaddress=htmlspecialchars($_POST["homeaddress"]);
+        $cartype=htmlspecialchars($_POST["cartype"]);
+        $carmodel=htmlspecialchars($_POST["carmodel"]);
+        $mileage = htmlspecialchars($_POST["mileage"]);
+        $expectedmonthlyrent = htmlspecialchars($_POST["expectedmonthlyrent"]);
     
-    //     $sql = "insert into cars4rent(FirstName,LastName,Email,Password,Hobby) 
-    // values('$fullname','$contactnumbers','$homeaddress','$cartype','$mileage', 'expectedmonthlyrent')";
-    //     $result = mysqli_query($conn, $sql);
+        $sql="insert into cars4rent(fullname,number,address,cartype,carmodel, mileage, expectedrent) 
+        values('$fullname','$contactnumbers','$homeaddress','$cartype','$carmodel','$mileage', '$expectedmonthlyrent')";
+        $result=mysqli_query($conn,$sql);
     
-    //     if ($result) {
-    //         print("woohoo");
-    //     }
-    // }
-    ?> -->
+        if($result)	{
+            print("el donia lessa bkheer");}}
+    ?>
 </body>
 
 </html>

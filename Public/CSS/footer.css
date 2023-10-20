@@ -7,7 +7,7 @@
 
 .foots {
     display: flex;
-    background-color: #5c75f6;
+    background-color: #002138;
     align-items: center;
     flex-flow: row wrap;
     justify-content: space-around;
@@ -53,7 +53,7 @@ a:hover {
 
 .copyrights {
     color: white;
-    background-color: #4254af;
+    background-color: #001728;
     text-align: center;
     padding: 1%;
     bottom: 0;

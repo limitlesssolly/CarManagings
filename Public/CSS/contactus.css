@@ -18,7 +18,7 @@ textarea {
 /* editnavbar */
 .header{
   position: relative;
-  background-color: rgba(1, 0, 4, 0.949);
+  background-color: rgba(0, 14, 37, 0.948);
    
   z-index: 1000;
 }

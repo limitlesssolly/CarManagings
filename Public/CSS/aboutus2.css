@@ -41,7 +41,9 @@
 .text {
     width: 540px;
     max-height: 500px;
-    margin-left: 25px;
+    padding-left: 100px;
+    line-height: 22pt;
+    text-align: center;
 }
 
 .text h2 {

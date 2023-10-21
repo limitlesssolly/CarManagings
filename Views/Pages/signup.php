@@ -3,77 +3,74 @@
    <head>
       <meta charset="utf-8">
       <title>Sign Up</title>
-      <link rel="stylesheet" href="../../Public/CSS/style.css">
+      <link rel="stylesheet" href="../../Public/CSS/style2.css">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
       <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
-      <style>
-   .bg-img {
-    background: url("../../Public/Images/hands-wheel-when-driving-high-speed-from-inside-car.jpg");
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-}
-
-.bg-img:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-}
-
-   </style>
+    
    </head>
    <body>
-      <div class="bg-img">
-         <div class="content">
-            <header>Sign Up</header>
-            <form action="#">
-               <div class="field">
-                  <span class="fa fa-user"></span>
-                  <input type="text" required placeholder="Name">
-               </div>
-               <div class="field space">
-                <span class="fa fa-envelope"></span>
-                <input type="email" required placeholder="Email">
-             </div>
-             <div class="field space">
-                <span class="fa fa-phone"></span>
-                <input type="email" required placeholder="Phone">
-             </div>
-               <div class="field space">
-                  <span class="fa fa-lock"></span>
-                  <input type="password" class="pass-key" required placeholder="Password">
-                  <span class="show">SHOW</span>
-               </div>
-               <div class="field2">
-               </div>
-               <div class="field">
-                  <input type="submit" value="Sign Up">
-               </div>
-           
-            <div class="login">
-               Already have account?
-               <a href="../../Views/Pages/login.php">Login</a>
-            </div>
-         </div>
-      </div>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<input type="text" placeholder="Name" />
+			<input type="email" placeholder="Email" />
+         <input type="text" placeholder="Phone" />
+			<input type="password" placeholder="Password" />
+         <input type="password" placeholder="Confirm Password" />
+
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="#">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<input type="email" placeholder="Email" />
+			<input type="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>Welcome Back!</h1>
+				<p>To keep connected with us please login with your personal info</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend!</h1>
+				<p>Enter your personal details and start journey with us</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
+</div>
+
       <script>
-         const pass_field = document.querySelector('.pass-key');
-         const showBtn = document.querySelector('.show');
-         showBtn.addEventListener('click', function(){
-          if(pass_field.type === "password"){
-            pass_field.type = "text";
-            showBtn.textContent = "HIDE";
-            showBtn.style.color = "#3498db";
-          }else{
-            pass_field.type = "password";
-            showBtn.textContent = "SHOW";
-            showBtn.style.color = "#222";
-          }
-         });
+   const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
       </script>
    </body>
 </html>

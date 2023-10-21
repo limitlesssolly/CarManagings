@@ -14,6 +14,9 @@
     height: auto;
  }
 
+
+
+
  #introo {
     margin-top: -10px;
     padding-top: 120px;
@@ -77,8 +80,30 @@
     width: 100%;
     text-align: center;
     background-color: rgba(2, 22, 101, 0.226);
+    transform: translateY(-5px);
+    padding-top: 5px;
+    padding-bottom: 3px;
 
 }
+/* responsive */
+
+@media (max-width: 1084px) {
+    .wrapper {
+        flex-wrap: wrap;
+        
+    }
+        
+
+    .card{
+        margin-bottom: 50px;
+        transform: translateX(-155px);
+    }
+    .card:hover{
+        transform: translateY(0px);
+
+    }
+}
+
 .container4 p{
     margin-top: 5px;
     font-weight: 500;
@@ -253,7 +278,7 @@ margin:0 auto;
 .section-head h4 span {
 font-weight: 700;
 padding-bottom: 5px;
-color:#2f2f2f
+color:#2f2f2f;
 }
 p.service_text{
 color:#cccccc !important;
@@ -266,6 +291,8 @@ color:#818181;
 font-size:16px;
 line-height:28px;
 text-align:center;  
+padding-left: 100px;
+padding-right: 125px;
 }
 
 .extra-text {
@@ -295,11 +322,13 @@ color:rgb(12, 123, 203);
 background: #fff;
 text-align: center;
 padding: 30px 25px;
+margin-left: 10px;
+transform: translateX(20px);
 -webkit-box-shadow:0 0px 25px rgba(0, 0, 0, 0.07);
 box-shadow:0 0px 25px rgba(0, 0, 0, 0.07);
 border-radius: 20px;
-width: 440px;
-height: 200px;
+width: 420px;
+height: 190px;
 border:5px solid rgba(0, 0, 0, 0.07);
 margin-bottom: 30px;
 -webkit-transition: all .5s ease 0;
@@ -435,6 +464,26 @@ border-radius: 30px;
 }
 /* whychooseus end */
 
+/* responsive why choose us */
+
+@media (max-width: 1084px) {
+    .item {
+        width: 380px;
+        height: 150px;        
+    }
+    .item p{
+        font-size: 12.5px;
+        transform: translateY(-30px);
+    }
+    .item h6{
+        font-size: 14px;
+        transform: translateY(-13px);
+    }
+
+        
+
+}
+
 
 
 
@@ -541,3 +590,6 @@ margin-left: -1.5px;
 #messageButton.active {
   background-color: #ff0000;
 }
+
+
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>      <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
-<link rel="stylesheet" href="../../Public/CSS/History.css">
+<link rel="stylesheet" href="../../Public/CSS/history.css">
 
 </head>
 <body style="background-color: #ffffff;">

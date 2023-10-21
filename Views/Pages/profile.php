@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../../Public/CSS/P.css">
     <link rel="stylesheet" href="../../Public/CSS/P2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-  
+
 
 <body>
     <?php
@@ -33,41 +33,41 @@
                         <tbody>
 
                             <tr>
-                            <td data-th="Supplier Code">
-                            <span class="fa fa-user"></span>
+                                <td data-th="Supplier Code">
+                                    <span class="fa fa-user"></span>
 
-                            </td>
+                                </td>
                                 <td data-th="Supplier Code">
 
                                     <p style="font-size:18px">Name</p>
                                 </td>
                                 <td data-th="Supplier Name">
-                                <p style="font-size:18px">  Client1 </p>
+                                    <p style="font-size:18px"> Client1 </p>
                                 </td>
 
                             </tr>
                             <tr>
-                            <td data-th="Supplier Code">
-                            <span class="fa fa-envelope"></span>
-
-                            </td>
                                 <td data-th="Supplier Code">
-                                <p style="font-size:18px">  Email</p>
+                                    <span class="fa fa-envelope"></span>
+
+                                </td>
+                                <td data-th="Supplier Code">
+                                    <p style="font-size:18px"> Email</p>
                                 </td>
                                 <td data-th="Supplier Name">
-                                <p style="font-size:18px">     Client1@email.com</p>
+                                    <p style="font-size:18px"> Client1@email.com</p>
 
                             </tr>
                             <tr>
-                            <td data-th="Supplier Code">
-                            <span class="fa fa-phone"></span>
-
-                            </td>
                                 <td data-th="Supplier Code">
-                                <p style="font-size:18px">   Phone</p>
+                                    <span class="fa fa-phone"></span>
+
+                                </td>
+                                <td data-th="Supplier Code">
+                                    <p style="font-size:18px"> Phone</p>
                                 </td>
                                 <td data-th="Supplier Name">
-                                <p style="font-size:18px">     012456789 </#000</td>
+                                    <p style="font-size:18px"> 012456789 </#000< /td>
 
                             </tr>
 

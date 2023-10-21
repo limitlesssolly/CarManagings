@@ -230,18 +230,19 @@ input::placeholder {
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
-.user_registered-login2{
-    margin-top: 30px;
-    margin-left:33%;
-    border: 1px solid #0E2038;
-    border-radius: 3px;
-    padding: 10px 30px;
-    color: #0E2038;
-    text-transform: uppercase;
-    line-height: 1em;
-    letter-spacing: 0.2rem;
-    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+.user_registered-login2 {
+  margin-top: 30px;
+  margin-left: 33%;
+  border: 1px solid #0E2038;
+  border-radius: 3px;
+  padding: 10px 30px;
+  color: #0E2038;
+  text-transform: uppercase;
+  line-height: 1em;
+  letter-spacing: 0.2rem;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 .user_registered-login:hover,
@@ -250,10 +251,11 @@ input::placeholder {
   background-color: #a3b5c0;
   border-color: #0E2038;
 }
-.user_registered-login2:hover{
-    color: #a3b5c0;
-    background-color:#0E2038;
-    border-color: #a3b5c0;
+
+.user_registered-login2:hover {
+  color: #a3b5c0;
+  background-color: #0E2038;
+  border-color: #a3b5c0;
 }
 
 /**
@@ -334,7 +336,7 @@ input::placeholder {
 
 .user_options-forms .forms_buttons-forgot:hover {
   color: #a3b5c0;
-  border-color: #0E2038 ;
+  border-color: #0E2038;
 }
 
 .user_options-forms .forms_buttons-action {
@@ -349,7 +351,7 @@ input::placeholder {
   letter-spacing: 0.1rem;
   -webkit-transition: background-color 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out;
-  
+
 }
 
 

@@ -182,7 +182,7 @@ tbody tr.hide td img {
 
 .status.cancelled {
     background-color: #d893a3;
-    color: #b30021;
+    /* color: #b30021; */
 }
 
 .status.pending {
@@ -310,3 +310,21 @@ thead th.active,tbody td.active {
     width: 2rem;
     height: auto;
 }
+
+td button{
+width: 110px;
+height: 40px;
+cursor: pointer;
+color: white;
+font-size: 15px;
+border: none;
+
+}
+.status.cancelled:hover{
+background-color: #cf6189;
+}
+.status.shipped:hover{
+    background-color: #4088c8cf;
+    }
+     
+ 

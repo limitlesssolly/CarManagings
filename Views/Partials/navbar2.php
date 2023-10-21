@@ -1,5 +1,5 @@
 <header class="header">
-    <a href="/" class="logo"><img src="../../Public/Images/logo.png" alt=""></a>
+    <a href="/" class="logo">24Sevenlimousine</a>
     
     <input type="checkbox" id="check">
     <label for="check" class="icons">
@@ -19,7 +19,7 @@
         <a href="../../Views/Pages/aboutus2.php" id="ourclients">About Us</a>
         <a href="../../Views/Pages/ratings.php" id="ourclients">Ratings</a>
         <a href="../../Views/Pages/contactus.php" id="contactus">Contact Us</a>
-        <a href=""  id="fb" target="_blank"> <i class='fa fa-user-circle' style="font-size:22px"></i> </a>
+        <a href="../../Views/Pages/signup.php"  id="fb" target="_blank"> <i class='fa fa-user-circle' style="font-size:22px"></i> </a>
     </nav>
 </header>
 

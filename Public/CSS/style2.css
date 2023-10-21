@@ -48,8 +48,8 @@ a {
 
 button {
 	border-radius: 20px;
-	border: 1px solid rgb(4, 16, 81);
-	background-color: rgb(4, 16, 81);
+	border: 1px solid rgba(4, 16, 81, 0.915);
+	background-color: rgba(4, 43, 81, 0.826);
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -163,9 +163,9 @@ input {
 }
 
 .overlay {
-	background: rgb(1, 5, 28);
-	background: -webkit-linear-gradient(to right, rgb(1, 5, 28), rgb(4, 16, 81));
-	background: linear-gradient(to right, rgb(1, 5, 28), rgb(4, 16, 81));
+	/* background: rgb(1, 19, 28); */
+	background: -webkit-linear-gradient(to right, rgb(1, 5, 28), rgb(124, 209, 252));
+	background: linear-gradient(to right, rgb(1, 5, 28), rgb(124, 209, 252));
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: 0 0;
@@ -179,7 +179,8 @@ input {
 }
 
 .container.right-panel-active .overlay {
-  	transform: translateX(50%);
+  	  transform: translateX(50%);
+	  background: linear-gradient(to right, rgb(124, 209, 252), rgb(1, 5, 28));
 }
 
 .overlay-panel {

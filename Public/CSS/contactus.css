@@ -18,7 +18,7 @@ textarea {
 /* editnavbar */
 .header{
   position: relative;
-  background-color: rgba(0, 14, 37, 0.948);
+  background-color: rgba(0, 5, 14, 0.948);
    
   z-index: 1000;
 }
@@ -56,7 +56,7 @@ textarea {
 }
 
 .contact-form {
-  background-color: rgba(2, 12, 71, 0.812);
+  background-color: rgba(153, 185, 227, 0.997);
   position: relative;
 }
 
@@ -191,7 +191,7 @@ textarea.input {
   opacity: 0;
   transition: 0.3s;
   height: 5px;
-  background-color: rgba(2, 12, 71, 0.812);
+  background-color: rgba(153, 185, 227, 0.997);
   top: 50%;
   transform: translateY(-50%);
 }
@@ -291,7 +291,7 @@ textarea.input {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: linear-gradient(to bottom, #0294d7, rgb(21, 155, 146));
+  background: linear-gradient(to bottom, rgba(153, 185, 227, 0.997), rgb(59, 114, 155));
   bottom: 50%;
   right: 50%;
   transform: translate(-40%, 38%);

@@ -24,6 +24,7 @@
         <div class="bodyimage">
             <img src="../../Public/Images/carbackground.jpg "alt="">
         </div>
+         
         <section id="introo">
             <div class="intro">
             <p class="p1">24Seven limousine for best travelling</p>
@@ -79,7 +80,7 @@
       <div class="col-lg-4 col-sm-6">
         <div class="item"> <span class="icon feature_box_col_one"><i class="fa fa-globe"></i></span>
           <h6>Modern Design</h6>
-          <p>We use latest technology for the latest world because we know the demand of peoples.</p>
+          <p>We use latest technology for the latest world because we know the demand of people.</p>
         </div>
       </div>
       <div class="col-lg-4 col-sm-6">
@@ -91,7 +92,7 @@
       <div class="col-lg-4 col-sm-6">
         <div class="item"> <span class="icon feature_box_col_three"><i class="fa fa-hourglass-half"></i></span>
           <h6>24 x 7 User Support</h6>
-          <p>If our customer has any problem and any query we are always happy to help then.</p>
+          <p>If our customer has any problem and any query we are always happy to help them.</p>
         </div>
       </div>
       

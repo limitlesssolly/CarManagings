@@ -38,10 +38,11 @@
                     </div>
 
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="">Cars</a></li>    
+                        <li><a class="link_name" href="">Cars</a></li> 
+                        <li><a href="../../Views/Pages/carshowdash.php">Show</a></li>  
                         <li><a href="">Add</a></li>
                         <li><a href="">Edit</a></li>
-                        <li><a href="">Delete</a></li>
+                         
                     </ul>
                 
                  </li>
@@ -64,6 +65,8 @@
                         <li><a href="">Delete</a></li>
                     </ul>
 
+                    
+
                 </li>
 
                     
@@ -80,10 +83,29 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Employes</a></li>
-                        <li><a href="">Add</a></li>
-                        <li><a href="">Edit</a></li>
-                        <li><a href="">Delete</a></li>
+                        <li><a href="../../Views/Pages/employees.php">Show</a></li>
+                        <li><a href="../../Views/Pages/addemployee.php">Add</a></li>
+                        <li><a href="../../Views/Pages/editemployees.php">Edit</a></li>
                     </ul>
+
+                </li>
+
+                <li>
+
+                        <div class="iocn_link">
+                        <a href="">
+                            <i class='bx bx-group'></i>
+                            <span class="link_name">Customers</span>  
+                        </a>
+                        <i class='bx bx-chevron-down arrow'></i>  
+                        </div>
+
+                        <ul class="sub-menu">
+                            <li><a class="link_name" href="">Customers</a></li>
+                            <li><a href="../../Views/Pages/customers.php">Show</a></li>
+                            <li><a href="../../Views/Pages/addcustomers.php">Add</a></li>
+                            <li><a href="../../Views/Pages/editcustomers.php">Edit</a></li>
+                        </ul>
 
                 </li>
 
@@ -99,7 +121,7 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Settings</a></li>   
-                        <li><a href="">Edit your profile</a></li>
+                        <li><a href="../../Views/Pages/editprofiledash.php">Edit your profile</a></li>
 
                     </ul>
 
@@ -124,26 +146,4 @@
             </ul>  
 
         </div>
-        <section class="home-section">
-            <div class="home-content">
-                <i class="bx bx-menu"></i>
-                <span class="text">Dashboard</span>
-            </div>
-        </section>    
-        <script>
-            let arrow = document.querySelectorAll(".arrow");
-            for(var i=0;i<arrow.length;i++){
-                arrow[i].addEventListener("click",(e)=>{
-                    let arrowParent=e.target.parentElement.parentElement;
-                    console.log(arrowParent)
-                    arrowParent.classList.toggle("showMenu");
-                });
-            }
-            let sidebar=document.querySelector(".sidebar");
-            let sidebarBtn=document.querySelector(".bx-menu");
-            sidebarBtn.addEventListener("click",()=>{
-                sidebar.classList.toggle("close")
-            })
-
-
-        </script>
+       

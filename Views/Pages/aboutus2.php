@@ -21,15 +21,17 @@
 
 
         <div class="bodyimage">
-            <img src="../../Public/Images/bgcar.jpg"alt="">
+            <img src="../../Public/Images/orangecar1.jpg"alt="">
         </div>
-
+ 
        
         <center>
     <section class="about-us">
         <div class="about">
                <div class="hero-image">
-                <img style="float: right; margin: 0px 0px 15px 15px;" src="../../Public/Images/bgcar2.jpg" class="pic" >
+                
+                <img style="float: right; margin: 0px 0px 15px 15px;" src="../../Public/Images/blackcar.jpg" class="pic" >
+                
             </div>
             <div class="text">
                 <div class="body2">
@@ -72,7 +74,7 @@
         setInterval(hourglass,30000);
         </script>
              <!-- our advantages -->
-             <h1 id="ouradvantages">Our Advantages</h1>
+             <h1 id="ouradvantages">OUR ADVANTAGES</h1>
         <div class="big">
        
         <div class="container">

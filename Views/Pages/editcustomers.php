@@ -7,53 +7,45 @@
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Add customer</title>
+    <title>Edit customer</title>
 </head>
-<body>  
+<body>
         <?php
           include('../Partials/dashboardsidebar.php');
         ?> 
-          <section class="home-section">
+        <section class="home-section">
             <div class="home-content">
                 <i class="bx bx-menu"></i>
                 <span class="text">Dashboard</span>
             </div>
             <!-- form -->
             <div class="contactForm">
-                    <h2 style="font-size: 21px;">Adding New Customer</h2>
+                    <h2>Updating info</h2>
                     <form  id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name">
-                            <span>Name</span>
-                        </div>
-
-                        <div class="inputBox">
-                            <input type="text" name="email" id="email">
-                            <span>Email</span>
-                        </div>
-
-                        <div class="inputBox">
-                            <input type="text" name="email" id="address">
+                            <input type="text" name="name"  id="name" placeholder="please enter the id of the customer">
                             <span>Id</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="password" id="password">
-                            <span>Password</span>
+                            <input type="text" name="email" id="email">
+                            <span>Name</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="password" id="confirmpassword">
-                            <span> Confirm Password</span>
+                            <input type="text" name="email" id="address">
+                            <span>Email</span>
                         </div>
+
 
                         <div class="inputBox">
                             <input type="text" name="phone" id="phone" >
                             <span>Phone</span>
                         </div>
 
-                                   
+
+                     
                         <div id="error"> </div>
 
                       

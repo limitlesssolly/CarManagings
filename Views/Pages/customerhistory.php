@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Customers</title>
+    <title>Customer history</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
@@ -40,62 +40,25 @@
                 <table>
                     <thead>
                         <tr>
-                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Email<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Phone<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> History <span class="icon-arrow">&UpArrow;</span></th>
-                            <!-- <th> Salary <span class="icon-arrow">&UpArrow;</span></th> -->
-                            <th>------- <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Pickup <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Distination <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Car Number<span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Driver<span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Cost <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Date <span class="icon-arrow">&UpArrow;</span></th>
 
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td> 1 </td>
-                            <td> Hasan Eid</td>
-                            <td> hasan@gmail.com </td>
-                            <td> 01123626850</td>
-                            <td>
-                            <form action="../../Views/Pages/customerhistory.php"> <button class="status shipped " >Show </form></button>
-                            </td>
-                         
-                             <td><button class="status cancelled">Delete</button>  </td> 
+                            <td> Mokattam,st 13 </td>
+                            <td> New cairo,concord plaza</td>
+                            <td> 145|ن ص غ </td>
+                            <td> Mohamed</td>
+                            <td>$120</td>
+                            <td  >12/10/2003</td>
                         </tr>
-                        <tr>
-                            <td> 2 </td>
-                            <td>  Ahmed Morad </td>
-
-                            <td> morad@gmail.com </td>
-                            <td> 01223626851</td>
-                            <td>
-                                <button class="status shipped "  >Show</button>
-                            </td>
-                            
-                            <td> <button class="status cancelled" >Delete</button> </td> 
-                        </tr>
-                        <tr>
-                            <td> 3</td>
-                            <td>  Karim Ashraf </td>
-                            <td> karim@gmail.com </td>
-                            <td> 01123626444</td>
-                            <td>
-                                <button class="status shipped "  >Show</button>
-                            </td>
-                            
-                            <td> <button class="status cancelled">Delete</button> </td> 
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td> Saad Mohamed </td>
-                            <td> saad@gmail.com</td>
-                            <td> 01123626666</td>
-                            <td>
-                                <button class="status shipped " >Show</button>
-                            </td>
-                         
-                            <td> <button class="status cancelled">Delete</button> </td> 
-                        </tr>
+                       
 
 
                     </tbody>

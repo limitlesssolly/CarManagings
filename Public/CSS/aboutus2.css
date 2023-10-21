@@ -8,7 +8,7 @@
 }
 .bodyimage  img{
     position: relative;
-    margin-top: -220px;
+    margin-top: -20px;
     width: 100%;
     height: auto;
  }
@@ -130,6 +130,7 @@ span {
     width: 540px;
     max-height: 500px;
 }
+
 
 @keyframes fadeInRight {
     0% {
@@ -458,16 +459,18 @@ span {
     position: relative;
     text-align: center;
     top: 120px;
-    font-size: 35px;
+    font-size: 48px;  
     font-weight: 500;
-    color: #fff;
+    /* -webkit-text-stroke:2px rgb(230, 222, 222);  
+    color: transparent;   */
+    color: white;
 }
 .big{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(#000000,#1c1c1d 50%,#fff 50%,#fff 100%);
+    background: linear-gradient(#000000,#0e0e0e 50%,#fff 50%,#fff 100%);
     
 }
  

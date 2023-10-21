@@ -4,7 +4,9 @@
 
     <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
     <link rel="stylesheet" href="../../Public/CSS/p.css">
+    <link rel="stylesheet" href="../../Public/CSS/p2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
 
 <body>
     <?php
@@ -25,97 +27,101 @@
                 </div>
             </div>
             <div class="user_options-forms" id="user_options-forms">
-                <div class="user_forms-login" style="padding: 50px 20px;">
+                <div class="user_forms-login">
                     <h2 class="forms_title">Profile Info</h2>
+                    <table class="rwd-table">
+                        <tbody>
 
-                    <form class="forms_form">
-                        <fieldset class="forms_fieldset">
-                            <div class="forms_field">
-                                <div class="forms_field-input">
-                                    <span class="fa fa-user"></span>
+                            <tr>
+                            <td data-th="Supplier Code">
+                            <span class="fa fa-user"></span>
 
-                                     Name: Client1
-                                </div>
-                            </div>
-                            <div class="forms_field">
-                                <div class="forms_field-input">
-                                <span class="fa fa-envelope"></span>
+                            </td>
+                                <td data-th="Supplier Code">
 
-                                    Email: Client1@gmail.com
-                                </div>
-                            </div>
-                            <div class="forms_field">
-                                <div class="forms_field-input">
-                                <span class="fa fa-house"></span>
+                                    <p style="font-size:18px">Name</p>
+                                </td>
+                                <td data-th="Supplier Name">
+                                <p style="font-size:18px">  Client1 </p>
+                                </td>
 
-                                    Address: Client1Adrres
-                                </div>
-                            </div>
-                            <div class="forms_field">
-                                <div class="forms_field-input">
-                                    <span class="fa fa-phone"></span>
+                            </tr>
+                            <tr>
+                            <td data-th="Supplier Code">
+                            <span class="fa fa-envelope"></span>
 
-                                    Phone Number: 0123456789
-                                </div>
-                            </div>
+                            </td>
+                                <td data-th="Supplier Code">
+                                <p style="font-size:18px">  Email</p>
+                                </td>
+                                <td data-th="Supplier Name">
+                                <p style="font-size:18px">     Client1@email.com</p>
 
-                        </fieldset>
+                            </tr>
+                            <tr>
+                            <td data-th="Supplier Code">
+                            <span class="fa fa-phone"></span>
 
-                    </form>
+                            </td>
+                                <td data-th="Supplier Code">
+                                <p style="font-size:18px">   Phone</p>
+                                </td>
+                                <td data-th="Supplier Name">
+                                <p style="font-size:18px">     012456789 </#000</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
                 </div>
+
                 <div class="user_forms-signup">
                     <h2 class="forms_title">Update Profile Info</h2>
-                    <form class="forms_form">
-                        <fieldset class="forms_fieldset">
-                            <div class="forms_field">
 
-                                <input type="text" placeholder="First Name" class="forms_field-input" />
+                    <div class="log">
+                        <form>
+                            <div class="input-cont">
+                                <input type="text">
+                                <label>Username</label>
+                                <div class="border1"></div>
                             </div>
-                            <div class="forms_field">
-
-                                <input type="text" placeholder="Last Name" class="forms_field-input" />
+                            <div class="input-cont">
+                                <input type="email">
+                                <label>Email</label>
+                                <div class="border2"></div>
                             </div>
-                            <div class="forms_field">
-                                <input type="email" placeholder="Email" class="forms_field-input" />
+                            <div class="input-cont">
+                                <input type="text">
+                                <label>Phone</label>
+                                <div class="border2"></div>
                             </div>
-                            <div class="forms_field">
-                                <input type="text" placeholder="Address" class="forms_field-input" />
+                            <div class="input-cont">
+                                <input type="password">
+                                <label>Password</label>
+                                <div class="border2"></div>
                             </div>
-                            <div class="forms_field">
-
-                                <input type="text" placeholder="Phone Number" class="forms_field-input" />
+                            <div class="input-cont">
+                                <input type="password">
+                                <label>Confirm Password</label>
+                                <div class="border2"></div>
                             </div>
-                            <div class="forms_field">
-                                <input type="password" placeholder="Password" class="forms_field-input" required />
-                            </div>
-                            <div class="forms_field">
-                                <input type="password" placeholder="New Password" class="forms_field-input" />
-                            </div>
-                        </fieldset>
-                        <div class="forms_buttons">
-                            <input type="submit" value="Update info" class="forms_buttons-action">
-                        </div>
-                    </form>
+                            <input type="submit" value="Update">
+                        </form>
+                    </div>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
     </section>
     <script>
         const signupButton = document.getElementById('signup-button'),
             loginButton = document.getElementById('login-button'),
             userForms = document.getElementById('user_options-forms')
-
-        /**
-         * Add event listener to the "Sign Up" button
-         */
         signupButton.addEventListener('click', () => {
             userForms.classList.remove('bounceRight')
             userForms.classList.add('bounceLeft')
         }, false)
-
-        /**
-         * Add event listener to the "Login" button
-         */
         loginButton.addEventListener('click', () => {
             userForms.classList.remove('bounceLeft')
             userForms.classList.add('bounceRight')

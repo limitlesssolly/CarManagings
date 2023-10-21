@@ -3,8 +3,8 @@
 <head>
 
     <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
-    <link rel="stylesheet" href="../../Public/CSS/p.css">
-    <link rel="stylesheet" href="../../Public/CSS/p2.css">
+    <link rel="stylesheet" href="../../Public/CSS/P.css">
+    <link rel="stylesheet" href="../../Public/CSS/P2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   
 
@@ -105,7 +105,7 @@
                                 <label>Confirm Password</label>
                                 <div class="border2"></div>
                             </div>
-                            <input type="submit" value="Update">
+                            <button class="user_registered-login2">Update</button>
                         </form>
                     </div>
                 </div>

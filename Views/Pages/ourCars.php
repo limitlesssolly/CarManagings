@@ -27,12 +27,16 @@
       </div>
       <div class="car">
         <img src="../../public/Images/R35.jpg" alt="Car 2">
-        <h3>Nissan GTR R35 Nismo</h3>
+        <h3>SUV</h3>
+        <h4 class="Price">8000$</h4>
+        <h5 class="info">Cras can hold up to 4 bags</h5>
         <a href="booking.html">Book Now</a>
       </div>
       <div class="car">
         <img src="../../public/Images/AM.jpg" alt="Car 3">
-        <h3>Aston Martin vantage</h3>
+        <h3>Van</h3>
+        <h4 class="Price">8000$</h4>
+        <h5 class="info">Cras can hold up to 6 bags</h5>
         <a href="booking.html">Book Now</a>
       </div>
     </div>

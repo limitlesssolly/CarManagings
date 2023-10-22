@@ -16,10 +16,10 @@
         ?>
 
   <section class="car-collection">
-    <h2>Our Collection</h2>
+    <h1>choose your car</h1>
     <div class="car-listing">
       <div class="car">
-        <img src="../../public/Images/RRjpg.jpg" alt="Car 1">
+        <img src="../../public/Images/sedan.jpg" alt="Car 1">
         <h3>Sedan</h3>
         <h4 class="Price">8000$</h4>
         <h5 class="info">Cras can hold up to 2 bags</h5>

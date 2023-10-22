@@ -8,7 +8,12 @@ body, h1, h2, h3, p, ul, li {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
   }
-  
+  .bodyimage  img{
+    position: relative;
+    margin-top: -140px;
+    width: 100%;
+    height: auto;
+ }
   
   section.car-collection {
     padding: 40px;

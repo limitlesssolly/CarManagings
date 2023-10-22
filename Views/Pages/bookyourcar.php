@@ -57,7 +57,7 @@
       <div id='map'></div>
     </div>
     <div class="box-2">
-        <form action="../../Views/Pages/chooseyourcar.php" >
+        <form action="../../Views/Pages/ourCars.php" >
           <div class="date">
               <label for="datePicker">Select your pickup Date:</label>
              <input type="text" id="datePicker" class="form-control">

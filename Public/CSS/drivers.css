@@ -42,7 +42,7 @@ th,
 td {
     text-align: center;
     padding: 8px;
-    border-bottom: 1px solid #5c75f6;
+    border-bottom: 1px solid #002138;
 }
 
 tr:nth-child(even) {
@@ -50,7 +50,7 @@ tr:nth-child(even) {
 }
 
 th {
-    background-color: #4254af;
+    background-color: #01051c;
     color: white;
 }
 
@@ -74,7 +74,7 @@ a
 .table__header .input-group {
     width: 35%;
     height: 100%;
-    background-color: #fff5;
+    background-color: #c5c7cc63;
     padding: 0 .8rem;
     border-radius: 2rem;
 
@@ -87,7 +87,7 @@ a
 
 .table__header .input-group:hover {
     width: 45%;
-    background-color: #fff8;
+    background-color: #c5c7cc63;
     box-shadow: 0 .1rem .4rem #0002;
 }
 

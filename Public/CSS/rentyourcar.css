@@ -120,7 +120,7 @@ input[type=text]:valid+.labella {
 }
 
 .subs:hover {
-    background: rgb(1, 5, 28);
+    background: #01051c;
     letter-spacing: 3px;
     color: #fff;
 

@@ -72,7 +72,6 @@ include_once "../../includes/db.php";
     <?php
     include('../Partials/footer2.php');
     ?>
-
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fullname = htmlspecialchars($_POST["fullname"]);
@@ -86,12 +85,9 @@ include_once "../../includes/db.php";
         $sql = "INSERT INTO cars4rent(fullname,number,address,cartype,carmodel, mileage, expectedrent) 
         values('$fullname','$contactnumbers','$homeaddress','$cartype','$carmodel','$mileage', '$expectedmonthlyrent')";
         $result = mysqli_query($conn, $sql);
-
-        if ($result) {
-            echo "<h1>Your request has been sent we'll contact you shortly!</h1>";
-        }
     }
     ?>
+
 
 </body>
 

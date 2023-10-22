@@ -22,12 +22,12 @@
                 </div>
 
                 <div class="contactinfo">
-                    <label for="contactnumbers">Contact Number</label>
-                    <input type="text" class="field" name="contactnumbers"> <br>
+                    <label for="Type">Type</label>
+                    <input type="text" class="field" name="Type"> <br>
                 </div>
 
                 <div class="status">
-                    <label for="salary">expected salary</label>
+                    <label for="salary">Number</label>
                     <input type="text" class="field" name="salary"> <br>
 
                     <label for="date">date of employment </label>

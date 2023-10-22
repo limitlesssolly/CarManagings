@@ -18,17 +18,17 @@
 
                 <div class="name">
                     <label for="fullname">Name</label>
-                    <input type="text" class="field" name="fullname" placeholder="samy salama"> <br>
+                    <input type="text" class="field" name="fullname"> <br>
                 </div>
 
                 <div class="contactinfo">
                     <label for="contactnumbers">Contact Number</label>
-                    <input type="text" class="field" name="contactnumbers" placeholder="0123456789"> <br>
+                    <input type="text" class="field" name="contactnumbers"> <br>
                 </div>
 
                 <div class="status">
                     <label for="salary">expected salary</label>
-                    <input type="text" class="field" name="salary" placeholder="50000"> <br>
+                    <input type="text" class="field" name="salary"> <br>
 
                     <label for="date">date of employment </label>
                     <input type="date" class="field" name="date"> <br>

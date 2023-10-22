@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Add employee</title>
+    <title>Add customer</title>
 </head>
 <body>  
         <?php

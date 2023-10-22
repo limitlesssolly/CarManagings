@@ -1,0 +1,340 @@
+.rwd-table {
+    margin: auto;
+    min-width: 500px;
+    width: fit-content;
+    border-collapse: collapse;
+    margin: 80px 0px 20px;
+
+}
+
+
+
+.rwd-table tr {
+    border-top: 0px solid #ddd;
+    border-bottom: 0px solid #ddd;
+}
+
+
+
+.rwd-table th {
+    display: none;
+}
+
+.rwd-table td {
+    display: block;
+}
+
+.rwd-table td:first-child {
+    margin-top: .5em;
+}
+
+.rwd-table td:last-child {
+    margin-bottom: .5em;
+}
+
+.rwd-table td:before {
+    content: attr(data-th) ": ";
+    font-weight: bold;
+    width: 120px;
+    display: inline-block;
+    color: #000;
+}
+
+.rwd-table th,
+.rwd-table td {
+    text-align: left;
+}
+
+.rwd-table {
+    color: #333;
+    border-radius: .4em;
+    overflow: hidden;
+}
+
+/* .rwd-table tr {
+    border-color: #bfbfbf;
+} */
+
+.rwd-table th,
+.rwd-table td {
+    padding: .5em 1em;
+}
+
+@media screen and (max-width: 601px) {
+    .rwd-table tr:nth-child(2) {
+        border-top: none;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .rwd-table tr:hover {
+        background-color: #d8e7f3;
+    }
+
+    .rwd-table td:before {
+        display: none;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        display: table-cell;
+        padding: .25em .5em;
+    }
+
+    .rwd-table th:first-child,
+    .rwd-table td:first-child {
+        padding-left: 0;
+    }
+
+    .rwd-table th:last-child,
+    .rwd-table td:last-child {
+        padding-right: 0;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+        padding: 1em !important;
+    }
+}
+
+
+/* THE END OF THE IMPORTANT STUFF */
+
+/* Basic Styling */
+body {
+    background: #4B79A1;
+    background: -webkit-linear-gradient(to left, #4B79A1, #283E51);
+    background: linear-gradient(to left, #4B79A1, #283E51);
+}
+
+h1 {
+    text-align: center;
+    font-size: 22px;
+    color: #f2f2f2;
+}
+
+.container {
+    display: block;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    font-size: 22px;
+    color: #cecece;
+}
+
+h3:before {
+    content: "\25C0";
+    position: absolute;
+    left: -50px;
+    -webkit-animation: leftRight 2s linear infinite;
+    animation: leftRight 2s linear infinite;
+}
+
+h3:after {
+    content: "\25b6";
+    position: absolute;
+    right: -50px;
+    -webkit-animation: leftRight 2s linear infinite reverse;
+    animation: leftRight 2s linear infinite reverse;
+}
+
+@-webkit-keyframes leftRight {
+    0% {
+        -webkit-transform: translateX(0)
+    }
+
+    25% {
+        -webkit-transform: translateX(-10px)
+    }
+
+    75% {
+        -webkit-transform: translateX(10px)
+    }
+
+    100% {
+        -webkit-transform: translateX(0)
+    }
+}
+
+@keyframes leftRight {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(-10px)
+    }
+
+    75% {
+        transform: translateX(10px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
+
+.data {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 35px;
+    outline: none;
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    background: none;
+    border: none;
+}
+
+.label {
+    font-size: 22px;
+}
+
+.log {
+    width: 400px;
+    margin: auto;
+
+}
+
+.log .input-cont {
+    position: relative;
+    margin: 0 40px 50px;
+}
+
+.log .input-cont:last-of-type {
+    margin-bottom: 30px;
+}
+
+.log .input-cont input {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 35px;
+    outline: none;
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+    background: none;
+    border: none;
+}
+
+.log .input-cont input:focus {
+    outline: none;
+}
+
+.log .input-cont label {
+    position: absolute;
+    color: black;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.log .input-cont input:focus+label {
+    margin-top: -30px;
+    -webkit-transform: scale(.8);
+    -moz-transform: scale(.8);
+    -o-transform: scale(.8);
+    transform: scale(.8);
+    color: black;
+}
+
+.log .border1,
+.log .border2 {
+    position: absolute;
+    height: 1px;
+    background-color: black;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.log .border1::after,
+.log .border1::before,
+.log .border2::after,
+.log .border2::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.log .border1::after,
+.log .border2::after {
+
+    right: 50%;
+    background-color: black;
+}
+
+.log .border1::before,
+.log .border2::before {
+    left: 50%;
+    background-color: black;
+}
+
+.log .input-cont input:focus~.border1::after,
+.log .input-cont input:focus~.border1::before,
+.log .input-cont input:focus~.border2::after,
+.log .input-cont input:focus~.border2::before {
+    width: 50%;
+}
+
+.log .check,
+.log a {
+    float: left;
+    width: calc(50% - 50px);
+    display: block;
+    font-size: 22px;
+    margin-bottom: 30px;
+}
+
+.log .check {
+    margin-left: 50px;
+}
+
+.log a {
+    text-align: right;
+    text-decoration: none;
+    color: black;
+}
+
+.log a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.log form input[type="submit"] {
+    display: block;
+    margin: 0 auto 20px;
+    border: 2px solid transparent;
+    padding: 5px 20px;
+    font-size: 22px;
+    cursor: pointer;
+    color: black;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.log form input[type="submit"]:focus {
+    outline: none;
+}
+
+.log form input[type="submit"]:hover {
+    border: 2px solid black;
+}

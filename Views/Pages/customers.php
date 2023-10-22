@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Employees</title>
+    <title>Customers</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
@@ -57,10 +57,10 @@
                             <td> hasan@gmail.com </td>
                             <td> 01123626850</td>
                             <td>
-                                  <button class="status shipped " >Show</button>
+                            <form action="../../Views/Pages/customerhistory.php"> <button class="status shipped " >Show </form></button>
                             </td>
                          
-                             <td> <button class="status cancelled">Delete</button> </td> 
+                             <td><button class="status cancelled">Delete</button>  </td> 
                         </tr>
                         <tr>
                             <td> 2 </td>

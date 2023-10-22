@@ -36,6 +36,12 @@
         .navbar a:hover::before{
         width: 100%;
         }
+        .logo {
+            font-size: 25px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+        }
     
         .logo img{
            position: relative;

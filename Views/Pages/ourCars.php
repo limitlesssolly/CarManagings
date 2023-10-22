@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Car Collection</title>
   <link rel="stylesheet" href="../../Public/CSS/navbar2.css">
-  <link rel="stylesheet" href="../../Public/css/ourcars.css">
+  <link rel="stylesheet" href="../../Public/CSS/ourCars.css">
   <link rel="stylesheet" href="../../Public/CSS/footer2.css">
   
 </head>
@@ -20,7 +20,9 @@
     <div class="car-listing">
       <div class="car">
         <img src="../../public/Images/RRjpg.jpg" alt="Car 1">
-        <h3>Rolls Royce</h3>
+        <h3>Sedan</h3>
+        <h4 class="Price">8000$</h4>
+        <h5 class="info">Cras can hold up to 2 bags</h5>
         <a href="booking.html">Book Now</a>
       </div>
       <div class="car">

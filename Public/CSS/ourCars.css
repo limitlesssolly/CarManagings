@@ -66,3 +66,12 @@ body, h1, h2, h3, p, ul, li {
   {
     transform: scale(1.05);
   }
+  .car .Price,
+.car .info {
+  display: none; /* Hide the elements by default */
+}
+
+.car:hover .Price,
+.car:hover .info {
+  display: block; /* Display the elements when hovering */
+}

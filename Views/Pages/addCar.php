@@ -12,90 +12,37 @@
 <?php
     include("../Partials/dashboardsidebar.php");
     ?>
-        <section class="home-section">
-            <div class="home-content">
-                <i class="bx bx-menu"></i>
-                <span class="text">Dashboard</span>
-            </div>
-            <!-- form -->
-<div class="contactForm">
-                    <!-- <h2>Send us a message</h2> -->
-                    <form  id="contactForm">
+       <div class="adddrivers">
+        <section>
+            <form action="" method="post">
 
-                    <div class="inputBox">
-                            <input type="text" name="Type"  id="name">
-                            <span>Name</span>
-                        </div>
-
-                        <div class="inputBox">
-                            <input type="text" name="Type"  id="Type">
-                            <span>Type</span>
-                        </div>
-
-                        <div class="inputBox">
-                            <input type="text" name="Model" id="Model">
-                            <span>Id</span>
-                        </div>
-
-                        <div class="inputBox">
-                            <input type="text" name="Plate" id="Plate">
-                            <span>Plate Numbers</span>
-                        </div>
-
-                        <div class="inputBox">
-                            <input type="text" name="Colour" id="Color">
-                            <span>Colour</span>
-                        </div>
-
-                        <div class="inputBox">
-                   <label for="carPhoto">Car Photo</label>
-                 <input type="file" name="CarPhoto" id="carPhoto">
-                      </div>
-
-                      
-                        <div class="inputBox">
-                            <label for="owned">Is the car owned by us?</label>
-                             <input type="checkbox" name="Owned" id="owned">
-                        </div>
-
-                  
-
-
-                     
-                        <div id="error"> </div>
-
-                      
-
-                        <div class="inputBox">
-                            <input type="submit" value="SEND">
-                        </div>
-                        
-                    </form>
-                    <!-- <script src="js/contactus.js"></script> -->
+                <div class="name">
+                    <label for="fullname">Name</label>
+                    <input type="text" class="field" name="fullname" placeholder="samy salama"> <br>
                 </div>
-<!-- end of form -->
-        </section>    
-        <script>
-            let arrow = document.querySelectorAll(".arrow");
-            for(var i=0;i<arrow.length;i++){
-                arrow[i].addEventListener("click",(e)=>{
-                    let arrowParent=e.target.parentElement.parentElement;
-                    console.log(arrowParent)
-                    arrowParent.classList.toggle("showMenu");
-                });
-            }
-            let sidebar=document.querySelector(".sidebar");
-            let sidebarBtn=document.querySelector(".bx-menu");
-            sidebarBtn.addEventListener("click",()=>{
-                sidebar.classList.toggle("close")
-            })
 
+                <div class="contactinfo">
+                    <label for="contactnumbers">Contact Number</label>
+                    <input type="text" class="field" name="contactnumbers" placeholder="0123456789"> <br>
+                </div>
 
-        </script>
+                <div class="status">
+                    <label for="salary">expected salary</label>
+                    <input type="text" class="field" name="salary" placeholder="50000"> <br>
 
-                
+                    <label for="date">date of employment </label>
+                    <input type="date" class="field" name="date"> <br>
 
+                    <label for="liscenced">liscenced</label>
+                    <input type="radio" name="liscenced">
+                    <input type="radio" name="liscenced"> <br>
+                </div>
 
-
+                <div class="subs">
+                    <input type="submit" name="submit" value="add driver">
+                </div>
+            </form>
+        </section>
+    </div>
 </body>
 </html>

@@ -30,7 +30,7 @@ include_once "../../includes/db.php";
             <h1>Rent Your Car</h1>
         </div>
 
-        <form action="" method="" class="formal">
+        <form method="POST" class="formal">
 
             <div class="info">
                 <input type="text" name="fullname">
@@ -83,7 +83,7 @@ include_once "../../includes/db.php";
         $mileage = htmlspecialchars($_POST["mileage"]);
         $expectedmonthlyrent = htmlspecialchars($_POST["expectedmonthlyrent"]);
 
-        $sql = "insert into cars4rent(fullname,number,address,cartype,carmodel, mileage, expectedrent) 
+        $sql = "INSERT INTO cars4rent(fullname,number,address,cartype,carmodel, mileage, expectedrent) 
         values('$fullname','$contactnumbers','$homeaddress','$cartype','$carmodel','$mileage', '$expectedmonthlyrent')";
         $result = mysqli_query($conn, $sql);
 

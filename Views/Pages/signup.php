@@ -1,3 +1,7 @@
+<?php
+include_once "../../includes/db.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -13,7 +17,8 @@
 <body>
 	<div class="container" id="container">
 		<div class="form-container sign-up-container">
-			<form action="#">
+
+			<form method="POST">
 				<h1>Create Account</h1>
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -21,17 +26,17 @@
 					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your email for registration</span>
-				<input type="text" placeholder="Name" />
-				<input type="email" placeholder="Email" />
-				<input type="text" placeholder="Phone" />
-				<input type="password" placeholder="Password" />
+				<input type="text" placeholder="Name" name="Name" />
+				<input type="email" placeholder="Email" name="Email" />
+				<input type="text" placeholder="Phone" name="Phone" />
+				<input type="password" placeholder="Password" name="Pass" />
 				<input type="password" placeholder="Confirm Password" />
 
-				<button>Sign Up</button>
+				<button type="submit">Sign Up</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
-			<form action="#">
+			<form method="POST">
 				<h1>Sign in</h1>
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -39,10 +44,10 @@
 					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your account</span>
-				<input type="email" placeholder="Email" />
-				<input type="password" placeholder="Password" />
+				<input type="email" placeholder="Email" name="Email" />
+				<input type="password" placeholder="Password" name="Pass" />
 				<a href="#">Forgot your password?</a>
-				<button>Sign In</button>
+				<button type="submit">Sign In</button>
 			</form>
 		</div>
 		<div class="overlay-container">
@@ -61,7 +66,46 @@
 			</div>
 		</div>
 	</div>
+	<?php
+			// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			// 	$name = htmlspecialchars($_POST["Name"]);
+			// 	$email = htmlspecialchars($_POST["Email"]);
+			// 	$phone = htmlspecialchars($_POST["Phone"]);
+			// 	$password = htmlspecialchars($_POST["Pass"]);
+			
+			// 	$sql = "insert into users(Name,Email,Phone,Pass) 
+			// 		values('$name','$email','$phone','$password')";
+			// 	$result = mysqli_query($conn, $sql);
 
+			// 	if($result)
+			// 	{
+			// 		echo "<h3> Account successfully created! Sign in now.</h3>";
+			// 	}
+			// 	else{
+			// 		echo "<h3> We seem to be facing an issue currently try again l8r :c </h3>";
+			// 	}
+			// }
+			?>
+	<?php
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			$email = $_POST['Email'];  
+			$password = $_POST['Pass'];  
+			
+			$email = mysqli_real_escape_string($conn, $email);  
+			$password = mysqli_real_escape_string($conn, $password);  
+			
+			$sql = "SELECT * FROM users WHERE Email = '$email' AND Pass = '$password'";  
+			$result = mysqli_query($conn, $sql);  
+			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+			$count = mysqli_num_rows($result);  
+			
+			if($count == 1){  
+				header("Location:index.php");
+			}  
+			else{  
+				echo "<h3> Login failed. Invalid username or password.</h3>";  
+			}}     
+			?>
 	<script>
 		const signUpButton = document.getElementById('signUp');
 		const signInButton = document.getElementById('signIn');
@@ -75,6 +119,7 @@
 			container.classList.remove("right-panel-active");
 		});
 	</script>
+
 </body>
 
 </html>

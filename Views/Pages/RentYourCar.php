@@ -1,7 +1,6 @@
 <?php
 include_once "../../includes/db.php";
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -80,10 +79,6 @@ include_once "../../includes/db.php";
         $sql = "insert into cars4rent(fullname,number,address,cartype,carmodel, mileage, expectedrent) 
         values('$fullname','$contactnumbers','$homeaddress','$cartype','$carmodel','$mileage', '$expectedmonthlyrent')";
         $result = mysqli_query($conn, $sql);
-
-        if ($result) {
-            // print("el donia lessa bkheer");
-        }
     }
     ?>
 </body>

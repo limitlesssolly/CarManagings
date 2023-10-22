@@ -33,13 +33,21 @@
 }
 
 .linking{
-    text-align: left;
+    text-align: center;
     color: white;
+}
+.linking a{
+    position: relative;
+    right: 10%;
 }
 
 .socials{
-    text-align: left;
+    text-align: center;
     color: white;
+}
+.socials a{
+    position: relative;
+    right: 20%;
 }
 
 a {

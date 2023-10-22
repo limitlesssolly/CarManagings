@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Public/CSS/addCar.css">
-    <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Add Car</title>
@@ -145,6 +144,11 @@
                     <!-- <h2>Send us a message</h2> -->
                     <form  id="contactForm">
 
+                    <div class="inputBox">
+                            <input type="text" name="Type"  id="name">
+                            <span>Name</span>
+                        </div>
+
                         <div class="inputBox">
                             <input type="text" name="Type"  id="Type">
                             <span>Type</span>
@@ -152,7 +156,7 @@
 
                         <div class="inputBox">
                             <input type="text" name="Model" id="Model">
-                            <span>Model</span>
+                            <span>Id</span>
                         </div>
 
                         <div class="inputBox">
@@ -164,10 +168,19 @@
                             <input type="text" name="Colour" id="Color">
                             <span>Colour</span>
                         </div>
+
+                        <div class="inputBox">
+                   <label for="carPhoto">Car Photo</label>
+                 <input type="file" name="CarPhoto" id="carPhoto">
+                      </div>
+
+                      
                         <div class="inputBox">
                             <label for="owned">Is the car owned by us?</label>
                              <input type="checkbox" name="Owned" id="owned">
                         </div>
+
+                  
 
 
                      

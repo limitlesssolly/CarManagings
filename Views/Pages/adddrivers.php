@@ -51,7 +51,7 @@ include_once "../../includes/db.php";
     </div>
 
     <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+   /* if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fullname = htmlspecialchars($_POST["fullname"]);
         $contactnumbers = htmlspecialchars($_POST["contactnumbers"]);
         $salary = htmlspecialchars($_POST["salary"]);
@@ -65,7 +65,7 @@ include_once "../../includes/db.php";
         if ($result) {
             // print("el donia lessa bkheer");
         }
-    }
+    }*/
     ?>
 
     <script>

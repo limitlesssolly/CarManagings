@@ -37,11 +37,6 @@
   <div class="bodytext">
        <h1>Choose Your Car</h1>
   </div>
-
-
-
-
-
   <div class="container1">
     <div class="box">
       <img src="../../Public/Images/sedan.png" alt="" >

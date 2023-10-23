@@ -29,6 +29,12 @@
                         <span class="menu-link-text">Profile</span>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="../../Views/Pages/index.php">
+                        <i class="fas fa-solid fa-home"></i>
+                        <span class="menu-link-text">Home</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="user-container">

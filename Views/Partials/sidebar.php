@@ -1,3 +1,6 @@
+<?php
+// session_start();
+?>
 <html lang="en">
 
 <head>
@@ -29,19 +32,33 @@
                         <span class="menu-link-text">Profile</span>
                     </a>
                 </li>
+                <li class="menu-item">
+                    <a class="menu-link" href="../../Views/Pages/index.php">
+                        <i class="fas fa-solid fa-home"></i>
+                        <span class="menu-link-text">Home</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <div class="user-container">
             <div class="user-info">
                 <i class="fas fa-solid fa-user-secret"></i>
                 <div class="user-details">
-                    <h3 class="user-name">Username</h3>
+                    <h3 class="user-name">
+                        <?php 
+                        // echo $_SESSION["Name"]
+                         ?>
+                    </h3>
                 </div>
             </div>
 
-            <a class="logout-btn" href="#">
+            <a class="logout-btn" href="../../Views/Pages/signup.php">
 
-                <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
+                <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket">
+                    <?php
+                    // session_destroy();
+                    ?>
+                </i>
             </a>
         </div>
     </nav>

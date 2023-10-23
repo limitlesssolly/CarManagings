@@ -1,4 +1,5 @@
 <?php
+// session_start();
 include_once "../../includes/db.php";
 ?>
 
@@ -24,7 +25,6 @@ include_once "../../includes/db.php";
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your email for registration</span>
 				<input type="text" placeholder="Name" name="Name" required/>
@@ -43,7 +43,6 @@ include_once "../../includes/db.php";
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your account</span>
 				<input type="email" placeholder="Email" name="Email" />

@@ -33,8 +33,8 @@ include_once "../../includes/db.php";
                     <form method="post">
                         <button class="user_registered-login" id="login-button">Delete Account
 
-                            <input type="hidden" name="id">
-                            <input type="submit" name="delete">
+                            <!-- <input type="hidden" name="id">
+                            <input type="submit" name="delete"> -->
 
                         </button>
                     </form>

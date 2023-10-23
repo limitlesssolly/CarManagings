@@ -11,7 +11,7 @@
   <span><span>4</span></span>
 </section>
 <div class="link-container">
-  <a target="_blank" href="../../index.php" class="more-link">Back to Home Page</a>
+  <a target="_blank" href="../../Views/Pages/index.php" class="more-link">Back to Home Page</a>
 </div>
 
 </html>

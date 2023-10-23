@@ -30,14 +30,9 @@ include_once "../../includes/db.php";
                     <h2 class="user_registered-title">View Your Profile Info?</h2>
                     <button class="user_registered-login" id="login-button">View</button>
 
-                    <form method="post">
                         <button class="user_registered-login" id="login-button">Delete Account
-
-                            <!-- <input type="hidden" name="id">
-                            <input type="submit" name="delete"> -->
-
+                        <a href='../../includes/deleteAccount.php'>
                         </button>
-                    </form>
                 </div>
             </div>
             <div class="user_options-forms" id="user_options-forms">
@@ -190,6 +185,8 @@ include_once "../../includes/db.php";
     // 	$conn->close();
 // }
     ?>
+
+
     <script>
         const signupButton = document.getElementById('signup-button'),
             loginButton = document.getElementById('login-button'),

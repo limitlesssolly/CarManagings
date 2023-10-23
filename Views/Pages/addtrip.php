@@ -96,7 +96,7 @@ button:hover {
         <div class="adddrivers">
             <section>
                 <div class="container">
-                    <h1>Add a driver</h1>
+                    <h1>Add a trip</h1>
                     
                     <form action="" method="post">
     <div class="name">

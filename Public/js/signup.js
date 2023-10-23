@@ -14,16 +14,9 @@ const signUpButton = document.getElementById('signUp');
     $("#confirmPassword").keyup(function() {
       var password = $("#password").val();
       var confirmPassword = $(this).val();
-      if(password.length())
-      {
-        $("#passwordValidation").html("Password less than 8 charcters").css("color", "red");
-        document.getElementById('sign').disabled = true;	
-      }
-
       if (password !== confirmPassword) {
         $("#passwordValidationMessage").html("Passwords do not match.").css("color", "red");
 		document.getElementById('sign').disabled = true;		
-
       } else {
         $("#passwordValidationMessage").html("");
 		document.getElementById('sign').disabled = false;	

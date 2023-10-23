@@ -11,6 +11,7 @@ include_once "../../includes/db.php";
 	<link rel="stylesheet" href="../../Public/CSS/style2.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
+	
 
 </head>
 
@@ -26,13 +27,14 @@ include_once "../../includes/db.php";
 					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your email for registration</span>
-				<input type="text" placeholder="Name" name="Name" />
-				<input type="email" placeholder="Email" name="Email" />
-				<input type="text" placeholder="Phone" name="Phone" />
-				<input type="password" placeholder="Password" name="Pass" />
-				<input type="password" placeholder="Confirm Password" />
+				<input type="text" placeholder="Name" name="Name" required/>
+				<input type="email" placeholder="Email" name="Email" required/>
+				<input type="text" placeholder="Phone" name="Phone" required/>
+				<input type="password" placeholder="Password" name="Pass"  id="password" required />
+				<input type="password" placeholder="Confirm Password" name="confirm" id="confirmPassword" required/>
+				<span id="passwordValidationMessage"></span>
 
-				<button type="submit">Sign Up</button>
+				<button type="submit" id="sign">Sign Up</button>
 			</form>
 		</div>
 		<div class="form-container sign-in-container">
@@ -67,17 +69,15 @@ include_once "../../includes/db.php";
 		</div>
 	</div>
 	<?php
-	/*
 			 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			 	$name = htmlspecialchars($_POST["Name"]);
 				$email = htmlspecialchars($_POST["Email"]);
 			 	$phone = htmlspecialchars($_POST["Phone"]);
 			 	$password = htmlspecialchars($_POST["Pass"]);
-			
-			 	$sql = "insert into users(Name,Email,Phone,Pass) 
-			 		values('$name','$email','$phone','$password')";
-			 	$result = mysqli_query($conn, $sql);
-
+			 	$confirmpassword = htmlspecialchars($_POST["confirm"]);
+					$sql = "insert into users(Name,Email,Phone,Pass) 
+					values('$name','$email','$phone','$password')";
+					$result = mysqli_query($conn, $sql);
 			 	if($result)
 			 	{
 			 		echo "<h3> Account successfully created! Sign in now.</h3>";
@@ -86,10 +86,10 @@ include_once "../../includes/db.php";
 			 		echo "<h3> We seem to be facing an issue currently try again l8r :c </h3>";
 				}
 			 }
-			 */
+			 
 			?>
 	<?php
-			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$email = $_POST['Email'];  
 			$password = $_POST['Pass'];  
 			
@@ -106,21 +106,14 @@ include_once "../../includes/db.php";
 			}  
 			else{  
 				echo "<h3> Login failed. Invalid username or password.</h3>";  
-			}}  
+			}}  */
 			?>
+			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="../../Public/js/signup.js"></script>
+</head>
 	<script>
-		const signUpButton = document.getElementById('signUp');
-		const signInButton = document.getElementById('signIn');
-		const container = document.getElementById('container');
-
-		signUpButton.addEventListener('click', () => {
-			container.classList.add("right-panel-active");
-		});
-
-		signInButton.addEventListener('click', () => {
-			container.classList.remove("right-panel-active");
-		});
-	</script>
+		
+		</script>
 
 </body>
 

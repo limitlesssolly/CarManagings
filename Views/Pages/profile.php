@@ -158,30 +158,30 @@ include_once "../../includes/db.php";
         </div>
     </section>
     <?php
-if($_SERVER['REQUEST_METHOD']== "POST"){ //check if form was submitted
-	//check if form is submitted 
-	$name=htmlspecialchars($_POST["Name"]);
-	$email=htmlspecialchars($_POST["Email"]);
-	$phone=htmlspecialchars($_POST["Phone"]);
-	$password=htmlspecialchars($_POST["Pass"]);
-    $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
-    if ($_POST['Pass']!= $_POST['Confirmpassword'])
-    {
-       echo "<h3> Oops! Password did not match! Try again.</h3>";
+// if($_SERVER['REQUEST_METHOD']== "POST"){ //check if form was submitted
+// 	//check if form is submitted 
+// 	$name=htmlspecialchars($_POST["Name"]);
+// 	$email=htmlspecialchars($_POST["Email"]);
+// 	$phone=htmlspecialchars($_POST["Phone"]);
+// 	$password=htmlspecialchars($_POST["Pass"]);
+//     $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
+//     if ($_POST['Pass']!= $_POST['Confirmpassword'])
+//     {
+//        echo "<h3> Oops! Password did not match! Try again.</h3>";
 
-   }else{
-	$sql="update  users set FirstName='$Fname', LastName='$Lname', Email='$Email', Password='$Password',Hobby='$Hobby' 
-	where ID =".$_SESSION['ID'];
-	$result=mysqli_query($conn,$sql);
-	if( $result) {
-        echo "<h3>Data Updated Succesfully!</h3>";
-	} else {
-        echo "<h3> Oops!There is an error occured! Try again.</h3>";
-	}
-}
+//    }else{
+// 	$sql="update  users set Name='$name', Email='$email', Pass='$password'
+// 	where ID =".$_SESSION['ID'];
+// 	$result=mysqli_query($conn,$sql);
+// 	if( $result) {
+//         echo "<h3>Data Updated Succesfully!</h3>";
+// 	} else {
+//         echo "<h3> Oops!There is an error occured! Try again.</h3>";
+// 	}
+// }
 	
-	$conn->close();
-}
+// 	$conn->close();
+// }
 ?>
     <script>
         const signupButton = document.getElementById('signup-button'),

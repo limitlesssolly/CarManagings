@@ -1,4 +1,4 @@
-<?php 
+<?php
 // session_start();
 ?>
 <html lang="en">
@@ -44,16 +44,20 @@
             <div class="user-info">
                 <i class="fas fa-solid fa-user-secret"></i>
                 <div class="user-details">
-                    <h3 class="user-name">Username</h3>
+                    <h3 class="user-name">
+                        <?php 
+                        // echo $_SESSION["Name"]
+                         ?>
+                    </h3>
                 </div>
             </div>
 
             <a class="logout-btn" href="../../Views/Pages/signup.php">
 
                 <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket">
-                <?php
-// session_destroy();
-?>
+                    <?php
+                    // session_destroy();
+                    ?>
                 </i>
             </a>
         </div>

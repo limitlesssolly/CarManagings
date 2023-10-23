@@ -31,6 +31,7 @@ include_once "../../includes/db.php";
 				<input type="email" placeholder="Email" name="Email" required/>
 				<input type="text" placeholder="Phone" name="Phone" required/>
 				<input type="password" placeholder="Password" name="Pass"  id="password" required />
+				<span id="passwordValidation"></span>
 				<input type="password" placeholder="Confirm Password" name="confirm" id="confirmPassword" required/>
 				<span id="passwordValidationMessage"></span>
 

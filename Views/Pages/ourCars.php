@@ -72,7 +72,7 @@
       </div>
       <div class="car">
         <img src="../../public/Images/van.png" alt="Car 3">
-        <h3>Van</h3>
+        <h3>Hiace</h3>
         <div class="info">
            <span class="material-symbols-outlined"> 
              groups_2

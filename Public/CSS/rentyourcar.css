@@ -90,20 +90,20 @@ input[type=text] {
     /* transition: 0.2s ease; */
 }
 
-/* input[type=text]:focus,
+ input[type=text]:focus,
 input[type=text]:valid {
     color: #002138;
     border: 2px solid #002138;
-} */
+} 
 
-/* input[type=text]:focus+.labella,
+ input[type=text]:focus+.labella,
 input[type=text]:valid+.labella {
     color: #002138;
     height: 20px;
     line-height: 30px;
     transform: translate(-5px, -65px) scale(0.88);
     z-index: 1111;
-} */
+} 
 
 .subs {
     font-size: 17px;

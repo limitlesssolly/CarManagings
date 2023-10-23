@@ -1,4 +1,5 @@
 <?php
+// session_start();
 include_once "../../includes/db.php";
 ?>
 
@@ -65,52 +66,52 @@ include_once "../../includes/db.php";
 		</div>
 	</div>
 	<?php
-			 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			 	$name = htmlspecialchars($_POST["Name"]);
-				$email = htmlspecialchars($_POST["Email"]);
-			 	$phone = htmlspecialchars($_POST["Phone"]);
-			 	$password = htmlspecialchars($_POST["Pass"]);
-				 $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
-				 if ($_POST['Pass']!= $_POST['Confirmpassword'])
-				 {
-					echo "<h3> Oops! Password did not match! Try again.</h3>";
+			//  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			//  	$name = htmlspecialchars($_POST["Name"]);
+			// 	$email = htmlspecialchars($_POST["Email"]);
+			//  	$phone = htmlspecialchars($_POST["Phone"]);
+			//  	$password = htmlspecialchars($_POST["Pass"]);
+			// 	 $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
+			// 	 if ($_POST['Pass']!= $_POST['Confirmpassword'])
+			// 	 {
+			// 		echo "<h3> Oops! Password did not match! Try again.</h3>";
 
-				}
-				 else{	
-				 $sql = "insert into users(Name,Email,Phone,Pass) 
-			 		values('$name','$email','$phone','$password')";
-			 	$result = mysqli_query($conn, $sql);
+			// 	}
+			// 	 else{	
+			// 	 $sql = "insert into users(Name,Email,Phone,Pass) 
+			//  		values('$name','$email','$phone','$password')";
+			//  	$result = mysqli_query($conn, $sql);
 				 
-			 	if($result)
-			 	{
-			 		echo "<h3> Account successfully created! Sign in now.</h3>";
-			 	}
-			 	else{
-			 		echo "<h3> We seem to be facing an issue currently try again l8r :c </h3>";
-				}
-			}
-			 }
+			//  	if($result)
+			//  	{
+			//  		echo "<h3> Account successfully created! Sign in now.</h3>";
+			//  	}
+			//  	else{
+			//  		echo "<h3> We seem to be facing an issue currently try again l8r :c </h3>";
+			// 	}
+			// }
+			//  }
 			 
 			?>
 	<?php
-			// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			// $email = $_POST['Email'];  
-			// $password = $_POST['Pass'];  
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			$email = $_POST['Email'];  
+			$password = $_POST['Pass'];  
 			
-			// $email = mysqli_real_escape_string($conn, $email);  
-			// $password = mysqli_real_escape_string($conn, $password);  
+			$email = mysqli_real_escape_string($conn, $email);  
+			$password = mysqli_real_escape_string($conn, $password);  
 			
-			// $sql = "SELECT * FROM users WHERE Email = '$email' AND Pass = '$password'";  
-			// $result = mysqli_query($conn, $sql);  
-			// $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-			// $count = mysqli_num_rows($result);  
+			$sql = "SELECT * FROM users WHERE Email = '$email' AND Pass = '$password'";  
+			$result = mysqli_query($conn, $sql);  
+			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+			$count = mysqli_num_rows($result);  
 			
-			// if($count == 1){  
-			// 	header("Location:index.php");
-			// }  
-			// else{  
-			// 	echo "<h3> Login failed. Invalid username or password.</h3>";  
-			// }}  
+			if($count == 1){  
+				header("Location:index.php");
+			}  
+			else{  
+				echo "<h3> Login failed. Invalid username or password.</h3>";  
+			}}  
 			?>
 	<script>
 		const signUpButton = document.getElementById('signUp');

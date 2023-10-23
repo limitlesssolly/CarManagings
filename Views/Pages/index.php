@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../Public/CSS/footer2.css">
@@ -11,16 +12,16 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>                      
+  <?php
+            include('../Partials/navbar2.php');
+        ?>
+       
 
-   
     <title>Home</title>
 </head>
 <body>
     
-        <?php
-            include('../Partials/navbar2.php');
-        ?>
-        
+  
         <div class="bodyimage">
             <img src="../../Public/Images/carbackground.jpg "alt="">
         </div>
@@ -156,7 +157,5 @@ window.addEventListener("click", function(event) {
   }
 });
         </script>
-
-
 </body>
 </html>

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Our Cars</title>
+    <title>Our Rides</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
@@ -27,7 +27,7 @@
         </div>
         <main class="table">
             <section class="table__header">
-                <h1>Our Cars</h1>
+                <h1>Our Rides</h1>
                 <div class="input-group">
                     <input type="search" placeholder="Search Data...">
                     <img src="../../Public/Images/search.png" alt="">

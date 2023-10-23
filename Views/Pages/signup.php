@@ -23,14 +23,13 @@ include_once "../../includes/db.php";
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your email for registration</span>
 				<input type="text" placeholder="Name" name="Name" />
 				<input type="email" placeholder="Email" name="Email" />
 				<input type="text" placeholder="Phone" name="Phone" />
 				<input type="password" placeholder="Password" name="Pass" />
-				<input type="password" placeholder="Confirm Password" />
+				<input type="password" placeholder="Confirm Password" name="Confirmpassword" />
 
 				<button type="submit">Sign Up</button>
 			</form>
@@ -41,7 +40,6 @@ include_once "../../includes/db.php";
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-					<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
 				</div>
 				<span>or use your account</span>
 				<input type="email" placeholder="Email" name="Email" />
@@ -67,17 +65,22 @@ include_once "../../includes/db.php";
 		</div>
 	</div>
 	<?php
-	/*
 			 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			 	$name = htmlspecialchars($_POST["Name"]);
 				$email = htmlspecialchars($_POST["Email"]);
 			 	$phone = htmlspecialchars($_POST["Phone"]);
 			 	$password = htmlspecialchars($_POST["Pass"]);
-			
-			 	$sql = "insert into users(Name,Email,Phone,Pass) 
+				 $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
+				 if ($_POST['Pass']!= $_POST['Confirmpassword'])
+				 {
+					echo "<h3> Oops! Password did not match! Try again.</h3>";
+
+				}
+				 else{	
+				 $sql = "insert into users(Name,Email,Phone,Pass) 
 			 		values('$name','$email','$phone','$password')";
 			 	$result = mysqli_query($conn, $sql);
-
+				 
 			 	if($result)
 			 	{
 			 		echo "<h3> Account successfully created! Sign in now.</h3>";
@@ -85,28 +88,29 @@ include_once "../../includes/db.php";
 			 	else{
 			 		echo "<h3> We seem to be facing an issue currently try again l8r :c </h3>";
 				}
+			}
 			 }
-			 */
+			 
 			?>
 	<?php
-			if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			$email = $_POST['Email'];  
-			$password = $_POST['Pass'];  
+			// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			// $email = $_POST['Email'];  
+			// $password = $_POST['Pass'];  
 			
-			$email = mysqli_real_escape_string($conn, $email);  
-			$password = mysqli_real_escape_string($conn, $password);  
+			// $email = mysqli_real_escape_string($conn, $email);  
+			// $password = mysqli_real_escape_string($conn, $password);  
 			
-			$sql = "SELECT * FROM users WHERE Email = '$email' AND Pass = '$password'";  
-			$result = mysqli_query($conn, $sql);  
-			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-			$count = mysqli_num_rows($result);  
+			// $sql = "SELECT * FROM users WHERE Email = '$email' AND Pass = '$password'";  
+			// $result = mysqli_query($conn, $sql);  
+			// $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+			// $count = mysqli_num_rows($result);  
 			
-			if($count == 1){  
-				header("Location:index.php");
-			}  
-			else{  
-				echo "<h3> Login failed. Invalid username or password.</h3>";  
-			}}  
+			// if($count == 1){  
+			// 	header("Location:index.php");
+			// }  
+			// else{  
+			// 	echo "<h3> Login failed. Invalid username or password.</h3>";  
+			// }}  
 			?>
 	<script>
 		const signUpButton = document.getElementById('signUp');

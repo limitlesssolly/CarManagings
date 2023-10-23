@@ -158,8 +158,7 @@ include_once "../../includes/db.php";
         </div>
     </section>
     <?php
-// if($_SERVER['REQUEST_METHOD']== "POST"){ //check if form was submitted
-// 	//check if form is submitted 
+// if($_SERVER['REQUEST_METHOD']== "POST"){ 
 // 	$name=htmlspecialchars($_POST["Name"]);
 // 	$email=htmlspecialchars($_POST["Email"]);
 // 	$phone=htmlspecialchars($_POST["Phone"]);
@@ -170,7 +169,7 @@ include_once "../../includes/db.php";
 //        echo "<h3> Oops! Password did not match! Try again.</h3>";
 
 //    }else{
-// 	$sql="update  users set Name='$name', Email='$email', Pass='$password'
+// 	$sql="update  users set Name='$name',  Email='$email',Phone='$phone', Pass='$password'
 // 	where ID =".$_SESSION['ID'];
 // 	$result=mysqli_query($conn,$sql);
 // 	if( $result) {

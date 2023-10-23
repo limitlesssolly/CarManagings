@@ -11,19 +11,19 @@
                  <li>
 
                     <div class="iocn_link">
-                        <a href="">
+                        <a href="../Pages/drivers.php">
                             <i class='bx bxs-group'></i>
-                            <span class="link_name">Drivers</span>  
+                            <span class="link_name" >Drivers</span>  
                         </a>
                         <i class='bx bx-chevron-down arrow'></i>  
                     </div>
 
-                    <ul class="sub-menu">   
-                        <li><a class="link_name" href="../Pages/drivers.php">Drivers</a></li>
+                    <ul class="sub-menu">    
+                        <li><a class="link_name" >Drivers</a></li> 
                         <li><a href="../Pages/adddrivers.php">Add</a></li>   
-                        <li><a href="../Pages/editdrivers.php">Edit</a></li>
-                        <li><a href="../Pages/deletedrivers.php">Delete</a></li>
-                    </ul>
+                        <!-- <li><a href="../Pages/editdrivers.php">Edit</a></li>
+                        <li><a href="../Pages/deletedrivers.php">Delete</a></li> -->
+                     </ul>
 
 
                 </li>

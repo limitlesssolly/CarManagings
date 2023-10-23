@@ -43,17 +43,18 @@ body {
 .container {
     /* max-width: 400px; */
     margin-left: 37%;
-    margin-top: 30px; 
+    margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px 40px;
 
-    background-color: #ffffff; 
+    background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     width: 700px;
     margin: 30px;
-} 
-.formal{
+}
+
+.formal {
     position: relative;
     left: 23%;
 }
@@ -80,29 +81,29 @@ input[type=text] {
 }
 
 .labella {
-    position: relative;
+    /* position: relative; */
     font-size: 1.3em;
     color: #c5c7cc63;
-    padding: 0 12px;
+    padding: 0 5px;
     margin: 0 20px;
-    background-color: white;
-    transition: 0.2s ease;
+    /* background-color: white; */
+    /* transition: 0.2s ease; */
 }
 
-input[type=text]:focus,
+/* input[type=text]:focus,
 input[type=text]:valid {
     color: #002138;
     border: 2px solid #002138;
-}
+} */
 
-input[type=text]:focus+.labella,
+/* input[type=text]:focus+.labella,
 input[type=text]:valid+.labella {
     color: #002138;
-    height: 30px;
+    height: 20px;
     line-height: 30px;
-    transform: translate(-15px, -65px) scale(0.88);
+    transform: translate(-5px, -65px) scale(0.88);
     z-index: 1111;
-}
+} */
 
 .subs {
     font-size: 17px;

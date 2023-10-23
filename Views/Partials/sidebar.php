@@ -1,3 +1,6 @@
+<?php 
+// session_start();
+?>
 <html lang="en">
 
 <head>
@@ -45,9 +48,13 @@
                 </div>
             </div>
 
-            <a class="logout-btn" href="#">
+            <a class="logout-btn" href="../../Views/Pages/signup.php">
 
-                <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket"></i>
+                <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket">
+                <?php
+// session_destroy();
+?>
+                </i>
             </a>
         </div>
     </nav>

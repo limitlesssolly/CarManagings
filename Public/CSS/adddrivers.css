@@ -3,50 +3,66 @@
     font-family: 'poppins', sans-serif;
     font-family: 'Roboto', sans-serif;
     font-family: 'Ubuntu', sans-serif;
-    margin:2px 0px; 
+    /* margin:2px 0px;  */
     padding:0px;
     text-align:center;
-    /* align:center; */
 }
 
+.container {
+    position: relative;
+    max-width: 500px;
+    margin-left: 30%;
+    margin-top: 30px; 
+    margin-bottom: 30px;
+    padding: 20px 40px;
+    
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
 .title {
     text-align: center;
-    font-size: 4rem;
+    font-size: 3vh;
 }
 
-form {
+ form {
     text-align: center;
-    float: right;
-    position: absolute;
-    right: 33%;
-    top: 20%;
 }
 
 input[type=text],
 select,
 textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
+    padding: 13px;
+    border: 1px solid #01051c;
     border-radius: 4px;
     resize: vertical;
+    margin: 10px;
 }
 
 label {
-    padding: 10px 10px 10px 0;
+    padding: 10px 10px 10px 10px;
     display: inline-block;
 }
 
-input[type=submit] {
-    background-color: #4c8bc5;
-    color: white;
-    padding: 12px 20px;
+button {
+    font-size: 17px;
+    background: transparent;
+    color: #000;
+    text-decoration: none;
+    font-family: 500;
     border: none;
+    padding: 15px 29px;
+    border: 1px solid rgb(1, 5, 28);
     border-radius: 4px;
-    cursor: pointer;
-    float: right;
+    transition: 0.9s;
+    position: relative;
+    right: 0%;
 }
 
-input[type=submit]:hover {
-    background-color: #2a4f71;
+button:hover {
+    background: #01051c;
+    letter-spacing: 3px;
+    color: #fff;
+
 }

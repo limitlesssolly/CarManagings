@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<!-- Coding By CodingNepal - codingnepalweb.com -->
+    <!-- Coding by CodingLab | www.codinglabweb.com -->
     <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -9,10 +8,10 @@
         <title>Responsive Card Slider</title>
 
         <!-- Swiper CSS -->
-        <link rel="stylesheet" href="css/cdn.jsdelivr.net_npm_swiper@10.3.1_swiper-bundle.min.css">
+        <link rel="stylesheet" href="../../Public/CSS/swiper-bundle.min.css">
 
         <!-- CSS -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="../../Public/CSS/cardstyle.css">
                                         
     </head>
     <body>
@@ -24,7 +23,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile1.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -40,7 +39,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="iC:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile2.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -56,7 +55,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile3.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -72,7 +71,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile4.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -88,7 +87,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile5.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -104,7 +103,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile6.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -120,7 +119,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile7.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -136,7 +135,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile8.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -152,7 +151,7 @@
                             <span class="overlay"></span>
 
                             <div class="card-image">
-                                <img src="C:\Users\karim\Downloads\download.jpeg" alt="" class="card-img">
+                                <img src="images/profile9.jpg" alt="" class="card-img">
                             </div>
                         </div>
 
@@ -174,8 +173,8 @@
     </body>
 
     <!-- Swiper JS -->
-      <script src="js/cdn.jsdelivr.net_npm_swiper@10.3.1_swiper-bundle.min.js"></script>
+    <script src="../../Public/js/swiper-bundle.min.js"></script>
 
     <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <script src="../../Public/js/cardscript.js"></script>
 </html>

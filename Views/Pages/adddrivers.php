@@ -96,7 +96,7 @@ button:hover {
         <div class="adddrivers">
             <section>
                 <div class="container">
-                    <h3>Add a driver</h3>
+                    <h1>Add a driver</h1>
                     <form action="" method="post">
 
                         <div class="name">
@@ -148,7 +148,7 @@ button:hover {
     </script>
 
     <?php
-    /* if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
          $fullname = htmlspecialchars($_POST["fullname"]);
          $contactnumbers = htmlspecialchars($_POST["contactnumbers"]);
          $salary = htmlspecialchars($_POST["salary"]);
@@ -160,9 +160,9 @@ button:hover {
          $result = mysqli_query($conn, $sql);
 
          if ($result) {
-             // print("el donia lessa bkheer");
+             header("Location:drivers.php");
          }
-     }*/
+     }
     ?>
 
     <script>

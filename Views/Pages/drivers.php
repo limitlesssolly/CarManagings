@@ -1,5 +1,10 @@
 <?php
 include_once "../../includes/db.php";
+$username = "root";
+$password = "";
+$database = "24sevenlimousine";
+$mysqli = new mysqli("localhost", $username, $password, $database);
+
 ?>
 
 <!DOCTYPE html>
@@ -37,10 +42,10 @@ include_once "../../includes/db.php";
                 </div>
             </section>
             <section class="table__body">
+
                 <table>
                     <thead>
                         <tr>
-                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Number <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Liscenced <span class="icon-arrow">&UpArrow;</span></th>
@@ -51,60 +56,27 @@ include_once "../../includes/db.php";
                     </thead>
                     <tbody>
                         <tr>
-                            <td> 1 </td>
-                            <td> <img src="../../Public/Images/profile6.jpg" alt="">Farah</td>
-                            <td>0123456789</td>
-                            <td>
-                                <p class="status delivered">Liscenced</p>
-                            </td>
-                            <td> <a href="">history</a></td>
-                            <td> <a href=""><i class='bx bxs-edit-alt'></i></td>
-                            <td> <a href=""><i class='bx bxs-basket'></i></td>
+                            <?php
+                            $query = "SELECT * FROM drivers";
+                            if ($result = $mysqli->query($query)) {
+
+                                while ($row = $result->fetch_assoc()) {
+                                    $name = $row["fullname"];
+                                    $number = $row["number"];
+                                    $liscence = $row["liscenced"];
+                                    echo'<tr>';
+                                    echo '<td>' .$name. '</td>';
+                                    echo '<td>' .$number. '</td>';
+                                    echo '<td>' .$liscence. '</td>';
+                                    echo '<td> <a href="">history</a></td>';
+                                    echo '<td><a href =""><i class ="bx bxs-edit"></i></a></td>';
+                                    echo '<td><a href =""><i class ="bx bxs-basket"></i></a></td>';
+                                    echo '</tr>';
+                                }
+                            }
+                            ?>
                         </tr>
-                        <tr>
-                            <td> 2 </td>
-                            <td> <img src="../../Public/Images/profile5.jpg" alt="">Samy</td>
-                            <td>01156232345</td>
-                            <td>
-                                <p class="status delivered">Liscenced</p>
-                            </td>
-                            <td> <a href="">history</a></td>
-                            <td> <a href=""><i class='bx bxs-edit-alt'></i></td>
-                            <td> <a href=""><i class='bx bxs-basket'></i></td>
-                        </tr>
-                        <tr>
-                            <td> 3 </td>
-                            <td> <img src="../../Public/Images/profile2.jpg" alt="">Magda</td>
-                            <td>0987654321</td>
-                            <td>
-                                <p class="status pending">Not Liscenced</p>
-                            </td>
-                            <td> <a href="">history</a></td>
-                            <td> <a href=""><i class='bx bxs-edit-alt'></i></td>
-                            <td> <a href=""><i class='bx bxs-basket'></i></td>
-                        </tr>
-                        <tr>
-                            <td> 4 </td>
-                            <td> <img src="../../Public/Images/profile7.jpg" alt="">Fathy</td>
-                            <td>01212343456</td>
-                            <td>
-                                <p class="status delivered">Liscenced</p>
-                            </td>
-                            <td> <a href="">history</a></td>
-                            <td> <a href=""><i class='bx bxs-edit-alt'></i></td>
-                            <td> <a href=""><i class='bx bxs-basket'></i></td>
-                        </tr>
-                        <tr>
-                            <td> 5 </td>
-                            <td> <img src="../../Public/Images/profile3.jpg" alt="">Sameh</td>
-                            <td>01178992351</td>
-                            <td>
-                                <p class="status delivered">Liscenced</p>
-                            </td>
-                            <td> <a href="">history</a></td>
-                            <td> <a href=""><i class='bx bxs-edit-alt'></i></td>
-                            <td> <a href=""><i class='bx bxs-basket'></i></td>
-                        </tr>
+
                     </tbody>
                     <script src="../../Public/js/carshowdash.js"></script>
                 </table>

@@ -6,8 +6,10 @@ include_once "../../includes/db.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../Public/CSS/editprofiledash.css">
+ 
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../Public/CSS/editprofiledash.css">
+    <link rel="stylesheet" href="../../Public/CSS/addemployee.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Add employee</title>
@@ -22,6 +24,7 @@ include_once "../../includes/db.php";
                 <span class="text">Dashboard</span>
             </div>
             <!-- form -->
+            
             <div class="contactForm">
                     <h2 style="font-size: 21px;">Adding New Employee</h2>
                     <form method="post" id="contactForm">

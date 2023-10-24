@@ -52,7 +52,7 @@
                  <li>
 
                     <div class="iocn_link">
-                    <a href="">
+                    <a href="../Pages/trips.php">
                         <i class='bx bx-trip'></i>
                         <span class="link_name">Rides</span>  
                     </a>

@@ -1,3 +1,12 @@
+<?php
+include_once "../../includes/db.php";
+$username = "root";
+$password = "";
+$database = "24sevenlimousine";
+$mysqli = new mysqli("localhost", $username, $password, $database);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,61 +56,57 @@
                             <th> Total Hours <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Salary <span class="icon-arrow">&UpArrow;</span></th>
                             <th>------- <span class="icon-arrow">&UpArrow;</span></th>
+                            <th>------- <span class="icon-arrow">&UpArrow;</span></th>
 
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td> Hasan Eid</td>
-                            <td> hasan@gmail.com </td>
-                            <td> 01123626850</td>
-                            <td>
-                                <p class="status shipped">40</p>
-                            </td>
-                            <td> <strong> $5000 </strong></td>
-                             <td> <button class="status cancelled">Delete</button> </td> 
-                        </tr>
-                        <tr>
-                            <td> 2 </td>
-                            <td>  Ahmed Morad </td>
-
-                            <td> morad@gmail.com </td>
-                            <td> 01223626851</td>
-                            <td>
-                                <p class="status shipped">50</p>
-                            </td>
-                            <td> <strong>$5350.50</strong> </td>
-                            <td> <button class="status cancelled">Delete</button> </td> 
-                        </tr>
-                        <tr>
-                            <td> 3</td>
-                            <td>  Karim Ashraf </td>
-                            <td> karim@gmail.com </td>
-                            <td> 01123626444</td>
-                            <td>
-                                <p class="status shipped">30</p>
-                            </td>
-                            <td> <strong>$3410.40</strong> </td>
-                            <td> <button class="status cancelled">Delete</button> </td> 
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td> Saad Mohamed </td>
-                            <td> saad@gmail.com</td>
-                            <td> 01123626666</td>
-                            <td>
-                                <p class="status shipped ">60</p>
-                            </td>
-                            <td> <strong>$5000</strong> </td>
-                            <td> <button class="status cancelled">Delete</button> </td> 
-                        </tr>
-
+                        <!-- <tr> -->
+                            <?php
+                            $query = "SELECT * FROM employees";
+                            if ($result = $mysqli->query($query)) {
+                            $i=0;
+                                while ($row = $result->fetch_assoc()) {
+                                    $name = $row["Name"];
+                                    $email = $row["Email"];
+                                    $phone = $row["Phone"];
+                                    $totalhours = $row["TotalHours"];
+                                    $salary = $row["Salary"];
+                                    
+                                    echo'<tr>';
+                                    echo '<td>' .++$i. '</td>';
+                                    echo '<td>' .$name. '</td>';
+                                    echo '<td>' .$email. '</td>';
+                                    echo '<td>' .$phone. '</td>';
+                                    echo '<td>' .$totalhours. '</td>';
+                                    echo '<td>' .$salary. '</td>';
+                            
+                                    echo '<td> <form action="../Pages/editemployees.php">  <button class="status shipped" >Edit</button> </form> </td>';
+                                    echo '<td>  <form method="post"> 
+                                          <input type="hidden" name="email" value="'.$email.'">
+                                          <button class="status cancelled">Delete</button></form></td>';
+                                    echo '</tr>';
+                                }
+                            }
+                            ?>
+                        <!-- </tr> -->
 
                     </tbody>
                     <script src="../../Public/js/carshowdash.js"></script>
                 </table>
+                <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                         $email=$_POST['email'];
+                         $sql="DELETE FROM employees WHERE Email='$email'";
 
+                         $result = mysqli_query($conn, $sql);
+
+                         if ($result) {
+                            echo "<meta http-equiv='refresh' content='0'>";
+                         }
+                    }
+                    
+                 ?>
             </section>
         </main>
 

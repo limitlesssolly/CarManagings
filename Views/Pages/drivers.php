@@ -58,7 +58,7 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
+                   
                             <?php
                             $query = "SELECT * FROM drivers";
                             if ($result = $mysqli->query($query)) {
@@ -75,17 +75,16 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                                     echo '<td>' .$phone. '</td>';
                                     echo '<td>' .$status. '</td>';
                                     echo '<td>' .$date. '</td>';
-                                    echo '<td>  <button class="status shipped">Show</button></td>';
+                                    echo '<td> <form action="../../Views/Pages/driverhistory.php"> <button class="status shipped">Show</button> </form>  </td>';
                                     echo '<td>  <button class="status cancelled">Delete</button></td>';
-                                 
                                     echo '</tr>';
                                 }
                             }
                             ?>
-                        </tr>
-                        <tr>
+                        
+                     
 
-                        </tr>
+                      
                     </tbody>
                     <script src="../../Public/js/carshowdash.js"></script>
                 </table>

@@ -30,7 +30,7 @@
                  <li>
 
                     <div class="iocn_link">
-                      <a href="">
+                      <a href="../Pages/carshowdash.php">
                         <i class='bx bxs-car'></i>
                         <span class="link_name">Cars</span>  
                       </a>
@@ -74,7 +74,7 @@
                 <li>
 
                     <div class="iocn_link">
-                    <a href="">
+                    <a href="../Pages/employees.php">
                         <i class='bx bx-group'></i>
                         <span class="link_name">Employes</span>  
                     </a>
@@ -93,7 +93,7 @@
                 <li>
 
                         <div class="iocn_link">
-                        <a href="">
+                        <a href="../Pages/customers.php">
                             <i class='bx bx-group'></i>
                             <span class="link_name">Customers</span>  
                         </a>

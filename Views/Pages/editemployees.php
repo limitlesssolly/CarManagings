@@ -21,22 +21,19 @@
             <!-- form -->
             <div class="contactForm">
                     <h2>Updating info</h2>
-                    <form  id="contactForm">
+                    <form  id="contactForm" method="post">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name" placeholder="please enter the id of the employee">
-                            <span>Id</span>
+                            <input type="text" name="email" id="address" placeholder="please enter the email of the employee">
+                            <span>Email</span>
                         </div>
-
+                        
                         <div class="inputBox">
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="name" id="email" >
                             <span>Name</span>
                         </div>
 
-                        <div class="inputBox">
-                            <input type="text" name="email" id="address">
-                            <span>Email</span>
-                        </div>
+                      
 
 
                         <div class="inputBox">
@@ -46,10 +43,14 @@
 
 
                         <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
+                            <input type="text" name="totalhours" id="phone" >
                             <span>Total Hours</span>
                         </div>
                      
+                        <div class="inputBox">
+                            <input type="text" name="salary" id="phone" >
+                            <span>Salary</span>
+                        </div>
                         <div id="error"> </div>
 
                       
@@ -80,6 +81,26 @@
 
 
         </script>
+
+
+                <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                         $email=$_POST['email'];
+                         $name=$_POST['name'];
+                         $phone=$_POST['phone'];
+                        
+
+                         $sql = "UPDATE employees SET salary = 60000 WHERE employee_id = 123";
+
+                         $result = mysqli_query($conn, $sql);
+
+                         if ($result) {
+                            echo "<meta http-equiv='refresh' content='0'>";
+                         }
+                    }
+                    
+                 ?>
+
 
                 
 

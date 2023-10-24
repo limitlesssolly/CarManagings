@@ -114,7 +114,8 @@ button:hover {
 
                         <div class="contactinfo">
                             <label for="contactnumbers">Email</label>
-                            <input type="email" class="field" name="email" placeholder="mail@gmail.com" required> 
+                            <input type="email" class="field" name="email" id="email"placeholder="mail@gmail.com" required>
+                            <span id="Validation"></span>
                         </div>
 
                         <div class="contactinfo">
@@ -133,7 +134,7 @@ button:hover {
                         </div>
 
                         <div class="subs">
-                            <button type="submit" name="submit">Add </button>
+                            <button type="submit" id="sign" name="submit">Add </button>
                         </div>
                     </form>
                 </div>
@@ -159,7 +160,8 @@ button:hover {
          }
      }
     ?>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+			<script src="../../Public/js/addDriver.js"></script>
     <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {

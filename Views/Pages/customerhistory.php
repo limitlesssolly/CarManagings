@@ -43,7 +43,7 @@
                             <th> Pickup <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Distination <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Car Number<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Driver<span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Driver Email<span class="icon-arrow">&UpArrow;</span></th>
                             <th> Cost <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Date <span class="icon-arrow">&UpArrow;</span></th>
 
@@ -54,7 +54,7 @@
                             <td> Mokattam,st 13 </td>
                             <td> New cairo,concord plaza</td>
                             <td> 145|ن ص غ </td>
-                            <td> Mohamed</td>
+                            <td> Mohsen@gmail.com</td>
                             <td>$120</td>
                             <td  >12/10/2003</td>
                         </tr>

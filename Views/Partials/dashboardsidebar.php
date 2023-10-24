@@ -113,7 +113,7 @@
                 <li>
 
                     <div class="iocn_link">
-                    <a href="">
+                    <a href="../../Views/Pages/editprofiledash.php">
                         <i class='bx bx-cog'></i>
                         <span class="link_name">Settings</span>  
                     </a>

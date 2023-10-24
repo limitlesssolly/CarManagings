@@ -1,3 +1,11 @@
+<?php
+include_once "../../includes/db.php";
+$username = "root";
+$password = "";
+$database = "24sevenlimousine";
+$mysqli = new mysqli("localhost", $username, $password, $database);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -88,13 +96,35 @@
                          $email=$_POST['email'];
                          $name=$_POST['name'];
                          $phone=$_POST['phone'];
-                        
+                         $totalhours=$_POST['totalhours'];
+                         $salary=$_POST['salary'];
+                         echo '$email';
+                         $c=0;
+                         if( $email !=null && $name!=null){
+                            $sql = "UPDATE employees SET Name = '$name' WHERE Email='$email'";
+                            $result = mysqli_query($conn, $sql);
+                            $c++;
+                         }
+                         if( $email !=null && $phone!=null){
+                            $sql = "UPDATE employees SET Phone = '$phone' WHERE Email='$email'";
+                            $result = mysqli_query($conn, $sql);
+                            $c++;
+                         }
 
-                         $sql = "UPDATE employees SET salary = 60000 WHERE employee_id = 123";
+                         if( $email !=null && $totalhours!=null){
+                            $sql = "UPDATE employees SET TotalHours = $totalhours WHERE Email='$email'";
+                            $result = mysqli_query($conn, $sql);
+                            $c++;
+                         }
 
-                         $result = mysqli_query($conn, $sql);
+                         if( $email !=null && $salary!=null){
+                            $sql = "UPDATE employees SET salary = $salary WHERE Email='$email'";
+                            $result = mysqli_query($conn, $sql);
+                            $c++;
+                         }
 
-                         if ($result) {
+  
+                         if ($c>0) {
                             echo "<meta http-equiv='refresh' content='0'>";
                          }
                     }

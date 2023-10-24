@@ -1,3 +1,6 @@
+<?php
+include_once "../../includes/db.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,41 +24,41 @@
             <!-- form -->
             <div class="contactForm">
                     <h2 style="font-size: 21px;">Adding New Employee</h2>
-                    <form  id="contactForm">
+                    <form method="post" id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name">
+                            <input type="text" name="name"  id="name" required>
                             <span>Name</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="email" id="email" required>
                             <span>Email</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="address">
-                            <span>Id</span>
-                        </div>
-
-                        <div class="inputBox">
-                            <input type="text" name="password" id="password">
+                            <input type="text" name="password" id="password" required>
                             <span>Password</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="password" id="confirmpassword">
+                            <input type="text" name="confirmpassword" id="confirmpassword" required>
                             <span> Confirm Password</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
+                            <input type="text" name="phone" id="phone" required >
                             <span>Phone</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
+                            <input type="text" name="totalhours" id="phone" required>
                             <span>Total Hours</span>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="text" name="salary" id="phone"  required>
+                            <span>Salary</span>
                         </div>
               
                      
@@ -72,6 +75,27 @@
                 </div>
 <!-- end of form -->
         </section>    
+        <?php 
+        
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $name = htmlspecialchars($_POST["name"]);
+            $email = htmlspecialchars($_POST["email"]);
+            $phone = htmlspecialchars($_POST["phone"]);
+            $totalhours = htmlspecialchars($_POST["totalhours"]);
+            $salary = htmlspecialchars($_POST["salary"]);
+            $pass=htmlspecialchars($_POST["password"]);
+
+            $sql = "insert into employees(Name,Email,Password,Phone,TotalHours,Salary) 
+            values('$name','$email','$pass','$phone','$totalhours', '$salary')";
+            $result = mysqli_query($conn, $sql);
+   
+            if ($result) {
+                // header("Location:drivers.php");
+            }
+        }
+        
+        
+        ?>
         <script>
             let arrow = document.querySelectorAll(".arrow");
             for(var i=0;i<arrow.length;i++){

@@ -47,11 +47,14 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                     <thead>
                         <tr>
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Number <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Liscenced <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> History </th>
-                            <th> Edit </th>
-                            <th> Delete </th>
+                            <th> Email <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Phone <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Status <span class="icon-arrow">&UpArrow;</span</th>
+                            <th> Date Of Employment <span class="icon-arrow">&UpArrow;</span</th>
+                           
+                            <th> History <span class="icon-arrow">&UpArrow;</span></th>
+                       
+                            <th> ---------- </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -61,22 +64,28 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                             if ($result = $mysqli->query($query)) {
 
                                 while ($row = $result->fetch_assoc()) {
-                                    $name = $row["fullname"];
-                                    $number = $row["number"];
-                                    $liscence = $row["liscenced"];
+                                    $name = $row["Name"];
+                                    $email = $row["Email"];
+                                    $phone = $row["Phone"];
+                                    $status = $row["Status"];
+                                    $date = $row["Dateofemployment"];
                                     echo'<tr>';
                                     echo '<td>' .$name. '</td>';
-                                    echo '<td>' .$number. '</td>';
-                                    echo '<td>' .$liscence. '</td>';
-                                    echo '<td> <a href="">history</a></td>';
-                                    echo '<td><a href =""><i class ="bx bxs-edit"></i></a></td>';
-                                    echo '<td><a href =""><i class ="bx bxs-basket"></i></a></td>';
+                                    echo '<td>' .$email. '</td>';
+                                    echo '<td>' .$phone. '</td>';
+                                    echo '<td>' .$status. '</td>';
+                                    echo '<td>' .$date. '</td>';
+                                    echo '<td>  <button class="status shipped">Show</button></td>';
+                                    echo '<td>  <button class="status cancelled">Delete</button></td>';
+                                 
                                     echo '</tr>';
                                 }
                             }
                             ?>
                         </tr>
+                        <tr>
 
+                        </tr>
                     </tbody>
                     <script src="../../Public/js/carshowdash.js"></script>
                 </table>

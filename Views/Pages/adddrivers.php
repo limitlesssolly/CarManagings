@@ -129,7 +129,7 @@ button:hover {
             </section>
         </div>
     </section>
-    <script>
+    <!-- <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {
             arrow[i].addEventListener("click", (e) => {
@@ -145,7 +145,7 @@ button:hover {
         })
 
 
-    </script>
+    </script> -->
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {

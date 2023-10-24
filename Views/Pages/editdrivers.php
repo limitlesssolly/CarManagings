@@ -123,7 +123,7 @@ button:hover {
                         </div>
 
                         <div class="status">
-
+                            
                             <label for="salary">Status</label>
                             <input type="text" class="field" name="status" placeholder="enter new status" required>                           
 

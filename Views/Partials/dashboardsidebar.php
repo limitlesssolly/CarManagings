@@ -41,8 +41,8 @@
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Cars</a></li> 
                         <li><a href="../../Views/Pages/carshowdash.php">Show</a></li>  
-                        <li><a href="">Add</a></li>
-                        <li><a href="">Edit</a></li>
+                        <li><a href="../Pages/addCar.php">Add</a></li>
+                        <li><a href="../Pages/editCar.php">Edit</a></li>
                          
                     </ul>
                 

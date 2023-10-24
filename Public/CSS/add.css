@@ -50,3 +50,16 @@ input[type=submit] {
 input[type=submit]:hover {
     background-color: #2a4f71;
 }
+.upload-button {
+    background-color: #4c8bc5;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  .upload-button:hover {
+    background-color: #2a4f71;
+  }

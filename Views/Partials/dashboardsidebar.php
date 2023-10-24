@@ -20,9 +20,10 @@
 
                     <ul class="sub-menu">    
                         <li><a class="link_name" >Drivers</a></li> 
+                        <li><a href="../Pages/drivers.php">show</a></li>  
                         <li><a href="../Pages/adddrivers.php">Add</a></li>   
-                        <!-- <li><a href="../Pages/editdrivers.php">Edit</a></li>
-                        <li><a href="../Pages/deletedrivers.php">Delete</a></li> -->
+                        <li><a href="../Pages/editdrivers.php">Edit</a></li>
+                       
                      </ul>
 
 

@@ -129,7 +129,22 @@
                 </li>  
 
 
+                <li>
+
+                    <div class="iocn_link">
+                    <a href="../../Views/Pages/ratingsdash.php">
+                    <i class='bx bx-star'></i>
+                        <span class="link_name">Ratings</span>  
+                    </a>
             
+                    </div>
+
+                 
+
+                </li>  
+               
+               
+                
                 <li>
                   <div class="profile-details">
                        <div class="profile-content">

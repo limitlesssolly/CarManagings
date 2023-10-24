@@ -28,14 +28,19 @@ include_once "../../includes/db.php";
     position: relative;
     max-width: 500px;
     margin-left: 30%;
-    margin-top: 30px; 
+    /* margin-top: 30px;  */
     margin-bottom: 30px;
     padding: 20px 40px;
-    
-    background-color: #ffffff; 
+   
+    background-color: white; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    
 }
+h1{
+    font-size: 30px;
+    color:black;
+} 
 .title {
     text-align: center;
     font-size: 3vh;
@@ -43,13 +48,15 @@ include_once "../../includes/db.php";
 
  form {
     text-align: center;
+    /* margin-top: -5px; */
 }
 
 input[type=text],
+input[type=email],
 select,
 textarea {
     width: 100%;
-    padding: 13px;
+    padding: 10px;
     border: 1px solid #01051c;
     border-radius: 4px;
     resize: vertical;
@@ -63,6 +70,7 @@ label {
 
 button {
     font-size: 17px;
+    width: 200px;
     background: transparent;
     color: #000;
     text-decoration: none;
@@ -95,30 +103,33 @@ button:hover {
         </div>
         <div class="adddrivers">
             <section>
-                <div class="container">
+                <div class="container" >
                     <h1>Add a driver</h1>
                     <form action="" method="post">
 
                         <div class="name">
                             <label for="fullname">Full Name</label>
-                            <input type="text" class="field" name="fullname" placeholder="samy salama"> <br>
+                            <input type="text" class="field" name="name" placeholder="samy salama" required> <br>
+                        </div>
+
+                        <div class="contactinfo">
+                            <label for="contactnumbers">Email</label>
+                            <input type="email" class="field" name="email" placeholder="mail@gmail.com" required> 
                         </div>
 
                         <div class="contactinfo">
                             <label for="contactnumbers">Contact Number</label>
-                            <input type="text" class="field" name="contactnumbers" placeholder="0123456789"> <br>
+                            <input type="text" class="field" name="phone" placeholder="0123456789" required>  
                         </div>
 
                         <div class="status">
-                            <label for="salary">expected salary</label>
-                            <input type="text" class="field" name="salary" placeholder="50000"> <br>
+
+                            <label for="salary">Status</label>
+                            <input type="text" class="field" name="status" placeholder="available,in trip,in vacation " required>                           
 
                             <label for="date">date of employment </label>
-                            <input type="date" class="field" name="date"> <br>
+                            <input type="date" class="field" name="date" required> <br>
 
-                            <label for="liscenced">liscenced</label>
-                            <input type="radio" name="liscenced">
-                            <input type="radio" name="liscenced"> <br>
                         </div>
 
                         <div class="subs">
@@ -149,18 +160,18 @@ button:hover {
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-         $fullname = htmlspecialchars($_POST["fullname"]);
-         $contactnumbers = htmlspecialchars($_POST["contactnumbers"]);
-         $salary = htmlspecialchars($_POST["salary"]);
+         $name = htmlspecialchars($_POST["name"]);
+         $email = htmlspecialchars($_POST["email"]);
+         $phone = htmlspecialchars($_POST["phone"]);
+         $status = htmlspecialchars($_POST["status"]);
          $date = htmlspecialchars($_POST["date"]);
-         $liscenced = htmlspecialchars($_POST["liscenced"]);
 
-         $sql = "insert into drivers(fullname,number,salary,date,liscenced) 
-         values('$fullname','$contactnumbers','$salary','$date', '$liscenced')";
+         $sql = "insert into drivers(Name,Email,Phone,Status,Dateofemployment) 
+         values('$name','$email','$phone','$status', '$date')";
          $result = mysqli_query($conn, $sql);
 
          if ($result) {
-             header("Location:drivers.php");
+            //  header("Location:drivers.php");
          }
      }
     ?>

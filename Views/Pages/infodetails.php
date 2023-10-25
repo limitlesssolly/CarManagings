@@ -47,17 +47,17 @@
                     <form  id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name">
+                            <input type="text" name="name"  id="name" required>
                             <span>Name</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="email" id="email" required>
                             <span>Email</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
+                            <input type="text" name="phone" id="phone" requuired>
                             <span>Phone</span>
                         </div>
 

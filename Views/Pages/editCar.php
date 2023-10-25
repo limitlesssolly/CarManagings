@@ -44,7 +44,7 @@
                 </div>
 
                 <div class="subs">
-                    <input type="submit" name="submit" value="Add">
+                    <input type="submit" name="submit" value="Edit">
                 </div>
             </form>
         </section>

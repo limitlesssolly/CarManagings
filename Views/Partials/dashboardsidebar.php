@@ -40,10 +40,16 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Cars</a></li> 
+<<<<<<< HEAD
                         <li><a href="../../Views/Pages/carshowdash.php">Show</a></li>
                         <li><a href="../../Views/Pages/requestedcars.php">Requested Cars</a></li> 
                         <li><a href="">Add</a></li>
                         <li><a href="">Edit</a></li>
+=======
+                        <li><a href="../../Views/Pages/carshowdash.php">Show</a></li>  
+                        <li><a href="../Pages/addCar.php">Add</a></li>
+                        <li><a href="../Pages/editCar.php">Edit</a></li>
+>>>>>>> 072e65089713d05e17fd92aced6d1ea91698ce90
                          
                     </ul>
                 

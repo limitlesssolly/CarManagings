@@ -14,11 +14,11 @@
         </div>
         <div class="f-col">
           <h3>About Us</h3>
-          <p>Established in 2013 By a Group of Challengers from Different Fields (Marcum, Finance,
-            Operation and Technology) To Be a Real Business Partner That Support in Transforming
-            the Business Performance to Adapt with The Global Market Needs/Trends.
-          </p>
-          <p>3 El-Nafoura SQ. ,Mokattam, Cairo, Egypt </p>
+          <p>Our mission is to drive you where ever you want, when ever you want safe and sound.<br>
+          <br>
+            Tax Registration Number : 849-934-698<br>
+          3 El-Nafoura SQ. ,Mokattam, Cairo, Egypt </p>
+          
 
         </div>
         <div class="f-col">
@@ -38,7 +38,7 @@
           </div>
           </div>
           <div class="f-col" style="font-size: 14px;" id="rights">
-            <p>© All Rights Reserved</p>
+            <p>24 Seven Limousine 2023 © Powered By Gravixa</p>
           </div>
 
         </div>

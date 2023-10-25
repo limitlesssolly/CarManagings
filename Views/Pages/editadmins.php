@@ -24,7 +24,7 @@
                     <form  id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name" placeholder="please enter the id of the customer">
+                            <input type="text" name="name"  id="name" placeholder="please enter the id of the admin">
                             <span>Id</span>
                         </div>
 

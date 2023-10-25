@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-    <title>Edit Admin</title>
+    <title>Edit admin</title>
 </head>
 <body>
         <?php
@@ -20,7 +20,7 @@
             </div>
             <!-- form -->
             <div class="contactForm">
-                    <h2>Updating admin info</h2>
+                    <h2>Updating info</h2>
                     <form  id="contactForm">
 
                         <div class="inputBox">

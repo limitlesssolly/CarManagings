@@ -174,10 +174,16 @@ include_once "../../includes/db.php";
 	$sql="update  users set Name='$name',  Email='$email',Phone='$phone', Pass='$password'
 	where Email =".$_SESSION['Email'];
 	$result=mysqli_query($conn,$sql);
-	if( $result) {
-        echo "<h3>Data Updated Succesfully!</h3>";
-	} else {
-        echo "<h3> Oops!There is an error occured! Try again.</h3>";
+	//if update is successful don't forget to update the seesion variables too the redirect to index.php
+	if($result){
+		$_SESSION['Name']=$row['Name'];
+		$_SESSION['Email']=$row['Email'];
+		$_SESSION['Pass']=$row['Pass'];
+		$_SESSION['Phone']=$row['Phone'];
+		header("Location:index.php");
+	}
+	else{
+		echo "Invalid Input";
 	}
 }
     

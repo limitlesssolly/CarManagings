@@ -47,7 +47,7 @@
                 <div class="info">
                     <h1>Sedan</h1>
                     <p>capacity 4 persons-3 bags</p>
-                    <a href="" class="btn">Book Now</a>
+                    <a href="../Pages/bookyourcar.php" class="btn">Book Now</a>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@
                 <div class="info">
                     <h1>SUV</h1>
                     <p>capacity 5 persons-4 bags</p>
-                    <a href="" class="btn">Book Now</a>
+                    <a href="../Pages/bookyourcar.php" class="btn">Book Now</a>
                 </div>
             </div>
 
@@ -65,7 +65,7 @@
                 <div class="info">
                     <h1>Hiace</h1>
                     <p>capacity 10 persons-7 bags</p>
-                    <a href="" class="btn">Book Now</a>
+                    <a href="../Pages/bookyourcar.php" class="btn">Book Now</a>
                 </div>
             </div>
          </div>
@@ -87,7 +87,7 @@
       <div class="col-lg-4 col-sm-6">
         <div class="item"> <span class="icon feature_box_col_two"><i class="fa fa-anchor"></i></span>
           <h6>Creative Design</h6>
-          <p>We are always creative and and always lisen our costomers and we mix these two things and make beast design.</p>
+          <p>We are always creative and always listen to our customers and we mix these two things to offer best service.</p>
         </div>
       </div>
       <div class="col-lg-4 col-sm-6">

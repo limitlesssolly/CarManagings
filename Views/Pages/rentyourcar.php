@@ -302,37 +302,37 @@ input[type=text]:valid+.labella {
         <form method="POST" class="formal">
 
             <div class="info">
-                <input type="text" name="fullname">
+                <input type="text" name="fullname" required>
                 <div class="labella">Full Name</div>
             </div>
 
             <div class="info">
-                <input type="text" name="contactnumbers">
+                <input type="text" name="contactnumbers" required>
                 <div class="labella">Contact Number</div>
             </div>
 
             <div class="info">
-                <input type="text" name="homeaddress">
+                <input type="text" name="homeaddress" required>
                 <div class="labella">Home Address</div>
             </div>
 
             <div class="info">
-                <input type="text" name="cartype">
+                <input type="text" name="cartype" required>
                 <div class="labella">Car Type</div>
             </div>
 
             <div class="info">
-                <input type="text" name="carmodel">
+                <input type="text" name="carmodel" required>
                 <div class="labella">Car Model</div>
             </div>
 
             <div class="info">
-                <input type="text" name="mileage">
+                <input type="text" name="mileage" required>
                 <div class="labella">Mileage</div>
             </div>
 
             <div class="info">
-                <input type="text" name="expectedmonthlyrent">
+                <input type="text" name="expectedmonthlyrent" required>
                 <div class="labella">Expected Monthly Rent</div>
             </div>
             <button type="submit" name="submit" class="subs">submit</button>

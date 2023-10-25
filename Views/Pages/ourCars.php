@@ -49,7 +49,7 @@
               counter_4
             </span>
         </div>
-        <a href="booking.html">Book Now</a>
+        <a href="infodetails.php">Select</a>
       </div>
       <div class="car">
         <img src="../../public/Images/pajero.jpg" alt="Car 2">
@@ -68,7 +68,7 @@
               counter_4
             </span>
         </div>
-        <a href="booking.html">Book Now</a>
+        <a href="infodetails.php">Select</a>
       </div>
       <div class="car">
         <img src="../../public/Images/van.png" alt="Car 3">
@@ -78,7 +78,7 @@
              groups_2
            </span>
            <span class="material-symbols-outlined">
-              counter_10
+              counter_9
             </span>
             <span class="material-symbols-outlined">
                work
@@ -87,7 +87,7 @@
               counter_7
             </span>
         </div>
-        <a href="booking.html">Book Now</a>
+        <a href="infodetails.php">Select</a>
       </div>
     </div>
   </section>

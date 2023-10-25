@@ -5,24 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Our Cars</title>
+    <title>Admins</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../Public/CSS/carshowdash.css">
-    <style>
-        td button{
-            width: 70px;
-        }
-    </style>
 </head>
 
 <body>
 
 
 
-        <?php
+       <?php
           include('../Partials/dashboardsidebar.php');
         ?> 
     <section class="home-section">
@@ -32,13 +27,12 @@
         </div>
         <main class="table">
             <section class="table__header">
-                <h1>Our Cars</h1>
+                <h1>Admins</h1>
                 <div class="input-group">
                     <input type="search" placeholder="Search Data...">
                     <img src="../../Public/Images/search.png" alt="">
                 </div>
                 <div class="export__file">
-
 
                 </div>
             </section>
@@ -48,63 +42,73 @@
                         <tr>
                             <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Type<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Plate <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Status <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Category <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Total Profit <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> History </th>
-                            <th>Owner</th>
-                            <th>----</th>
+                            <th> Email<span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Phone<span class="icon-arrow">&UpArrow;</span></th>
+                            <th> History <span class="icon-arrow">&UpArrow;</span></th>
+                            <!-- <th> Salary <span class="icon-arrow">&UpArrow;</span></th> -->
+                            <th>------- <span class="icon-arrow">&UpArrow;</span></th>
+
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td> 1 </td>
-                            <td> <img src="../../Public/Images/carla.png" alt="">Toyota</td>
-                            <td> Sedan </td>
-                            <td> 123|ن ص ع </td>
+                            <td> Hasan Eid</td>
+                            <td> hasan@gmail.com </td>
+                            <td> 01123626850</td>
                             <td>
-                                <p class="status pending">in ride</p>
+                            <form action="../../Views/Pages/customerhistory.php"> <button class="status shipped " >Show </form></button>
                             </td>
-                            <td>Ours</td>
-                            <td> <strong> $128.90 </strong></td>
-                            <td><form action="" ><button class="status shipped">Show</button></form></td>
-                            <td></td>
-                            <td><form action="" ><button class="status cancelled">Delete</button></form></td>
+                         
+                             <td><button class="status cancelled">Delete</button>  </td> 
                         </tr>
                         <tr>
                             <td> 2 </td>
-                            <td><img src="../../Public/Images/carla.png" alt=""> Toyota </td>
+                            <td>  Ahmed Morad </td>
 
-                            <td> suv </td>
-                            <td> 154|ت ص غ </td>
+                            <td> morad@gmail.com </td>
+                            <td> 01223626851</td>
                             <td>
-                                <p class="status delivered">available</p>
+                                <button class="status shipped "  >Show</button>
                             </td>
-                            <td>rented</td>
-                            <td> <strong>$5350.50</strong> </td>
-                            <td><form action="" ><button class="status shipped">Show</button></form></td>
-                            <td><form action="../Pages/rentedcarinfo.php" ><button class="status shipped">Show</button></form></td>
-                            <td><form action="" ><button class="status cancelled">Delete</button></form></td>
-
+                            
+                            <td> <button class="status cancelled" >Delete</button> </td> 
                         </tr>
                         <tr>
                             <td> 3</td>
-                            <td><img src="../../Public/Images/carla.png" alt=""> Mitsubishsi </td>
-                            <td> suv </td>
-                            <td> 154|ت ص غ </td>
+                            <td>  Karim Ashraf </td>
+                            <td> karim@gmail.com </td>
+                            <td> 01123626444</td>
                             <td>
-                                <p class="status shipped">Shipped</p>
+                                <button class="status shipped "  >Show</button>
                             </td>
-                            <td>Ours</td>
-                            <td> <strong>$210.40</strong> </td>
-                            <td><form action="" ><button class="status shipped">Show</button></form></td>
-                            <td></td>
-                            <td><form action="" ><button class="status cancelled">Delete</button></form></td>
+                            
+                            <td> <button class="status cancelled">Delete</button> </td> 
                         </tr>
+                        <tr>
+                            <td>4</td>
+                            <td> Saad Mohamed </td>
+                            <td> saad@gmail.com</td>
+                            <td> 01123626666</td>
+                            <td>
+                                <button class="status shipped " >Show</button>
+                            </td>
+                         
+                            <td> <button class="status cancelled">Delete</button> </td> 
+                        </tr>
+
+
                     </tbody>
                     <script src="../../Public/js/carshowdash.js"></script>
+                    <script>
+                            document.querySelectorAll('.status shipped').addEventListener('click', function() {
+                                // Define the URL of the PHP page you want to open
+                                var phpPageURL = '../../Views/Pages/aboutus2.php';
+
+                                // Use the window.location object to navigate to the PHP page
+                                window.location.href = phpPageURL;
+                            });
+                    </script>
                 </table>
 
             </section>

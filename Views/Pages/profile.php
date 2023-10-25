@@ -1,8 +1,6 @@
 <?php
 session_start();
 include_once "../../includes/db.php";
-
-
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +27,10 @@ include_once "../../includes/db.php";
                 <div class="user_options-registered">
                     <h2 class="user_registered-title">View Your Profile Info?</h2>
                     <button class="user_registered-login" id="login-button">View</button>
-
+                    <form method="POST">
                         <button class="user_registered-login" id="login-button">Delete Account
-                        <a href='../../includes/deleteAccount.php'>
                         </button>
+                    </form>
                 </div>
             </div>
             <div class="user_options-forms" id="user_options-forms">
@@ -52,8 +50,9 @@ include_once "../../includes/db.php";
                                 </td>
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
+                                    Name1
                                         <?php
-                                        //  echo   $_SESSION["Name"] 
+                                                    // echo  $_SESSION["Name"] 
                                         ?>
                                     </p>
                                 </td>
@@ -69,6 +68,7 @@ include_once "../../includes/db.php";
                                 </td>
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
+                                    Email1
                                         <?php
                                         //  echo   $_SESSION["Email"] 
                                         ?>
@@ -85,6 +85,7 @@ include_once "../../includes/db.php";
                                 </td>
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
+                                    Phone1
                                         <?php
                                         //  echo   $_SESSION["Phone"]
                                         ?>
@@ -104,8 +105,7 @@ include_once "../../includes/db.php";
                                 <input type="text">
 
                                 <!-- <input type="text" value="
-                                <?
-                                // =$_SESSION['Name']?>
+                                <?php $_SESSION['Name']?>
                                 " name='Name'> -->
                                 <label>Username</label>
                                 <div class="border1"></div>
@@ -114,9 +114,9 @@ include_once "../../includes/db.php";
                                 <input type="email">
 
                                 <!-- <input type="email" value="
-                                <?
-                                // =$_SESSION['Email']
-                                ?>" name='Email'> -->
+                                <?php
+                                $_SESSION['Email']?>
+                                " name='Email'> -->
                                 <label>Email</label>
                                 <div class="border2"></div>
                             </div>
@@ -124,8 +124,8 @@ include_once "../../includes/db.php";
                                 <input type="text">
 
                                 <!-- <input type="text" value="
-                                <?
-                                // =$_SESSION['Phone']
+                                <?php
+                                $_SESSION['Phone']
                                 ?>" name='Phone'> -->
                                 <label>Phone</label>
                                 <div class="border2"></div>
@@ -133,19 +133,18 @@ include_once "../../includes/db.php";
                             <div class="input-cont">
                                 <input type="password">
 
-                                <!-- <input type="password" value=" -->
-                                <?
-                                // =$_SESSION['Pass']
-                                ?>
-                                <!-- " name='Pass'> -->
+                                <!-- <input type="password" value=" 
+                                <?php
+                                $_SESSION['Pass']
+                                ?>" name='Pass'> -->
                                 <label>Password</label>
                                 <div class="border2"></div>
                             </div>
                             <div class="input-cont">
                                 <input type="password">
                                 <!-- <input type="password" value="
-                                <?
-                                // $_SESSION['Confirmpassword']
+                                <?php
+                                $_SESSION['Confirmpassword']
                                 ?>
                                 " name='Confirmpassword'> -->
                                 <label>Confirm Password</label>
@@ -161,29 +160,35 @@ include_once "../../includes/db.php";
         </div>
     </section>
     <?php
-    // if($_SERVER['REQUEST_METHOD']== "POST"){ 
-// 	$name=htmlspecialchars($_POST["Name"]);
-// 	$email=htmlspecialchars($_POST["Email"]);
-// 	$phone=htmlspecialchars($_POST["Phone"]);
-// 	$password=htmlspecialchars($_POST["Pass"]);
-//     $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
-//     if ($_POST['Pass']!= $_POST['Confirmpassword'])
-//     {
-//        echo "<h3> Oops! Password did not match! Try again.</h3>";
+    if($_SERVER['REQUEST_METHOD']== "POST"){ 
+	$name=htmlspecialchars($_POST["Name"]);
+	$email=htmlspecialchars($_POST["Email"]);
+	$phone=htmlspecialchars($_POST["Phone"]);
+	$password=htmlspecialchars($_POST["Pass"]);
+    $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
+    if ($_POST['Pass']!= $_POST['Confirmpassword'])
+    {
+       echo "<h3> Oops! Password did not match! Try again.</h3>";
     
-    //    }else{
-// 	$sql="update  users set Name='$name',  Email='$email',Phone='$phone', Pass='$password'
-// 	where ID =".$_SESSION['ID'];
-// 	$result=mysqli_query($conn,$sql);
-// 	if( $result) {
-//         echo "<h3>Data Updated Succesfully!</h3>";
-// 	} else {
-//         echo "<h3> Oops!There is an error occured! Try again.</h3>";
-// 	}
-// }
+       }else{
+	$sql="update  users set Name='$name',  Email='$email',Phone='$phone', Pass='$password'
+	where Email =".$_SESSION['Email'];
+	$result=mysqli_query($conn,$sql);
+	//if update is successful don't forget to update the seesion variables too the redirect to index.php
+	if($result){
+		$_SESSION['Name']=$row['Name'];
+		$_SESSION['Email']=$row['Email'];
+		$_SESSION['Pass']=$row['Pass'];
+		$_SESSION['Phone']=$row['Phone'];
+		header("Location:index.php");
+	}
+	else{
+		echo "Invalid Input";
+	}
+}
     
-    // 	$conn->close();
-// }
+    	$conn->close();
+}
     ?>
 
 

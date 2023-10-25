@@ -16,10 +16,13 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Employees</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../Public/CSS/carshowdash.css">
+    <style>
+       td button{
+            width: 70px;
+        }
+    </style>
 </head>
 
 <body>
@@ -53,10 +56,11 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Email<span class="icon-arrow">&UpArrow;</span></th>
                             <th> Phone<span class="icon-arrow">&UpArrow;</span></th>
+                            <th> DOE<span class="icon-arrow">&UpArrow;</span></th>
                             <th> Total Hours <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Salary <span class="icon-arrow">&UpArrow;</span></th>
-                            <th>------- <span class="icon-arrow">&UpArrow;</span></th>
-                            <th>------- <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> -----</th>
+                            <th> -----</th>
 
                         </tr>
                     </thead>
@@ -72,12 +76,14 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                                     $phone = $row["Phone"];
                                     $totalhours = $row["TotalHours"];
                                     $salary = $row["Salary"];
-                                    
+                                    $doe=$row["DateOfEmployment"];
                                     echo'<tr>';
                                     echo '<td>' .++$i. '</td>';
                                     echo '<td>' .$name. '</td>';
                                     echo '<td>' .$email. '</td>';
                                     echo '<td>' .$phone. '</td>';
+                              
+                                    echo '<td>' .$doe. '</td>';
                                     echo '<td>' .$totalhours. '</td>';
                                     echo '<td>' .$salary. '</td>';
                             

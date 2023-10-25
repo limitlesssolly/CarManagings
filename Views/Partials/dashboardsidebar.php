@@ -40,10 +40,13 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Cars</a></li> 
-                        <li><a href="../../Views/Pages/carshowdash.php">Show</a></li>  
+ 
+                        <li><a href="../../Views/Pages/carshowdash.php">Show</a></li>
+                        <li><a href="../../Views/Pages/requestedcars.php">Requested Cars</a></li> 
                         <li><a href="../Pages/addCar.php">Add</a></li>
                         <li><a href="../Pages/editCar.php">Edit</a></li>
-                         
+ 
+                
                     </ul>
                 
                  </li>
@@ -61,7 +64,10 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Rides</a></li>  
-                        <li><a href="">Add</a></li> 
+                        
+                        <li><a href="">Add</a></li>
+                        <li><a href="../Pages/assigntrip.php">Assign driver and car</a></li>  
+                        
                         <li><a href="">Edit</a></li>
                         <li><a href="">Delete</a></li>
                     </ul>
@@ -107,6 +113,7 @@
                             <li><a href="../../Views/Pages/addcustomers.php">Add</a></li>
                             <li><a href="../../Views/Pages/editcustomers.php">Edit</a></li>
                         </ul>
+                        
 
                 </li>
                 <li>
@@ -116,12 +123,26 @@
                     <i class='bx bx-star'></i>
                         <span class="link_name">Ratings</span>  
                     </a>
+                    </div>
+
+
+
+                </li> 
+                <li>
+
+                    <div class="iocn_link">
+                    <a href="">
+                     <i class='bx bx-chat'></i>
+                        <span class="link_name">Chats</span>  
+                    </a>
 
                     </div>
 
 
 
-                </li>  
+                </li>   
+
+               
                 <li>
 
                     <div class="iocn_link">
@@ -141,7 +162,25 @@
                 </li>  
 
 
-               
+                <li>
+
+<div class="iocn_link">
+<a href="../Pages/customers.php">
+    <i class='bx bx-group'></i>
+    <span class="link_name">Admins</span>  
+</a>
+<i class='bx bx-chevron-down arrow'></i>  
+</div>
+
+<ul class="sub-menu">
+    <li><a class="link_name" href="">Admins</a></li>
+    <li><a href="../../Views/Pages/admins.php">Show</a></li>
+    <li><a href="../../Views/Pages/addadmins.php">Add</a></li>
+    <li><a href="../../Views/Pages/editadmins.php">Edit</a></li>
+</ul>
+
+
+</li>
                
                
                 

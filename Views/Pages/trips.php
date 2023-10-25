@@ -11,6 +11,11 @@
 
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../Public/CSS/carshowdash.css">
+    <style>
+         td button{
+            width: 70px;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,83 +47,57 @@
         <table>
             <thead>
                 <tr>
-                    <th> ID <span class="icon-arrow">&UpArrow;</span></th>
-                    <th> Name <span class="icon-arrow">&UpArrow;</span></th>
-                    <th> Driver <span class="icon-arrow">&UpArrow;</span></th>
-                    <th> Start <span class="icon-arrow">&UpArrow;</span></th>
-                    <th> Endpoint <span class="icon-arrow">&UpArrow;</span></th>
-                    <th> Trip Date <span class="icon-arrow">&UpArrow;</span></th>
-                    <th> Status <span class="icon-arrow">&UpArrow;</span></th>
-                    <th> Car Plate <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> NO. </th>
+                    <th>ID</th>
+                    <th> Car Name </th>
+                    <th> Driver </th>
+                    <th> Customer Email <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Start</th>
+                    <th> Endpoint </th>
+                    <th> Date <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Time <span class="icon-arrow">&UpArrow;</span></th>
+                    <th> Status </th>
+                    <th> Car Plate </th>
                     <th> Trip Cost <span class="icon-arrow">&UpArrow;</span></th>
+                    <th>not assigned</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td> 1 </td>
-                    <td> <img src="../../Public/Images/carla.png" alt="">Toyota</td>
+                    <td>12502</td>
+                    <td>Toyota</td>
                     <td> John Doe </td>
+                    <td> moamen@gmail.com </td>
                     <td> City A </td>
                     <td> City B </td>
                     <td> 2023-10-24 </td>
+                    <td>12:34pm</td>
                     <td>
                         <p class="status delivered">Delivered</p>
                     </td>
                     <td> 123|ن ص ع </td>
                     <td> <strong> $128.90 </strong></td>
                 </tr>
+
                 <tr>
                     <td> 2 </td>
-                    <td> <img src="../../Public/Images/carla.png" alt="">Toyota</td>
-                    <td> karim  </td>
-                    <td> Cairo </td>
-                    <td> alex </td>
-                    <td> 2023-10-12 </td>
-                    <td>
-                        <p class="status delivered">Delivered</p>
-                    </td>
-                    <td> 123|ن ص ع </td>
-                    <td> <strong> $128.90 </strong></td>
-                </tr>
-                <tr>
-                    <td> 3 </td>
-                    <td> <img src="../../Public/Images/carla.png" alt="">Toyota</td>
-                    <td> ashraf </td>
-                    <td> newyork</td>
-                    <td> California </td>
-                    <td> 2023-10-24 </td>
-                    <td>
-                        <p class="status delivered">Delivered</p>
-                    </td>
-                    <td> 123|ن ص ع </td>
-                    <td> <strong> $128.90 </strong></td>
-                </tr>
-                <tr>
-                    <td> 4 </td>
-                    <td> <img src="../../Public/Images/carla.png" alt="">Toyota</td>
-                    <td> John  </td>
+                    <td>----</td>
+                    <td>----</td>
+                    <td> ----- </td>
+                    <td> moamen@gmail.com </td>
                     <td> City A </td>
                     <td> City B </td>
                     <td> 2023-10-24 </td>
+                    <td>12:34pm</td>
                     <td>
-                        <p class="status delivered">Delivered</p>
+                        <p class="status pending">Pending</p>
                     </td>
-                    <td> 123|ن ص ع </td>
+                    <td> ----</td>
                     <td> <strong> $128.90 </strong></td>
+                    <td><form action="../Pages/assigntrip.php"> <button class="status shipped">assign</button> </form> </td>
                 </tr>
-                <tr>
-                    <td> 5 </td>
-                    <td> <img src="../../Public/Images/carla.png" alt="">Toyota</td>
-                    <td> John Doe </td>
-                    <td> City A </td>
-                    <td> City B </td>
-                    <td> 2023-10-24 </td>
-                    <td>
-                        <p class="status delivered">Delivered</p>
-                    </td>
-                    <td> 123|ن ص ع </td>
-                    <td> <strong> $128.90 </strong></td>
-                </tr>
+               
                 <!-- Add more rows with trip details here -->
             </tbody>
             <!-- ... (your existing script includes) ... -->

@@ -1,10 +1,8 @@
 <?php
 	session_start();
-    include_once "includes/dbh.inc.php";
-
-    
-    $id=$_SESSION['ID'];
-    $sql="delete from users where id=".$id;
+    include_once "../../includes/db.php";
+    $email=$_SESSION['Email'];
+    $sql="delete from users where Email=".$email;
     $result=mysqli_query($conn,$sql);
     if($result){
         session_destroy();

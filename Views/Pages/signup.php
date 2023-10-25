@@ -1,5 +1,4 @@
 <?php
-// session_start();
 include_once "../../includes/db.php";
 ?>
 
@@ -69,44 +68,54 @@ include_once "../../includes/db.php";
 		</div>
 	</div>
 	<?php
-			 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-			 	$name = htmlspecialchars($_POST["Name"]);
-				$email = htmlspecialchars($_POST["Email"]);
-			 	$phone = htmlspecialchars($_POST["Phone"]);
-			 	$password = htmlspecialchars($_POST["Pass"]);
-			 	$confirmpassword = htmlspecialchars($_POST["confirm"]);
-					$sql = "insert into users(Name,Email,Phone,Pass) 
-					values('$name','$email','$phone','$password')";
-					$result = mysqli_query($conn, $sql);
-			 	if($result)
-			 	{
-			 		echo "<h3> Account successfully created! Sign in now.</h3>";
-			 	}
-			 	else{
-			 		echo "<h3> We seem to be facing an issue currently try again l8r :c </h3>";
-				}
-			 }
+			//  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			//  	$name = htmlspecialchars($_POST["Name"]);
+			// 	$email = htmlspecialchars($_POST["Email"]);
+			//  	$phone = htmlspecialchars($_POST["Phone"]);
+			//  	$password = htmlspecialchars($_POST["Pass"]);
+			//  	$confirmpassword = htmlspecialchars($_POST["confirm"]);
+			// 		$sql = "insert into users(Name,Email,Phone,Pass) 
+			// 		values('$name','$email','$phone','$password')";
+			// 		$result = mysqli_query($conn, $sql);
+			//  	if($result)
+			//  	{
+			//  		echo "<h3> Account successfully created! Sign in now.</h3>";
+			//  	}
+			//  	else{
+			//  		echo "<h3> We seem to be facing an issue currently try again l8r :c </h3>";
+			// 	}
+			//  }
 			 
-			?>
+			// ?>
 	<?php
-			/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	session_start();
+	require_once "../../includes/db.php";
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
 			$email = $_POST['Email'];  
 			$password = $_POST['Pass'];  
-			
 			$email = mysqli_real_escape_string($conn, $email);  
-			$password = mysqli_real_escape_string($conn, $password);  
-			
+			$password = mysqli_real_escape_string($conn, $password);  	
 			$sql = "SELECT * FROM users WHERE Email = '$email' AND Pass = '$password'";  
 			$result = mysqli_query($conn, $sql);  
 			$row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
 			$count = mysqli_num_rows($result);  
-			
+			if($row=mysqli_fetch_array($result)){
+				$_SESSION['Name']=$row['Name'];
+				$_SESSION['Email']=$row['Email'];
+				$_SESSION['Pass']=$row['Pass'];
+				$_SESSION['Phone']=$row['Phone'];
+				header("Location:index.php");
+			   }
+			   else{
+				echo "Invalid Input";
+			   }
+			  
 			if($count == 1){  
 				header("Location:index.php");
 			}  
 			else{  
 				echo "<h3> Login failed. Invalid username or password.</h3>";  
-			}}  */
+			}}  
 			?>
 			<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 			<script src="../../Public/js/signup.js"></script>

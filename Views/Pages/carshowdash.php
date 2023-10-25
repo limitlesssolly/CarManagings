@@ -11,6 +11,11 @@
 
     <link rel="stylesheet" href="../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../Public/CSS/carshowdash.css">
+    <style>
+        td button{
+            width: 70px;
+        }
+    </style>
 </head>
 
 <body>
@@ -44,9 +49,13 @@
                             <th> Id <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Type<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Number <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Plate <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Category <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Total Profit <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> History </th>
+                            <th>Owner</th>
+                            <th>----</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,9 +65,13 @@
                             <td> Sedan </td>
                             <td> 123|ن ص ع </td>
                             <td>
-                                <p class="status delivered">Delivered</p>
+                                <p class="status pending">in ride</p>
                             </td>
+                            <td>Ours</td>
                             <td> <strong> $128.90 </strong></td>
+                            <td><form action="" ><button class="status shipped">Show</button></form></td>
+                            <td></td>
+                            <td><form action="" ><button class="status cancelled">Delete</button></form></td>
                         </tr>
                         <tr>
                             <td> 2 </td>
@@ -67,9 +80,14 @@
                             <td> suv </td>
                             <td> 154|ت ص غ </td>
                             <td>
-                                <p class="status cancelled">Cancelled</p>
+                                <p class="status delivered">available</p>
                             </td>
+                            <td>rented</td>
                             <td> <strong>$5350.50</strong> </td>
+                            <td><form action="" ><button class="status shipped">Show</button></form></td>
+                            <td><form action="../Pages/rentedcarinfo.php" ><button class="status shipped">Show</button></form></td>
+                            <td><form action="" ><button class="status cancelled">Delete</button></form></td>
+
                         </tr>
                         <tr>
                             <td> 3</td>
@@ -79,67 +97,11 @@
                             <td>
                                 <p class="status shipped">Shipped</p>
                             </td>
+                            <td>Ours</td>
                             <td> <strong>$210.40</strong> </td>
-                        </tr>
-                        <tr>
-                            <td> 4</td>
-                            <td><img src="../../Public/Images/carla.png" alt=""> Hyundai </td>
-                            <td> suv </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status delivered">Delivered</p>
-                            </td>
-                            <td> <strong>$149.70</strong> </td>
-                        </tr>
-                        <tr>
-                            <td> 5</td>
-                            <td><img src="../../Public/Images/carla.png" alt="">Nissan </td>
-                            <td> sedan </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status pending">Pending</p>
-                            </td>
-                            <td> <strong>$399.99</strong> </td>
-                        </tr>
-                        <tr>
-                            <td> 6</td>
-                            <td><img src="../../Public/Images/carla.png" alt=""> Hai S </td>
-                            <td> van </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status cancelled">Cancelled</p>
-                            </td>
-                            <td> <strong>$399.99</strong> </td>
-                        </tr>
-                        <tr>
-                            <td> 7</td>
-                            <td><img src="../../Public/Images/carla.png" alt=""> Hyundai </td>
-                            <td> sedan </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status delivered">Delivered</p>
-                            </td>
-                            <td> <strong>$399.99</strong> </td>
-                        </tr>
-                        <tr>
-                            <td> 8</td>
-                            <td><img src="../../Public/Images/carla.png" alt=""> Nissan </td>
-                            <td> hatchback </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status pending">Pending</p>
-                            </td>
-                            <td> <strong>$149.70</strong> </td>
-                        </tr>
-                        <tr>
-                            <td> 9</td>
-                            <td><img src="../../Public/Images/carla.png" alt="">Hyundai </td>
-                            <td> Suv </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status cancelled">Cancelled</p>
-                            </td>
-                            <td> <strong>$249.99</strong> </td>
+                            <td><form action="" ><button class="status shipped">Show</button></form></td>
+                            <td></td>
+                            <td><form action="" ><button class="status cancelled">Delete</button></form></td>
                         </tr>
                     </tbody>
                     <script src="../../Public/js/carshowdash.js"></script>

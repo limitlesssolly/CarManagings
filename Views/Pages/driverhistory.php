@@ -46,7 +46,7 @@
                             <th> Customer Email<span class="icon-arrow">&UpArrow;</span></th>
                             <th> Cost <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Date <span class="icon-arrow">&UpArrow;</span></th>
-                            
+                            <th> Time <span class="icon-arrow">&UpArrow;</span></th>
 
 
                         </tr>
@@ -59,6 +59,7 @@
                             <td> Mohamed@gmail.com</td>
                             <td>$120</td>
                             <td  >12/10/2003</td>
+                            <td  >12:34pm</td>
                         </tr>
                        
 

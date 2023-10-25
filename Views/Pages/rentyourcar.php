@@ -145,6 +145,15 @@ input[type=text]:valid+.labella {
     color: #fff;
 
 }
+ 
+         #home::before{
+    
+    width: 0%;
+   
+ }  #rent::before{
+    width: 100%;
+ }
+     
     </style>
 </head>
 <style>

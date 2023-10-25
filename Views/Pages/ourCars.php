@@ -16,7 +16,15 @@
    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
    
-  
+  <style>
+         #home::before{
+    
+    width: 0%;
+   
+ }  #book::before{
+    width: 100%;
+ }
+    </style>
 </head>
 <body>
   

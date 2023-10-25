@@ -20,7 +20,15 @@
 
   <title>Personal Information</title>
 
-
+  <style>
+         #home::before{
+    
+    width: 0%;
+   
+ }  #book::before{
+    width: 100%;
+ }
+    </style>
 
 <body>
 
@@ -47,23 +55,23 @@
                     <form  id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name">
+                            <input type="text" name="name"  id="name" required>
                             <span>Name</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="email" id="email" required>
                             <span>Email</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
+                            <input type="text" name="phone" id="phone" required>
                             <span>Phone</span>
                         </div>
 
               
                         <div class="inputBox">
-                            <textarea  name="req" id="req"></textarea>
+                            <textarea  name="req" id="req" required></textarea>
                             <span>Comment</span>
                         </div>
                         <div id="error"> </div>

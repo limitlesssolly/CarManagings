@@ -36,6 +36,15 @@
       height: 65vh;
       width: 30vw;
     }
+     
+         #home::before{
+    
+    width: 0%;
+   
+ }  #book::before{
+    width: 100%;
+ }
+    
   </style>
   <script src="../../Public/js/script.js" defer></script>
 </head>

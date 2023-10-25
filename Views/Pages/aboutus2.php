@@ -14,6 +14,15 @@
 
     <link rel="stylesheet" href="">
     <title>About-us</title>
+    <style>
+         #home::before{
+    
+    width: 0%;
+   
+ }  #about::before{
+    width: 100%;
+ }
+    </style>
 </head>
 
 <body>

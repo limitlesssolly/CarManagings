@@ -12,10 +12,10 @@
     </label>
     <nav class="navbar">
         <a href="../../Views/Pages/index.php" id="home">Home</a>
-        <a href="../../Views/Pages/bookyourcar.php" id="aboutus">Book your ride</a>
-        <a href="../../views/pages/rentyourcar.php" id="ourservices"> Rent your car</a>
-        <a href="../../Views/Pages/aboutus2.php" id="ourclients">About Us</a>
-        <a href="../../Views/Pages/ratings.php" id="ourclients">Ratings</a>
+        <a href="../../Views/Pages/bookyourcar.php" id="book">Book your ride</a>
+        <a href="../../views/pages/rentyourcar.php" id="rent"> Rent your car</a>
+        <a href="../../Views/Pages/aboutus2.php" id="about">About Us</a>
+        <a href="../../Views/Pages/ratings.php" id="ratings">Ratings</a>
         <a href="../../Views/Pages/contactus.php" id="contactus">Contact Us</a>
         <a href="../../Views/Pages/signup.php"  id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i> </a>
     </nav>

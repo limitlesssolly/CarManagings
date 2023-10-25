@@ -1,5 +1,10 @@
 <?php
 include_once "../../includes/db.php";
+$username = "root";
+$password = "";
+$database = "24sevenlimousine";
+$mysqli = new mysqli("localhost", $username, $password, $database);
+
 ?>
 
 <!DOCTYPE html>
@@ -112,23 +117,22 @@ button:hover {
                         </div>
                         <div class="name">
                             <label for="fullname">Full Name</label>
-                            <input type="text" class="field" name="name" placeholder="enter new name" required> <br>
+                            <input type="text" class="field" name="name" placeholder="enter new name" > <br>
                         </div>
 
                        
 
                         <div class="contactinfo">
                             <label for="contactnumbers">Contact Number</label>
-                            <input type="text" class="field" name="phone" placeholder="enter new phone" required>  
+                            <input type="text" class="field" name="phone" placeholder="enter new phone" >  
                         </div>
 
                         <div class="status">
                             
                             <label for="salary">Status</label>
-                            <input type="text" class="field" name="status" placeholder="enter new status" required>                           
+                            <input type="text" class="field" name="status" placeholder="enter new status" >                           
 
-                            <label for="date">date of employment </label>
-                            <input type="date" class="field" name="date" required> <br>
+                            
 
                         </div>
 
@@ -142,23 +146,39 @@ button:hover {
     </section>
 
 
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-         $name = htmlspecialchars($_POST["name"]);
-         $email = htmlspecialchars($_POST["email"]);
-         $phone = htmlspecialchars($_POST["phone"]);
-         $status = htmlspecialchars($_POST["status"]);
-         $date = htmlspecialchars($_POST["date"]);
 
-         $sql = "insert into drivers(Name,Email,Phone,Status,Dateofemployment) 
-         values('$name','$email','$phone','$status', '$date')";
-         $result = mysqli_query($conn, $sql);
 
-         if ($result) {
-            //  header("Location:drivers.php");
-         }
-     }
-    ?>
+                <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                         $email=$_POST['email'];
+                         $name=$_POST['name'];
+                         $phone=$_POST['phone'];
+                         $status=$_POST['status'];
+                         $c=0;
+                         if( $email !=null && $name!=null){
+                            $sql = "UPDATE drivers SET Name = '$name' WHERE Email='$email'";
+                            $result = mysqli_query($conn, $sql);
+                            $c++;
+                         }
+                         if( $email !=null && $phone!=null){
+                            $sql = "UPDATE drivers SET Phone = '$phone' WHERE Email='$email'";
+                            $result = mysqli_query($conn, $sql);
+                            $c++;
+                         }
+
+                         if( $email !=null && $totalhours!=null){
+                            $sql = "UPDATE drivers SET Status = $status WHERE Email='$email'";
+                            $result = mysqli_query($conn, $sql);
+                            $c++;
+                         }
+
+  
+                         if ($c>0) {
+                            echo "<meta http-equiv='refresh' content='0'>";
+                         }
+                    }
+                    
+                 ?>
 
     <script>
         let arrow = document.querySelectorAll(".arrow");

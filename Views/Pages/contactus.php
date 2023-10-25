@@ -71,17 +71,17 @@
           <form action="index.html" autocomplete="off">
             <h3 class="title">Contact us</h3>
             <div class="input-container">
-              <input type="text" name="name" class="input" />
+              <input type="text" name="name" class="input" required/>
               <label for="">Username</label>
               <span>Username</span>
             </div>
             <div class="input-container">
-              <input type="email" name="email" class="input" />
+              <input type="email" name="email" class="input" required/>
               <label for="">Email</label>
               <span>Email</span>
             </div>
             <div class="input-container">
-              <input type="tel" name="phone" class="input" />
+              <input type="tel" name="phone" class="input" required />
               <label for="">Phone</label>
               <span>Phone</span>
             </div>

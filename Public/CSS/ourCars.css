@@ -78,3 +78,15 @@ body, h1, h2, h3, p, ul, li {
 .car:hover .info {
   display: block; /* Display the elements when hovering */
 }
+.bodytext{
+
+  margin-top: -10px;
+  text-align: center;
+  background-color: #010d3468;
+  /* background-color: #24262b; */
+}
+.bodytext h1{
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+}

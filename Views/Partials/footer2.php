@@ -8,7 +8,7 @@
           <ul>
             <li>0228452245</li>
             <li><a href="mailto:info@dperformance.org">info@dperformance.org</a></li>
-            <p>We are open from 10am — 5pm on week days.</p>
+            <p>We are open from 10am — 5pm on week days</p>
 
           </ul>
         </div>
@@ -17,7 +17,8 @@
           <p>Our mission is to drive you where ever you want, when ever you want safe and sound.<br>
           <br>
             Tax Registration Number : 849-934-698<br>
-          3 El-Nafoura SQ. ,Mokattam, Cairo, Egypt </p>
+            <br>
+            Main Address: Alexandria - New Miami - Behind Marseilia Company, next to the European Center for Car Maintenanc </p>
           
 
         </div>

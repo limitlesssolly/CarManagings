@@ -75,8 +75,10 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                                     echo '<td>' .$phone. '</td>';
                                     echo '<td>' .$status. '</td>';
                                     echo '<td>' .$date. '</td>';
-                                    echo '<td> <form action="../../Views/Pages/driverhistory.php"> <button class="status shipped">Show</button> </form>  </td>';
-                                    echo '<td>  <button class="status cancelled">Delete</button></td>';
+                                    echo '<td> <form action="../Pages/driverhistory.php"> <button class="status shipped">Show</button> </form>  </td>';
+                                    echo '<td>  <form method="post"> 
+                                    <input type="hidden" name="email" value="'.$email.'">
+                                    <button class="status cancelled">Delete</button></form></td>';
                                     echo '</tr>';
                                 }
                             }
@@ -110,7 +112,19 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
 
 
     </script>
+    <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                         $email=$_POST['email'];
+                         $sql="DELETE FROM drivers WHERE Email='$email'";
 
+                         $result = mysqli_query($conn, $sql);
+
+                         if ($result) {
+                            echo "<meta http-equiv='refresh' content='0'>";
+                         }
+                    }
+                    
+     ?>
 
 
 

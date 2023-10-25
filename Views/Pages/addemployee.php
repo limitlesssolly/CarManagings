@@ -13,6 +13,12 @@ include_once "../../includes/db.php";
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <title>Add employee</title>
+    <style>
+        .contactForm{
+            position: relative;
+            top: -43px;
+        }
+    </style>
 </head>
 <body>  
         <?php
@@ -25,7 +31,7 @@ include_once "../../includes/db.php";
             </div>
             <!-- form -->
             
-            <div class="contactForm">
+            <div class="contactForm" >
                     <h2 style="font-size: 21px;">Adding New Employee</h2>
                     <form method="post" id="contactForm">
 
@@ -52,6 +58,11 @@ include_once "../../includes/db.php";
                         <div class="inputBox">
                             <input type="text" name="phone" id="phone" required >
                             <span>Phone</span>
+                        </div>
+
+                        <div class="inputBox">
+                            <input type="text" name="doe" id="phone" required >
+                            <span>Date of Employment</span>
                         </div>
 
                         <div class="inputBox">
@@ -87,9 +98,10 @@ include_once "../../includes/db.php";
             $totalhours = htmlspecialchars($_POST["totalhours"]);
             $salary = htmlspecialchars($_POST["salary"]);
             $pass=htmlspecialchars($_POST["password"]);
+            $doe=htmlspecialchars($_POST["doe"]);
 
-            $sql = "insert into employees(Name,Email,Password,Phone,TotalHours,Salary) 
-            values('$name','$email','$pass','$phone','$totalhours', '$salary')";
+            $sql = "insert into employees(Name,Email,Password,Phone,DateOfEmployment,TotalHours,Salary) 
+            values('$name','$email','$pass','$phone','$doe','$totalhours', '$salary')";
             $result = mysqli_query($conn, $sql);
    
             if ($result) {

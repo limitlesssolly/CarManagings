@@ -17,6 +17,7 @@
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
    
   <style>
+<<<<<<< HEAD
          #home::before{
     
     width: 0%;
@@ -25,20 +26,44 @@
     width: 100%;
  }
     </style>
+=======
+    .bodyimage  img{
+    position: relative;
+    margin-top: -140px;
+    width: 100%;
+    height: auto;
+ }
+
+    .bodytext{
+
+margin-top: -10px;
+text-align: center;
+background-color: #010d3468;
+/* background-color: #24262b; */
+}
+.bodytext h1{
+font-size: 30px;
+font-weight: 400;
+color: #fff;
+}
+  </style>
+  
+>>>>>>> 029b6f2d77afb7ff3e148c95739466af7bd69de1
 </head>
 <body>
   
 <?php
             include('../Partials/navbar2.php');
         ?>
-          <section>
+         <section>
     <div class="bodyimage">
           <img src="../../Public/Images/carr.jpg" alt="">
     </div>
   </section>
+  <div class="bodytext">
+       <h1>Choose your car</h1>
+  </div>
 
-  <section class="car-collection">
-    <h1>choose your car</h1>
     <div class="car-listing">
       <div class="car">
         <img src="../../public/Images/sedan.jpg" alt="Car 1">

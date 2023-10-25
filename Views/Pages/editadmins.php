@@ -24,31 +24,26 @@
                     <form  id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name" placeholder="please enter the id of the admin">
+                            <input type="text" name="name" id="name" placeholder="Please enter the id of the admin" required>
                             <span>Id</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="email" id="email" required>
                             <span>Name</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="address">
+                            <input type="text" name="email" id="address" required>
                             <span>Email</span>
                         </div>
 
-
                         <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
+                            <input type="text" name="phone" id="phone" required>
                             <span>Phone</span>
                         </div>
 
-
-                     
                         <div id="error"> </div>
-
-                      
 
                         <div class="inputBox">
                             <input type="submit" value="SEND">
@@ -73,13 +68,6 @@
             sidebarBtn.addEventListener("click",()=>{
                 sidebar.classList.toggle("close")
             })
-
-
         </script>
-
-                
-
-
-
 </body>
 </html>

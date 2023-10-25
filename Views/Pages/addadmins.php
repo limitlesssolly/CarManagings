@@ -24,39 +24,36 @@
                     <form  id="contactForm">
 
                         <div class="inputBox">
-                            <input type="text" name="name"  id="name">
+                            <input type="text" name="name"  id="name" required>
                             <span>Name</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="email">
+                            <input type="text" name="email" id="email" required>
                             <span>Email</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="address">
+                            <input type="text" name="email" id="address" required>
                             <span>Id</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="password" id="password">
+                            <input type="text" name="password" id="password" required>
                             <span>Password</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="password" id="confirmpassword">
+                            <input type="text" name="password" id="confirmpassword" required>
                             <span> Confirm Password</span>
                         </div>
 
                         <div class="inputBox">
-                            <input type="text" name="phone" id="phone" >
+                            <input type="text" name="phone" id="phone" required>
                             <span>Phone</span>
                         </div>
 
-                                   
                         <div id="error"> </div>
-
-                      
 
                         <div class="inputBox">
                             <input type="submit" value="SEND">
@@ -81,13 +78,6 @@
             sidebarBtn.addEventListener("click",()=>{
                 sidebar.classList.toggle("close")
             })
-
-
         </script>
-
-                
-
-
-
 </body>
 </html>

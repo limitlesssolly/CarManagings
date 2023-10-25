@@ -80,7 +80,11 @@
           <form action="index.html" autocomplete="off">
             <h3 class="title">Contact us</h3>
             <div class="input-container">
+<<<<<<< HEAD
               <input type="text" name="name" class="input" required />
+=======
+              <input type="text" name="name" class="input" required/>
+>>>>>>> 029b6f2d77afb7ff3e148c95739466af7bd69de1
               <label for="">Username</label>
               <span>Username</span>
             </div>
@@ -90,7 +94,11 @@
               <span>Email</span>
             </div>
             <div class="input-container">
+<<<<<<< HEAD
               <input type="tel" name="phone" class="input" required/>
+=======
+              <input type="tel" name="phone" class="input" required />
+>>>>>>> 029b6f2d77afb7ff3e148c95739466af7bd69de1
               <label for="">Phone</label>
               <span>Phone</span>
             </div>

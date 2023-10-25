@@ -65,7 +65,11 @@
                         </div>
 
                         <div class="inputBox">
+<<<<<<< HEAD
                             <input type="text" name="phone" id="phone" required>
+=======
+                            <input type="text" name="phone" id="phone" requuired>
+>>>>>>> 029b6f2d77afb7ff3e148c95739466af7bd69de1
                             <span>Phone</span>
                         </div>
 

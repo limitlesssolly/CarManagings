@@ -1,5 +1,5 @@
 <header class="header">
-    <a href="/" class="logo">24Sevenlimousine</a>
+    <a href="../Pages/index.php" class="logo">24Sevenlimousine</a>
     
     <input type="checkbox" id="check">
     <label for="check" class="icons">

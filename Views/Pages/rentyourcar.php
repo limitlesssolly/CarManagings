@@ -16,146 +16,6 @@ include_once "../../includes/db.php";
         integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
     <title>Rent Your Car</title>
-    <style>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    /* box-sizing: border-box; */
-}
-
-.bodyimage img {
-
-    position: relative;
-    margin-top: -50px;
-    width: 100%;
-    height: auto;
-}
-
-h1 {
-    font-weight: bold;
-    margin: 0;
-    text-align: center;
-    font-size: 3rem;
-}
-
-form {
-    position: relative;
-    left: 10%;
-    top: 10%;
-    width: 50%;
-}
-
-body {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    background: white;
-    align-items: center;
-    flex-flow: row wrap;
-    align-content: center;
-}
-
-.container {
-    /* max-width: 400px; */
-    margin-left: 37%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 20px 40px;
-
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    width: 700px;
-    margin: 30px;
-}
-
-.formal {
-    position: relative;
-    left: 23%;
-}
-
-.info {
-    position: relative;
-    height: 50px;
-    line-height: 50px;
-    margin: 30px;
-}
-
-input[type=text] {
-    position: relative;
-    width: 100%;
-    outline: none;
-    font-size: 1em;
-    padding: 0 10px;
-    line-height: 50px;
-    border-radius: 10px;
-    border: 2px solid #c5c7cc63;
-    background: transparent;
-    transition: 0.1s ease;
-    z-index: 1111;
-}
-
-.labella {
-    /* position: relative; */
-    font-size: 1.3em;
-    color: #c5c7cc63;
-    padding: 0 5px;
-    margin: 0 20px;
-    background-color: white; 
-    transition: 0.2s ease; 
-}
-
- input[type=text].focus,
-input[type=text]:valid {
-    color: #002138;
-    border: 2px solid #002138;
-} 
-
- input[type=text].focus+.labella,
-input[type=text]:valid+.labella {
-    color: #002138;
-    height: 20px;
-    line-height: 30px;
-    transform: translate(-5px, -65px) scale(0.88);
-    z-index: 1111;
-} 
-
-.subs {
-    font-size: 17px;
-    background: transparent;
-    color: #000;
-    text-decoration: none;
-    font-family: 500;
-    border: none;
-    padding: 15px 29px;
-    border: 2px solid rgb(1, 5, 28);
-    border-radius: 10px;
-    transition: 0.9s;
-    position: relative;
-    left: 35%;
-}
-
-.subs:hover {
-    background: #01051c;
-    letter-spacing: 3px;
-    color: #fff;
-
-}
- 
-         #home::before{
-    
-    width: 0%;
-   
- }  #rent::before{
-    width: 100%;
- }
-     
-    </style>
-</head>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -163,20 +23,25 @@ input[type=text]:valid+.labella {
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+     font-family: 'Poppins',sans-serif;
+
     /* box-sizing: border-box; */
 }
-
+/* .header{
+    background-color: #070c1523;
+        backdrop-filter: blur(50px);
+} */
 .bodyimage img {
 
     position: relative;
-    margin-top: -50px;
+    margin-top: -320px;
     width: 100%;
     height: auto;
 }
 
 h1 {
-    font-weight: bold;
+    font-weight: 600;
+    /* font-weight: bold; */
     margin: 0;
     text-align: center;
     font-size: 3rem;
@@ -203,18 +68,18 @@ body {
     margin-left: 37%;
     margin-top: 30px;
     margin-bottom: 30px;
-    padding: 20px 40px;
+    padding: 20px 0px;
 
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 700px;
-    margin: 30px;
+    width: 580px;
+    margin: 20px;
 }
 
 .formal {
     position: relative;
-    left: 23%;
+    left: 18%;
 }
  
 .info {
@@ -232,7 +97,7 @@ input[type=text] {
     padding: 0 10px;
     line-height:40px;
     border-radius: 10px;
-    border: 2px solid #c5c7cc63;
+    border: 1px solid #1d1c1e77;
     background: transparent;
     transition: 0.1s ease;
     z-index: 1111;
@@ -241,7 +106,8 @@ input[type=text] {
 .labella {
     position: relative;
     top: -55%;
-    font-size: 1em;
+    font-size: 1rem;
+   
     color: #c5c7cc63;
     padding: 0 5px;
     margin: 0 20px;
@@ -257,7 +123,7 @@ input[type=text]:valid {
 
 input[type=text]:focus+.labella,
 input[type=text]:valid+.labella {
-    color: #002138;
+    color: #1d1c1e77;
     height: 20px;
     line-height: 30px;
     transform: translate(-5px, -30px) scale(1);
@@ -265,15 +131,17 @@ input[type=text]:valid+.labella {
 }
 
 .subs {
-    font-size: 17px;
+    font-size: 16px;
     background: transparent;
     color: #000;
     text-decoration: none;
     font-family: 500;
     border: none;
     padding: 15px 29px;
-    border: 2px solid rgb(1, 5, 28);
-    border-radius: 10px;
+    width: 160px;
+    border: 1px solid rgb(1, 5, 28);
+    border-radius: 8px;
+    cursor: pointer;
     transition: 0.9s;
     position: relative;
     left: 35%;
@@ -292,7 +160,7 @@ input[type=text]:valid+.labella {
     include('../Partials/navbar2.php');
     ?>
     <div class="bodyimage">
-        <img src="../../Public/Images/carlos.jpg " alt="">
+        <img src="../../Public/Images/blackcarr.jpg" alt="">
     </div>
     <div class="container">
         <div class="title">
@@ -335,7 +203,7 @@ input[type=text]:valid+.labella {
                 <input type="text" name="expectedmonthlyrent" required>
                 <div class="labella">Expected Monthly Rent</div>
             </div>
-            <button type="submit" name="submit" class="subs">submit</button>
+            <button type="submit" name="submit" class="subs">SUBMIT</button>
         </form>
     </div>
     <?php

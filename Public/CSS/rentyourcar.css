@@ -4,20 +4,25 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+     font-family: 'Poppins',sans-serif;
+
     /* box-sizing: border-box; */
 }
-
+/* .header{
+    background-color: #070c1523;
+        backdrop-filter: blur(50px);
+} */
 .bodyimage img {
 
     position: relative;
-    margin-top: -50px;
+    margin-top: -320px;
     width: 100%;
     height: auto;
 }
 
 h1 {
-    font-weight: bold;
+    font-weight: 600;
+    /* font-weight: bold; */
     margin: 0;
     text-align: center;
     font-size: 3rem;
@@ -41,80 +46,83 @@ body {
 }
 
 .container {
-    /* max-width: 400px; */
     margin-left: 37%;
     margin-top: 30px;
     margin-bottom: 30px;
-    padding: 20px 40px;
+    padding: 20px 0px;
 
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 700px;
-    margin: 30px;
+    width: 580px;
+    margin: 20px;
 }
 
 .formal {
     position: relative;
-    left: 23%;
+    left: 18%;
 }
-
+ 
 .info {
     position: relative;
-    height: 50px;
-    line-height: 50px;
-    margin: 30px;
+    height: 40px;
+    line-height: 0px;
+    margin: 25px;
 }
 
 input[type=text] {
     position: relative;
-    width: 100%;
+    width: 300px;
     outline: none;
     font-size: 1em;
     padding: 0 10px;
-    line-height: 50px;
+    line-height:40px;
     border-radius: 10px;
     border: 2px solid #c5c7cc63;
     background: transparent;
     transition: 0.1s ease;
     z-index: 1111;
-}
+} 
 
 .labella {
-    /* position: relative; */
-    font-size: 1.3em;
+    position: relative;
+    top: -55%;
+    font-size: 1rem;
+   
     color: #c5c7cc63;
     padding: 0 5px;
     margin: 0 20px;
-    /* background-color: white; */
-    /* transition: 0.2s ease; */
+    background-color: white;
+    transition: 0.2s ease;
 }
-
- input[type=text]:focus,
+ 
+input[type=text]:focus,
 input[type=text]:valid {
     color: #002138;
     border: 2px solid #002138;
 } 
 
- input[type=text]:focus+.labella,
+input[type=text]:focus+.labella,
 input[type=text]:valid+.labella {
     color: #002138;
     height: 20px;
     line-height: 30px;
-    transform: translate(-5px, -65px) scale(0.88);
+    transform: translate(-5px, -30px) scale(1);
     z-index: 1111;
-} 
+}
 
 .subs {
-    font-size: 17px;
+    font-size: 16px;
     background: transparent;
     color: #000;
     text-decoration: none;
     font-family: 500;
     border: none;
     padding: 15px 29px;
-    border: 2px solid rgb(1, 5, 28);
-    border-radius: 10px;
+    width: 160px;
+    border: 1px solid rgb(1, 5, 28);
+    border-radius: 8px;
+    cursor: pointer;
     transition: 0.9s;
     position: relative;
     left: 35%;

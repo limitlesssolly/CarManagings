@@ -44,7 +44,7 @@
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Email<span class="icon-arrow">&UpArrow;</span></th>
                             <th> Phone<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> History <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> ------ <span class="icon-arrow">&UpArrow;</span></th>
                             <!-- <th> Salary <span class="icon-arrow">&UpArrow;</span></th> -->
                             <th>------- <span class="icon-arrow">&UpArrow;</span></th>
 
@@ -57,7 +57,7 @@
                             <td> hasan@gmail.com </td>
                             <td> 01123626850</td>
                             <td>
-                            <form action="../../Views/Pages/customerhistory.php"> <button class="status shipped " >Show </form></button>
+                            <form action="../../Views/Pages/editadmins.php"> <button class="status shipped " >Edit </form></button>
                             </td>
                          
                              <td><button class="status cancelled">Delete</button>  </td> 
@@ -69,7 +69,7 @@
                             <td> morad@gmail.com </td>
                             <td> 01223626851</td>
                             <td>
-                                <button class="status shipped "  >Show</button>
+                                <button class="status shipped "  >Edit</button>
                             </td>
                             
                             <td> <button class="status cancelled" >Delete</button> </td> 
@@ -80,7 +80,7 @@
                             <td> karim@gmail.com </td>
                             <td> 01123626444</td>
                             <td>
-                                <button class="status shipped "  >Show</button>
+                                <button class="status shipped "  >Edit</button>
                             </td>
                             
                             <td> <button class="status cancelled">Delete</button> </td> 
@@ -91,7 +91,7 @@
                             <td> saad@gmail.com</td>
                             <td> 01123626666</td>
                             <td>
-                                <button class="status shipped " >Show</button>
+                                <button class="status shipped " >Edit</button>
                             </td>
                          
                             <td> <button class="status cancelled">Delete</button> </td> 

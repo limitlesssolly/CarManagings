@@ -23,19 +23,16 @@
                     <h2>Updating info</h2>
                     <form  id="contactForm">
 
-                        <div class="inputBox">
-                            <input type="text" name="name" id="name" placeholder="Please enter the id of the admin" required>
-                            <span>Id</span>
-                        </div>
+                
 
                         <div class="inputBox">
-                            <input type="text" name="email" id="email" required>
-                            <span>Name</span>
+                            <input type="email" name="email" id="email" placeholder="Please enter the email of the admin" required>
+                            <span>Email</span>
                         </div>
 
                         <div class="inputBox">
                             <input type="text" name="email" id="address" required>
-                            <span>Email</span>
+                            <span>Name</span>
                         </div>
 
                         <div class="inputBox">

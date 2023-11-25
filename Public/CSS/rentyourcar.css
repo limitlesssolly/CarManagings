@@ -78,7 +78,7 @@ input[type=text] {
     padding: 0 10px;
     line-height:40px;
     border-radius: 10px;
-    border: 2px solid #c5c7cc63;
+    border: 1px solid #1d1c1e77;
     background: transparent;
     transition: 0.1s ease;
     z-index: 1111;
@@ -104,7 +104,7 @@ input[type=text]:valid {
 
 input[type=text]:focus+.labella,
 input[type=text]:valid+.labella {
-    color: #002138;
+    color: #1d1c1e77;
     height: 20px;
     line-height: 30px;
     transform: translate(-5px, -30px) scale(1);

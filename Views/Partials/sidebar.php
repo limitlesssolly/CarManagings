@@ -6,7 +6,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../../Public/CSS/sideBarr.css">
+    <link rel="stylesheet" href="../../../Public/CSS/sideBarr.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
 </head>
 
@@ -21,19 +21,19 @@
             <i id='icon-search' class="fas fa-regular fa-magnifying-glass"></i>
             <ul class="menu-list">
                 <li class="menu-item">
-                    <a class="menu-link" href="../../Views/Pages/history.php">
+                    <a class="menu-link" href="../../../Views/Pages/User/history.php">
                         <i class="fas fa-history"></i>
                         <span class="menu-link-text">History</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a class="menu-link" href="../../Views/Pages/profile.php">
+                    <a class="menu-link" href="../../../Views/Pages/User/profile.php">
                         <i class="fas fa-solid fa-user"></i>
                         <span class="menu-link-text">Profile</span>
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a class="menu-link" href="../../Views/Pages/index.php">
+                    <a class="menu-link" href="../../../Views/Pages/User/index.php">
                         <i class="fas fa-solid fa-home"></i>
                         <span class="menu-link-text">Home</span>
                     </a>
@@ -52,7 +52,7 @@
                 </div>
             </div>
 
-            <a class="logout-btn" href="../../Views/Pages/signup.php">
+            <a class="logout-btn" href="../../../Views/Pages/signup.php">
 
                 <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket">
                     <?php

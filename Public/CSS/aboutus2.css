@@ -552,3 +552,13 @@ span {
 .container .box:hover p {
     color: #fff;
 }
+
+#home::before {
+
+    width: 0%;
+
+}
+
+#about::before {
+    width: 100%;
+}

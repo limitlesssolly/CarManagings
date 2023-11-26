@@ -13,15 +13,15 @@
     crossorigin="anonymous"></script>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-  <?php
-  include('../Partials/navbar2.php');
-  ?>
 
 
   <title>Home</title>
 </head>
 
 <body>
+  <?php
+  include('../Partials/navbar.php');
+  ?>
 
 
   <div class="bodyimage">
@@ -144,7 +144,7 @@
   <button id="messageButton"><i class="fa fa-comment"></i></button>
 
   <?php
-  include('../Partials/footer2.php');
+  include('../Partials/footer.php');
   ?>
   <script>
     // Open the popup when the button is clicked

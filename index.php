@@ -57,13 +57,13 @@ switch ($request) {
     case '/adminlogin':
         require __DIR__ . '../Views/Pages/Admin/dashboardlogin.php';
         break;
+        
+    case '/admin/alladmins':
+        require __DIR__ . '../Views/Pages/Admin/admins.php';
+        break;
 
     case '/admin/addadmins':
         require __DIR__ . '../Views/Pages/Admin/addadmins.php';
-        break;
-
-    case '/admin/alladmins':
-        require __DIR__ . '../Views/Pages/Admin/admins.php';
         break;
 
     case '/admin/editadmins':
@@ -90,7 +90,7 @@ switch ($request) {
         require __DIR__ . '../Views/Pages/Admin/Cars/editCar.php';
         break;
         
-    case '/admin/cars/rentedcars':
+    case '/admin/cars/rented':
         require __DIR__ . '../Views/Pages/Admin/Cars/rentedcarinfo.php';
         break;
         

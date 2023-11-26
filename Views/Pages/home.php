@@ -20,7 +20,7 @@
 
 <body>
   <?php
-  include('../Partials/navbar.php');
+    // include('./Partials/navbar.php');
   ?>
 
 
@@ -144,7 +144,7 @@
   <button id="messageButton"><i class="fa fa-comment"></i></button>
 
   <?php
-  include('../Partials/footer.php');
+  // include('./Partials/footer.php');
   ?>
   <script>
     // Open the popup when the button is clicked

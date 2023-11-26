@@ -1,5 +1,4 @@
 <?php
-// Path: routes/router.php
 
 // Get the current URL
 $url = $_SERVER['REQUEST_URI'];
@@ -15,4 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         include 'Views/Pages/404.php';// show the 404 page
         exit();
     }
+
+    include 'Views/Pages/index.php';
+//     exit();
 }

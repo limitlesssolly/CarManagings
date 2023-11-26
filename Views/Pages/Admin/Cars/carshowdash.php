@@ -21,7 +21,7 @@
 <body>
 
     <?php
-    include('../../../Partials/dashboardsidebar.php');
+    // include('../../Partials/dashboardsidebar.php');
     ?>
     <section class="home-section">
         <div class="home-content">

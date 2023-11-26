@@ -4,43 +4,55 @@
 <html lang="en">
 
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"
-        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap"rel="stylesheet">
+
     <link rel="stylesheet" href="../../../Public/CSS/sideBarr.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.3.0/css/all.css">
+
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="navbar-container">
-            <div class="navbar-logo-div">
 
+    <nav class="navbar">
+
+        <div class="navbar-container">
+
+            <div class="navbar-logo-div">
                 <button class="navbar-toggler"><i class='fas fa-solid fa-bars'></i></button>
             </div>
+
             <input type="search" name="search" placeholder="Search..." class="navbar-search" id="search">
             <i id='icon-search' class="fas fa-regular fa-magnifying-glass"></i>
+
             <ul class="menu-list">
+
                 <li class="menu-item">
-                    <a class="menu-link" href="../../../Views/Pages/User/history.php">
+                    <a class="menu-link" href="/history">
                         <i class="fas fa-history"></i>
                         <span class="menu-link-text">History</span>
                     </a>
                 </li>
+
                 <li class="menu-item">
-                    <a class="menu-link" href="../../../Views/Pages/User/profile.php">
+                    <a class="menu-link" href="/profile">
                         <i class="fas fa-solid fa-user"></i>
                         <span class="menu-link-text">Profile</span>
                     </a>
                 </li>
+
                 <li class="menu-item">
-                    <a class="menu-link" href="../../../Views/Pages/User/index.php">
+                    <a class="menu-link" href="/home">
                         <i class="fas fa-solid fa-home"></i>
                         <span class="menu-link-text">Home</span>
                     </a>
                 </li>
+
             </ul>
         </div>
+
         <div class="user-container">
+
             <div class="user-info">
                 <i class="fas fa-solid fa-user-secret"></i>
                 <div class="user-details">
@@ -52,7 +64,7 @@
                 </div>
             </div>
 
-            <a class="logout-btn" href="../../../Views/Pages/signup.php">
+            <a class="logout-btn" href="/signups">
 
                 <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket">
                     <?php
@@ -60,9 +72,12 @@
                     ?>
                 </i>
             </a>
+
         </div>
     </nav>
+
 </body>
+
 <script>
     const btnToggler = window.document.querySelector(".navbar-toggler");
     const inputSearch = window.document.querySelector(".navbar-search");

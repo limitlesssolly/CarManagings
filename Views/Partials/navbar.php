@@ -1,21 +1,29 @@
+<link rel="stylesheet" href="../../Public/CSS/navbar.css">
 <header class="header">
 
-    <a href="../Pages/index.php" class="logo">24Sevenlimousine</a>
+    <a href="/home" class="logo">24Sevenlimousine</a>
 
     <input type="checkbox" id="check">
+
     <label for="check" class="icons">
+
         <span class="material-symbols-outlined" id="menu-icon">menu</span>
         <span class="material-symbols-outlined" id="close-icon">close</span>
+
     </label>
+
     <nav class="navbar">
-        <a href="../../Pages/index.php" id="home">Home</a>
-        <a href="../../Views/Pages/User/bookyourcar.php" id="book">Book your ride</a>
-        <a href="../../Views/pages/User/rentyourcar.php" id="rent"> Rent your car</a>
-        <a href="../../Views/Pages/User/aboutus.php" id="about">About Us</a>
-        <a href="../../Pages/User/ratings.php" id="ratings">Ratings</a>
-        <a href="../../Pages/User/contactus.php" id="contactus">Contact Us</a>
-        <a href="../../Views/Pages/User/signup.php" id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i> </a>
+
+        <a href="/home" id="home">Home</a>
+        <a href="/ordercar" id="book">Book your ride</a>
+        <a href="/rentcar" id="rent"> Rent your car</a>
+        <a href="/about" id="about">About Us</a>
+        <a href="/rate" id="ratings">Rate Us</a>
+        <a href="/contactus" id="contactus">Contact Us</a>
+        <a href="/profile" id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i></a>
+
     </nav>
+
 </header>
 
 <script>

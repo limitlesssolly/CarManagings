@@ -5,17 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Our Cars</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <title>Our Cars</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <link rel="stylesheet" href="../../../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../../../Public/CSS/carshowdash.css">
-    <style>
-        td button {
-            width: 70px;
-        }
-    </style>
 </head>
 
 <body>
@@ -23,24 +19,31 @@
     <?php
     // include('../../Partials/dashboardsidebar.php');
     ?>
+
     <section class="home-section">
+
         <div class="home-content">
             <i class="bx bx-menu"></i>
             <span class="text">Dashboard</span>
         </div>
+
         <main class="table">
+
             <section class="table__header">
+
                 <h1>Our Cars</h1>
                 <div class="input-group">
                     <input type="search" placeholder="Search Data...">
                     <img src="../../../../Public/Images/search.png" alt="">
                 </div>
-                <div class="export__file">
 
+                <!-- <div class="export__file">
+                </div> -->
 
-                </div>
             </section>
+
             <section class="table__body">
+
                 <table>
                     <thead>
                         <tr>
@@ -70,7 +73,6 @@
                             <td>
                                 <form action=""><button class="status shipped">Show</button></form>
                             </td>
-                            <td></td>
                             <td>
                                 <form action=""><button class="status cancelled">Delete</button></form>
                             </td>
@@ -78,7 +80,6 @@
                         <tr>
                             <td> 2 </td>
                             <td><img src="../../../../Public/Images/carla.png" alt=""> Toyota </td>
-
                             <td> suv </td>
                             <td> 154|ت ص غ </td>
                             <td>
@@ -96,7 +97,6 @@
                             <td>
                                 <form action=""><button class="status cancelled">Delete</button></form>
                             </td>
-
                         </tr>
                         <tr>
                             <td> 3</td>
@@ -111,7 +111,6 @@
                             <td>
                                 <form action=""><button class="status shipped">Show</button></form>
                             </td>
-                            <td></td>
                             <td>
                                 <form action=""><button class="status cancelled">Delete</button></form>
                             </td>
@@ -124,6 +123,7 @@
         </main>
 
     </section>
+
     <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {
@@ -141,10 +141,6 @@
 
 
     </script>
-
-
-
-
 
 </body>
 

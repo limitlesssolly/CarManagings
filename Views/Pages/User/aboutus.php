@@ -11,7 +11,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"
-    integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
 
     <title>About-us</title>
 </head>
@@ -19,24 +19,20 @@
 <body>
 
     <?php
-    include('../../Partials/navbar.php');
+    // include('../../Partials/navbar.php');
     ?>
-
 
     <div class="bodyimage">
         <img src="../../../Public/Images/orangecar1.jpg" alt="">
     </div>
-
 
     <center>
         <section class="about-us">
             <div class="about">
 
                 <div class="hero-image">
-
                     <img style="float: right; margin: 0px 0px 15px 15px;" src="../../../Public/Images/blackcar.jpg"
                         class="pic">
-
                 </div>
 
                 <div class="text">
@@ -61,7 +57,7 @@
                             We guarantee that we have a vehicle to suit all your needs</p>
 
                         <div class="data">
-                            <a href="#" class="hire">BOOK NOW</a>
+                            <a href="/ordercar" class="hire">BOOK NOW</a>
                         </div>
 
                     </div>
@@ -100,7 +96,7 @@
                     Every where Around the Clock and always on time
                 </p>
             </div>
-            
+
             <div class="box">
                 <h2>02</h2>
                 <h3>Service One</h3>
@@ -121,11 +117,9 @@
 
     </div>
 
-
     <?php
-    include('../../Partials/footer.php');
+    // include('../../Partials/footer.php');
     ?>
-
 
 </body>
 

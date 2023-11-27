@@ -23,13 +23,15 @@
 
 		<div class="form-container sign-up-container">
 
-			<form method="POST">
+			<form method="POST" action="/signups">
 
 				<h1>Create Account</h1>
+
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				</div>
+
 				<span>or use your email for registration</span>
 				<input type="text" placeholder="Name" name="Name" required />
 				<input type="email" placeholder="Email" name="Email" required />
@@ -46,17 +48,20 @@
 
 		<div class="form-container sign-in-container">
 
-			<form method="POST">
+			<form method="POST" action="/home">
 
 				<h1>Sign in</h1>
+
 				<div class="social-container">
 					<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
 					<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
 				</div>
+
 				<span>or use your account</span>
 				<input type="email" placeholder="Email" name="Email" />
 				<input type="password" placeholder="Password" name="Pass" />
 				<a href="#">Forgot your password?</a>
+
 				<button type="submit">Sign In</button>
 			</form>
 
@@ -79,6 +84,7 @@
 		</div>
 
 	</div>
+
 	<?php
 	//  if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	// session_start();
@@ -110,6 +116,7 @@
 	// 	echo "<h3> Login failed. Invalid username or password.</h3>";  
 	// }}  
 	?>
+
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="../../../Public/js/signup.js"></script>
 

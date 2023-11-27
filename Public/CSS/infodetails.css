@@ -104,6 +104,16 @@ body{
   margin-left: 10px;
 }
 
+#home::before {
+
+  width: 0%;
+
+}
+
+#book::before {
+  width: 100%;
+}
+
 /* pagination */
 .pagination ul{
     display: flex;

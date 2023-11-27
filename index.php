@@ -1,5 +1,4 @@
 <?php
-
 $request = $_SERVER['REQUEST_URI'];
 
 switch ($request) {
@@ -21,6 +20,10 @@ switch ($request) {
     case '/rentcar':
         require __DIR__ . '../Views/Pages/User/rentyourcar.php';
         break;
+
+    // case '/ourcars':
+    //     require __DIR__ . '../Views/Pages/User/ourcars.php';
+    //     break;
 
     case '/ordercar':
         require __DIR__ . '../Views/Pages/User/bookyourcar.php';

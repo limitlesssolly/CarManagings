@@ -1,6 +1,6 @@
 <?php 
 
-class Drivers extends User
+class Driver extends User
 {
     private $dateofemployment;
     private $status;
@@ -8,4 +8,13 @@ class Drivers extends User
     function __construct() {
         
 	}
+    function getAllDrivers(){
+
+    }
+    function addDriver($id,$name){
+
+    }
+    function removeDriver($id){
+
+    }
 }

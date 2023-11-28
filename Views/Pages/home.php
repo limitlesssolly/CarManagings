@@ -28,7 +28,7 @@
 <body>
 
   <?php
-    // include '../Partials/navbar.php';
+
   ?>
 
   <div class="bodyimage">

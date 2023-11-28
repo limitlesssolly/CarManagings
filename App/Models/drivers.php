@@ -27,6 +27,7 @@ class Driver extends User
     }
     function editDriver($id, $name, $phone, $dateofemployment, $status)
     {
+        // name='$name',password='$password', age='$age', phone='$phone' where id=$this->id;
         // $sql = "UPDATE `drivers` (`ID`, `Name`, `Phone`, `DateOfEmployment`, `Status`) VALUES
         // ($id, '$name', $phone ,$dateofemployment ,$status),";
         // $sql = "UPDATE drivers SET (`ID`=$id ,`Name`=$name, `Phone`=$phone, )"

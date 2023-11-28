@@ -20,9 +20,9 @@
   <link rel="stylesheet"href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
-  <link rel="stylesheet" href="../../../Public/CSS/navbar2.css">
+  <link rel="stylesheet" href="../../../Public/CSS/navbar.css">
   <link rel="stylesheet" href="../../../Public/CSS/bookyourcar.css">
-  <link rel="stylesheet" href="../../../Public/CSS/footer2.css">
+  <link rel="stylesheet" href="../../../Public/CSS/footer.css">
   <link rel="stylesheet" href="../../../Public/CSS/style.css">
 
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
@@ -36,7 +36,7 @@
 <body>
 
   <?php
-  include('../../Partials/navbar.php');
+    include '../navbar.php';
   ?>
 
   <section>
@@ -97,8 +97,8 @@
   </div>
 
   <?php
-  // include('../../Partials/footer.php');
-  ?>
+  include "footer.php";
+?>
 
 </body>
 

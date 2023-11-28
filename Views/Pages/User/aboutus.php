@@ -19,7 +19,7 @@
 <body>
 
     <?php
-    // include('../../Partials/navbar.php');
+    include('../../Partials/navbar.php');
     ?>
 
     <div class="bodyimage">

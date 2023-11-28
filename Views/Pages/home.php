@@ -14,8 +14,8 @@
   <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
     crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="../../Public/CSS/footer2.css">
   <link rel="stylesheet" href="../../Public/CSS/index.css">
+  <link rel="stylesheet" href="../../Public/CSS/navbar.css">
   
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -28,7 +28,7 @@
 <body>
 
   <?php
-
+    include "navbar.php";
   ?>
 
   <div class="bodyimage">
@@ -150,10 +150,10 @@
 </div>
 
 <button id="messageButton"><i class="fa fa-comment"></i></button>
-
 <?php
-  // include('./Partials/footer.php');
+  include "footer.php";
 ?>
+
 
 <script>
     // Open the popup when the button is clicked

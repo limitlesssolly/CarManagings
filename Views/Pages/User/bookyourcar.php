@@ -22,10 +22,19 @@
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<<<<<<< HEAD
   <link rel="stylesheet" href="../../Public/CSS/navbar2.css"> 
    <link rel="stylesheet" href="../../Public/CSS/bookyourcar.css">
   
   <link rel="stylesheet" href="../../Public/CSS/footer2.css">
+=======
+
+  <link rel="stylesheet" href="../../../Public/CSS/navbar.css">
+  <link rel="stylesheet" href="../../../Public/CSS/bookyourcar.css">
+  <link rel="stylesheet" href="../../../Public/CSS/footer.css">
+  <link rel="stylesheet" href="../../../Public/CSS/style.css">
+
+>>>>>>> 3acd3f7a23d14fe86195e7f214384558fb2ac5df
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
   <!-- <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script> -->
   <script src="../../Public/js/mapbox.js"></script>
@@ -58,9 +67,15 @@
 
 <body>
 
+<<<<<<< HEAD
     <?php
             include('../Partials/navbar2.php');
     ?>
+=======
+  <?php
+    include '../navbar.php';
+  ?>
+>>>>>>> 3acd3f7a23d14fe86195e7f214384558fb2ac5df
 
   <section>
     <div class="bodyimage">
@@ -117,6 +132,12 @@
       </ul>
   </div>
 
+<<<<<<< HEAD
+=======
+  <?php
+  include "footer.php";
+?>
+>>>>>>> 3acd3f7a23d14fe86195e7f214384558fb2ac5df
 
   
    

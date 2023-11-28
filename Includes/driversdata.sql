@@ -10,7 +10,6 @@ SET time_zone = "+00:00";
 CREATE TABLE `drivers` (
   `ID` int(10) NOT NULL,
   `Name` varchar(20) NOT NULL,
-  `Email` varchar(40) NOT NULL,
   `Phone` int(12) NOT NULL,
   `DateOfEmployment` date(20),
   `Status` varchar(10) NOT NULL,
@@ -20,12 +19,12 @@ CREATE TABLE `drivers` (
 -- Dumping data for table `drivers`
 --
 
-INSERT INTO `drivers` (`ID`, `Name`, `Email`, `Phone`, `Status`) VALUES
-(1, 'Sameh Lotfy', 'sameh.lotfy@email.com', 01183126772 , 'Avaliable'),
-(2, 'Mostafa Azouz', 'mostafa.azouz@email.com', 01257293331, 'Avaliable'),
-(3, 'Wael Hashem', 'wael.hashem@email.com', 01114423882, 'Avaliable'),
-(4, 'Fathy Selwan', 'fathy.selwan@email.com', 01556223490, 'Avaliable'),
-(5, 'Mohsen Farouk', 'mohsen.farouk@email.com', 01232435584, 'Avaliable');
+INSERT INTO `drivers` (`ID`, `Name`, `Phone`, `Status`) VALUES
+(1, 'Sameh Lotfy', 01183126772 , 'Avaliable'),
+(2, 'Mostafa Azouz', 01257293331, 'Avaliable'),
+(3, 'Wael Hashem', 01114423882, 'Avaliable'),
+(4, 'Fathy Selwan', 01556223490, 'Avaliable'),
+(5, 'Mohsen Farouk', 01232435584, 'Avaliable');
 
 --
 -- Indexes for table `drivers`

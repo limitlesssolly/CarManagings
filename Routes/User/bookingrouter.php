@@ -1,14 +1,20 @@
 <?php
 
-$url = $_SERVER['REQUEST_URI'];
+require_once("Controllers/booking.php");
+$book=new Booking();
+if($_GET['action']=='firstvalidation'){
+    $result =$book->firstvalidation($_POST['start'],$_POST['end'],$_POST['date'],$_POST['time']);
+    if($result =='successful'){
+        echo 'successful';
+       
+    }else{
 
-$segments = explode('/', $url);
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    
-    if (count($segments) > 3) {
-        include 'Views/Pages/404.php';
-        exit();
+        echo "failed";
+        // $_SESSION['error']=$result;
+        // header("Location:Views/Pages/bookyourcar.php");
+       
     }
-    include 'Views/Pages/User/bookyourcar.php';
+    
+   
 }
+?>

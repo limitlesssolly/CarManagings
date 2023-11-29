@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Database.php'; 
+
 class Employee {
     private $employeeId;
     private $firstName;
@@ -7,6 +9,7 @@ class Employee {
     private $position;
     private $salary;
     private $assignedCars = [];
+    private $db;
 
     public function __construct($employeeId, $firstName, $lastName, $position, $salary) {
         $this->employeeId = $employeeId;
@@ -14,6 +17,7 @@ class Employee {
         $this->lastName = $lastName;
         $this->position = $position;
         $this->salary = $salary;
+        $this->db = new Database(); 
     }
 
     public function getEmployeeId() {
@@ -40,8 +44,23 @@ class Employee {
         return $this->assignedCars;
     }
 
-    
-   
+    public function addEmployeeToDatabase($firstName, $lastName, $position, $salary) {
+        $sql = "INSERT INTO employees (first_name, last_name, position, salary) VALUES (?, ?, ?, ?)";
+        $params = [$firstName, $lastName, $position, $salary];
+        $this->db->execute($sql, $params);
+    }
 
+    public function editEmployeeInDatabase($employeeId, $firstName, $lastName, $position, $salary) {
+        $sql = "UPDATE employees SET first_name = ?, last_name = ?, position = ?, salary = ? WHERE employee_id = ?";
+        $params = [$firstName, $lastName, $position, $salary, $employeeId];
+        $this->db->execute($sql, $params);
+    }
+
+    public function deleteEmployeeFromDatabase($employeeId) {
+        $sql = "DELETE FROM employees WHERE employee_id = ?";
+        $params = [$employeeId];
+        $this->db->execute($sql, $params);
+    }
 }
 
+?>

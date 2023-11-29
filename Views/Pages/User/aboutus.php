@@ -18,9 +18,9 @@
 
 <body>
 
-    <?php
-    include('../../Partials/navbar.php');
-    ?>
+<?php
+    include PARTIALS . "navbar.php";
+  ?>
 
     <div class="bodyimage">
         <img src="../../../Public/Images/orangecar1.jpg" alt="">

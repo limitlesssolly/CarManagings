@@ -2,7 +2,7 @@
 
 <head>
   <link rel="icon" href="../../Public/Images/logodowns.png" type="image/gif">
-  <link rel="stylesheet" href="../Public/CSS/404.css">
+  <link rel="stylesheet" href="../../Public/CSS/404.css">
 </head>
 
 <p class="zoom-area"><b>Page</b> Not Found </p>

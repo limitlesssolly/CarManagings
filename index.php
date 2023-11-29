@@ -1,8 +1,12 @@
 <?php
-
-// define('__ROOT__', "../App/");
-// require_once(__ROOT__ . "model/Users.php");
-// require_once(__ROOT__ . "controller/UsersController.php");
+define('__ROOT__', "App/");
+define('CSS',"Public/CSS/");
+define('IMAGES',"Public/Images/");
+define('JS',"Public/js/");
+define('PARTIALS',"Views/Partials/");
+define('PAGES',"Views/Pages/");
+// require_once(__ROOT__ . "Model/users.php");
+// require_once(__ROOT__ . "Controller/UserControllers.php");
 // require_once(__ROOT__ . "view/ViewUser.php");
 
 // $model = new Users();
@@ -42,7 +46,7 @@
 
   <link rel="stylesheet" href="Public/CSS/index.css">
   <link rel="stylesheet" href="Public/CSS/navbar.css">
-  
+
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
@@ -54,7 +58,7 @@
 <body>
 
   <?php
-    include "Views/Partials/navbar.php";
+    include PARTIALS . "navbar.php";
   ?>
 
   <div class="bodyimage">
@@ -81,7 +85,7 @@
       <div class="info">
         <h1>Sedan</h1>
         <p>capacity 4 persons-3 bags</p>
-        <a href="/ordercar" class="btn">Book Now</a>
+        <a href='profile.php?action=edit' class="btn">Book Now</a>
       </div>
     </div>
 
@@ -90,7 +94,7 @@
       <div class="info">
         <h1>SUV</h1>
         <p>capacity 5 persons-4 bags</p>
-        <a href="/ordercar" class="btn">Book Now</a>
+        <a href='profile.php?action=edit' class="btn">Book Now</a>
       </div>
     </div>
 
@@ -99,11 +103,11 @@
       <div class="info">
         <h1>Hiace</h1>
         <p>capacity 10 persons-7 bags</p>
-        <a href="/ordercar" class="btn">Book Now</a>
+        <a href='profile.php?action=edit' class="btn">Book Now</a>
       </div>
     </div>
-    
-</div>
+
+  </div>
 
   <div class="feat bg-gray pt-5 pb-5">
     <div class="container">
@@ -144,44 +148,44 @@
     </div>
   </div>
 
-    <div class="container3">
-      <div class="box2">
-        <img src="../../Public/Images/mitsubishilogo.png" alt="">
-      </div>
-
-      <div class="box2">
-        <img src="../../Public/Images/toyotalogo.png" alt="" id="toyota">
-      </div>
-
-      <div class="box2">
-        <img src="../../Public/Images/hyundai-logo.png" alt="">
-      </div>
+  <div class="container3">
+    <div class="box2">
+      <img src="Public/Images/mitsubishilogo.png" alt="">
     </div>
 
-    <div class="popup">
-      <span class="close">&times;</span>
-      <h2>Contact Us</h2>
-      <div class="icons">
-        <a href="https://api.whatsapp.com/send?phone=1234567890" target="_blank" id=whatsapp>
-          <i class="fa fa-whatsapp"></i>
-        </a>
-        <a href="tel:1234567890">
-          <i class="fa fa-phone" id="phone"></i>
-        </a>
-      </div>
+    <div class="box2">
+      <img src="Public/Images/toyotalogo.png" alt="" id="toyota">
     </div>
+
+    <div class="box2">
+      <img src="Public/Images/hyundai-logo.png" alt="">
+    </div>
+  </div>
+
+  <div class="popup">
+    <span class="close">&times;</span>
+    <h2>Contact Us</h2>
+    <div class="icons">
+      <a href="https://api.whatsapp.com/send?phone=1234567890" target="_blank" id=whatsapp>
+        <i class="fa fa-whatsapp"></i>
+      </a>
+      <a href="tel:1234567890">
+        <i class="fa fa-phone" id="phone"></i>
+      </a>
+    </div>
+  </div>
 
   <div>
 
-</div>
+  </div>
 
-<button id="messageButton"><i class="fa fa-comment"></i></button>
-<?php
+  <button id="messageButton"><i class="fa fa-comment"></i></button>
+
+  <?php
   include "Views/Partials/footer.php";
-?>
+  ?>
 
-
-<script>
+  <script>
     // Open the popup when the button is clicked
     document.getElementById("messageButton").addEventListener("click", function () {
       document.querySelector(".popup").style.display = "block";
@@ -198,7 +202,7 @@
         document.querySelector(".popup").style.display = "none";
       }
     });
-</script>
+  </script>
 
 </body>
 

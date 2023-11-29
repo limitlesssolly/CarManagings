@@ -1,7 +1,9 @@
 <?php
 
-if(parse_url($_SERVER['REQUEST_URI'])['path']=='/CarManagings/')
+if(parse_url($_SERVER['REQUEST_URI'])['path']=='CarManagings/')
 {
+    header("Location:index.php");
+}else if (parse_url($_SERVER['REQUEST_URI'])['path']=='/CarManagings/about'){
     header("Location:Views/Pages/home.php");
 }
 

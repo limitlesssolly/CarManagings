@@ -1,3 +1,37 @@
+<?php 
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+	switch($_GET['action']){
+
+		case 'dash':
+			header("Location:dashboard.php");
+			break;
+		case 'admin':
+			header("Location:admins.php");
+			break;
+		case 'admin/add':
+			header("Location:addadmins.php");
+			break;
+		case 'admin/edit':
+			header("Location:editadmins.php");
+			break;
+		case 'driver':
+			header("Location:drivers.php");
+			break;
+		case 'driver/add':
+			header("Location:adddrivers.php");
+			break;
+		case 'driver/edit':
+			header("Location:editdrivers.php");
+			break;
+		case 'driver/delete':
+			header("Location:deletedrivers.php");
+			break;
+		case 'driver/history':
+			header("Location:driverhistory.php");
+			break;
+	}
+}
+?>
 <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
 
 <div class="sidebar ">
@@ -11,7 +45,7 @@
 
         <li>
             <div class="iocn_link">
-                <a href="/admin/drivers">
+                <a>
                     <i class='bx bxs-group'></i>
                     <span class="link_name">Drivers</span>
                 </a>
@@ -20,16 +54,16 @@
 
             <ul class="sub-menu">
                 <li><a class="link_name">Drivers</a></li>
-                <li><a href="/admin/drivers">show</a></li>
-                <li><a href="/admin/drivers/add">Add</a></li>
-                <li><a href="./admin/drivers/edit">Edit</a></li>
-                <li><a href="./admin/drivers/history">History</a></li>
+                <li><a href="?action=driver">show</a></li>
+                <li><a href="?action=driver/add">Add</a></li>
+                <li><a href="?action=driver/edit">Edit</a></li>
+                <li><a href="?action=driver/history">History</a></li>
             </ul>
         </li>
 
         <li>
             <div class="iocn_link">
-                <a href="/admin/cars">
+                <a>
                     <i class='bx bxs-car'></i>
                     <span class="link_name">Cars</span>
                 </a>
@@ -48,7 +82,7 @@
 
         <li>
             <div class="iocn_link">
-                <a href="/admin/trips">
+                <a>
                     <i class='bx bx-trip'></i>
                     <span class="link_name">Trips</span>
                 </a>
@@ -66,7 +100,7 @@
 
         <li>
             <div class="iocn_link">
-                <a href="/admin/employees">
+                <a>
                     <i class='bx bx-group'></i>
                     <span class="link_name">Employes</span>
                 </a>
@@ -83,7 +117,7 @@
 
         <li>
             <div class="iocn_link">
-                <a href="/admin/customers">
+                <a>
                     <i class='bx bx-group'></i>
                     <span class="link_name">Customers</span>
                 </a>
@@ -119,7 +153,7 @@
 
         <li>
             <div class="iocn_link">
-                <a href="/admin/alladmins">
+                <a>
                     <i class='bx bx-group'></i>
                     <span class="link_name">Admins</span>
                 </a>
@@ -136,7 +170,7 @@
 
         <li>
             <div class="iocn_link">
-                <a href="/admin/editprofile">
+                <a>
                     <i class='bx bx-cog'></i>
                     <span class="link_name">Settings</span>
                 </a>

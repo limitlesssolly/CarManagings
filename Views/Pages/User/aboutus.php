@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../../../Public/CSS/navbar2.css">
-    <link rel="stylesheet" href="../../../Public/CSS/footer2.css">
+    <link rel="stylesheet" href="../../../Public/CSS/navbar.css">
+    <link rel="stylesheet" href="../../../Public/CSS/footer.css">
     <link rel="stylesheet" href="../../../Public/CSS/aboutus2.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
@@ -19,7 +19,7 @@
 <body>
 
 <?php
-    include PARTIALS . "navbar.php";
+    include "../../Partials/navbar.php";
   ?>
 
     <div class="bodyimage">
@@ -118,7 +118,7 @@
     </div>
 
     <?php
-    // include('../../Partials/footer.php');
+        include "../../Partials/footer.php";
     ?>
 
 </body>

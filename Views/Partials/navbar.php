@@ -1,7 +1,37 @@
+<?php 
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+	switch($_GET['action']){
+		case 'home':
+			header("Location:index.php");
+			break;
+		case 'order':
+			header("Location:bookyourcar.php");
+			break;
+		case 'rent':
+			header("Location:rentyourcar.php");
+			break;
+		case 'about':
+			header("Location:aboutus.php");
+			break;
+		case 'rate':
+			header("Location:ratings.php");
+			break;
+		case 'contact':
+			header("Location:contactus.php");
+			break;
+		case 'profile':
+			header("Location:profile.php");
+			break;
+		case 'admin':
+			header("Location:Views/Pages/Admin/dashboard.php");
+			break;
+	}
+}
+?>
 <link rel="stylesheet" href="../../Public/CSS/navbar.css">
 <header class="header">
 
-    <a href="/home" class="logo">24Sevenlimousine</a>
+    <a href="?action=admin" class="logo">24Sevenlimousine</a>
 
     <input type="checkbox" id="check">
 
@@ -14,13 +44,13 @@
 
     <nav class="navbar">
 
-        <a href="/home" id="home">Home</a>
-        <a href="/ordercar" id="book">Book your ride</a>
-        <a href="/rentcar" id="rent"> Rent your car</a>
-        <a href="/about" id="about">About Us</a>
-        <a href="/rate" id="ratings">Rate Us</a>
-        <a href="/contactus" id="contactus">Contact Us</a>
-        <a href="/profile" id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i></a>
+        <a href="?action=home" id="home">Home</a>
+        <a href="?action=order" id="book">Book your ride</a>
+        <a href="?action=rent" id="rent"> Rent your car</a>
+        <a href="?action=about" id="about">About Us</a>
+        <a href="?action=rate" id="ratings">Rate Us</a>
+        <a href="?action=contact" id="contactus">Contact Us</a>
+        <a href="?action=profile" id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i></a>
 
     </nav>
 

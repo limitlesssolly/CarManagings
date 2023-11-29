@@ -182,7 +182,7 @@ define('PAGES',"Views/Pages/");
   <button id="messageButton"><i class="fa fa-comment"></i></button>
 
   <?php
-  include "Views/Partials/footer.php";
+    include PARTIALS . "footer.php";
   ?>
 
   <script>

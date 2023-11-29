@@ -7,9 +7,9 @@
 
   <title>Contact-us</title>
 
-  <link rel="stylesheet" href="../../../Public/CSS/navbar2.css" />
+  <link rel="stylesheet" href="../../../Public/CSS/navbar.css" />
   <link rel="stylesheet" href="../../../Public/CSS/contactus.css" />
-  <link rel="stylesheet" href="../../../Public/CSS/footer2.css" />
+  <link rel="stylesheet" href="../../../Public/CSS/footer.css" />
 
   <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
@@ -17,7 +17,7 @@
 <body>
 
   <?php
-  // include('../../Partials/navbar.php');
+  include('../../Partials/navbar.php');
   ?>
 
   <div class="container">
@@ -127,7 +127,7 @@
   <script src="../../../Public/js/contactus.js"></script>
 
   <?php
-  // include('../../Partials/footer.php');
+  include('../../Partials/footer.php'); 
   ?>
 
 </body>

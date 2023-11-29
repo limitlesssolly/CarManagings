@@ -1,5 +1,29 @@
 <?php
-// include_once "../../../includes/db.php";
+require_once(__ROOT__ . "Model/user.php");
+require_once(__ROOT__ . "Controller/UserControllers.php");
+// require_once( "../../Views/View.php");
+
+$model = new user();
+$controller = new UsersController($model);
+// $view = new ViewUser($controller, $model);
+
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+	$controller->{$_GET['action']}();
+}
+
+if(isset($_POST['login']))	{
+	$email=$_REQUEST["Email"];
+	$password=$_REQUEST["Password"];
+	$sql = "SELECT * FROM user where Email='$email' and Password='$password'";
+	$dbh = new Dbh();
+	$result = $dbh->query($sql);
+	if ($result->num_rows == 1){
+		$row = $dbh->fetchRow();
+		$_SESSION["ID"]=$row["ID"];
+		$_SESSION["Name"]=$row["Name"];
+		header("Location:User/profile.php");
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +47,7 @@
 
 		<div class="form-container sign-up-container">
 
-			<form method="POST" action="/signups">
+			<form action="signup.php?action=insert" method="post">
 
 				<h1>Create Account</h1>
 
@@ -36,7 +60,7 @@
 				<input type="text" placeholder="Name" name="Name" required />
 				<input type="email" placeholder="Email" name="Email" required />
 				<input type="text" placeholder="Phone" name="Phone" required />
-				<input type="password" placeholder="Password" name="Pass" id="password" required />
+				<input type="password" placeholder="Password" name="Password" id="password" required />
 				<span id="passwordValidation"></span>
 				<input type="password" placeholder="Confirm Password" name="confirm" id="confirmPassword" required />
 				<span id="passwordValidationMessage"></span>
@@ -48,7 +72,7 @@
 
 		<div class="form-container sign-in-container">
 
-			<form method="POST" action="/home">
+			<form action="index.php" method="post">
 
 				<h1>Sign in</h1>
 
@@ -59,10 +83,10 @@
 
 				<span>or use your account</span>
 				<input type="email" placeholder="Email" name="Email" />
-				<input type="password" placeholder="Password" name="Pass" />
+				<input type="password" placeholder="Password" name="Password" />
 				<a href="#">Forgot your password?</a>
 
-				<button type="submit">Sign In</button>
+				<button type="submit" name="login">Sign In</button>
 			</form>
 
 		</div>

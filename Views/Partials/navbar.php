@@ -20,7 +20,10 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			header("Location:contactus.php");
 			break;
 		case 'profile':
-			header("Location:profile.php");
+			header("Location:Views/Pages/User/profile.php");
+			break;
+		case 'signups':
+			header("Location:Views/Pages/User/signup.php");
 			break;
 		case 'admin':
 			header("Location:Views/Pages/Admin/dashboard.php");
@@ -50,7 +53,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
         <a href="?action=about" id="about">About Us</a>
         <a href="?action=rate" id="ratings">Rate Us</a>
         <a href="?action=contact" id="contactus">Contact Us</a>
-        <a href="?action=profile" id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i></a>
+        <a href="?action=signups" id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i></a>
 
     </nav>
 

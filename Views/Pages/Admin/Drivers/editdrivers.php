@@ -111,75 +111,38 @@ button:hover {
             <section>
                 <div class="container" >
                     <h1>Update driver info</h1>
-                    <form action="" method="post">
-                        <div class="contactinfo">
-                            <label for="contactnumbers">Email</label>
-                            <input type="email" class="field" name="email" placeholder="enter the email of the specific driver for editing" required> 
-                        </div>
+                    <form action="profile.php?action=editaction" method="post">
+
                         <div class="name">
                             <label for="fullname">Full Name</label>
-                            <input type="text" class="field" name="name" placeholder="enter new name" > <br>
+                            <input type="text" class="field" name="name" value="'.$this->model->getName().'"> <br>
                         </div>
 
-                       
+                        <div class="contactinfo">
+                            <label for="contactnumbers">Email</label>
+                            <input type="email" class="field" name="email" value="'.$this->model->getEmail().'"required> 
+                        </div>
 
                         <div class="contactinfo">
                             <label for="contactnumbers">Contact Number</label>
-                            <input type="text" class="field" name="phone" placeholder="enter new phone" >  
+                            <input type="text" class="field" name="phone" value="'.$this->model->getPhone().'">  
                         </div>
 
                         <div class="status">
                             
                             <label for="salary">Status</label>
-                            <input type="text" class="field" name="status" placeholder="enter new status" >                           
-
-                            
+                            <input type="text" class="field" name="status" value="'.$this->model->getStatus().'">                           
 
                         </div>
 
                         <div class="subs">
-                            <button type="submit" name="submit">Add </button>
+                            <button type="submit" name="submit">edit </button>
                         </div>
                     </form>
                 </div>
             </section>
         </div>
     </section>
-
-
-
-
-                <?php
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                         $email=$_POST['email'];
-                         $name=$_POST['name'];
-                         $phone=$_POST['phone'];
-                         $status=$_POST['status'];
-                         $c=0;
-                         if( $email !=null && $name!=null){
-                            $sql = "UPDATE drivers SET Name = '$name' WHERE Email='$email'";
-                            $result = mysqli_query($conn, $sql);
-                            $c++;
-                         }
-                         if( $email !=null && $phone!=null){
-                            $sql = "UPDATE drivers SET Phone = '$phone' WHERE Email='$email'";
-                            $result = mysqli_query($conn, $sql);
-                            $c++;
-                         }
-
-                         if( $email !=null && $totalhours!=null){
-                            $sql = "UPDATE drivers SET Status = $status WHERE Email='$email'";
-                            $result = mysqli_query($conn, $sql);
-                            $c++;
-                         }
-
-  
-                         if ($c>0) {
-                            echo "<meta http-equiv='refresh' content='0'>";
-                         }
-                    }
-                    
-                 ?>
 
     <script>
         let arrow = document.querySelectorAll(".arrow");
@@ -198,6 +161,7 @@ button:hover {
 
 
     </script>
+
 </body>
 
 </html>

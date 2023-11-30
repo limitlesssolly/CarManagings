@@ -1,6 +1,6 @@
 <?php
 
-abstract class  View{
+ class  View{
     protected $model;
     protected $controller;
 
@@ -9,6 +9,5 @@ abstract class  View{
         $this->model = $model;
     }
 	
-    public abstract function output();
 }
 ?>

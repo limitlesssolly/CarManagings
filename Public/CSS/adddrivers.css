@@ -4,36 +4,45 @@
     font-family: 'Roboto', sans-serif;
     font-family: 'Ubuntu', sans-serif;
     /* margin:2px 0px;  */
-    padding:0px;
-    text-align:center;
+    padding: 0px;
+    text-align: center;
 }
 
 .container {
     position: relative;
     max-width: 500px;
     margin-left: 30%;
-    margin-top: 30px; 
+    /* margin-top: 30px;  */
     margin-bottom: 30px;
     padding: 20px 40px;
-    
-    background-color: #ffffff; 
+
+    background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+
 }
+
+h1 {
+    font-size: 30px;
+    color: black;
+}
+
 .title {
     text-align: center;
     font-size: 3vh;
 }
 
- form {
+form {
     text-align: center;
+    /* margin-top: -5px; */
 }
 
 input[type=text],
+input[type=email],
 select,
 textarea {
     width: 100%;
-    padding: 13px;
+    padding: 10px;
     border: 1px solid #01051c;
     border-radius: 4px;
     resize: vertical;
@@ -47,6 +56,7 @@ label {
 
 button {
     font-size: 17px;
+    width: 200px;
     background: transparent;
     color: #000;
     text-decoration: none;

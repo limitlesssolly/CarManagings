@@ -1,13 +1,6 @@
 <?php
 
-abstract class Controller
-{
-    protected $model;
-
-    public function __construct($model) {
-        $this->model = $model;
-    }
-}
+require "Controller.php";
 class DriversController extends Controller{
 	public function add() {
 		$name = $_REQUEST['name'];

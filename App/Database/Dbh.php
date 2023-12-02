@@ -1,6 +1,6 @@
 <?php
 
-require_once("config.php");
+require_once "config.php";
 class DBh{
 	private $servername;
 	private $username;

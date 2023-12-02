@@ -160,9 +160,6 @@ class User extends Model
             echo "Error";
         }
     }
-
-
-
     function readUser($email)
     {
         $sql = "SELECT * FROM users where Email=" . $email;

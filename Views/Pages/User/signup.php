@@ -6,44 +6,17 @@ $controller = new UsersController($model);
 if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$controller->{$_GET['action']}();
 }
-// if(isset($_POST['login']))	{
-// 	$email=$_REQUEST["Email"];
-// 	$password=$_REQUEST["Password"];
-// 	$sql = "SELECT * FROM user where Email='$email' and Password='$password'";
-// 	$dbh = new Dbh();
-// 	$result = $dbh->query($sql);
-// 	if ($result->num_rows == 1){
-// 		$row = $dbh->fetchRow();
-// 		$_SESSION["ID"]=$row["ID"];
-// 		$_SESSION["Name"]=$row["Name"];
-// 		header("Location:User/profile.php");
-// 	}
-// }else if(isset($_POST['']))
-
-
-
-// if (isset($_POST['signup'])) {
-// 	$name = $_POST['Name'];
-//     $email = $_POST['Email'];
-//     $password = $_POST['password'];
-//     $phone = $_POST['Phone'];
-
-//     if ($user->insert($name,$email,$password,$phone)) {
-//         echo "Registration successful!";
-//     } else {
-//         echo "Registration failed.";
-//     }
-// }else if (isset($_POST['login'])) {
-// 	$name = $_POST['Name'];
-//     $password = $_POST['password'];
-
-//     if ($user->login($name,$password)) {
-//         echo "Login successful!";
-//     } else {
-//         echo "Login failed.";
-//     }
-// }
-
+if(isset($_POST['login']))	{
+	$email=$_REQUEST["Email"];
+	$password=$_REQUEST["Password"];
+	$sql = "SELECT * FROM users where Email='$email' and Pass='$password'";
+	$dbh = new Dbh();
+	$result = $dbh->query($sql);
+	if ($result->num_rows == 1){
+		$row = $dbh->fetchRow();
+		header("Location:index.php");
+	}
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -91,7 +64,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 
 		<div class="form-container sign-in-container">
 
-			<form action="users.php?action=login" method="post">
+			<form action="signup.php" method="post">
 
 				<h1>Sign in</h1>
 

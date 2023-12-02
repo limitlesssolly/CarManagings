@@ -77,5 +77,12 @@ public function deleteUser($userId)
     $params = [$userId];
     return $this->dbh->execute($sql, $params);
 }
+
+public function assignTripToDriver($tripId, $driverId)
+{
+    $sql = "UPDATE trips SET driver_id = ? WHERE id = ?";
+    $params = [$driverId, $tripId];
+    return $this->dbh->execute($sql, $params);
+}
 }
 ?>

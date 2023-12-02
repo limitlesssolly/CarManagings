@@ -26,7 +26,7 @@ class DBh{
 		}
 		return $this->conn;
 	}
-	//3ashan te excute ay quere 
+	//3ashan te excute ay quere
 	public function execute($sql, $params)
     {
         $stmt = $this->conn->prepare($sql);

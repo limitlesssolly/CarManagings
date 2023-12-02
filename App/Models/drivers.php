@@ -111,22 +111,21 @@ class Driver extends Model
             echo "Fee Mashakel";
         }
     }
-    function editDriver($name,$email, $phone, $dateofemployment, $status)
+    function editDriver($name,$email, $phone, $status)
     {
-        $sql = "update drivers set name='$name',email='$email', phone='$phone', date='$dateofemployment', status='$status' where id=$this->id;";
+        $sql = "UPDATE drivers SET name='$name',email='$email', phone='$phone', status='$status'";
         if ($this->db->query($sql) === true) {
             echo "updated successfully.";
-            $this->readDriver($this->id);
         } else {
             echo "Fee mashakel";
         }
 
     }
-    function removeDriver()
+    function removeDrivers()
     {
-        $sql = "DELETE FROM drivers WHERE id=$this->id;";
+        $sql = "DELETE FROM drivers WHERE id=$this->id; ";
         if ($this->db->query($sql) === true) {
-            echo "Driver Deleted Successfully";
+            echo "Drivers Deleted Successfully";
         } else {
             echo "Fee Mashakel";
         }

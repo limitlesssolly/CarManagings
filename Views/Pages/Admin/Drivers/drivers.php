@@ -1,9 +1,13 @@
 <?php
-// include_once "../../includes/db.php";
-$username = "root";
-$password = "";
-$database = "24sevenlimousine";
-$mysqli = new mysqli("localhost", $username, $password, $database);
+
+require "../../../../App/Models/drivers.php";
+require "../../../../App/Controllers/DriversControllers.php";
+// $model = new Driver($id, $name, $email, $phone, $dateofemployment, $status);
+// $controller = new DriversController($model);
+
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+    $controller->{$_GET['action']}();
+}
 
 ?>
 
@@ -59,33 +63,6 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
                     </thead>
                     <tbody>
                    
-                            <?php
-                            // $query = "SELECT * FROM drivers";
-                            // if ($result = $mysqli->query($query)) {
-
-                            //     while ($row = $result->fetch_assoc()) {
-                            //         $name = $row["Name"];
-                            //         $email = $row["Email"];
-                            //         $phone = $row["Phone"];
-                            //         $status = $row["Status"];
-                            //         $date = $row["Dateofemployment"];
-                            //         echo'<tr>';
-                            //         echo '<td>' .$name. '</td>';
-                            //         echo '<td>' .$email. '</td>';
-                            //         echo '<td>' .$phone. '</td>';
-                            //         echo '<td>' .$status. '</td>';
-                            //         echo '<td>' .$date. '</td>';
-                            //         echo '<td> <form action="../Pages/driverhistory.php"> <button class="status shipped">Show</button> </form>  </td>';
-                            //         echo '<td>  <form method="post"> 
-                            //         <input type="hidden" name="email" value="'.$email.'">
-                            //         <button class="status cancelled">Delete</button></form></td>';
-                            //         echo '</tr>';
-                            //     }
-                            // }
-                            ?>
-                        
-                     
-
                       
                     </tbody>
                     <script src="../../../../Public/js/carshowdash.js"></script>
@@ -112,21 +89,6 @@ $mysqli = new mysqli("localhost", $username, $password, $database);
 
 
     </script>
-    <?php
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                         $email=$_POST['email'];
-                         $sql="DELETE FROM drivers WHERE Email='$email'";
-
-                         $result = mysqli_query($conn, $sql);
-
-                         if ($result) {
-                            echo "<meta http-equiv='refresh' content='0'>";
-                         }
-                    }
-                    
-     ?>
-
-
 
 
 </body>

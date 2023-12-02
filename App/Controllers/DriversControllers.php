@@ -16,13 +16,12 @@ class DriversController extends Controller{
 		$name = $_REQUEST['name'];
 		$email = $_REQUEST['email'];
 		$phone = $_REQUEST['phone'];
-		$date = $_REQUEST['date'];
 		$status = $_REQUEST['status'];
 
-		$this->model->editDriver($name,$email,$phone,$date,$status);
+		$this->model->editDriver($name,$email,$phone,$status);
 	}
 	
 	public function delete(){
-		$this->model->removeDriver();
+		$this->model->removeDrivers();
 	}
 }

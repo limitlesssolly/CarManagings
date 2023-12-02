@@ -1,5 +1,5 @@
 <?php
-define('__ROOT__', "App/");
+// define('__ROOT__', "App/");
 define('CSS',"Public/CSS/");
 define('IMAGES',"Public/Images/");
 define('JS',"Public/js/");

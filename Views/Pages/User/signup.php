@@ -1,31 +1,23 @@
 <?php
-require_once(__ROOT__ . "Model/user.php");
-require_once(__ROOT__ . "Controller/UserControllers.php");
-// require_once( "../../Views/View.php");
-
+require_once( "../../../App/Models/users.php");
+require_once("../../../App/Controllers/UserControllers.php");
 $model = new user();
 $controller = new UsersController($model);
-// $view = new ViewUser($controller, $model);
-
 if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$controller->{$_GET['action']}();
 }
-
 if(isset($_POST['login']))	{
 	$email=$_REQUEST["Email"];
 	$password=$_REQUEST["Password"];
-	$sql = "SELECT * FROM user where Email='$email' and Password='$password'";
+	$sql = "SELECT * FROM users where Email='$email' and Pass='$password'";
 	$dbh = new Dbh();
 	$result = $dbh->query($sql);
 	if ($result->num_rows == 1){
 		$row = $dbh->fetchRow();
-		$_SESSION["ID"]=$row["ID"];
-		$_SESSION["Name"]=$row["Name"];
-		header("Location:User/profile.php");
+		header("Location:index.php");
 	}
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -65,14 +57,14 @@ if(isset($_POST['login']))	{
 				<input type="password" placeholder="Confirm Password" name="confirm" id="confirmPassword" required />
 				<span id="passwordValidationMessage"></span>
 
-				<button type="submit" id="sign">Sign Up</button>
+				<button type="submit" id="sign"name="submit">Sign Up</button>
 			</form>
 
 		</div>
 
 		<div class="form-container sign-in-container">
 
-			<form action="index.php" method="post">
+			<form action="signup.php" method="post">
 
 				<h1>Sign in</h1>
 
@@ -86,7 +78,7 @@ if(isset($_POST['login']))	{
 				<input type="password" placeholder="Password" name="Password" />
 				<a href="#">Forgot your password?</a>
 
-				<button type="submit" name="login">Sign In</button>
+				<button type="submit" name="login"name="submit">Sign In</button>
 			</form>
 
 		</div>

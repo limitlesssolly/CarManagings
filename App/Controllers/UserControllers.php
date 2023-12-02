@@ -1,37 +1,34 @@
 <?php
-	// session_start();
-    // include_once "../../includes/db.php";
-    // $email=$_SESSION['Email'];
-    // $sql="delete from users where Email=".$email;
-    // $result=mysqli_query($conn,$sql);
-    // if($result){
-    //     session_destroy();
-    //     header("Location:index.php");
-    // }
+abstract class Controller
+{
+    protected $model;
 
-require_once(__ROOT__ . "Controllers/Controller.php");
-
+    public function __construct($model) {
+        $this->model = $model;
+    }
+}
 class UsersController extends Controller{
 	public function insert() {
-		$name = $_REQUEST['name'];
-		$password = $_REQUEST['password'];
-		$age = $_REQUEST['age'];
-		$phone = $_REQUEST['phone'];
-
-		$this->model->insertUser($name,$password,$age,$phone);
+	$name = $_POST['Name'];
+    $email = $_POST['Email'];
+    $password = $_POST['Password'];
+    $phone = $_POST['Phone'];
+	$this->model->insert($name,$email,$password,$phone);
 	}
 
-	public function edit() {
-		$name = $_REQUEST['name'];
-		$password = $_REQUEST['password'];
-		$age = $_REQUEST['age'];
-		$phone = $_REQUEST['phone'];
+	// public function edit() {
+	// 	$name = $_REQUEST['name'];
+	// 	$email = $_REQUEST['email'];
+	// 	$phone = $_REQUEST['phone'];
+	// 	$date = $_REQUEST['date'];
+	// 	$status = $_REQUEST['status'];
 
-		$this->model->editUser($name,$password,$age,$phone);
-	}
+	// 	$this->model->editDriver($name,$email,$phone,$date,$status);
+	// }
 	
-	public function delete(){
-		$this->model->deleteUser();
-	}
+	// public function delete(){
+	// 	$this->model->removeDriver();
+	// }
 }
+
 ?>

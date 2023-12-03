@@ -2,7 +2,6 @@
 abstract class Controller
 {
     protected $model;
-
     public function __construct($model) {
         $this->model = $model;
     }
@@ -27,6 +26,8 @@ class UsersController extends Controller{
 	public function delete(){
 		$this->model->deleteUser();
 	}
+	public function view(){
+		$this->model->output();
+	}
 }
-
 ?>

@@ -1,70 +1,18 @@
 <?php
-define('DB_SERVER', "localhost");
-define('DB_USER', "root");
-define('DB_PASS', "");
-define('DB_DATABASE', "24sevenlimousine");
-class DBh{
-	private $servername;
-	private $username;
-	private $password;
-	private $dbname;
+require_once("../../../Views/View.php");
+require_once("../../../App/Database/Dbh.php");
+require_once("../../../App/Models/Model.php");
 
-	private $conn;
-	private $result;
-	public $sql;
-
-	function __construct() {
-		$this->servername = DB_SERVER;
-		$this->username = DB_USER;
-		$this->password = DB_PASS;
-		$this->dbname = DB_DATABASE;
-		$this->connect();
-	}
-
-	public function connect(){
-		$this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
-		if ($this->conn->connect_error) {
-			die("Connection failed: " . $this->conn->connect_error);
-		}
-		return $this->conn;
-	}
-
-	public function getConn(){
-		return $this->conn;
-	}
-
-	function query($sql){
-		if (!empty($sql)){
-			$this->sql = $sql;
-			$this->result = $this->conn->query($sql);
-			return $this->result;
-		}
-		else{
-			return false;
-		}
-	}
-
-	function fetchRow($result=""){
-		if (empty($result)){ 
-			$result = $this->result; 
-		}
-		return $result->fetch_assoc();
-	}
-
-	function __destruct(){
-		$this->conn->close();
-	}
-}
-abstract class Model{
-    protected $db;
-    protected $conn;
-    public function connect(){
-        if(null === $this->conn ){
-            $this->db = new Dbh();
-        }
-        return $this->db;
-    }
-}
+// abstract class Model{
+//     protected $db;
+//     protected $conn;
+//     public function connect(){
+//         if(null === $this->conn ){
+//             $this->db = new Dbh();
+//         }
+//         return $this->db;
+//     }
+// }
 
 class User extends Model
 {
@@ -74,7 +22,7 @@ class User extends Model
     protected $email;
     protected $password;
     protected $phone;
-
+private $users;
     function __construct($name = "", $email = "", $phone = "", $password = "")
     {
         $this->db = $this->connect();
@@ -84,15 +32,15 @@ class User extends Model
             $this->password = $password;
         
     }
-
-    function getName()
-    {
-        return $this->name;
-    }
     function setName($name)
     {
         return $this->name = $name;
     }
+    function getName()
+    {
+        return $this->name;
+    }
+
 
     function getEmail()
     {
@@ -120,10 +68,10 @@ class User extends Model
     }
 
 
-    function getID()
-    {
-        return $this->id;
-    }
+    // function getID()
+    // {
+    //     return $this->id;
+    // }
     function getAllUsers()
     {
 
@@ -160,33 +108,37 @@ class User extends Model
             echo "Error";
         }
     }
-    function readUser($email)
-    {
-        $sql = "SELECT * FROM users where Email=" . $email;
-        $db = $this->connect();
-        $result = $db->query($sql);
-        if ($result->num_rows == 1) {
-            $row = $db->fetchRow();
-            $this->name = $row["Name"];
-            $_SESSION["Name"] = $row["Name"];
-            $this->email = $row["Email"];
-            $this->phone = $row["Phone"];
-        } else {
-            $this->name = "";
-            $this->email = "";
-            $this->phone = "";
-        }
-    }
-    function editUser($name,$email,$password,$phone){
-        $sql = "update user set Name='$name',Email='$email', Pass='$password', Phone='$phone' where id=$this->id;";
-          if($this->db->query($sql) === true){
-              echo "updated successfully.";
-              $this->readUser($this->id);
-          } else{
-              echo "ERROR: Could not able to execute $sql. " ;
-          }
+// public  function readUser($email)
+//     {
+//         $sql = "SELECT * FROM users where Email=" . $email;
+//         $db = $this->connect();
+//         $result = $db->query($sql);
+//         if ($result->num_rows == 1) {
+//             $row = $db->fetchRow();
+//             $this->name = $row["Name"];
+//             $_SESSION["Name"] = $row["Name"];
+//             $this->email = $row["Email"];
+//             $_SESSION["Email"] = $row["Email"];
+//             $this->phone = $row["Phone"];
+//             $_SESSION["Phone"] = $row["Phone"];
+
+//         } else {
+//             $this->name = "";
+//             $this->email = "";
+//             $this->phone = "";
+//         }
+//         return $result ;
+//     }
+//     function editUser($name,$email,$password,$phone){
+//         $sql = "update user set Name='$name',Email='$email', Pass='$password', Phone='$phone' where id=$this->id;";
+//           if($this->db->query($sql) === true){
+//               echo "updated successfully.";
+//               $this->readUser($this->id);
+//           } else{
+//               echo "ERROR: Could not able to execute $sql. " ;
+//           }
   
-    }
+//     }
     
     function deleteUser(){
         $sql="delete from user where email=$this->email;";
@@ -196,6 +148,21 @@ class User extends Model
               echo "ERROR: Could not able to execute $sql. ";
           }
       }
+}
+class ViewUser extends View{	
+	public function view(){
+        return $this->model->getName();
+		
+	}
+	// public function editForm(){
+	// 	$str='<form action="profile.php?action=editaction" method="post">
+	// 	<div>Name:</div><div> <input type="text" name="name" value="'.$this->model->getName().'"/></div><br>
+	// 	<div>Password:</div><div> <input type="password" name="password" value="'.$this->model->getPassword().'"/></div><br>
+	// 	<div>Age:</div><div> <input type="text" name="age" value="'.$this->model->getAge().'"/></div><br>
+	// 	<div>Phone: </div><div><input type="text" name="phone" value="'.$this->model->getPhone().'"/></div><br>
+	// 	<div><input type="submit" /></div>';
+	// 	return $str;
+	// }
 }
 ?>
 

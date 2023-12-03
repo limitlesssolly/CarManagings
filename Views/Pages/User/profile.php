@@ -1,6 +1,32 @@
 <?php
-session_start();
+require_once( "../../../App/Models/users.php");
+require_once("../../../App/Controllers/UserControllers.php");
+require_once("../../../Views/View.php");
+$model = new User($_SESSION["Email"]);
+$controller = new UsersController($model);
+$view = new ViewUser($controller, $model);
+$userId = $_SESSION["Email"];
 
+// $sql = "SELECT * FROM users WHERE Email = $userId";
+// $result = query($sql);
+
+// if ($result->num_rows > 0) {
+//     $user = $result->fetch_assoc();
+// } else {
+//     echo "User not found";
+//     exit;
+// }
+
+
+
+
+
+
+
+// if (isset($_GET['action']) && !empty($_GET['action'])) {
+
+// 	echo $view->output();
+// }
 // include_once "../../includes/db.php";
 ?>
 
@@ -45,6 +71,7 @@ session_start();
                 </div>
 
             </div>
+			<form action="profile.php?action=view" method="get">
 
             <div class="user_options-forms" id="user_options-forms">
 
@@ -61,14 +88,13 @@ session_start();
                                 </td>
 
                                 <td data-th="Supplier Code">
-                                    <p style="font-size:18px">Name</p>
+                                    <p style="font-size:18px">Name :</p>
                                 </td>
 
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
-                                        Name1
-                                        <?php
-                                        // echo  $_SESSION["Name"] 
+                                        <?php 
+			                            echo $view->view();
                                         ?>
                                     </p>
                                 </td>
@@ -80,14 +106,13 @@ session_start();
                                 </td>
 
                                 <td data-th="Supplier Code">
-                                    <p style="font-size:18px"> Email</p>
+                                    <p style="font-size:18px"> Email : </p>
                                 </td>
 
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
-                                        Email1
                                         <?php
-                                        //  echo   $_SESSION["Email"] 
+                                            $_SESSION["Email"] 
                                         ?>
                                     </p>
                             </tr>
@@ -97,14 +122,13 @@ session_start();
                                 </td>
 
                                 <td data-th="Supplier Code">
-                                    <p style="font-size:18px"> Phone</p>
+                                    <p style="font-size:18px"> Phone : </p>
                                 </td>
 
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
-                                        Phone1
                                         <?php
-                                        //  echo   $_SESSION["Phone"]
+                                         echo  ($_SESSION["Phone"]) 
                                         ?>
                                     </p>
                             </tr>
@@ -112,7 +136,7 @@ session_start();
                         </tbody>
                     </table>
                 </div>
-
+</form>
                 <div class="user_forms-signup">
 
                     <h2 class="forms_title">Update Profile Info</h2>

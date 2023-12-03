@@ -18,7 +18,7 @@
 <body>
 
     <?php
-    // include('../../../Views/Partials/sidebar.php');
+    include('../../../Views/Partials/sidebar.php');
     ?>
 
     <section class="user">

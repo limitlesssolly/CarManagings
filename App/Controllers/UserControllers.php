@@ -16,19 +16,18 @@ class UsersController extends Controller{
 	$this->model->insert($name,$email,$password,$phone);
 	}
 
-	// public function edit() {
-	// 	$name = $_REQUEST['name'];
-	// 	$email = $_REQUEST['email'];
-	// 	$phone = $_REQUEST['phone'];
-	// 	$date = $_REQUEST['date'];
-	// 	$status = $_REQUEST['status'];
+	public function edit() {
+		$name = $_REQUEST['name'];
+		$password = $_REQUEST['password'];
+		$age = $_REQUEST['age'];
+		$phone = $_REQUEST['phone'];
 
-	// 	$this->model->editDriver($name,$email,$phone,$date,$status);
-	// }
+		$this->model->editUser($name,$password,$age,$phone);
+	}
 	
-	// public function delete(){
-	// 	$this->model->removeDriver();
-	// }
+	public function delete(){
+		$this->model->deleteUser();
+	}
 }
 
 ?>

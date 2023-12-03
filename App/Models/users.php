@@ -177,25 +177,25 @@ class User extends Model
             $this->phone = "";
         }
     }
-    // function editUser($name, $password, $age, $phone){
-    //     $sql = "update user set name='$name',password='$password', age='$age', phone='$phone' where id=$this->id;";
-    //       if($this->db->query($sql) === true){
-    //           echo "updated successfully.";
-    //           $this->readUser($this->id);
-    //       } else{
-    //           echo "ERROR: Could not able to execute $sql. " . $conn->error;
-    //       }
+    function editUser($name,$email,$password,$phone){
+        $sql = "update user set Name='$name',Email='$email', Pass='$password', Phone='$phone' where id=$this->id;";
+          if($this->db->query($sql) === true){
+              echo "updated successfully.";
+              $this->readUser($this->id);
+          } else{
+              echo "ERROR: Could not able to execute $sql. " ;
+          }
   
-    // }
+    }
     
-    // function deleteUser(){
-    //     $sql="delete from user where id=$this->id;";
-    //     if($this->db->query($sql) === true){
-    //           echo "deletet successfully.";
-    //       } else{
-    //           echo "ERROR: Could not able to execute $sql. " . $conn->error;
-    //       }
-    //   }
+    function deleteUser(){
+        $sql="delete from user where email=$this->email;";
+        if($this->db->query($sql) === true){
+              echo "deletet successfully.";
+          } else{
+              echo "ERROR: Could not able to execute $sql. ";
+          }
+      }
 }
 ?>
 

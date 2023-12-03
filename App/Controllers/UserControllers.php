@@ -17,12 +17,11 @@ class UsersController extends Controller{
 	}
 
 	public function edit() {
-		$name = $_REQUEST['name'];
-		$password = $_REQUEST['password'];
-		$age = $_REQUEST['age'];
-		$phone = $_REQUEST['phone'];
-
-		$this->model->editUser($name,$password,$age,$phone);
+		$name = $_POST['Name'];
+		$email = $_POST['Email'];
+		$password = $_POST['Password'];
+		$phone = $_POST['Phone'];
+		$this->model->editUser($name,$email,$password,$phone);
 	}
 	
 	public function delete(){

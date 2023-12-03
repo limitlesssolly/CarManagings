@@ -1,5 +1,6 @@
 <?php
-// session_start();
+session_start();
+
 // include_once "../../includes/db.php";
 ?>
 
@@ -117,59 +118,38 @@
                     <h2 class="forms_title">Update Profile Info</h2>
 
                     <div class="log">
-                        <form > 
+                    <form action="profile.php?action=edit" method="post">
 
                             <div class="input-cont">
-                                <input type="text">
-                                <!-- <input type="text" value="
-                                <?php $_SESSION['Name'] ?>
-                                " name='Name'> -->
+                                <input type="text" name="Name" required />
                                 <label>Username</label>
                                 <div class="border1"></div>
                             </div>
 
                             <div class="input-cont">
-                                <input type="email">
-                                <!-- <input type="email" value="
-                                <?php
-                                $_SESSION['Email'] ?>
-                                " name='Email'> -->
+                                <input type="email" name="Email" required />
                                 <label>Email</label>
                                 <div class="border2"></div>
                             </div>
 
                             <div class="input-cont">
-                                <input type="text">
-                                <!-- <input type="text" value="
-                                <?php
-                                $_SESSION['Phone']
-                                    ?>" name='Phone'> -->
+                                <input type="text" name="Phone" required/>
                                 <label>Phone</label>
                                 <div class="border2"></div>
                             </div>
 
                             <div class="input-cont">
-                                <input type="password">
-                                <!-- <input type="password" value=" 
-                                <?php
-                                $_SESSION['Pass']
-                                    ?>" name='Pass'> -->
+                                <input type="password"  name="Password" id="password" required />
                                 <label>Password</label>
                                 <div class="border2"></div>
                             </div>
 
                             <div class="input-cont">
-                                <input type="password">
-                                <!-- <input type="password" value="
-                                <?php
-                                $_SESSION['Confirmpassword']
-                                    ?>
-                                " name='Confirmpassword'> -->
+                                <input type="password"name="confirm" id="confirmPassword" required />
                                 <label>Confirm Password</label>
                                 <div class="border2"></div>
                             </div>
-
-                            <button class="user_registered-login2">Update</button>
+                            <button type="submit" id="sign"name="submit"class="user_registered-login2">Update</button>
 
                         </form>
                     </div>
@@ -181,33 +161,33 @@
     </section>
 
     <?php
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $name = htmlspecialchars($_POST["Name"]);
-        $email = htmlspecialchars($_POST["Email"]);
-        $phone = htmlspecialchars($_POST["Phone"]);
-        $password = htmlspecialchars($_POST["Pass"]);
-        $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
-        if ($_POST['Pass'] != $_POST['Confirmpassword']) {
-            echo "<h3> Oops! Password did not match! Try again.</h3>";
+    // if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    //     $name = htmlspecialchars($_POST["Name"]);
+    //     $email = htmlspecialchars($_POST["Email"]);
+    //     $phone = htmlspecialchars($_POST["Phone"]);
+    //     $password = htmlspecialchars($_POST["Pass"]);
+    //     $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
+    //     if ($_POST['Pass'] != $_POST['Confirmpassword']) {
+    //         echo "<h3> Oops! Password did not match! Try again.</h3>";
 
-        } else {
-            $sql = "update  users set Name='$name',  Email='$email',Phone='$phone', Pass='$password'
-	where Email =" . $_SESSION['Email'];
-            $result = mysqli_query($conn, $sql);
-            //if update is successful don't forget to update the seesion variables too the redirect to index.php
-            if ($result) {
-                $_SESSION['Name'] = $row['Name'];
-                $_SESSION['Email'] = $row['Email'];
-                $_SESSION['Pass'] = $row['Pass'];
-                $_SESSION['Phone'] = $row['Phone'];
-                header("Location:index.php");
-            } else {
-                echo "Invalid Input";
-            }
-        }
+    //     } else {
+    //         $sql = "update  users set Name='$name',  Email='$email',Phone='$phone', Pass='$password'
+	// where Email =" . $_SESSION['Email'];
+    //         $result = mysqli_query($conn, $sql);
+    //         //if update is successful don't forget to update the seesion variables too the redirect to index.php
+    //         if ($result) {
+    //             $_SESSION['Name'] = $row['Name'];
+    //             $_SESSION['Email'] = $row['Email'];
+    //             $_SESSION['Pass'] = $row['Pass'];
+    //             $_SESSION['Phone'] = $row['Phone'];
+    //             header("Location:index.php");
+    //         } else {
+    //             echo "Invalid Input";
+    //         }
+    //     }
 
-        $conn->close();
-    }
+    //     $conn->close();
+    // }
     ?>
 
     <script>

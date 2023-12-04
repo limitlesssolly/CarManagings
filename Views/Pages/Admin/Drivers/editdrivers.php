@@ -1,10 +1,12 @@
 <?php
-// include_once "../../includes/db.php";
-$username = "root";
-$password = "";
-$database = "24sevenlimousine";
-$mysqli = new mysqli("localhost", $username, $password, $database);
+require "../../../../App/Models/drivers.php";
+require "../../../../App/Controllers/DriversControllers.php";
+$model = new Driver($id, $name, $email, $phone, $status);
+$controller = new DriversController($model);
 
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+    $controller->{$_GET['action']}();
+}
 ?>
 
 <!DOCTYPE html>
@@ -111,27 +113,27 @@ button:hover {
             <section>
                 <div class="container" >
                     <h1>Update driver info</h1>
-                    <form action="profile.php?action=editaction" method="post">
+                    <form action="editdrivers.php?action=edit" method="post">
 
                         <div class="name">
                             <label for="fullname">Full Name</label>
-                            <input type="text" class="field" name="name" value="'.$this->model->getName().'"> <br>
+                            <input type="text" class="field" name="name"> <br>
                         </div>
 
                         <div class="contactinfo">
                             <label for="contactnumbers">Email</label>
-                            <input type="email" class="field" name="email" value="'.$this->model->getEmail().'"required> 
+                            <input type="email" class="field" name="email" required> 
                         </div>
 
                         <div class="contactinfo">
                             <label for="contactnumbers">Contact Number</label>
-                            <input type="text" class="field" name="phone" value="'.$this->model->getPhone().'">  
+                            <input type="text" class="field" name="phone" >  
                         </div>
 
                         <div class="status">
                             
                             <label for="salary">Status</label>
-                            <input type="text" class="field" name="status" value="'.$this->model->getStatus().'">                           
+                            <input type="text" class="field" name="status"  >                           
 
                         </div>
 

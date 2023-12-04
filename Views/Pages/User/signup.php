@@ -1,31 +1,31 @@
 <?php
-require_once(__ROOT__ . "Model/user.php");
-require_once(__ROOT__ . "Controller/UserControllers.php");
-// require_once( "../../Views/View.php");
-
+require_once( "../../../App/Models/users.php");
+require_once("../../../App/Controllers/UserControllers.php");
 $model = new user();
 $controller = new UsersController($model);
-// $view = new ViewUser($controller, $model);
+session_start();
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$controller->{$_GET['action']}();
 }
-
 if(isset($_POST['login']))	{
 	$email=$_REQUEST["Email"];
 	$password=$_REQUEST["Password"];
-	$sql = "SELECT * FROM user where Email='$email' and Password='$password'";
+	$sql = "SELECT * FROM users where Email='$email' and Pass='$password'";
 	$dbh = new Dbh();
 	$result = $dbh->query($sql);
-	if ($result->num_rows == 1){
+	if ($result){
 		$row = $dbh->fetchRow();
-		$_SESSION["ID"]=$row["ID"];
 		$_SESSION["Name"]=$row["Name"];
-		header("Location:User/profile.php");
+		$_SESSION["Email"]=$row["Email"];
+		$_SESSION["Phone"]=$row["Phone"];
+		$_SESSION["Password"]=$row["Pass"];
+		header("Location:profile.php");
+	}else{
+		echo ("ERRORR");
 	}
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -65,14 +65,14 @@ if(isset($_POST['login']))	{
 				<input type="password" placeholder="Confirm Password" name="confirm" id="confirmPassword" required />
 				<span id="passwordValidationMessage"></span>
 
-				<button type="submit" id="sign">Sign Up</button>
+				<button type="submit" id="sign"name="submit">Sign Up</button>
 			</form>
 
 		</div>
 
 		<div class="form-container sign-in-container">
 
-			<form action="index.php" method="post">
+			<form action="signup.php" method="post">
 
 				<h1>Sign in</h1>
 
@@ -86,7 +86,7 @@ if(isset($_POST['login']))	{
 				<input type="password" placeholder="Password" name="Password" />
 				<a href="#">Forgot your password?</a>
 
-				<button type="submit" name="login">Sign In</button>
+				<button type="submit" name="login"name="submit">Sign In</button>
 			</form>
 
 		</div>
@@ -108,39 +108,6 @@ if(isset($_POST['login']))	{
 		</div>
 
 	</div>
-
-	<?php
-	//  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	// session_start();
-	// require_once "../../includes/db.php";
-	// if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	// $email = $_POST['Email'];  
-	// $password = $_POST['Pass'];  
-	// $email = mysqli_real_escape_string($conn, $email);  
-	// $password = mysqli_real_escape_string($conn, $password);  	
-	// $sql = "SELECT * FROM users WHERE Email = '$email' AND Pass = '$password'";  
-	// $result = mysqli_query($conn, $sql);  
-	// $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-	// $count = mysqli_num_rows($result);  
-	// if($row=mysqli_fetch_array($result)){
-	// 	$_SESSION['Name']=$row['Name'];
-	// 	$_SESSION['Email']=$row['Email'];
-	// 	$_SESSION['Pass']=$row['Pass'];
-	// 	$_SESSION['Phone']=$row['Phone'];
-	// 	header("Location:index.php");
-	//    }
-	//    else{
-	// 	echo "Invalid Input";
-	//    }
-	
-	// if($count == 1){  
-	// 	header("Location:index.php");
-	// }  
-	// else{  
-	// 	echo "<h3> Login failed. Invalid username or password.</h3>";  
-	// }}  
-	?>
-
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="../../../Public/js/signup.js"></script>
 

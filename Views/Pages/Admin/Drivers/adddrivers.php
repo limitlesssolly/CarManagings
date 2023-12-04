@@ -1,7 +1,7 @@
 <?php
 
-require_once "../App/Models/drivers.php";
-require_once "../App/Controllers/DriversControllers.php";
+require "../../../../App/Models/drivers.php";
+require "../../../../App/Controllers/DriversControllers.php";
 $model = new Driver($id, $name, $email, $phone, $dateofemployment, $status);
 $controller = new DriversController($model);
 
@@ -17,96 +17,15 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="../../Public/CSS/adddrivers.css"> -->
-    <link rel="stylesheet" href="../Public/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../../../Public/CSS/adddrivers.css">
+    <link rel="stylesheet" href="../../../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Drivers</title>
 </head>
 
-<style>
-    * {
-        box-sizing: border-box;
-        font-family: 'poppins', sans-serif;
-        font-family: 'Roboto', sans-serif;
-        font-family: 'Ubuntu', sans-serif;
-        /* margin:2px 0px;  */
-        padding: 0px;
-        text-align: center;
-    }
-
-    .container {
-        position: relative;
-        max-width: 500px;
-        margin-left: 30%;
-        /* margin-top: 30px;  */
-        margin-bottom: 30px;
-        padding: 20px 40px;
-
-        background-color: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-
-    }
-
-    h1 {
-        font-size: 30px;
-        color: black;
-    }
-
-    .title {
-        text-align: center;
-        font-size: 3vh;
-    }
-
-    form {
-        text-align: center;
-        /* margin-top: -5px; */
-    }
-
-    input[type=text],
-    input[type=email],
-    select,
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #01051c;
-        border-radius: 4px;
-        resize: vertical;
-        margin: 10px;
-    }
-
-    label {
-        padding: 10px 10px 10px 10px;
-        display: inline-block;
-    }
-
-    button {
-        font-size: 17px;
-        width: 200px;
-        background: transparent;
-        color: #000;
-        text-decoration: none;
-        font-family: 500;
-        border: none;
-        padding: 15px 29px;
-        border: 1px solid rgb(1, 5, 28);
-        border-radius: 4px;
-        transition: 0.9s;
-        position: relative;
-        right: 0%;
-    }
-
-    button:hover {
-        background: #01051c;
-        letter-spacing: 3px;
-        color: #fff;
-
-    }
-</style>
-
 <body>
     <?php
-    include("Partials/dashboardsidebar.php");
+    include("../../../Partials/dashboardsidebar.php");
     ?>
     <section class="home-section">
         <div class="home-content">

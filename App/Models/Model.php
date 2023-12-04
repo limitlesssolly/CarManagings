@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../Database/Dbh.php";
+// require_once "../Database/Dbh.php";
 abstract class Model{
     protected $db;
     protected $conn;

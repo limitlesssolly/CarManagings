@@ -1,6 +1,6 @@
 <?php
 
-require_once("config.php");
+require_once "config.php";
 class DBh{
 	private $servername;
 	private $username;
@@ -26,7 +26,20 @@ class DBh{
 		}
 		return $this->conn;
 	}
+	//3ashan te excute ay quere
+	public function execute($sql, $params)
+    {
+        $stmt = $this->conn->prepare($sql);
+        return $stmt->execute($params);
+    }
 
+	//3ashan tfetch row wahed mene el database
+	public function queryOne($sql, $params)
+    {
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute($params);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 	public function getConn(){
 		return $this->conn;
 	}

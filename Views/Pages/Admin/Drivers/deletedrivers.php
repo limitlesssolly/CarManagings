@@ -1,3 +1,15 @@
+<?php
+
+require "../../../../App/Models/drivers.php";
+require "../../../../App/Controllers/DriversControllers.php";
+$model = new Driver($id, $name, $email, $phone, $dateofemployment, $status);
+$controller = new DriversController($model);
+
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+    $controller->{$_GET['action']}();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 

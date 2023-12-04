@@ -1,13 +1,6 @@
 <?php
 
-abstract class Controller
-{
-    protected $model;
-
-    public function __construct($model) {
-        $this->model = $model;
-    }
-}
+require "Controller.php";
 class DriversController extends Controller{
 	public function add() {
 		$name = $_REQUEST['name'];
@@ -23,13 +16,12 @@ class DriversController extends Controller{
 		$name = $_REQUEST['name'];
 		$email = $_REQUEST['email'];
 		$phone = $_REQUEST['phone'];
-		$date = $_REQUEST['date'];
 		$status = $_REQUEST['status'];
 
-		$this->model->editDriver($name,$email,$phone,$date,$status);
+		$this->model->editDriver($name,$email,$phone,$status);
 	}
 	
 	public function delete(){
-		$this->model->removeDriver();
+		$this->model->removeDrivers();
 	}
 }

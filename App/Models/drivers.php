@@ -12,7 +12,7 @@ class Driver extends Model
     private $status;
     private $drivers;
 
-    function __construct($id, $name = "", $email = "", $phone = "", $dateofemployment = "", $status = "")
+    function __construct($id , $name = "", $email = "", $phone = "", $dateofemployment = "", $status = "")
     {
         $this->id = $id;
         $this->db = $this->connect();
@@ -74,10 +74,6 @@ class Driver extends Model
     {
         return $this->id;
     }
-    function getAllDrivers()
-    {
-
-    }
     function getDrivers() {
 		return $this->drivers;
 	}
@@ -89,6 +85,7 @@ class Driver extends Model
 			array_push($this->drivers, new Driver($row["ID"],$row["name"],$row["email"],$row["phone"],$row["date"],$row["status"]));
 		}
 	}
+
 
 	public function readDrivers(){
 		$sql = "SELECT * FROM drivers";
@@ -105,7 +102,7 @@ class Driver extends Model
     {
         $sql = "INSERT INTO drivers (name, email, phone, date,status) VALUES ('$name','$email', '$phone', '$dateofemployment', '$status')";
 		if($this->db->query($sql) === true){
-			echo "Driver inserted successfully.";
+            echo "Driver inserted successfully.";
 			$this->fillArray();
 		} else {
             echo "Fee Mashakel";
@@ -119,7 +116,7 @@ class Driver extends Model
         } else {
             echo "Fee mashakel";
         }
-
+        
     }
     function removeDrivers()
     {
@@ -130,7 +127,7 @@ class Driver extends Model
             echo "Fee Mashakel";
         }
     }
-
+    
     function readDriver($id)
     {
         $sql = "SELECT * FROM drivers where ID=" . $id;
@@ -146,6 +143,17 @@ class Driver extends Model
             $this->name = "";
             $this->email = "";
             $this->phone = "";
+        }
+    }
+    function readDrivers(){
+        $sql = "SELECT * FROM drivers";
+    
+        $result = $this->db->query($sql);
+        if ($result->num_rows > 0){
+            return $result;
+        }
+        else {
+            return false;
         }
     }
 }

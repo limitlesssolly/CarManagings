@@ -1,3 +1,15 @@
+<?php
+
+require_once "../../../App/Models/users.php";
+require_once "../../../App/Controllers/UserControllers.php";
+$model = new User($id, $name, $email, $phone);
+$controller = new UsersController($model);
+
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+    $controller->{$_GET['action']}();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +44,7 @@
 
         <h1>Rate Your Experience</h1>
 
-        <form method="POST" action="/home">
+        <form method="POST" action="ratings.php?action=addRating">
             <div class="user-info">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required> <!--validation -->
@@ -59,7 +71,7 @@
             </div>
 
             <div class="submit-button">
-                <button type="submit">Submit Rating</button>
+                <button type="submit" name="submit">Submit Rating</button>
             </div>
         </form>
 

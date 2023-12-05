@@ -14,10 +14,10 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			header("Location:aboutus.php");
 			break;
 		case 'rate':
-			header("Location:ratings.php");
+			header("Location:Views/Pages/User/ratings.php");
 			break;
 		case 'contact':
-			header("Location:contactus.php");
+			header("Location:Views/Pages/User/contactus.php");
 			break;
 		case 'profile':
 			header("Location:Views/Pages/User/profile.php");

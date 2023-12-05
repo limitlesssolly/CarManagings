@@ -74,25 +74,6 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
             </section>
         </div>
     </section>
-
-
-    <?php
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //      $name = htmlspecialchars($_POST["name"]);
-    //      $email = htmlspecialchars($_POST["email"]);
-    //      $phone = htmlspecialchars($_POST["phone"]);
-    //      $status = htmlspecialchars($_POST["status"]);
-    //      $date = htmlspecialchars($_POST["date"]);
-    
-    //      $sql = "insert into drivers(Name,Email,Phone,Status,Dateofemployment) 
-    //      values('$name','$email','$phone','$status', '$date')";
-    //      $result = mysqli_query($conn, $sql);
-    
-    //      if ($result) {
-    //         //  header("Location:drivers.php");
-    //      }
-    //  }
-    ?>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../../../Public/js/addDriver.js"></script>
     <script>

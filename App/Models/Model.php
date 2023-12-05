@@ -1,7 +1,7 @@
 <?php
 session_start();
-// require_once "../Database/Dbh.php";
-abstract class Model{
+require(__DIR__ . '/../Database/Dbh.php');
+class Model{
     protected $db;
     protected $conn;
 

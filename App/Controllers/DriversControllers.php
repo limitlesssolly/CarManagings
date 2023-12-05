@@ -24,4 +24,15 @@ class DriversController extends Controller{
 	public function delete(){
 		$this->model->removeDrivers();
 	}
+	public function allDrivers(){
+		$str="";
+		$str.=$this->model->getName();
+		$str.=$this->model->getEmail();
+		$str.=$this->model->getPhone();
+		$str.=$this->model->getDate();
+		$str.=$this->model->getStatus();
+		// $str.="<h5>".$this->model->getStatus()."</h5>";
+		// $str.="<h5>".$this->model->getStatus()."</h5>";
+		return $str;
+	}
 }

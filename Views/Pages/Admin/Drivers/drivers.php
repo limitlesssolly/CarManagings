@@ -2,13 +2,12 @@
 
 require "../../../../App/Models/drivers.php";
 require "../../../../App/Controllers/DriversControllers.php";
-// $model = new Driver($id, $name, $email, $phone, $dateofemployment, $status);
-// $controller = new DriversController($model);
+$model = new Driver($id, $name, $email, $phone, $dateofemployment, $status);
+$controller = new DriversController($model);
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
     $controller->{$_GET['action']}();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -53,17 +52,32 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Email <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Phone <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Status <span class="icon-arrow">&UpArrow;</span</th>
-                            <th> Date Of Employment <span class="icon-arrow">&UpArrow;</span</th>
-                           
+                            <th> Status <span class="icon-arrow">&UpArrow;</span></th>
+                            <th> Date Of Employment <span class="icon-arrow">&UpArrow;</span></th>
+
                             <th> History <span class="icon-arrow">&UpArrow;</span></th>
-                       
+
                             <th> ---------- </th>
                         </tr>
                     </thead>
                     <tbody>
-                   
-                      
+                        <?php
+                        if ($result->num_rows > 0) {
+
+                            while ($row = $result->fetch_assoc()) {
+                                echo $str.=$this->model->getName();
+                                echo $str.=$this->model->getEmail();
+                                echo $str.=$this->model->getPhone();
+                                echo $str.=$this->model->getDate();
+                                echo $str.=$this->model->getStatus();
+                            }
+
+                        } else {
+                            echo "0 results";
+                        }
+                        ?>
+
+
                     </tbody>
                     <script src="../../../../Public/js/carshowdash.js"></script>
                 </table>

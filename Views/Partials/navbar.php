@@ -31,7 +31,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 	}
 }
 ?>
-<link rel="stylesheet" href="../../Public/CSS/navbar.css">
+<!-- <link rel="stylesheet" href="../../Public/CSS/navbar.css"> -->
 <header class="header">
 
     <a href="?action=admin" class="logo">24Sevenlimousine</a>

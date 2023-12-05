@@ -1,7 +1,7 @@
 <?php
 
-require "../../../../App/Models/users.php";
-require "../../../../App/Controllers/UserControllers.php";
+require "../../../App/Models/users.php";
+require "../../../App/Controllers/UserControllers.php";
 $model = new User($id, $name, $email, $phone);
 $controller = new UsersController($model);
 

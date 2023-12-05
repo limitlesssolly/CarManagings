@@ -38,7 +38,7 @@ class DBh{
     {
         $stmt = $this->conn->prepare($sql);
         $stmt->execute($params);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        return $stmt->fetch();
     }
 	public function getConn(){
 		return $this->conn;

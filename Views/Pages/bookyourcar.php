@@ -39,9 +39,7 @@
     }
      
    #home::before{
-    
     width: 0%;
-   
  } 
   #book::before{
     width: 100%;

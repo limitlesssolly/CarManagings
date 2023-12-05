@@ -1,6 +1,7 @@
 <?php
 
 require "Controller.php";
+
 class DriversController extends Controller{
 	public function add() {
 		$name = $_REQUEST['name'];
@@ -11,6 +12,10 @@ class DriversController extends Controller{
 
 		$this->model->addDriver($name,$email,$phone,$date,$status);
 	}
+	public function getdrivers(){
+	 return	$this->model->readDrivers();
+	}
+
 
 	public function edit() {
 		$name = $_REQUEST['name'];

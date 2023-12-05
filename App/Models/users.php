@@ -148,6 +148,26 @@ private $users;
               echo "ERROR: Could not able to execute $sql. ";
           }
       }
+
+      function rate($name,$email,$rating,$review){
+        $sql = "INSERT INTO ratings (name, email, rating, review) VALUES ('$name','$email', '$rating','$review')";
+		if($this->db->query($sql) === true){
+            echo "Rating Saved Successfully.";
+			$this->fillArray();
+		} else {
+            echo "Fee Mashakel";
+        }
+      }
+
+      function requestContact($name,$email,$phone,$message){
+        $sql = "INSERT INTO contactings (name, email, phone, message) VALUES ('$name','$email', '$phone','$message')";
+		if($this->db->query($sql) === true){
+            echo "Request sent Successfully.";
+			$this->fillArray();
+		} else {
+            echo "Fee Mashakel";
+        }
+      }
 }
 class ViewUser extends View{	
 	public function view(){

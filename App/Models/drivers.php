@@ -90,9 +90,8 @@ class Driver extends Model
 		}
 	}
 
-	function readDrivers(){
+	public function readDrivers(){
 		$sql = "SELECT * FROM drivers";
-
 		$result = $this->db->query($sql);
 		if ($result->num_rows > 0){
 			return $result;
@@ -101,6 +100,7 @@ class Driver extends Model
 			return false;
 		}
 	}
+
     function addDriver($name,$email, $phone, $dateofemployment, $status)
     {
         $sql = "INSERT INTO drivers (name, email, phone, date,status) VALUES ('$name','$email', '$phone', '$dateofemployment', '$status')";

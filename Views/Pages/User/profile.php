@@ -148,7 +148,7 @@ require_once("../../../Views/View.php");
                             <label>Confirm Password</label>
                             <div class="border2"></div>
                         </div>
-                        <button type="submit" id="sign" name="submit" class="user_registered-login2">Update</button>
+                        <button type="submit" id="sign" name="submit" name="edit"class="user_registered-login2">Update</button>
 
                     </form>
                 </div>

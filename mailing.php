@@ -1,0 +1,39 @@
+<?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'Mail/src/Exception.php';
+require 'Mail/src/PHPMailer.php';
+require 'Mail/src/SMTP.php';
+
+if (isset($_POST["submit"])){
+    $mail = new PHPMailer(true);
+
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username ='shahdahmed7203@gmail.com';
+    $mail->Password ='lezdherbbqplhfjv';
+    $mail->SMTPSecure ='ssl';
+    $mail->Port = 465;
+
+    $mail->setFrom('shahdahmed7203@gmail.com');
+
+    $mail->addAddress($_POST["email"]);
+
+    $mail->isHTML(true);
+
+    $mail->Subject = "Contact Mail Test";
+    $mail->Body = $_POST["message"];
+
+    $mail->send();
+
+    echo
+    "
+    <script>
+    alert('Sent Successfully');
+    document.location.href='contactus.php';
+    </script>
+    ";
+}

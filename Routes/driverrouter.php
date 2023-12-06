@@ -52,4 +52,16 @@ else if($_GET['action']=='editdriver'){
         echo json_encode($result);
     }
 
+}else if($_GET['action']=='deletedriver'){
+
+    $result=$driver->Delete($_POST['id']);
+    if($result=='sucessful'){
+        echo 'successful';
+    }else{
+        echo 'failed';
+    }
+
 }
+
+
+

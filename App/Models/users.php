@@ -1,27 +1,8 @@
 <?php
-<<<<<<< HEAD
 require_once("../../../Views/View.php");
 require_once("../../../App/Database/Dbh.php");
 require_once("../../../App/Models/Model.php");
-class User extends Model
-{
-=======
-require_once "../../../Views/View.php";
-require_once "../../../App/Models/Model.php";
-
-// abstract class Model{
-//     protected $db;
-//     protected $conn;
-//     public function connect(){
-//         if(null === $this->conn ){
-//             $this->db = new Dbh();
-//         }
-//         return $this->db;
-//     }
-// }
-
 class User extends Model {
->>>>>>> dccb6f7926e2dbe56c95271cf790d591e2991717
     protected $id;
     protected $name;
     protected $email;
@@ -42,8 +23,6 @@ class User extends Model {
     function getName() {
         return $this->name;
     }
-
-
     function getEmail() {
         return $this->email;
     }
@@ -63,19 +42,6 @@ class User extends Model {
         return $this->password = $password;
     }
 
-<<<<<<< HEAD
-    function getAllUsers()
-    {
-=======
-
-    // function getID()
-    // {
-    //     return $this->id;
-    // }
-    function getAllUsers() {
->>>>>>> dccb6f7926e2dbe56c95271cf790d591e2991717
-
-    }
     function getUser() {
         return $this->users;
     }
@@ -88,7 +54,6 @@ class User extends Model {
         }
     }
 
-<<<<<<< HEAD
 	function readUsers(){
 		$sql = "SELECT * FROM users";
 		$result = $this->db->query($sql);
@@ -99,33 +64,34 @@ class User extends Model {
 			return false;
 		}
 	}
-    public function insert($name,$email,$phone,$password)
-{
+    public function insert($name,$email,$phone,$password) {
         $sql = "INSERT INTO users (Name,Email,Phone,Pass) VALUES ('$name','$email','$phone','$password')";
         if($this->db->query($sql) === true){
 			echo "successfull";
 			$this->fillArray();
 		} else {
-=======
-    function readUsers() {
-        $sql = "SELECT * FROM users";
-        $result = $this->db->query($sql);
-        if($result->num_rows > 0) {
-            return $result;
-        } else {
-            return false;
+            echo "error";
+ 
         }
     }
-    public function insert($name, $email, $phone, $password) {
-        $sql = "INSERT INTO users (Name, Email, Phone,Pass) VALUES ('$name','$email','$phone','$password')";
-        if($this->db->query($sql) === true) {
-            echo "successfull";
-            $this->fillArray();
-        } else {
->>>>>>> dccb6f7926e2dbe56c95271cf790d591e2991717
-            echo "Error";
-        }
-    }
+//     function readUsers() {
+//         $sql = "SELECT * FROM users";
+//         $result = $this->db->query($sql);
+//         if($result->num_rows > 0) {
+//             return $result;
+//         } else {
+//             return false;
+//         }
+//     }
+// public     function insert($name, $email, $phone, $password) {
+//         $sql = "INSERT INTO users (Name, Email, Phone,Pass) VALUES ('$name','$email','$phone','$password')";
+//         if($this->db->query($sql) === true) {
+//             echo "successfull";
+//             $this->fillArray();
+//         } else {
+//             echo "Error";
+//         }
+//     }
     // public  function readUser($email)
 //     {
 //         $sql = "SELECT * FROM users where Email=" . $email;
@@ -187,19 +153,12 @@ class User extends Model {
         }
     }
 }
+
 class ViewUser extends View {
     public function view() {
         return $this->model->getName();
 
     }
-    // public function editForm(){
-    // 	$str='<form action="profile.php?action=editaction" method="post">
-    // 	<div>Name:</div><div> <input type="text" name="name" value="'.$this->model->getName().'"/></div><br>
-    // 	<div>Password:</div><div> <input type="password" name="password" value="'.$this->model->getPassword().'"/></div><br>
-    // 	<div>Age:</div><div> <input type="text" name="age" value="'.$this->model->getAge().'"/></div><br>
-    // 	<div>Phone: </div><div><input type="text" name="phone" value="'.$this->model->getPhone().'"/></div><br>
-    // 	<div><input type="submit" /></div>';
-    // 	return $str;
-    // }
+
 }
 ?>

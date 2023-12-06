@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once "../../../App/Models/users.php";
 require_once "../../../App/Controllers/UserControllers.php";
 $model = new User($id, $name, $email, $phone);

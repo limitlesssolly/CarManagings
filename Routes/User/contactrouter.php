@@ -1,14 +1,40 @@
 <?php
+require_once("../App/Controllers/UsersControllers.php");
 
-$url = $_SERVER['REQUEST_URI'];
+$user=new UsersController('UsersController');
 
-$segments = explode('/', $url);
-
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+if($_GET['action']=='ratings'){
+    $result=$user->getRatings();
+    $_SESSION['AllRatings']=array(); 
+ 
+    $i=0; 
+    while ($row =$result->fetch_assoc()) {
+     
+     $_SESSION['AllRatings'][$i]=[
+ 
+         'ID'=>$row['ID'], 
+         'Name'=>  $row['name'], 
+         'Email'=> $row['email'],  
+         'Rating'=> $row['rating'],
+         'Review'=> $row['review'],
+     ]; 
+    $i++; 
+    } 
     
-    if (count($segments) > 3) {
-        include 'Views/Pages/404.php';
-        exit();
+    header("Location:../Views/Pages/User/ratings.php");
+
+}
+else if($_GET['action']=='ratings'){
+    header("Location:../Views/Pages/User/ratings.php");
+
+}
+else if($_GET['action']=='rate'){
+    $result=$driver->Add( $_POST['name'],$_POST['email'],$_POST['phone'], $_POST['date'], $_POST['photo'], $_POST['status']);
+    if($result=='successful')
+    {
+        echo 'successful';
+    }else{
+        echo json_encode($result);
     }
-    include 'Views/Pages/User/contactus.php';
+
 }

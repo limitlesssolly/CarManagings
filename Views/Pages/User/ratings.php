@@ -1,11 +1,11 @@
 <?php
-
+session_start();
 require_once "../../../App/Models/users.php";
 require_once "../../../App/Controllers/UserControllers.php";
 $model = new User($id, $name, $email, $phone);
 $controller = new UsersController($model);
 
-if (isset($_GET['action']) && !empty($_GET['action'])) {
+if(isset($_GET['action']) && !empty($_GET['action'])) {
     $controller->{$_GET['action']}();
 }
 
@@ -47,7 +47,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
         <form method="POST" action="ratings.php?action=addRating">
             <div class="user-info">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required> <!--validation -->
+                <input type="text" id="name" name="name" required>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </div>
@@ -76,183 +76,30 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
         </form>
 
     </div>
-
     <div class="slide-container swiper">
 
         <div class="slide-content">
             <div class="card-wrapper swiper-wrapper">
-                <div class="card swiper-slide">
+                <?php
+                $i = 0;
+                while(isset($_SESSION['AllRatings'][$i]['ID'])) {
+                    echo '<div class="card swiper-slide">';
+                    echo '<div class="image-content">';
+                    echo '<span class="overlay"></span>';
+                    echo '<div class="card-image"></div>';
+                    echo '</div>';
 
-                    <div class="image-content">
-                        <span class="overlay"></span>
+                    echo '<div class="card-content">';
+                    echo '<h2 class="name">'.$_SESSION['AllRatings'][$i]['name'].'</h2>';
+                    echo '<p class="description">'.$_SESSION['AllRatings'][$i]['review'].'</p>';
+                    echo '<button class="button">View More</button>';
+                    echo '</div>';
+                    echo '</div>';
 
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile1.jpg" alt="" class="card-img">
-                        </div>
+                    $i++;
+                }
+                ?>
 
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-
-                </div>
-
-                <div class="card swiper-slide">
-
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile2.jpg" alt="" class="card-img">
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-
-                </div>
-
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile3.jpg" alt="" class="card-img">
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-
-                </div>
-
-                <div class="card swiper-slide">
-
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile4.jpg" alt="" class="card-img">
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-
-                </div>
-
-                <div class="card swiper-slide">
-
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile5.jpg" alt="" class="card-img">
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-
-                </div>
-
-                <div class="card swiper-slide">
-
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile6.jpg" alt="" class="card-img">
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-
-                </div>
-
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile7.jpg" alt="" class="card-img">
-                        </div>
-
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-                        <button class="button">View More</button>
-                    </div>
-
-                </div>
-
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile8.jpg" alt="" class="card-img">
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
-                <div class="card swiper-slide">
-                    <div class="image-content">
-                        <span class="overlay"></span>
-
-                        <div class="card-image">
-                            <img src="../../../Public/Images/profile9.jpg" alt="" class="card-img">
-                        </div>
-                    </div>
-
-                    <div class="card-content">
-                        <h2 class="name">David Dell</h2>
-                        <p class="description">The lorem text the section that contains header with having open
-                            functionality. Lorem dolor sit amet consectetur adipisicing elit.</p>
-
-                        <button class="button">View More</button>
-                    </div>
-                </div>
             </div>
         </div>
 

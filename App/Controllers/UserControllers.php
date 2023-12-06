@@ -9,10 +9,10 @@ abstract class Controller
 class UsersController extends Controller{
 	public function insert() {
 	$name = $_POST['Name'];
-    $email = $_POST['Email']; 
-	$phone = $_POST['Phone'];
+    $email = $_POST['Email'];
     $password = $_POST['Password'];
-	$this->model->insert($name,$email,$phone,$password);
+    $phone = $_POST['Phone'];
+	$this->model->insert($name,$email,$password,$phone);
 	}
 
 	public function edit() {
@@ -20,7 +20,7 @@ class UsersController extends Controller{
 		$email = $_POST['Email'];
 		$password = $_POST['Password'];
 		$phone = $_POST['Phone'];
-		$this->model->editUser($name,$email,$phone,$password);
+		$this->model->editUser($name,$email,$password,$phone);
 	}
 	
 	public function delete(){
@@ -37,6 +37,10 @@ class UsersController extends Controller{
 		$review = $_REQUEST['review'];
 
 		$this->model->rate($name,$email,$rating,$review);
+	}
+	public function getRatings(){
+		$user=new  User();
+	   return	$user->getRatings();
 	}
 	public function contact(){
 		$name = $_REQUEST['name'];

@@ -1,6 +1,5 @@
 <?php
 require_once("../../../Views/View.php");
-require_once("../../../App/Database/Dbh.php");
 require_once("../../../App/Models/Model.php");
 class User extends Model {
     protected $id;
@@ -132,7 +131,6 @@ class User extends Model {
             echo "ERROR: Could not able to execute $sql. ";
         }
     }
-
     function rate($name, $email, $rating, $review) {
         $sql = "INSERT INTO ratings (name, email, rating, review) VALUES ('$name','$email', '$rating','$review')";
         if($this->db->query($sql) === true) {
@@ -142,6 +140,12 @@ class User extends Model {
             echo "Fee Mashakel";
         }
     }
+
+    static function getRatings(){
+        $sql = "SELECT * FROM ratings";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        return $result;
+     }
 
     function requestContact($name, $email, $phone, $message) {
         $sql = "INSERT INTO contactings (name, email, phone, message) VALUES ('$name','$email', '$phone','$message')";

@@ -107,7 +107,7 @@ class User extends Model {
     //     }
 
     function readUser($id){
-        $sql = "SELECT * FROM user where ID=".$id;
+        $sql = "SELECT * FROM user where id=".$id;
         $db = $this->connect();
         $result = $db->query($sql);
         if ($result->num_rows == 1){
@@ -120,17 +120,21 @@ class User extends Model {
             $_SESSION["Phone"] = $row["Phone"];
             $this->password = $row["Pass"];
             $_SESSION["Password"] = $row["Pass"];
+            $result->fillArray();
+
         }
         else {
             $this->name = "";
             $this->password="";
             $this->age = "";
             $this->phone = "";
+            echo ("ERROR");
         }
       }
       
     function editUser($name,$email,$phone,$password){
-        $sql = "UPDATE users SET Name='$name',Email='$email', Phone='$phone', Pass='$password' where id=$this->id;";
+        $sql= "UPDATE `users` SET ,`Name`='$name',`Email`='$email',`Phone`='$phone',`Pass`='$password' WHERE `id`='$this->id'";
+        // $sql = "UPDATE users SET Name='$name',Email='$email', Phone='$phone', Pass='$password' where id=$this->id;";
             if($this->db->query($sql) === true){
                 echo "updated successfully.";
                 $this->readUser($this->id);

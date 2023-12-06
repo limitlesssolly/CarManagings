@@ -8,9 +8,15 @@ session_start(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>All Drivers</title>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../../Public/CSS/carshowdash.css">
+    <link rel="stylesheet" href="../../../Public/CSS/alert.css">
 </head>
 
 <body>
@@ -34,6 +40,14 @@ session_start(); ?>
 
                 </div>
             </section>
+
+            <div class="alert hide"> 
+                        <span class="fas fa-check-circle"></span>
+                        <span class="msg">Deleted Successfully!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+        </div>
             <section class="table__body">
 
                 <table>
@@ -51,6 +65,8 @@ session_start(); ?>
                             <th> ---------- </th>
                         </tr>
                     </thead>
+
+
                     <tbody>
                 <?php
                     
@@ -75,7 +91,7 @@ session_start(); ?>
                         echo "<td>" .  $_SESSION['Alldrivers'][$i]['dateofemployment'] . "</td>";
 
                       echo "<td><form action='../Pages/assigntrip.php'> <button class='status shipped'>Show</button> </form> </td>";
-                      echo "<td><form action='../Pages/assigntrip.php'> <button class='status cancelled'>delete</button> </form> </td>";
+                      echo "<td><form id='deleteform'>  <button class='status cancelled' id='" . $_SESSION['Alldrivers'][$i]['ID'] . "'>delete</button> </form> </td>";
                       echo "</tr>";
 
 
@@ -84,6 +100,7 @@ session_start(); ?>
                 ?>
             </tbody>
                     <script src="../../../Public/js/carshowdash.js"></script>
+                    <script src="../../../Public/js/deletedriver.js"></script>
                 </table>
 
             </section>

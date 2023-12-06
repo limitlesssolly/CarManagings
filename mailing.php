@@ -13,18 +13,18 @@ if (isset($_POST["submit"])){
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username ='shahdahmed7203@gmail.com';
-    $mail->Password ='lezdherbbqplhfjv';
+    $mail->Username ='247LimousineOfficial@gmail.com';
+    $mail->Password ='buwhpjbrxjdpywaz';
     $mail->SMTPSecure ='ssl';
     $mail->Port = 465;
 
-    $mail->setFrom('shahdahmed7203@gmail.com');
+    $mail->setFrom('247LimousineOfficial@gmail.com');
 
     $mail->addAddress($_POST["email"]);
 
     $mail->isHTML(true);
 
-    $mail->Subject = "Contact Mail Test";
+    $mail->Subject = "Contacting Mail";
     $mail->Body = $_POST["message"];
 
     $mail->send();

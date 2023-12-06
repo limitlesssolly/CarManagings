@@ -1,15 +1,3 @@
-<?php
-
-require "../../../../App/Models/drivers.php";
-require "../../../../App/Controllers/DriversControllers.php";
-$model = new Driver($id, $name, $email, $phone, $dateofemployment, $status);
-$controller = new DriversController($model);
-
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-    $controller->{$_GET['action']}();
-}
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,65 +5,94 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../../../Public/CSS/adddrivers.css">
-    <link rel="stylesheet" href="../../../../Public/CSS/dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <link rel="stylesheet" href="../../../Public/CSS/adddrivers.css">
+    <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../../Public/CSS/alert.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Drivers</title>
+    <style>
+        .container{
+            margin-top: -32px;
+            margin-left: 27.8%;
+        }
+        body{
+            overflow: hidden;
+        }
+    </style>
 </head>
 
 <body>
     <?php
-    include("../../../Partials/dashboardsidebar.php");
+    include("../../Partials/dashboardsidebar.php");
     ?>
     <section class="home-section">
         <div class="home-content">
             <i class="bx bx-menu"></i>
             <span class="text">Dashboard</span>
         </div>
+        <div class="alert hide"> 
+                        <span class="fas fa-check-circle"></span>
+                        <span class="msg">Added Successfully!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+        </div>
         <div class="adddrivers">
             <section>
                 <div class="container">
                     <h1>Add a driver</h1>
-                    <form action="adddrivers.php?action=add" method="post">
+
+     
+                    <form >
 
                         <div class="name">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" class="field" name="name" placeholder="samy salama" required> <br>
+                            <label >Full Name</label>
+                            <input type="text" class="field" id="name" name="name" placeholder="samy salama" required> <br>
+                            <p id='nameerror' style="color: red;"></p>
                         </div>
 
                         <div class="contactinfo">
-                            <label for="contactnumbers">Email</label>
-                            <input type="email" class="field" name="email" id="email" placeholder="mail@gmail.com"
+                            <label >Email</label>
+                            <input type="email" class="field" id='email' name="email"  placeholder="mail@gmail.com"
                                 required>
-                            <span id="Validation"></span>
+                            <p id='emailerror' style="color: red;"></p>
                         </div>
 
                         <div class="contactinfo">
-                            <label for="contactnumbers">Contact Number</label>
-                            <input type="text" class="field" name="phone" placeholder="0123456789" required>
+                            <label >Contact Number</label>
+                            <input type="text" class="field" id='phone' name="phone" placeholder="0123456789" required>
+                            <p id='phoneerror' style="color: red;"></p>
                         </div>
 
                         <div class="status">
 
-                            <label for="date">date of employment </label>
-                            <input type="date" class="field" name="date" required> <br>
+                            <label >date of employment </label>
+                            <input type="date" class="field" id='date' name="date" required> <br>
+                            
+                            <label >driver photo</label>
+                            <input type="file" class="field" id='img' name="img" required> <br>
 
-                            <label for="salary">Status</label>
-                            <input type="text" class="field" name="status" placeholder="available,in trip,in vacation "
+                            <label >Status</label>
+                            <input type="text" class="field" id='status' name="status" placeholder="available,in trip,in vacation"
                                 required>
+                                <p id='statuserror' style="color: red;"></p>
 
                         </div>
 
                         <div class="subs">
                             <button type="submit" id="sign" name="submit">Add </button>
                         </div>
+              
                     </form>
+                    <script src="../../../Public/js/addriver.js"></script>
                 </div>
             </section>
         </div>
     </section>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="../../../Public/js/addDriver.js"></script>
+
     <script>
         let arrow = document.querySelectorAll(".arrow");
         for (var i = 0; i < arrow.length; i++) {

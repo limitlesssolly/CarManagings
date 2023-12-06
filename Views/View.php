@@ -1,14 +1,20 @@
 <?php
 
-abstract class  View{
+abstract class View
+{
     protected $model;
     protected $controller;
 
-    public function __construct($controller, $model) {
+    public function __construct($controller, $model)
+    {
         $this->controller = $controller;
         $this->model = $model;
     }
-	
-    public abstract function view();
+
+    // public abstract function viewName();
+    // public abstract function viewEmail();
+    // public abstract function viewPhone();
+
+
 }
 ?>

@@ -1,31 +1,8 @@
 <?php
-require_once( "../../../App/Models/users.php");
+session_start();
+require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
 require_once("../../../Views/View.php");
-$model = new User($_SESSION["Email"]);
-$controller = new UsersController($model);
-$view = new ViewUser($controller, $model);
-// echo $_SESSION["Email"];
-// $sql = "SELECT * FROM users WHERE Email = $userId";
-// $result = query($sql);
-
-// if ($result->num_rows > 0) {
-//     $user = $result->fetch_assoc();
-// } else {
-//     echo "User not found";
-//     exit;
-// }
-
-
-
-
-
-
-// if (isset($_GET['action']) && !empty($_GET['action'])) {
-
-// 	echo $view->output();
-// }
-// include_once "../../includes/db.php";
 ?>
 
 <!DOCTYPE html>
@@ -43,8 +20,6 @@ $view = new ViewUser($controller, $model);
 <body>
 
     <?php
-    // include('../../../Views/Partials/sidebar.php');
-   
     include('../../Partials/sidebar.php');
 
     ?>
@@ -65,157 +40,124 @@ $view = new ViewUser($controller, $model);
                     <h2 class="user_registered-title">View Your Profile Info?</h2>
                     <button class="user_registered-login" id="login-button">View</button>
 
-                    <form >
+                    <form>
                         <button class="user_registered-login" id="login-button">Delete Account</button>
                     </form>
 
                 </div>
 
             </div>
-			<form action="profile.php?action=view" method="get">
+            <form action="profile.php?action=view" method="get">
 
-            <div class="user_options-forms" id="user_options-forms">
+                <div class="user_options-forms" id="user_options-forms">
 
-                <div class="user_forms-login">
+                    <div class="user_forms-login">
 
-                    <h2 class="forms_title">Profile Info</h2>
+                        <h2 class="forms_title">Profile Info</h2>
 
-                    <table class="rwd-table">
-                        <tbody>
+                        <table class="rwd-table">
+                            <tbody>
 
-                            <tr>
-                                <td data-th="Supplier Code">
-                                    <span class="fa fa-user"></span>
-                                </td>
+                                <tr>
+                                    <td data-th="Supplier Code">
+                                        <span class="fa fa-user"></span>
+                                    </td>
 
-                                <td data-th="Supplier Code">
-                                    <p style="font-size:18px">Name :</p>
-                                </td>
+                                    <td data-th="Supplier Code">
+                                        <p style="font-size:18px">Name :</p>
+                                    </td>
 
-                                <td data-th="Supplier Name">
-                                    <p style="font-size:18px">
-                                        <?php 
+                                    <td data-th="Supplier Name">
+                                        <p style="font-size:18px">
+                                            <?php
 
-			                            echo $view->view();
-                                        ?>
-                                    </p>
-                                </td>
-                            </tr>
+                                            echo $_SESSION["Name"]; ?>
+                                        </p>
+                                    </td>
+                                </tr>
 
-                            <tr>
-                                <td data-th="Supplier Code">
-                                    <span class="fa fa-envelope"></span>
-                                </td>
+                                <tr>
+                                    <td data-th="Supplier Code">
+                                        <span class="fa fa-envelope"></span>
+                                    </td>
 
-                                <td data-th="Supplier Code">
-                                    <p style="font-size:18px"> Email : </p>
-                                </td>
+                                    <td data-th="Supplier Code">
+                                        <p style="font-size:18px"> Email : </p>
+                                    </td>
 
-                                <td data-th="Supplier Name">
-                                    <p style="font-size:18px">
-                                        <?php
-                                          echo $_SESSION["Email"];
-                                        ?>
-                                    </p>
-                            </tr>
-                            <tr>
-                                <td data-th="Supplier Code">
-                                    <span class="fa fa-phone"></span>
-                                </td>
+                                    <td data-th="Supplier Name">
+                                        <p style="font-size:18px">
+                                            <?php
+                                            echo $_SESSION["Email"];
+                                            ?>
+                                        </p>
+                                </tr>
+                                <tr>
+                                    <td data-th="Supplier Code">
+                                        <span class="fa fa-phone"></span>
+                                    </td>
 
-                                <td data-th="Supplier Code">
-                                    <p style="font-size:18px"> Phone : </p>
-                                </td>
+                                    <td data-th="Supplier Code">
+                                        <p style="font-size:18px"> Phone : </p>
+                                    </td>
 
-                                <td data-th="Supplier Name">
-                                    <p style="font-size:18px">
-                                        <?php
-                                         echo  ($_SESSION["Phone"]) 
-                                        ?>
-                                    </p>
-                            </tr>
+                                    <td data-th="Supplier Name">
+                                        <p style="font-size:18px">
+                                            <?php
+                                            echo $_SESSION["Phone"]; ?>
+                                        </p>
+                                </tr>
 
-                        </tbody>
-                    </table>
-                </div>
-</form>
-                <div class="user_forms-signup">
+                            </tbody>
+                        </table>
+                    </div>
+            </form>
+            <div class="user_forms-signup">
 
-                    <h2 class="forms_title">Update Profile Info</h2>
+                <h2 class="forms_title">Update Profile Info</h2>
 
-                    <div class="log">
+                <div class="log">
                     <form action="profile.php?action=edit" method="post">
 
-                            <div class="input-cont">
-                                <input type="text" name="Name" required />
-                                <label>Username</label>
-                                <div class="border1"></div>
-                            </div>
+                        <div class="input-cont">
+                            <input type="text" name="Name" required />
+                            <label>Username</label>
+                            <div class="border1"></div>
+                        </div>
 
-                            <div class="input-cont">
-                                <input type="email" name="Email" required />
-                                <label>Email</label>
-                                <div class="border2"></div>
-                            </div>
+                        <div class="input-cont">
+                            <input type="email" name="Email" required />
+                            <label>Email</label>
+                            <div class="border2"></div>
+                        </div>
 
-                            <div class="input-cont">
-                                <input type="text" name="Phone" required/>
-                                <label>Phone</label>
-                                <div class="border2"></div>
-                            </div>
+                        <div class="input-cont">
+                            <input type="text" name="Phone" required />
+                            <label>Phone</label>
+                            <div class="border2"></div>
+                        </div>
 
-                            <div class="input-cont">
-                                <input type="password"  name="Password" id="password" required />
-                                <label>Password</label>
-                                <div class="border2"></div>
-                            </div>
+                        <div class="input-cont">
+                            <input type="password" name="Password" id="password" required />
+                            <label>Password</label>
+                            <div class="border2"></div>
+                        </div>
 
-                            <div class="input-cont">
-                                <input type="password"name="confirm" id="confirmPassword" required />
-                                <label>Confirm Password</label>
-                                <div class="border2"></div>
-                            </div>
-                            <button type="submit" id="sign"name="submit"class="user_registered-login2">Update</button>
+                        <div class="input-cont">
+                            <input type="password" name="confirm" id="confirmPassword" required />
+                            <label>Confirm Password</label>
+                            <div class="border2"></div>
+                        </div>
+                        <button type="submit" id="sign" name="submit" class="user_registered-login2">Update</button>
 
-                        </form>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
         </div>
         </div>
+        </div>
     </section>
-
-    <?php
-    // if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    //     $name = htmlspecialchars($_POST["Name"]);
-    //     $email = htmlspecialchars($_POST["Email"]);
-    //     $phone = htmlspecialchars($_POST["Phone"]);
-    //     $password = htmlspecialchars($_POST["Pass"]);
-    //     $Confirmpassword = htmlspecialchars($_POST["Confirmpassword"]);
-    //     if ($_POST['Pass'] != $_POST['Confirmpassword']) {
-    //         echo "<h3> Oops! Password did not match! Try again.</h3>";
-
-    //     } else {
-    //         $sql = "update  users set Name='$name',  Email='$email',Phone='$phone', Pass='$password'
-	// where Email =" . $_SESSION['Email'];
-    //         $result = mysqli_query($conn, $sql);
-    //         //if update is successful don't forget to update the seesion variables too the redirect to index.php
-    //         if ($result) {
-    //             $_SESSION['Name'] = $row['Name'];
-    //             $_SESSION['Email'] = $row['Email'];
-    //             $_SESSION['Pass'] = $row['Pass'];
-    //             $_SESSION['Phone'] = $row['Phone'];
-    //             header("Location:index.php");
-    //         } else {
-    //             echo "Invalid Input";
-    //         }
-    //     }
-
-    //     $conn->close();
-    // }
-    ?>
-
     <script>
         const signupButton = document.getElementById('signup-button'),
             loginButton = document.getElementById('login-button'),

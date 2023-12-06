@@ -1,7 +1,7 @@
 <?php
 require_once( "../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
-$model = new user();
+$model = new User();
 $controller = new UsersController($model);
 session_start();
 

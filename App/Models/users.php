@@ -1,6 +1,6 @@
 <?php
-require_once("../../../Views/View.php");
-require_once("../../../App/Models/Model.php");
+require_once "../../../Views/View.php";
+require_once "../../../App/Models/Model.php";
 class User extends Model {
     protected $id;
     protected $name;
@@ -73,55 +73,37 @@ class User extends Model {
  
         }
     }
-//     function readUsers() {
-//         $sql = "SELECT * FROM users";
-//         $result = $this->db->query($sql);
-//         if($result->num_rows > 0) {
-//             return $result;
-//         } else {
-//             return false;
-//         }
-//     }
-// public     function insert($name, $email, $phone, $password) {
-//         $sql = "INSERT INTO users (Name, Email, Phone,Pass) VALUES ('$name','$email','$phone','$password')";
-//         if($this->db->query($sql) === true) {
-//             echo "successfull";
-//             $this->fillArray();
-//         } else {
-//             echo "Error";
-//         }
-//     }
-    // public  function readUser($email)
-//     {
-//         $sql = "SELECT * FROM users where Email=" . $email;
-//         $db = $this->connect();
-//         $result = $db->query($sql);
-//         if ($result->num_rows == 1) {
-//             $row = $db->fetchRow();
-//             $this->name = $row["Name"];
-//             $_SESSION["Name"] = $row["Name"];
-//             $this->email = $row["Email"];
-//             $_SESSION["Email"] = $row["Email"];
-//             $this->phone = $row["Phone"];
-//             $_SESSION["Phone"] = $row["Phone"];
+    public  function readUser($email)
+    {
+        $sql = "SELECT * FROM users where Email=" . $email;
+        $db = $this->connect();
+        $result = $db->query($sql);
+        if ($result->num_rows == 1) {
+            $row = $db->fetchRow($result);
+            $this->name = $row["Name"];
+            $_SESSION["Name"] = $row["Name"];
+            $this->email = $row["Email"];
+            $_SESSION["Email"] = $row["Email"];
+            $this->phone = $row["Phone"];
+            $_SESSION["Phone"] = $row["Phone"];
 
-    //         } else {
-//             $this->name = "";
-//             $this->email = "";
-//             $this->phone = "";
-//         }
-//         return $result ;
-//     }
-//     function editUser($name,$email,$password,$phone){
-//         $sql = "update user set Name='$name',Email='$email', Pass='$password', Phone='$phone' where id=$this->id;";
-//           if($this->db->query($sql) === true){
-//               echo "updated successfully.";
-//               $this->readUser($this->id);
-//           } else{
-//               echo "ERROR: Could not able to execute $sql. " ;
-//           }
+            } else {
+            $this->name = "";
+            $this->email = "";
+            $this->phone = "";
+        }
+        return $result ;
+    }
+    function editUser($name,$email,$phone,$password){
+        $sql = "update user set Name='$name',Email='$email', Phone='$phone', Pass='$password' where Email=$this->email;";
+          if($this->db->query($sql) === true){
+              echo "updated successfully.";
+              $this->readUser($this->id);
+          } else{
+              echo "ERROR: Could not able to execute $sql. " ;
+          }
 
-    //     }
+        }
 
     function deleteUser() {
         $sql = "delete from user where email=$this->email;";
@@ -156,13 +138,20 @@ class User extends Model {
             echo "Fee Mashakel";
         }
     }
-}
+ }
 
-class ViewUser extends View {
-    public function view() {
-        return $this->model->getName();
+// class ViewUser extends View {
+//     public function viewName() {
+//         return $this->model->getName();
 
-    }
+//     } public  function viewEmail(){
+//         return $this->model->getEmail();
 
-}
+//     }
+//     public  function viewPhone(){
+//         return $this->model->getPhone();
+
+//     }
+
+// }
 ?>

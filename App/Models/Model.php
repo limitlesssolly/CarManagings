@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 require(__DIR__ . '/../Database/Dbh.php');
 class Model{
     protected $db;

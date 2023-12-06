@@ -1,7 +1,7 @@
 <?php
 
 require "Model.php";
-
+include_once "../App/Database/db.php";
 class Driver extends Model
 {
     protected $id;
@@ -12,20 +12,21 @@ class Driver extends Model
     private $status;
     private $drivers;
 
-    function __construct($id, $name = "", $email = "", $phone = "", $dateofemployment = "", $status = "")
+    function __construct()
     {
-        $this->id = $id;
-        $this->db = $this->connect();
+        // $id , $name = "", $email = "", $phone = "", $dateofemployment = "", $status = ""  constructor parameters
+        // $this->id = $id;
+        // $this->db = $this->connect();
 
-        if ("" === $name) {
-            $this->readDriver($id);
-        } else {
-            $this->name = $name;
-            $this->email = $email;
-            $this->phone = $phone;
-            $this->dateofemployment = $dateofemployment;
-            $this->status = $status;
-        }
+        // if ("" === $name) {
+        //     $this->readDriver($id);
+        // } else {
+        //     $this->name = $name;
+        //     $this->email = $email;
+        //     $this->phone = $phone;
+        //     $this->dateofemployment = $dateofemployment;
+        //     $this->status = $status;
+        // }
     }
 
     function getName()
@@ -74,10 +75,6 @@ class Driver extends Model
     {
         return $this->id;
     }
-    function getAllDrivers()
-    {
-
-    }
     function getDrivers() {
 		return $this->drivers;
 	}
@@ -86,30 +83,32 @@ class Driver extends Model
 		$this->db = $this->connect();
 		$result = $this->readDrivers();
 		while ($row = $result->fetch_assoc()) {
-			array_push($this->drivers, new Driver($row["ID"],$row["name"],$row["email"],$row["phone"],$row["date"],$row["status"]));
+			// array_push($this->drivers, new Driver($row["ID"],$row["name"],$row["email"],$row["phone"],$row["date"],$row["status"]));
 		}
 	}
 
-	function readDrivers(){
+
+	public function readDrivers(){
 		$sql = "SELECT * FROM drivers";
-
-		$result = $this->db->query($sql);
-		if ($result->num_rows > 0){
-			return $result;
-		}
-		else {
-			return false;
-		}
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
 	}
-    function addDriver($name,$email, $phone, $dateofemployment, $status)
+
+    function addDriver($name,$email, $phone, $date, $status, $img)
     {
-        $sql = "INSERT INTO drivers (name, email, phone, date,status) VALUES ('$name','$email', '$phone', '$dateofemployment', '$status')";
-		if($this->db->query($sql) === true){
-			echo "Driver inserted successfully.";
-			$this->fillArray();
-		} else {
-            echo "Fee Mashakel";
-        }
+        $sql = "INSERT INTO drivers (Name, Email, Phone, dateofemployment , status , img) VALUES ('$name','$email', '$phone', '$date', '$status','$img')";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 0;
+         }
+         else{
+            echo "error";
+         }
     }
     function editDriver($name,$email, $phone, $status)
     {
@@ -119,7 +118,7 @@ class Driver extends Model
         } else {
             echo "Fee mashakel";
         }
-
+        
     }
     function removeDrivers()
     {
@@ -130,7 +129,7 @@ class Driver extends Model
             echo "Fee Mashakel";
         }
     }
-
+    
     function readDriver($id)
     {
         $sql = "SELECT * FROM drivers where ID=" . $id;
@@ -148,4 +147,5 @@ class Driver extends Model
             $this->phone = "";
         }
     }
+
 }

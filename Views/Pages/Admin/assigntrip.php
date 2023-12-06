@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../../Public/CSS/adddrivers.css"> -->
-    <link rel="stylesheet" href="../../../../Public/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Drivers</title>
 </head>
@@ -96,7 +96,7 @@ button:hover {
 
 <body>
     <?php
-    include("../../../Partials/dashboardsidebar.php");
+    include("../../Partials/dashboardsidebar.php");
     ?>
     <section class="home-section">
         <div class="home-content">

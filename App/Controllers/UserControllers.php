@@ -29,5 +29,22 @@ class UsersController extends Controller{
 	public function view(){
 		$this->model->output();
 	}
+
+	public function addRating(){
+		$name = $_REQUEST['name'];
+		$email = $_REQUEST['email'];
+		$rating = $_REQUEST['rating'];
+		$review = $_REQUEST['review'];
+
+		$this->model->rate($name,$email,$rating,$review);
+	}
+	public function contact(){
+		$name = $_REQUEST['name'];
+		$email = $_REQUEST['email'];
+		$phone = $_REQUEST['phone'];
+		$message = $_REQUEST['message'];
+
+		$this->model->requestContact($name,$email,$phone,$message);
+	}
 }
 ?>

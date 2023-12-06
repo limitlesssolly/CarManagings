@@ -1,3 +1,15 @@
+<?php
+
+require_once "../../../App/Models/users.php";
+require_once "../../../App/Controllers/UserControllers.php";
+$model = new User($id, $name, $email, $phone);
+$controller = new UsersController($model);
+
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+    $controller->{$_GET['action']}();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,7 +98,7 @@
         <span class="circle one"></span>
         <span class="circle two"></span>
 
-        <form action="/home" autocomplete="off" method="POSt">
+        <form action="contactus.php?action=contact" autocomplete="off" method="POSt">
 
           <h3 class="title">Contact us</h3>
 
@@ -114,7 +126,7 @@
             <span>Message</span>
           </div>
 
-          <input type="submit" value="Send" class="btn" />
+          <input type="submit" value="Send" class="btn" name="submit"/>
 
         </form>
 

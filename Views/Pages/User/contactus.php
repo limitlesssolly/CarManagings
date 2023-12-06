@@ -1,15 +1,6 @@
 <?php
 session_start();
 require_once "../../../mailing.php";
-require_once "../../../App/Models/users.php";
-require_once "../../../App/Controllers/UserControllers.php";
-$model = new User($id, $name, $email, $phone);
-$controller = new UsersController($model);
-
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-    $controller->{$_GET['action']}();
-}
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +90,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
         <span class="circle one"></span>
         <span class="circle two"></span>
 
-        <form action="contactus.php?action=contact" autocomplete="off" method="POSt">
+        <form action="contactus.php" autocomplete="off" method="POSt">
 
           <h3 class="title">Contact us</h3>
 

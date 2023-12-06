@@ -110,14 +110,16 @@ class Driver extends Model
             echo "error";
          }
     }
-    function editDriver($name,$email, $phone, $status)
+    function editDriver($name,$email, $phone,$img, $status)
     {
-        $sql = "UPDATE drivers SET name='$name',email='$email', phone='$phone', status='$status'";
-        if ($this->db->query($sql) === true) {
-            echo "updated successfully.";
-        } else {
-            echo "Fee mashakel";
-        }
+        $sql = "UPDATE drivers SET Name='$name',Email='$email', Phone='$phone',img='$img', status='$status'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 'true';
+         }
+         else{
+            echo "error";
+         }
         
     }
     function removeDrivers()
@@ -132,20 +134,27 @@ class Driver extends Model
     
     function readDriver($id)
     {
-        $sql = "SELECT * FROM drivers where ID=" . $id;
-        $db = $this->connect();
-        $result = $db->query($sql);
-        if ($result->num_rows == 1) {
-            $row = $db->fetchRow();
-            $this->name = $row["Name"];
-            $_SESSION["Name"] = $row["Name"];
-            $this->email = $row["Email"];
-            $this->phone = $row["Phone"];
-        } else {
-            $this->name = "";
-            $this->email = "";
-            $this->phone = "";
-        }
+        $sql = "SELECT * FROM drivers where ID=".$id;
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
+        // $db = $this->connect();
+        // $result = $db->query($sql);
+        // if ($result->num_rows == 1) {
+        //     $row = $db->fetchRow();
+        //     $this->name = $row["Name"];
+        //     $_SESSION["Name"] = $row["Name"];
+        //     $this->email = $row["Email"];
+        //     $this->phone = $row["Phone"];
+        // } else {
+        //     $this->name = "";
+        //     $this->email = "";
+        //     $this->phone = "";
+        // }
     }
 
 }

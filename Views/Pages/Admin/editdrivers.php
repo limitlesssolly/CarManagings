@@ -1,13 +1,3 @@
-<?php
-require "../../../../App/Models/drivers.php";
-require "../../../../App/Controllers/DriversControllers.php";
-$model = new Driver($id, $name, $email, $phone, $status);
-$controller = new DriversController($model);
-
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-    $controller->{$_GET['action']}();
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -16,8 +6,12 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../../Public/CSS/adddrivers.css"> -->
-    <link rel="stylesheet" href="../../../../Public/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../../Public/CSS/alert.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <title>Edit-Driver</title>
 </head>
 
@@ -31,7 +25,9 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
     padding:0px;
     text-align:center;
 }
-
+body{
+    overflow: hidden;
+}
 .container {
     position: relative;
     max-width: 500px;
@@ -64,7 +60,7 @@ input[type=email],
 select,
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     border: 1px solid #01051c;
     border-radius: 4px;
     resize: vertical;
@@ -90,6 +86,7 @@ button {
     transition: 0.9s;
     position: relative;
     right: 0%;
+    cursor: pointer;
 }
 
 button:hover {
@@ -102,38 +99,54 @@ button:hover {
 
 <body>
     <?php
-    include("../../../Partials/dashboardsidebar.php");
+    include("../../Partials/dashboardsidebar.php");
     ?>
     <section class="home-section">
         <div class="home-content">
             <i class="bx bx-menu"></i>
             <span class="text">Dashboard</span>
         </div>
+        <div class="alert hide"> 
+                        <span class="fas fa-check-circle"></span>
+                        <span class="msg">Updated Successfully!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+        </div>
         <div class="adddrivers">
             <section>
                 <div class="container" >
                     <h1>Update driver info</h1>
                     <form action="editdrivers.php?action=edit" method="post">
+                        <div class="id">
+                            <label >Driver ID</label>
+                            <input type="text" class="field" name="name" id='id' required> <br>
+                        </div>
 
                         <div class="name">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" class="field" name="name"> <br>
+                            <label >Full Name</label>
+                            <input type="text" class="field" name="name" id='name'> <br>
                         </div>
 
                         <div class="contactinfo">
-                            <label for="contactnumbers">Email</label>
-                            <input type="email" class="field" name="email" required> 
+                            <label >Email</label>
+                            <input type="email" class="field" name="email" id='email' > 
                         </div>
 
                         <div class="contactinfo">
-                            <label for="contactnumbers">Contact Number</label>
-                            <input type="text" class="field" name="phone" >  
+                            <label >Contact Number</label>
+                            <input type="text" class="field" name="phone" id='phone' >  
+                        </div>
+
+                        <div class="phot">
+                            <label >Driver Photo</label>
+                            <input type="file" class="field" name="photo"  id='img' >  
                         </div>
 
                         <div class="status">
                             
-                            <label for="salary">Status</label>
-                            <input type="text" class="field" name="status"  >                           
+                            <label >Status</label>
+                            <input type="text" class="field" name="status" id='status' >                           
 
                         </div>
 
@@ -141,6 +154,7 @@ button:hover {
                             <button type="submit" name="submit">edit </button>
                         </div>
                     </form>
+                    <script src="../../../Public/js/editdriver.js"></script>
                 </div>
             </section>
         </div>

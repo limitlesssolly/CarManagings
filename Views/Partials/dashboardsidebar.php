@@ -22,7 +22,7 @@
                         <li><a class="link_name" >Drivers</a></li> 
                         <li><a href="../../../Routes/driverrouter.php?action=drivers">show</a></li>  
                         <li><a href="../../../Routes/driverrouter.php?action=adddriverpage">Add</a></li>   
-                        <li><a href="../Pages/editdrivers.php">Edit</a></li>
+                        <li><a href="../../../Routes/driverrouter.php?action=editdriverpage">Edit</a></li>
                        
                      </ul>
 

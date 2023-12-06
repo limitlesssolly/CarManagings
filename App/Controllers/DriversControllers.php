@@ -73,17 +73,54 @@ class DriversController extends Controller{
 	   return	$drivers->readDrivers();
 	}
 
-
-	public function edit() {
-		$name = $_REQUEST['name'];
-		$email = $_REQUEST['email'];
-		$phone = $_REQUEST['phone'];
-		$status = $_REQUEST['status'];
-
-		$this->model->editDriver($name,$email,$phone,$status);
-	}
 	
 	public function delete(){
 		$this->model->removeDrivers();
+	}
+	public function Edit($id,$name,$email,$phone,$img,$status) {
+		
+
+
+		 $i=0;
+         if($id == null)
+		 {
+            $i++;
+			return 'please enter id';
+
+		 }else{
+			// $drivers=new  Driver();
+
+		$driverinfo =$drivers->readDriver($id);
+		while ($row = $driverinfo->fetch_assoc()) {
+     
+			 
+		
+			if($name==''){
+               $name=$row['Name'];
+			}
+
+			if($email==''){
+				$email=$row['Email'];
+			 }
+
+			 if($phone==''){
+				$phone=$row['Phone'];
+			 }
+
+			 if($img==''){
+				$img= $row['img'];
+			 }
+			 if($status==''){
+				$status= $row['status'];
+			 }
+			 $drivers->editDriver($id,$name,$email,$phone,$img, $status);
+			 return	'successful';
+ 
+		   } 
+    
+		 }
+
+        
+
 	}
 }

@@ -39,4 +39,17 @@ else if($_GET['action']=='adddriver'){
         echo json_encode($result);
     }
 
+}else if($_GET['action']=='editdriverpage'){
+
+    header("Location:../Views/Pages/Admin/editdrivers.php");
+}
+else if($_GET['action']=='editdriver'){
+    $result=$driver->Edit($_POST['id'],$_POST['name'],$_POST['email'],$_POST['phone'],$_POST['photo'], $_POST['status']);
+    if($result=='successful')
+    {
+        echo 'successful';
+    }else{
+        echo json_encode($result);
+    }
+
 }

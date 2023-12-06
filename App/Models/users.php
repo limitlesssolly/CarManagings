@@ -2,23 +2,10 @@
 require_once("../../../Views/View.php");
 require_once("../../../App/Database/Dbh.php");
 require_once("../../../App/Models/Model.php");
-
-// abstract class Model{
-//     protected $db;
-//     protected $conn;
-//     public function connect(){
-//         if(null === $this->conn ){
-//             $this->db = new Dbh();
-//         }
-//         return $this->db;
-//     }
-// }
-
 class User extends Model
 {
     protected $id;
     protected $name;
-    // protected $type;
     protected $email;
     protected $password;
     protected $phone;
@@ -67,11 +54,6 @@ private $users;
         return $this->password = $password;
     }
 
-
-    // function getID()
-    // {
-    //     return $this->id;
-    // }
     function getAllUsers()
     {
 
@@ -100,7 +82,7 @@ private $users;
 	}
     public function insert($name,$email,$phone,$password)
 {
-        $sql = "INSERT INTO users (Name, Email, Phone,Pass) VALUES ('$name','$email','$phone','$password')";
+        $sql = "INSERT INTO users (Name,Email,Phone,Pass) VALUES ('$name','$email','$phone','$password')";
         if($this->db->query($sql) === true){
 			echo "successfull";
 			$this->fillArray();

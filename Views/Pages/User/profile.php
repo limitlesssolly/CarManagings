@@ -5,8 +5,7 @@ require_once("../../../Views/View.php");
 $model = new User($_SESSION["Email"]);
 $controller = new UsersController($model);
 $view = new ViewUser($controller, $model);
-$userId = $_SESSION["Email"];
-
+// echo $_SESSION["Email"];
 // $sql = "SELECT * FROM users WHERE Email = $userId";
 // $result = query($sql);
 
@@ -16,7 +15,6 @@ $userId = $_SESSION["Email"];
 //     echo "User not found";
 //     exit;
 // }
-
 
 
 
@@ -45,7 +43,10 @@ $userId = $_SESSION["Email"];
 <body>
 
     <?php
-    include('../../../Views/Partials/sidebar.php');
+    // include('../../../Views/Partials/sidebar.php');
+   
+    include('../../Partials/sidebar.php');
+
     ?>
 
     <section class="user">
@@ -94,6 +95,7 @@ $userId = $_SESSION["Email"];
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
                                         <?php 
+
 			                            echo $view->view();
                                         ?>
                                     </p>
@@ -112,7 +114,7 @@ $userId = $_SESSION["Email"];
                                 <td data-th="Supplier Name">
                                     <p style="font-size:18px">
                                         <?php
-                                            $_SESSION["Email"] 
+                                          echo $_SESSION["Email"];
                                         ?>
                                     </p>
                             </tr>

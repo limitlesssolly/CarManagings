@@ -1,5 +1,5 @@
-
-
+<?php
+session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +39,7 @@
                 <table>
                     <thead>
                         <tr>
+                        <th> ID <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Name <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Email <span class="icon-arrow">&UpArrow;</span></th>
                             <th> Phone <span class="icon-arrow">&UpArrow;</span></th>
@@ -51,9 +52,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                   
-                      
-                    </tbody>
+                <?php
+                    
+                    $i=0;
+                    while ( isset( $_SESSION['Alldrivers'][$i]['ID']) ){
+                        echo "<tr>";
+                        echo "<td>" . $_SESSION['Alldrivers'][$i]['ID'] . "</td>";
+                        echo "<td>" .  $_SESSION['Alldrivers'][$i]['Name'] . "</td>";
+                        echo "<td>" . $_SESSION['Alldrivers'][$i]['Email'] . "</td>";
+                        echo "<td>" .  $_SESSION['Alldrivers'][$i]['Phone'] . "</td>";
+                        
+                        if( $_SESSION['Alldrivers'][$i]['Status'] == 'available'){
+                            echo '<td>
+                            <p class="status delivered">' .  $_SESSION['Alldrivers'][$i]['Status'] . '</p>
+                            </td>'; 
+                        }else{
+                            echo '<td>
+                            <p class="status cancelled">' .  $_SESSION['Alldrivers'][$i]['Status'] . '</p>
+                            </td>'; 
+                        }
+
+                        echo "<td>" .  $_SESSION['Alldrivers'][$i]['dateofemployment'] . "</td>";
+
+                      echo "<td><form action='../Pages/assigntrip.php'> <button class='status shipped'>Show</button> </form> </td>";
+                      echo "<td><form action='../Pages/assigntrip.php'> <button class='status cancelled'>delete</button> </form> </td>";
+                      echo "</tr>";
+
+
+                      $i++;
+                    }
+                ?>
+            </tbody>
                     <script src="../../../Public/js/carshowdash.js"></script>
                 </table>
 
@@ -82,28 +111,3 @@
 
 </html>
 
-<?php
-// $query = "SELECT * FROM drivers";
-// echo '<table border="0" cellspacing="2" cellpadding="2">
-//     <tr>
-//         <td>
-//             <font face="Arial">Value1</font>
-//         </td>
-//         <td>
-//             <font face="Arial">Value2</font>
-//         </td>
-//     </tr>';
-
-//     if ($result = $mysqli->query($query)) {
-//     while ($row = $result->fetch_assoc()) {
-//     $field1name = $row["col1"];
-//     $field2name = $row["col2"];
-
-//     echo '<tr>
-//         <td>'.$field1name.'</td>
-//         <td>'.$field2name.'</td>
-//     </tr>';
-//     }
-//     $result->free();
-//     }
-?>

@@ -110,9 +110,9 @@ class Driver extends Model
             echo "error";
          }
     }
-    function editDriver($name,$email, $phone,$img, $status)
+    function editDriver($id,$name,$email, $phone,$img, $status)
     {
-        $sql = "UPDATE drivers SET Name='$name',Email='$email', Phone='$phone',img='$img', status='$status'";
+        $sql = "UPDATE drivers  SET Name='$name',Email='$email', Phone='$phone',img='$img', status='$status' where ID='$id'";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
             return 'true';
@@ -122,14 +122,16 @@ class Driver extends Model
          }
         
     }
-    function removeDrivers()
+    function removeDriver($id)
     {
-        $sql = "DELETE FROM drivers WHERE id=$this->id; ";
-        if ($this->db->query($sql) === true) {
-            echo "Drivers Deleted Successfully";
-        } else {
-            echo "Fee Mashakel";
-        }
+        $sql = "DELETE FROM drivers WHERE id='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 'sucessful';
+         }
+         else{
+            echo "error";
+         }
     }
     
     function readDriver($id)

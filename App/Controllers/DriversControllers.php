@@ -3,6 +3,9 @@
 require "Controller.php";
 require_once("../App/Models/drivers.php");
 class DriversController extends Controller{
+
+
+
 	public function Add($name,$email,$phone,$date,$img,$status) {
 
 		$error=[
@@ -74,8 +77,12 @@ class DriversController extends Controller{
 	}
 
 	
-	public function delete(){
-		$this->model->removeDrivers();
+	public function Delete($id){
+
+		$drivers=new  Driver();
+		return $drivers->removeDriver($id);
+
+
 	}
 	public function Edit($id,$name,$email,$phone,$img,$status) {
 		
@@ -88,7 +95,7 @@ class DriversController extends Controller{
 			return 'please enter id';
 
 		 }else{
-			// $drivers=new  Driver();
+			$drivers=new  Driver();
 
 		$driverinfo =$drivers->readDriver($id);
 		while ($row = $driverinfo->fetch_assoc()) {

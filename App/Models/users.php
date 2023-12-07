@@ -73,38 +73,76 @@ class User extends Model {
  
         }
     }
-    public  function readUser($email)
-    {
-        $sql = "SELECT * FROM users where Email=" . $email;
+    // public  function readUser($email)
+    // {
+    //     $sql = "SELECT * FROM users where Email=" . $email;
+    //     $db = $this->connect();
+    //     $result = $db->query($sql);
+    //     if ($result->num_rows == 1) {
+    //         $row = $db->fetchRow($result);
+    //         $this->name = $row["Name"];
+    //         $_SESSION["Name"] = $row["Name"];
+    //         $this->email = $row["Email"];
+    //         $_SESSION["Email"] = $row["Email"];
+    //         $this->phone = $row["Phone"];
+    //         $_SESSION["Phone"] = $row["Phone"];
+
+    //         } else {
+    //         $this->name = "";
+    //         $this->email = "";
+    //         $this->phone = "";
+    //     }
+    //     return $result ;
+    // }
+    // function editUser($name,$email,$phone,$password){
+    //     $sql = "UPDATE users SET Name='$name',Email='$email', Phone='$phone', Pass='$password' where Email=$this->email;";
+    //     if($this->db->query($sql) === true){
+	// 		echo "successfull";
+	// 		$this->fillArray();
+	// 	} else {
+    //         echo "error";
+ 
+    //     }
+
+    //     }
+
+    function readUser($id){
+        $sql = "SELECT * FROM user where id=".$id;
         $db = $this->connect();
         $result = $db->query($sql);
-        if ($result->num_rows == 1) {
-            $row = $db->fetchRow($result);
-            $this->name = $row["Name"];
+        if ($result->num_rows == 1){
+            $row = $db->fetchRow();
+             $this->name = $row["Name"];
             $_SESSION["Name"] = $row["Name"];
             $this->email = $row["Email"];
             $_SESSION["Email"] = $row["Email"];
             $this->phone = $row["Phone"];
             $_SESSION["Phone"] = $row["Phone"];
+            $this->password = $row["Pass"];
+            $_SESSION["Password"] = $row["Pass"];
+            $result->fillArray();
 
-            } else {
+        }
+        else {
             $this->name = "";
-            $this->email = "";
+            $this->password="";
+            $this->age = "";
             $this->phone = "";
+            echo ("ERROR");
         }
-        return $result ;
-    }
+      }
+      
     function editUser($name,$email,$phone,$password){
-        $sql = "update user set Name='$name',Email='$email', Phone='$phone', Pass='$password' where Email=$this->email;";
-          if($this->db->query($sql) === true){
-              echo "updated successfully.";
-              $this->readUser($this->id);
-          } else{
-              echo "ERROR: Could not able to execute $sql. " ;
-          }
-
-        }
-
+        $sql= "UPDATE `users` SET ,`Name`='$name',`Email`='$email',`Phone`='$phone',`Pass`='$password' WHERE `id`='$this->id'";
+        // $sql = "UPDATE users SET Name='$name',Email='$email', Phone='$phone', Pass='$password' where id=$this->id;";
+            if($this->db->query($sql) === true){
+                echo "updated successfully.";
+                $this->readUser($this->id);
+            } else{
+                echo "ERROR: Could not able to execute $sql. " ;
+            }
+    
+      }
     function deleteUser() {
         $sql = "delete from user where email=$this->email;";
         if($this->db->query($sql) === true) {

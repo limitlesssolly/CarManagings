@@ -146,14 +146,5 @@ class User extends Model {
         return $result;
      }
 
-    function requestContact($name, $email, $phone, $message) {
-        $sql = "INSERT INTO contactings (name, email, phone, message) VALUES ('$name','$email', '$phone','$message')";
-        if($this->db->query($sql) === true) {
-            echo "Request sent Successfully.";
-            $this->fillArray();
-        } else {
-            echo "Fee Mashakel";
-        }
-    }
  }
 ?>

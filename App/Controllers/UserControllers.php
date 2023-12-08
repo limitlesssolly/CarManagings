@@ -1,12 +1,6 @@
 <?php
-abstract class Controller
-{
-	protected $model;
-	public function __construct($model)
-	{
-		$this->model = $model;
-	}
-}
+require "Controller.php";
+require_once("../../../App/Models/users.php");
 class UsersController extends Controller
 {
 	public function insert()
@@ -21,21 +15,20 @@ class UsersController extends Controller
 
 	public function edit()
 	{
+		$id=$_SESSION["id"];
 		$name = $_POST['Name'];
 		$email = $_POST['Email'];
 		$phone = $_POST['Phone'];
 		$password = $_POST['Password'];
-		$this->model->editUser($name, $email, $phone, $password);
-	}
+		$this->model->editUser($id,$name, $email, $phone, $password);
 
+ 
+	}
+	
 	public function delete()
 	{
 		$this->model->deleteUser();
 	}
-	// public function view(){
-	// 	$this->model->output();
-	// }
-
 	public function addRating()
 	{
 		$name = $_REQUEST['name'];

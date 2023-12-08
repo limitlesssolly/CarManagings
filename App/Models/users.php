@@ -1,6 +1,8 @@
 <?php
 require_once "../../../Views/View.php";
-require_once "../../../App/Models/Model.php";
+require "Model.php";
+include_once "../../../App/Database/db.php";
+include_once "../../../App/Database/Dbh.php";
 class User extends Model {
     protected $id;
     protected $name;
@@ -15,6 +17,12 @@ class User extends Model {
         $this->phone = $phone;
         $this->password = $password;
 
+    }
+    function setID($id) {
+        return $this->id = $id;
+    }
+    function getID() {
+        return $this->id;
     }
     function setName($name) {
         return $this->name = $name;
@@ -73,46 +81,14 @@ class User extends Model {
  
         }
     }
-    // public  function readUser($email)
-    // {
-    //     $sql = "SELECT * FROM users where Email=" . $email;
-    //     $db = $this->connect();
-    //     $result = $db->query($sql);
-    //     if ($result->num_rows == 1) {
-    //         $row = $db->fetchRow($result);
-    //         $this->name = $row["Name"];
-    //         $_SESSION["Name"] = $row["Name"];
-    //         $this->email = $row["Email"];
-    //         $_SESSION["Email"] = $row["Email"];
-    //         $this->phone = $row["Phone"];
-    //         $_SESSION["Phone"] = $row["Phone"];
-
-    //         } else {
-    //         $this->name = "";
-    //         $this->email = "";
-    //         $this->phone = "";
-    //     }
-    //     return $result ;
-    // }
-    // function editUser($name,$email,$phone,$password){
-    //     $sql = "UPDATE users SET Name='$name',Email='$email', Phone='$phone', Pass='$password' where Email=$this->email;";
-    //     if($this->db->query($sql) === true){
-	// 		echo "successfull";
-	// 		$this->fillArray();
-	// 	} else {
-    //         echo "error";
- 
-    //     }
-
-    //     }
-
-    function readUser($id){
-        $sql = "SELECT * FROM user where id=".$id;
-        $db = $this->connect();
-        $result = $db->query($sql);
+        function readUser($id){
+		$id=$_SESSION["id"];
+        $sql = "SELECT * FROM `users` WHERE id=$id";
+        $dbh = new Dbh();
+        $result = $dbh->query($sql);
         if ($result->num_rows == 1){
-            $row = $db->fetchRow();
-             $this->name = $row["Name"];
+            $row = $dbh->fetchRow($result);
+            $this->name = $row["Name"];
             $_SESSION["Name"] = $row["Name"];
             $this->email = $row["Email"];
             $_SESSION["Email"] = $row["Email"];
@@ -120,33 +96,36 @@ class User extends Model {
             $_SESSION["Phone"] = $row["Phone"];
             $this->password = $row["Pass"];
             $_SESSION["Password"] = $row["Pass"];
-            $result->fillArray();
-
+                $this->fillArray();
         }
         else {
             $this->name = "";
             $this->password="";
             $this->age = "";
             $this->phone = "";
-            echo ("ERROR");
         }
       }
       
-    function editUser($name,$email,$phone,$password){
-        $sql= "UPDATE `users` SET ,`Name`='$name',`Email`='$email',`Phone`='$phone',`Pass`='$password' WHERE `id`='$this->id'";
-        // $sql = "UPDATE users SET Name='$name',Email='$email', Phone='$phone', Pass='$password' where id=$this->id;";
+    function editUser($id,$name,$email,$phone,$password){
+        $id=$_SESSION["id"];
+        $sql= "UPDATE `users` SET `Name`='[$name]',`Email`='[$email]',`Phone`='[$phone]',`Pass`='[$password]' WHERE `id`='[$id]'  ";
             if($this->db->query($sql) === true){
+                $this->readUser($id); 
                 echo "updated successfully.";
-                $this->readUser($this->id);
+                $this->fillArray();
+
             } else{
                 echo "ERROR: Could not able to execute $sql. " ;
             }
     
       }
     function deleteUser() {
-        $sql = "delete from user where email=$this->email;";
+        $id=$_SESSION["id"];
+        $sql = "delete from usesr where id=$id;";
         if($this->db->query($sql) === true) {
             echo "deletet successfully.";
+            header("Location:signup.php");
+
         } else {
             echo "ERROR: Could not able to execute $sql. ";
         }
@@ -177,19 +156,4 @@ class User extends Model {
         }
     }
  }
-
-// class ViewUser extends View {
-//     public function viewName() {
-//         return $this->model->getName();
-
-//     } public  function viewEmail(){
-//         return $this->model->getEmail();
-
-//     }
-//     public  function viewPhone(){
-//         return $this->model->getPhone();
-
-//     }
-
-// }
 ?>

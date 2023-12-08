@@ -16,6 +16,7 @@ if(isset($_POST['login']))	{
 	$result = $dbh->query($sql);
 	if ($result){
 		$row = $dbh->fetchRow($result);
+		$_SESSION["id"]=$row["id"];
 		$_SESSION["Name"]=$row["Name"];
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Phone"]=$row["Phone"];

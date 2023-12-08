@@ -1,8 +1,43 @@
 <?php
-session_start();
 require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
 require_once("../../../Views/View.php");
+$model = new User();
+$controller = new UsersController($model);
+session_start();
+$id=$_SESSION["id"];
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+	$controller->{$_GET['action']}();
+}
+// if(isset($_POST['edit']))	{
+//     $name=$_REQUEST["Name"];
+// 	$email=$_REQUEST["Email"];
+//     $phone=$_REQUEST["Phone"];
+// 	$password=$_REQUEST["Password"];
+//     $sql= "UPDATE `users` SET `Name`='[$name]',`Email`='[$email]',`Phone`='[$phone]',`Pass`='[$password]' WHERE `id`='[$id]'  ";
+// 	$dbh = new Dbh();
+// 	$result = $dbh->query($sql);
+// 	if ($result){
+// 		$row = $dbh->fetchRow($result);
+// 		$_SESSION["Name"]=$row["Name"];
+// 		$_SESSION["Email"]=$row["Email"];
+// 		$_SESSION["Phone"]=$row["Phone"];
+// 		$_SESSION["Password"]=$row["Pass"];
+// 		header("Location:profile.php");
+// 	}else{
+// 		echo ("ERRORR");
+// 	}
+// }
+// if (isset($_GET['action']) && !empty($_GET['action'])) {
+// 	switch($_GET['action']){
+// 		case 'edit':
+// 			$controller->edit();
+// 			break;
+//         	}
+// }
+// else{
+//     echo("ERRORRRRRrr");
+// }
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +82,7 @@ require_once("../../../Views/View.php");
                 </div>
 
             </div>
-            <form action="profile.php?action=view" method="get">
+            <form action="profile.php?action=view" method="post">
 
                 <div class="user_options-forms" id="user_options-forms">
 
@@ -138,7 +173,7 @@ require_once("../../../Views/View.php");
                         </div>
 
                         <div class="input-cont">
-                            <input type="password" name="Password" id="password" required />
+                            <input type="password" name="Password" id="Password" required />
                             <label>Password</label>
                             <div class="border2"></div>
                         </div>
@@ -148,7 +183,7 @@ require_once("../../../Views/View.php");
                             <label>Confirm Password</label>
                             <div class="border2"></div>
                         </div>
-                        <button type="submit" id="sign" name="submit" name="edit"class="user_registered-login2">Update</button>
+                        <button type="submit" id="edit" name="submit" name="edit"class="user_registered-login2">Update</button>
 
                     </form>
                 </div>

@@ -179,30 +179,35 @@ define('PAGES',"Views/Pages/");
 
   </div>
 
-  <button id="messageButton"><i class="fa fa-comment"></i></button>
-
   <?php
     include PARTIALS . "footer.php";
   ?>
 
-  <script>
-    // Open the popup when the button is clicked
-    document.getElementById("messageButton").addEventListener("click", function () {
-      document.querySelector(".popup").style.display = "block";
-    });
+<button class="whatsapp_float" onclick="openForm()"><i class="fa-brands fa-whatsapp whatsapp-icon"></i></button> 
 
-    // Close the popup when the close button is clicked
-    document.querySelector(".popup .close").addEventListener("click", function () {
-      document.querySelector(".popup").style.display = "none";
-    });
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    
 
-    // Close the popup when clicking outside the popup
-    window.addEventListener("click", function (event) {
-      if (event.target.classList.contains("popup")) {
-        document.querySelector(".popup").style.display = "none";
-      }
-    });
-  </script>
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Got any questions? I'm happy to help.
+Please press Send to contact with us easily" name="msg" required></textarea>
+    
+
+    <a href="https:/wa.me/201212977738"  target="_blank" button  class="btn">Send </button> ></a>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
 
 </body>
 

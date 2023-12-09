@@ -1,6 +1,14 @@
 <?php
+require_once("../../../App/Models/users.php");
+require_once("../../../App/Controllers/UserControllers.php");
+require_once("../../../Views/View.php");
+$model = new User();
+$controller = new UsersController($model);
 session_start();
-require_once "../../../Routes/User/ratingsrouter.php";
+$id=$_SESSION["id"];
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+	$controller->{$_GET['action']}();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +44,7 @@ require_once "../../../Routes/User/ratingsrouter.php";
 
         <h1>Rate Your Experience</h1>
 
-        <form method="POST" action="ratings.php?action=rate">
+        <form method="POST" action="ratings.php">
             <div class="user-info">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>

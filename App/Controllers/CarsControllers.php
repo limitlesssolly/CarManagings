@@ -1,25 +1,9 @@
 <?php
 
-class CarController
+class CarController extends Controller
 {
     private $db;
 
-    public function __construct()
-    {
-        // Replace 'your_database_name', 'your_username', and 'your_password' with your actual database details
-        $dsn = 'mysql:host=localhost;dbname=your_database_name';
-        $username = 'your_username';
-        $password = 'your_password';
-
-        try {
-            $this->db = new PDO($dsn, $username, $password);
-            // Set the PDO error mode to exception
-            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            // Handle connection errors
-            throw new Exception('Database connection failed: ' . $e->getMessage());
-        }
-    }
 
     public function getCars()
     {

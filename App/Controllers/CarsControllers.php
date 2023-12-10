@@ -1,56 +1,75 @@
 <?php
 
-require "Controller.php";
-require_once("../models/cars.php");
-class CarController extends Controller {
-    public function Add($id, $model, $year, $color, $fuelType) {
+class CarController
+{
+    private $db;
+
+    public function __construct()
+    {
+        // Replace 'your_database_name', 'your_username', and 'your_password' with your actual database details
+        $dsn = 'mysql:host=localhost;dbname=your_database_name';
+        $username = 'your_username';
+        $password = 'your_password';
+
         try {
-            // Validate input parameters
-            $this->validateInput($id, $model, $year, $color, $fuelType);
+            $this->db = new PDO($dsn, $username, $password);
+            // Set the PDO error mode to exception
+            $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            // Handle connection errors
+            throw new Exception('Database connection failed: ' . $e->getMessage());
+        }
+    }
 
-            // Perform the actual operation (e.g., add a car)
-            $this->performAddOperation($id, $model, $year, $color, $fuelType);
+    public function getCars()
+    {
+        try {
+            $query = "SELECT * FROM cars";
+            $statement = $this->db->query($query);
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-            // Respond with success message or data
+            return $result;
+        } catch (PDOException $e) {
+            throw new Exception('Error fetching cars: ' . $e->getMessage());
+        }
+    }
+
+    public function Add($id, $model, $year, $color, $fuelType)
+    {
+        try {
+            $query = "INSERT INTO cars (id, model, year, color, fuel_type) VALUES (?, ?, ?, ?, ?)";
+            $statement = $this->db->prepare($query);
+            $statement->execute([$id, $model, $year, $color, $fuelType]);
+
             return ['success' => true, 'message' => 'Car added successfully'];
-        } catch (Exception $e) {
-            // Handle errors
-            return ['success' => false, 'message' => $e->getMessage()];
+        } catch (PDOException $e) {
+            throw new Exception('Error adding car: ' . $e->getMessage());
         }
     }
 
-    private function validateInput($id, $model, $year, $color, $fuelType) {
-         // Placeholder for database connection (replace with your actual database connection logic)
-        $dbConnection = new PDO('mysql:host=localhost;dbname=your_database', 'username', 'password');
+    public function Edit($id, $model, $year, $color, $fuelType)
+    {
+        try {
+            $query = "UPDATE cars SET model=?, year=?, color=?, fuel_type=? WHERE id=?";
+            $statement = $this->db->prepare($query);
+            $statement->execute([$model, $year, $color, $fuelType, $id]);
 
-        // Placeholder SQL query (replace with your
-
-        if (empty($id) || empty($model) || empty($year) || empty($color) || empty($fuelType)) {
-            throw new Exception('All fields are required');
+            return ['success' => true, 'message' => 'Car edited successfully'];
+        } catch (PDOException $e) {
+            throw new Exception('Error editing car: ' . $e->getMessage());
         }
-
-        // Additional validation logic can be added based on your requirements
     }
 
-    private function performAddOperation($id, $model, $year, $color, $fuelType) {
-        // Perform the actual operation (e.g., adding a car to the database)
-        // You can add your database logic or any other business logic here
-        // If an error occurs during the operation, throw an exception
-        // For example:
-        // $result = $database->insertCar($id, $model, $year, $color, $fuelType);
-        // if (!$result) {
-        //     throw new Exception('Failed to add car');
-        // }
+    public function Delete($id)
+    {
+        try {
+            $query = "DELETE FROM cars WHERE id=?";
+            $statement = $this->db->prepare($query);
+            $statement->execute([$id]);
+
+            return ['success' => true, 'message' => 'Car deleted successfully'];
+        } catch (PDOException $e) {
+            throw new Exception('Error deleting car: ' . $e->getMessage());
+        }
     }
-}
-
-// Example usage:
-$carController = new CarController();
-$result = $carController->Add($id, $model, $year, $color, $fuelType);
-
-// Check the result and handle accordingly
-if ($result['success']) {
-    echo $result['message'];
-} else {
-    echo 'Error: ' . $result['message'];
 }

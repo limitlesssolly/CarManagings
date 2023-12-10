@@ -1,8 +1,9 @@
 <?php
 
-require_once 'Database.php';
+require "Model.php";
+include_once "../Database/db.php";
 
-class Car {
+class Car extends Model{
     private $id;
     private $model;
     private $year;
@@ -18,7 +19,7 @@ class Car {
         $this->year = $year;
         $this->color = $color;
         $this->fuelType = $fuelType;
-        $this->db = new Database(); 
+        $this->db = new Dbh(); 
     }
 
     public function getId() {

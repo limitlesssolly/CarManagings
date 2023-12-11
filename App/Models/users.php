@@ -130,6 +130,11 @@ class User extends Model {
             echo "ERROR: Could not able to execute $sql. ";
         }
     }
+    function LogOut($id) {
+        $id = $_SESSION["id"];
+        session_destroy();
+
+    }
     function rate($name, $email, $rating, $review) {
         $sql = "INSERT INTO ratings (name, email, rating, review) VALUES ('$name','$email', '$rating','$review')";
         if($this->db->query($sql) === true) {

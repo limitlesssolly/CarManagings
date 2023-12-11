@@ -106,19 +106,18 @@ class User extends Model {
         }
       }
       
-    function editUser($id,$name,$email,$phone,$password){
-        $id=$_SESSION["id"];
-        $sql= "UPDATE `users` SET `Name`='[$name]',`Email`='[$email]',`Phone`='[$phone]',`Pass`='[$password]' WHERE `id`='[$id]'  ";
-            if($this->db->query($sql) === true){
-                $this->readUser($id); 
-                echo "updated successfully.";
-                $this->fillArray();
+      function editUser($id, $name, $email, $phone, $password) {
+        $id = $_SESSION["id"];
+        $sql = "UPDATE `users` SET `Name`='$name', `Email`='$email', `Phone`='$phone', `Pass`='$password' WHERE `id`='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            echo "updated successfully.";
+            $this->readUser($id);
 
-            } else{
-                echo "ERROR: Could not able to execute $sql. " ;
-            }
-    
-      }
+        } else {
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($GLOBALS['conn']);
+        }
+    }
     function deleteUser() {
         $id=$_SESSION["id"];
         $sql = "delete from usesr where id=$id;";

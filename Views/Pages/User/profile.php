@@ -75,7 +75,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
                     <h2 class="user_registered-title">View Your Profile Info?</h2>
                     <button class="user_registered-login" id="login-button">View</button>
 
-                    <form>
+                    <form action="profile.php?action=delete" method="post">
                         <button class="user_registered-login" id="login-button">Delete Account</button>
                     </form>
 

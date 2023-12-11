@@ -120,10 +120,11 @@ class User extends Model {
     }
     function deleteUser() {
         $id=$_SESSION["id"];
-        $sql = "delete from usesr where id=$id;";
+        $sql = "delete from users where id=$id;";
         if($this->db->query($sql) === true) {
             echo "deletet successfully.";
             header("Location:signup.php");
+            session_destroy();
 
         } else {
             echo "ERROR: Could not able to execute $sql. ";

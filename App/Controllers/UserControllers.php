@@ -34,7 +34,7 @@ class UsersController extends Controller
 		$id=$_SESSION["id"];
 		$this->model->LogOut($id);
 	}
-	public function addRating()
+	public function rate()
 	{
 		$name = $_REQUEST['name'];
 		$email = $_REQUEST['email'];

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../App/Controllers/CarsController.php");
+require_once("../App/Controllers/CarsControllers.php");
 
 $carController = new CarController();
 
@@ -9,19 +9,20 @@ if ($_GET['action'] == 'cars') {
     $_SESSION['AllCars'] = array();
 
     $i = 0;
+    
     while ($row = $result->fetch_assoc()) {
-
         $_SESSION['AllCars'][$i] = [
             'ID' => $row['ID'],
             'Model' => $row['Model'],
             'Year' => $row['Year'],
             'Color' => $row['Color'],
             'FuelType' => $row['FuelType'],
+            
         ];
         $i++;
     }
 
-    header("Location: ../Views/Pages/Admin/cars.php");
+    header("Location: ../Views/Pages/Admin/Cars/carshowdash.php");
 } else if ($_GET['action'] == 'addcarpage') {
     header("Location: ../Views/Pages/Admin/addcars.php");
 } else if ($_GET['action'] == 'addcar') {

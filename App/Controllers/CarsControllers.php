@@ -35,9 +35,17 @@ class CarController
             return ['success' => false, 'message' => $e->getMessage()];
         }
     }
+
+    public function getdrivers(){
+		$car=new Car();
+	   return car->readcars();
+	}
+
 }
+    
 
 // Example usage:
+/*
 $carController = new CarController();
 
 // Add a car
@@ -63,4 +71,6 @@ if ($result['success']) {
 } else {
     echo 'Error: ' . $result['message'];
 }
+*/
+
 ?>

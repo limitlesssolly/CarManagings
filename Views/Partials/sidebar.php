@@ -28,21 +28,21 @@
             <ul class="menu-list">
 
                 <li class="menu-item">
-                    <a class="menu-link" href="/history">
+                    <a class="menu-link" href="../../Pages/User/history.php">
                         <i class="fas fa-history"></i>
                         <span class="menu-link-text">History</span>
                     </a>
                 </li>
 
                 <li class="menu-item">
-                    <a class="menu-link" href="/profile">
+                    <a class="menu-link" href="../../Pages/User/profile.php">
                         <i class="fas fa-solid fa-user"></i>
                         <span class="menu-link-text">Profile</span>
                     </a>
                 </li>
 
                 <li class="menu-item">
-                    <a class="menu-link" href="/home">
+                    <a class="menu-link" href="../../../index.php">
                         <i class="fas fa-solid fa-home"></i>
                         <span class="menu-link-text">Home</span>
                     </a>
@@ -58,21 +58,17 @@
                 <div class="user-details">
                     <h3 class="user-name">
                         <?php 
-                        // echo $_SESSION["Name"]
+                        echo $_SESSION["Name"]
                          ?>
                     </h3>
                 </div>
             </div>
-
-            <a class="logout-btn" href="/signups">
-
+            <form action="sidebar.php?action=LogOut" method="">
+            <a class="logout-btn" href="../../Pages/User/signup.php">
                 <i class="fas fa-sharp fa-regular fa-arrow-right-from-bracket">
-                    <?php
-                    // session_destroy();
-                    ?>
                 </i>
             </a>
-
+</form>
         </div>
     </nav>
 

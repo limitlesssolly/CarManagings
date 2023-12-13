@@ -29,7 +29,12 @@ class UsersController extends Controller
 	{
 		$this->model->deleteUser();
 	}
-	public function addRating()
+	public function LogOut()
+	{
+		$id=$_SESSION["id"];
+		$this->model->LogOut($id);
+	}
+	public function rate()
 	{
 		$name = $_REQUEST['name'];
 		$email = $_REQUEST['email'];

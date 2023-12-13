@@ -1,16 +1,18 @@
 <?php
 
-require_once 'Database.php';
+require "Model.php";
+include_once "../App/Database/db.php";
 
-class Car {
+class Car extends Model{
     private $id;
     private $model;
     private $year;
     private $color;
     private $fuelType;
-    private $driver;
+    private $cars;
     private $maintenanceHistory = [];
-    private $db;
+    protected $db;
+
 
     public function __construct($id, $model, $year, $color, $fuelType) {
         $this->id = $id;
@@ -18,7 +20,7 @@ class Car {
         $this->year = $year;
         $this->color = $color;
         $this->fuelType = $fuelType;
-        $this->db = new Database(); 
+        $this->db = new Dbh(); 
     }
 
     public function getId() {
@@ -41,8 +43,8 @@ class Car {
         return $this->fuelType;
     }
 
-    public function getDriver() {
-        return $this->driver;
+    public function getcars() {
+        return $this->cars;
     }
 
     public function assignDriver($driver) {
@@ -70,6 +72,20 @@ class Car {
         $params = [$this->model, $this->year, $this->color, $this->fuelType, $this->id];
         $this->db->execute($sql, $params);
     }
+
+    function readcars($id)
+    {
+        $sql = "SELECT * FROM cars where Id=".$id;
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
+
+    }
+
 
 }
 

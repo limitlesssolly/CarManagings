@@ -1,6 +1,8 @@
 <?php
 require_once "../../../Views/View.php";
-require_once "../../../App/Models/Model.php";
+require "Model.php";
+include_once "../../../App/Database/db.php";
+include_once "../../../App/Database/Dbh.php";
 class User extends Model {
     protected $id;
     protected $name;
@@ -15,6 +17,12 @@ class User extends Model {
         $this->phone = $phone;
         $this->password = $password;
 
+    }
+    function setID($id) {
+        return $this->id = $id;
+    }
+    function getID() {
+        return $this->id;
     }
     function setName($name) {
         return $this->name = $name;
@@ -73,45 +81,59 @@ class User extends Model {
  
         }
     }
-    public  function readUser($email)
-    {
-        $sql = "SELECT * FROM users where Email=" . $email;
-        $db = $this->connect();
-        $result = $db->query($sql);
-        if ($result->num_rows == 1) {
-            $row = $db->fetchRow($result);
+        function readUser($id){
+		$id=$_SESSION["id"];
+        $sql = "SELECT * FROM `users` WHERE id=$id";
+        $dbh = new Dbh();
+        $result = $dbh->query($sql);
+        if ($result->num_rows == 1){
+            $row = $dbh->fetchRow($result);
             $this->name = $row["Name"];
             $_SESSION["Name"] = $row["Name"];
             $this->email = $row["Email"];
             $_SESSION["Email"] = $row["Email"];
             $this->phone = $row["Phone"];
             $_SESSION["Phone"] = $row["Phone"];
-
-            } else {
+            $this->password = $row["Pass"];
+            $_SESSION["Password"] = $row["Pass"];
+                $this->fillArray();
+        }
+        else {
             $this->name = "";
-            $this->email = "";
+            $this->password="";
+            $this->age = "";
             $this->phone = "";
         }
-        return $result ;
-    }
-    function editUser($name,$email,$phone,$password){
-        $sql = "update user set Name='$name',Email='$email', Phone='$phone', Pass='$password' where Email=$this->email;";
-          if($this->db->query($sql) === true){
-              echo "updated successfully.";
-              $this->readUser($this->id);
-          } else{
-              echo "ERROR: Could not able to execute $sql. " ;
-          }
+      }
+      
+      function editUser($id, $name, $email, $phone, $password) {
+        $id = $_SESSION["id"];
+        $sql = "UPDATE `users` SET `Name`='$name', `Email`='$email', `Phone`='$phone', `Pass`='$password' WHERE `id`='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            echo "updated successfully.";
+            $this->readUser($id);
 
+        } else {
+            echo "ERROR: Could not able to execute $sql. " . mysqli_error($GLOBALS['conn']);
         }
-
+    }
     function deleteUser() {
-        $sql = "delete from user where email=$this->email;";
+        $id=$_SESSION["id"];
+        $sql = "delete from users where id=$id;";
         if($this->db->query($sql) === true) {
             echo "deletet successfully.";
+            header("Location:signup.php");
+            session_destroy();
+
         } else {
             echo "ERROR: Could not able to execute $sql. ";
         }
+    }
+    function LogOut($id) {
+        $id = $_SESSION["id"];
+        session_destroy();
+
     }
     function rate($name, $email, $rating, $review) {
         $sql = "INSERT INTO ratings (name, email, rating, review) VALUES ('$name','$email', '$rating','$review')";
@@ -129,29 +151,5 @@ class User extends Model {
         return $result;
      }
 
-    function requestContact($name, $email, $phone, $message) {
-        $sql = "INSERT INTO contactings (name, email, phone, message) VALUES ('$name','$email', '$phone','$message')";
-        if($this->db->query($sql) === true) {
-            echo "Request sent Successfully.";
-            $this->fillArray();
-        } else {
-            echo "Fee Mashakel";
-        }
-    }
  }
-
-// class ViewUser extends View {
-//     public function viewName() {
-//         return $this->model->getName();
-
-//     } public  function viewEmail(){
-//         return $this->model->getEmail();
-
-//     }
-//     public  function viewPhone(){
-//         return $this->model->getPhone();
-
-//     }
-
-// }
 ?>

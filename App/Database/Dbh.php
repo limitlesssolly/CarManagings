@@ -1,12 +1,10 @@
 <?php
-
 require_once "config.php";
 class DBh{
 	private $servername;
 	private $username;
 	private $password;
 	private $dbname;
-
 	private $conn;
 	private $result;
 	public $sql;

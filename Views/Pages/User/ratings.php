@@ -1,15 +1,15 @@
 <?php
-session_start();
-require_once "../../../App/Models/users.php";
-require_once "../../../App/Controllers/UserControllers.php";
-$model = new User($id, $name, $email, $phone);
+require_once("../../../App/Models/users.php");
+require_once("../../../App/Controllers/UserControllers.php");
+require_once("../../../Views/View.php");
+$model = new User();
 $controller = new UsersController($model);
-
-if(isset($_GET['action']) && !empty($_GET['action'])) {
-    $controller->{$_GET['action']}();
+session_start();
+$id=$_SESSION["id"];
+if (isset($_GET['action']) && !empty($_GET['action'])) {
+	$controller->{$_GET['action']}();
 }
-
-?>
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +44,7 @@ if(isset($_GET['action']) && !empty($_GET['action'])) {
 
         <h1>Rate Your Experience</h1>
 
-        <form method="POST" action="ratings.php?action=addRating">
+        <form  action="ratings.php?action=rate" method="POST">
             <div class="user-info">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -53,15 +53,15 @@ if(isset($_GET['action']) && !empty($_GET['action'])) {
             </div>
 
             <div class="rating">
-                <input type="radio" id="star5" name="rating" value="5">
+                <input type="radio" id="star5" name="rating" value="1">
                 <label for="star5"></label>
-                <input type="radio" id="star4" name="rating" value="4">
+                <input type="radio" id="star4" name="rating" value="2">
                 <label for="star4"></label>
                 <input type="radio" id="star3" name="rating" value="3">
                 <label for="star3"></label>
-                <input type="radio" id="star2" name="rating" value="2">
+                <input type="radio" id="star2" name="rating" value="4">
                 <label for="star2"></label>
-                <input type="radio" id="star1" name="rating" value="1">
+                <input type="radio" id="star1" name="rating" value="5">
                 <label for="star1"></label>
             </div>
 
@@ -71,7 +71,7 @@ if(isset($_GET['action']) && !empty($_GET['action'])) {
             </div>
 
             <div class="submit-button">
-                <button type="submit" name="submit">Submit Rating</button>
+                <button type="submit" name="submit" name="rate">Submit Rating</button>
             </div>
         </form>
 
@@ -82,7 +82,7 @@ if(isset($_GET['action']) && !empty($_GET['action'])) {
             <div class="card-wrapper swiper-wrapper">
                 <?php
                 $i = 0;
-                while(isset($_SESSION['AllRatings'][$i]['ID'])) {
+                while(isset($_SESSION['AllRatings'][$i]['id'])) {
                     echo '<div class="card swiper-slide">';
                     echo '<div class="image-content">';
                     echo '<span class="overlay"></span>';

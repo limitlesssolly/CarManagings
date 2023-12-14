@@ -13,7 +13,7 @@ CREATE TABLE `drivers` (
   `Phone` int(12) NOT NULL,
   `DateOfEmployment` date(20),
   `Status` varchar(10) NOT NULL,
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `drivers`

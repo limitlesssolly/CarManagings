@@ -66,19 +66,19 @@ session_start(); ?>
                         </tr>
                     </thead>
 
-
                     <tbody>
                 <?php
                     
                     $i=0;
                     while ( isset( $_SESSION['Alldrivers'][$i]['ID']) ){
                         echo "<tr>";
+                      
                         echo "<td>" . $_SESSION['Alldrivers'][$i]['ID'] . "</td>";
                         echo "<td>" .  $_SESSION['Alldrivers'][$i]['Name'] . "</td>";
                         echo "<td>" . $_SESSION['Alldrivers'][$i]['Email'] . "</td>";
                         echo "<td>" .  $_SESSION['Alldrivers'][$i]['Phone'] . "</td>";
                         
-                        if( $_SESSION['Alldrivers'][$i]['Status'] == 'available'){
+                        if( $_SESSION['Alldrivers'][$i]['Status'] == 'available'  ||  $_SESSION['Alldrivers'][$i]['Status'] == 'Available' ){
                             echo '<td>
                             <p class="status delivered">' .  $_SESSION['Alldrivers'][$i]['Status'] . '</p>
                             </td>'; 

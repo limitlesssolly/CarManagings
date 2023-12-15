@@ -59,8 +59,6 @@ class DriversController extends Controller{
 			$i++;
             $error['status']='please enter status';
 		} 
-
-
 		if($i==0)
 		{
 			$drivers=new  Driver();
@@ -74,9 +72,7 @@ class DriversController extends Controller{
 	public function getdrivers(){
 		$drivers=new  Driver();
 	   return	$drivers->readDrivers();
-	}
-
-	
+	}	
 	public function Delete($id){
 
 		$drivers=new  Driver();

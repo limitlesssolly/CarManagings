@@ -127,7 +127,7 @@
                 <li>
 
                     <div class="iocn_link">
-                    <a href="../Pages/admins.php">
+                    <a href="../../../Routes/adminrouter.php?action=admins">
                     <i class='bx bx-group'></i>
                     <span class="link_name">Admins</span>  
                     </a>
@@ -137,8 +137,8 @@
                     <ul class="sub-menu">
                     <li><a class="link_name" href="">Admins</a></li>
                     <li><a href="../../Views/Pages/admins.php">Show</a></li>
-                    <li><a href="../../Views/Pages/addadmins.php">Add</a></li>
-                    <li><a href="../../Views/Pages/editadmins.php">Edit</a></li>
+                    <li><a href="../../../Routes/adminrouter.php?action=addadminpage">Add</a></li>
+                    <li><a href="../../../Routes/adminrouter.php?action=editpage">Edit</a></li>
                     </ul>
 
 

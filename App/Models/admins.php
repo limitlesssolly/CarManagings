@@ -1,88 +1,81 @@
 <?php
-require_once 'Dbh.php';
-
-class AdminModel
+include_once "../App/Database/db.php";
+class Admin
 {
-    private $dbh;
+    public $ID;
+    public $Name;
+    public $Email;
+    public $Phone;
 
-    public function __construct()
-    {
-        $this->dbh = new Dbh();
+    public function AddAdmin($name,$email, $phone,$password){
+        $sql = "INSERT INTO admin (Name, Email, Phone,Password) VALUES ('$name','$email', '$phone','$password')";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 0;
+        }
+         else{
+            echo "error";
+        }
     }
 
-    public function getAllCars()
+    public function getAdmins(){
+		$sql = "SELECT * FROM admin";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            return "error";
+         }
+	}
+
+    function editAdmin($id,$name,$email, $phone,$pass)
     {
-        $sql = "SELECT * FROM cars";
-        return $this->dbh->queryAll($sql);
+        $sql = "UPDATE admin  SET Name='$name',Email='$email', Phone='$phone',Password='$pass' where ID='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 'true';
+         }
+         else{
+            echo "error";
+         }
+        
     }
 
-
-    public function getCarById($carId)
+    function removeAdmin($id)
     {
-        $sql = "SELECT * FROM cars WHERE id = ?";
-        $params = [$carId];
-        return $this->dbh->queryOne($sql, $params);
+        $sql = "DELETE FROM admin WHERE id='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 'sucessful';
+         }
+         else{
+            echo "error";
+         }
     }
-
-    public function addCar($carDetails)
+    
+    function readAdmin($id)
     {
-        $sql = "INSERT INTO cars (brand, model, capacity) VALUES (?, ?, ?)";
-        $params = [$carDetails['brand'], $carDetails['model'], $carDetails['capacity']];
-        return $this->dbh->execute($sql, $params);
+        $sql = "SELECT * FROM admin where ID=".$id;
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            return "notfound";
+         }
     }
-    public function updateCar($carId, $newDetails)
+    public function if_Emailexists($email)
     {
-        $sql = "UPDATE cars SET brand = ?, model = ?, capacity = ? WHERE id = ?";
-        $params = [$newDetails['brand'], $newDetails['model'], $newDetails['capacity'], $carId];
-        return $this->dbh->execute($sql, $params);
+        $sql = "SELECT * FROM admin where Email='$email'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if (mysqli_num_rows($result) == 0) {
+            return $result;
+         }
+         else{
+            return "exists";
+         }
     }
-
-    public function deleteCar($carId)
-    {
-        $sql = "DELETE FROM cars WHERE id = ?";
-        $params = [$carId];
-        return $this->dbh->execute($sql, $params);
-    }
-
-    public function getAllUsers()
-    {
-        $sql = "SELECT * FROM user";
-        return $this->dbh->queryAll($sql);
-    }
-
-
-    public function getUserById($carId)
-    {
-        $sql = "SELECT * FROM user WHERE id = ?";
-        $params = [$carId];
-        return $this->dbh->queryOne($sql, $params);
-    }
-
-    public function addUser($userData)
-{
-    $sql = "INSERT INTO users (firstname,lastname,username, password, email) VALUES (?, ?, ?, ?, ?)";
-    $params = [$userData['firstname'],$userData['lastname'],$userData['username'], $userData['password'], $userData['email']];
-    return $this->dbh->execute($sql, $params);
-}
-public function editUser($userId, $newUserData)
-{
-    $sql = "UPDATE users SET username = ?, password = ?, email = ? WHERE id = ?";
-    $params = [$newUserData['username'], $newUserData['password'], $newUserData['email'], $userId];
-    return $this->dbh->execute($sql, $params);
-}
-
-public function deleteUser($userId)
-{
-    $sql = "DELETE FROM users WHERE id = ?";
-    $params = [$userId];
-    return $this->dbh->execute($sql, $params);
-}
-
-public function assignTripToDriver($tripId, $driverId)
-{
-    $sql = "UPDATE trips SET driver_id = ? WHERE id = ?";
-    $params = [$driverId, $tripId];
-    return $this->dbh->execute($sql, $params);
-}
+    
 }
 ?>

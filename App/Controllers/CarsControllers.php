@@ -3,15 +3,55 @@ require "Controller.php";
 require_once("../App/Models/cars.php");
 class CarController
 {
-    public function addCar($id, $model, $year, $color, $fuelType)
+    public $car;
+    public function __construct() {
+     $this->car=new  Car();
+    }
+    public function addCar($details)
     {
-        try {
-            $car = new Car($id, $model, $year, $color, $fuelType);
-            $car->addCar();
-            return ['success' => true, 'message' => 'Car added successfully'];
-        } catch (Exception $e) {
-            return ['success' => false, 'message' => $e->getMessage()];
+        $error=[
+            'name'=>'',
+            'type'=>'',
+            'plate'=>'',
+            'color'=>'',
+			'status'=>'',
+
+        ];
+       
+        $i=0;
+        if($details['name'] =='' ){
+            $i++;
+            $error['name']='please enter a name';
         }
+        if($details['plate'] =='' ){
+            $i++;
+            $error['plate']='please enter car plate';
+        }
+        if($details['color'] =='' ){
+            $i++;
+            $error['color']='please enter car color';
+        }
+        if($details['status'] =='' ){
+            $i++;
+            $error['status']='please enter car status';
+        }
+
+
+		if($i==0)
+		{
+ 
+                $updatedetails=[
+                    'name'=>$details['name'],
+                    'type'=>$details['type'],
+                    'plate'=>$details['plate'],
+                    'color'=>$details['color'],
+                    'status'=>$details['status']
+                ];
+                $this->car->addCar($updatedetails);
+			return 'successful';
+		}else{
+			return $error;
+		}
     }
 
     public function deleteCar($id)
@@ -36,10 +76,7 @@ class CarController
         }
     }
 
-    public function getdrivers(){
-		$car=new Car();
-	   return car->readcars();
-	}
+
 
 }
     

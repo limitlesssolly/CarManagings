@@ -54,15 +54,13 @@ class CarController
 		}
     }
 
-    // public function getCars() {
-    //     try {
-    //         $car = new Car(0, '', '', '', '', '', 0);
-    //         $cars = $car->getCars();
-    //         return ['success' => true, 'cars' => $cars];
-    //     } catch (Exception $e) {
-    //         return ['success' => false, 'message' => $e->getMessage()];
-    //     }
-    // }
+    public function getCars() {
+        try {
+            return $this->car->getAllCars();
+        } catch (Exception $e) {
+            return ['success' => false, 'message' => $e->getMessage()];
+        }
+    }
 
     // public function deleteCar($id) {
     //     try {

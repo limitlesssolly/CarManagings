@@ -44,7 +44,14 @@ class Car {
     }
 
     public function getAllCars() {
-        // return $this->cars;
+        $sql = "SELECT * FROM cars";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
     }
 
  

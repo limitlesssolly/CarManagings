@@ -7,15 +7,29 @@ $carController = new CarController();
 if ($_GET['action'] == 'cars') {
     $result = $carController->getCars();
 
-    if ($result['success']) {
-        $_SESSION['AllCars'] = $result['cars'];
-        header("Location: ../Views/Pages/Admin/Cars/carshowdash.php");
-        exit; // Ensure no further execution after redirection
-    } else {
-        echo 'Error: ' . $result['message'];
-    }
+    $_SESSION['Alldrivers']=array(); 
+ 
+    $i=0; 
+    while ($row =$result->fetch_assoc()) {
+     
+     $_SESSION['AllCars'][$i]=[
+ 
+         'ID'=>$row['ID'], 
+         'CarName'=>  $row['CarName'] , 
+         'CarType'=>  $row['CarType'] , 
+         'CarPlate'=> $row['CarPlate'],  
+         'Status'=> $row['Status']  ,
+         'AssignedDriver'=> $row['AssignedDriver'] ,
+         'Colour'=>  $row['Colour'] ,
+     ]; 
+    $i++; 
+    } 
+
+    header("Location: ../Views/Pages/Admin/carshowdash.php");
+         
+
 } else if ($_GET['action'] == 'addcarpage') {
-    header("Location: ../Views/Pages/Admin/addcars.php");
+    header("Location: ../Views/Pages/Admin/addCar.php");
 } else if ($_GET['action'] == 'addcar') {
 
     

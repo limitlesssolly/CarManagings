@@ -7,9 +7,7 @@
             </div>
 
             <ul class="nav-links">
-
                  <li>
-
                     <div class="iocn_link">
                         <a href="../../../Routes/driverrouter.php?action=drivers">
                             <i class='bx bxs-group'></i>
@@ -26,12 +24,11 @@
                        
                      </ul>
 
-
                 </li>
                  <li>
 
                     <div class="iocn_link">
-                      <a href="../Pages/carshowdash.php">
+                      <a href="../../../Routes/CarsRouter.php?action=cars">
                         <i class='bx bxs-car'></i>
                         <span class="link_name">Cars</span>  
                       </a>
@@ -39,11 +36,11 @@
                     </div>
 
                     <ul class="sub-menu">
-                        <li><a class="link_name" href="">Cars</a></li> 
+                         
  
                         <li><a href="../../../Routes/CarsRouter.php?action=cars">Show</a></li>
                         <!-- <li><a href="../../Views/Pages/requestedcars.php">Requested Cars</a></li>  -->
-                        <li><a href="../Pages/addCar.php">Add</a></li>
+                        <li><a href="../../../Routes/CarsRouter.php?action=addcarpage">Add</a></li>
                         <li><a href="../Pages/editCar.php">Edit</a></li>
  
                 

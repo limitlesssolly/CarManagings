@@ -11,15 +11,15 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <!-- Add your CSS file paths here -->
-    <link rel="stylesheet" href="../../../../Public/CSS/dashboard.css">
-    <link rel="stylesheet" href="../../../../Public/CSS/carshowdash.css">
+    <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../../Public/CSS/carshowdash.css">
 </head>
 
 <body>
 
 <?php
 session_start();
-include('../../../Partials/dashboardsidebar.php');
+include('../../Partials/dashboardsidebar.php');
 ?>
 
     <section class="home-section">
@@ -51,28 +51,47 @@ include('../../../Partials/dashboardsidebar.php');
                             <th>Name</th>
                             <th>Type</th>
                             <th>Plate</th>
+                            <th>Color</th>
                             <th>Status</th>
-                            <th>Category</th>
-                            <th>Total Profit</th>
-                            <!-- Add more headers if needed -->
+                            <th>Assigned Driver</th>
+                            <th>history</th>
+                            <th>-----</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php
-                        // Loop through the cars and display them in the table
-                        foreach ($_SESSION['AllCars'] as $car) {
+                    <?php
+                        $i=0;
+                        while (isset( $_SESSION['AllCars'][$i]['ID']) ){
                             echo "<tr>";
-                            echo "<td>{$car['ID']}</td>";
-                            echo "<td>{$car['Name']}</td>";
-                            echo "<td>{$car['Type']}</td>";
-                            echo "<td>{$car['Plate']}</td>";
-                            echo "<td>{$car['Status']}</td>";
-                            echo "<td>{$car['Category']}</td>";
-                            echo "<td>{$car['TotalProfit']}</td>";
-                            echo "</tr>";
+                        
+                            echo "<td>" . $_SESSION['AllCars'][$i]['ID'] . "</td>";
+                            echo "<td>" .  $_SESSION['AllCars'][$i]['CarName'] . "</td>";
+                            echo "<td>" . $_SESSION['AllCars'][$i]['CarType'] . "</td>";
+                            echo "<td>" .  $_SESSION['AllCars'][$i]['CarPlate'] . "</td>";
+                            echo "<td>" .  $_SESSION['AllCars'][$i]['Colour'] . "</td>";
+                       
+                            if( $_SESSION['AllCars'][$i]['Status'] == 'available'  ||  $_SESSION['AllCars'][$i]['Status'] == 'Available' ){
+                                echo '<td>
+                                <p class="status delivered">' .  $_SESSION['AllCars'][$i]['Status'] . '</p>
+                                </td>'; 
+                            }else{
+                                echo '<td>
+                                <p class="status cancelled">' .  $_SESSION['AllCars'][$i]['Status'] . '</p>
+                                </td>'; 
+                            }
+                        if( $_SESSION['AllCars'][$i]['AssignedDriver'] ==''){
+                            echo "<td> No driver </td>"; 
+                        }else{
+                            echo "<td>" .  $_SESSION['AllCars'][$i]['AssignedDriver'] . "</td>"; 
+                        }    
+                         
+                        echo "<td><form action='../Pages/assigntrip.php'> <button class='status shipped'>show</button> </form> </td>";
+                        echo "<td><form id='deleteform'>  <button class='status cancelled' id='" . $_SESSION['AllCars'][$i]['ID'] . "'>delete</button> </form> </td>";
+                        echo "</tr>";
+                        $i++;
                         }
-                        ?>
-                    </tbody>
+                   ?>
+            </tbody>
                 </table>
 
             </section>
@@ -81,7 +100,7 @@ include('../../../Partials/dashboardsidebar.php');
     </section>
 
     <!-- Add your JavaScript file paths here -->
-    <script src="../../../../Public/js/carshowdash.js"></script>
+    <script src="../../../Public/js/carshowdash.js"></script>
 
 </body>
 

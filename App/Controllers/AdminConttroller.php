@@ -107,7 +107,7 @@ class AdminController extends Controller{
 
 		return$this->admin->removeAdmin($id);
 	}
-	public function Edit($id,$name,$email,$phone,$pass,$confirmpass){
+	public function Edit($id,$name,$email,$phone,$pass){
 		 $i=0;
          if($id == null)
 		 {
@@ -129,11 +129,6 @@ class AdminController extends Controller{
 			 if($phone==''){
 				$phone=$row['Phone'];
 			 }
-                 
-             if($pass=='' && $confirmpass== ''){
-				$pass=$row['Password'];
-			 }                   
-               
              if($pass!=''){
                 $uppercase = preg_match('@[A-Z]@', $pass);
                 $lowercase = preg_match('@[a-z]@', $pass);
@@ -143,29 +138,9 @@ class AdminController extends Controller{
                 
                 if ($uppercase && $lowercase && $number && strlen($pass) >= $minLength) {
                     
-                    if($confirmpass=='')
-                    {
-                        $i++;
-                        $error['confirmpass']='please enter a confirmation password';
-                    } 
-                    else if($confirmpass!=$pass){
-                        $i++;
-                        $error['confirmpass']="passwords dont match";
-                    }
-                         
                 } else {
                     $i++;
                     $error['pass']='password must be at least 8 characters including uppercase,lowrcase,and numbers';
-    
-                    if($confirmpass=='')
-                    {
-                        $i++;
-                        $error['confirmpass']='please enter a confirmation password';
-                    } 
-                    else{
-                        $i++;
-                        $error['confirmpass']="please a valid password first";
-                    }
                 }         
              }
                

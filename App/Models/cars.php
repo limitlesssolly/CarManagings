@@ -5,46 +5,49 @@ include_once "../App/Database/db.php";
 
 class Car extends Model{
     private $id;
-    private $model;
-    private $year;
-    private $color;
-    private $fuelType;
+    private $name; // Updated attribute
+    private $type; // Updated attribute
+    private $plate; // Updated attribute
+    private $status; // Updated attribute
+    private $category; // Updated attribute
+    private $totalProfit; // Updated attribute
     private $cars;
     private $maintenanceHistory = [];
     protected $db;
 
-
-    public function __construct($id, $model, $year, $color, $fuelType) {
+    public function __construct($id, $name, $type, $plate, $status, $category, $totalProfit) {
         $this->id = $id;
-        $this->model = $model;
-        $this->year = $year;
-        $this->color = $color;
-        $this->fuelType = $fuelType;
+        $this->name = $name;
+        $this->type = $type;
+        $this->plate = $plate;
+        $this->status = $status;
+        $this->category = $category;
+        $this->totalProfit = $totalProfit;
         $this->db = new Dbh(); 
     }
-
-    public function getId() {
-        return $this->id;
+    // Getters for the updated attributes
+    public function getName() {
+        return $this->name;
     }
 
-    public function getModel() {
-        return $this->model;
+    public function getType() {
+        return $this->type;
     }
 
-    public function getYear() {
-        return $this->year;
+    public function getPlate() {
+        return $this->plate;
     }
 
-    public function getColor() {
-        return $this->color;
+    public function getStatus() {
+        return $this->status;
     }
 
-    public function getFuelType() {
-        return $this->fuelType;
+    public function getCategory() {
+        return $this->category;
     }
 
-    public function getcars() {
-        return $this->cars;
+    public function getTotalProfit() {
+        return $this->totalProfit;
     }
 
     public function assignDriver($driver) {
@@ -56,8 +59,8 @@ class Car extends Model{
     }
 
     public function addCar() {
-        $sql = "INSERT INTO cars (model, year, color, fuelType) VALUES (?, ?, ?, ?)";
-        $params = [$this->model, $this->year, $this->color, $this->fuelType];
+        $sql = "INSERT INTO cars (name, type, plate, status, category, totalProfit) VALUES (?, ?, ?, ?, ?, ?)";
+        $params = [$this->name, $this->type, $this->plate, $this->status, $this->category, $this->totalProfit];
         $this->db->execute($sql, $params);
     }
 
@@ -66,10 +69,17 @@ class Car extends Model{
         $params = [$this->id];
         $this->db->execute($sql, $params);
     }
-
+    public function getCars() {
+        $sql = "SELECT * FROM cars";
+        $result = $this->db->query($sql);
+        if (!$result) {
+            die("Error: " . $this->db->getErrorMessage()); // Print the error message
+        }
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
     public function editCar() {
-        $sql = "UPDATE cars SET model = ?, year = ?, color = ?, fuelType = ? WHERE id = ?";
-        $params = [$this->model, $this->year, $this->color, $this->fuelType, $this->id];
+        $sql = "UPDATE cars SET name = ?, type = ?, plate = ?, status = ?, category = ?, totalProfit = ? WHERE id = ?";
+        $params = [$this->name, $this->type, $this->plate, $this->status, $this->category, $this->totalProfit, $this->id];
         $this->db->execute($sql, $params);
     }
 

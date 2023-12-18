@@ -1,32 +1,23 @@
 <?php
 session_start();
-require_once("../App/Controllers/CarsControllers.php");
+require_once("../app/Controllers/CarsControllers.php");
 
 $carController = new CarController();
 
 if ($_GET['action'] == 'cars') {
     $result = $carController->getCars();
-    $_SESSION['AllCars'] = array();
 
-    $i = 0;
-    
-    while ($row = $result->fetch_assoc()) {
-        $_SESSION['AllCars'][$i] = [
-            'ID' => $row['ID'],
-            'Model' => $row['Model'],
-            'Year' => $row['Year'],
-            'Color' => $row['Color'],
-            'FuelType' => $row['FuelType'],
-            
-        ];
-        $i++;
+    if ($result['success']) {
+        $_SESSION['AllCars'] = $result['cars'];
+        header("Location: ../Views/Pages/Admin/Cars/carshowdash.php");
+        exit; // Ensure no further execution after redirection
+    } else {
+        echo 'Error: ' . $result['message'];
     }
-
-    header("Location: ../Views/Pages/Admin/Cars/carshowdash.php");
 } else if ($_GET['action'] == 'addcarpage') {
     header("Location: ../Views/Pages/Admin/addcars.php");
 } else if ($_GET['action'] == 'addcar') {
-    $result = $carController->Add($_POST['id'], $_POST['model'], $_POST['year'], $_POST['color'], $_POST['fuelType']);
+    $result = $carController->addCar($_POST['name'], $_POST['type'], $_POST['plate'], $_POST['status'], $_POST['category'], $_POST['totalProfit']);
     if ($result['success']) {
         echo 'successful';
     } else {
@@ -35,17 +26,18 @@ if ($_GET['action'] == 'cars') {
 } else if ($_GET['action'] == 'editcarpage') {
     header("Location: ../Views/Pages/Admin/editcars.php");
 } else if ($_GET['action'] == 'editcar') {
-    $result = $carController->Edit($_POST['id'], $_POST['model'], $_POST['year'], $_POST['color'], $_POST['fuelType']);
+    $result = $carController->editCar($_POST['id'], $_POST['name'], $_POST['type'], $_POST['plate'], $_POST['status'], $_POST['category'], $_POST['totalProfit']);
     if ($result['success']) {
         echo 'successful';
     } else {
         echo json_encode($result);
     }
 } else if ($_GET['action'] == 'deletecar') {
-    $result = $carController->Delete($_POST['id']);
+    $result = $carController->deleteCar($_POST['id']);
     if ($result['success']) {
         echo 'successful';
     } else {
         echo 'failed';
     }
 }
+?>

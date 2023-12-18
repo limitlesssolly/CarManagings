@@ -17,9 +17,9 @@ if ($_GET['action'] == 'customers') {
         ];
         $i++;
     }
-    header("Location:../Views/Pages/Customer/customers.php");
+    header("Location:../Views/Pages/Customers/customers.php");
 } else if ($_GET['action'] == 'addcustomerpage') {
-    header("Location:../Views/Pages/Customer/addcustomer.php");
+    header("Location:../Views/Pages/Customers/addcustomers.php");
 } else if ($_GET['action'] == 'addcustomer') {
     $result = $customer->Add($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['pass'], $_POST['confirmpass']);
     if ($result == 'successful') {

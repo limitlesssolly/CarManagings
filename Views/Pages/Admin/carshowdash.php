@@ -10,15 +10,17 @@
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
+    <!-- Add your CSS file paths here -->
     <link rel="stylesheet" href="../../../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../../../Public/CSS/carshowdash.css">
 </head>
 
 <body>
 
-    <?php
-     include('../../Partials/dashboardsidebar.php');
-    ?>
+<?php
+session_start();
+include('../../../Partials/dashboardsidebar.php');
+?>
 
     <section class="home-section">
 
@@ -37,9 +39,6 @@
                     <img src="../../../../Public/Images/search.png" alt="">
                 </div>
 
-                <!-- <div class="export__file">
-                </div> -->
-
             </section>
 
             <section class="table__body">
@@ -47,76 +46,33 @@
                 <table>
                     <thead>
                         <tr>
-                            <th> Id <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Name <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Type<span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Plate <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Status <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Category <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> Total Profit <span class="icon-arrow">&UpArrow;</span></th>
-                            <th> History </th>
-                            <th>Owner</th>
-                            <th>----</th>
+                            <!-- Add your table headers based on your data model -->
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Plate</th>
+                            <th>Status</th>
+                            <th>Category</th>
+                            <th>Total Profit</th>
+                            <!-- Add more headers if needed -->
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td> 1 </td>
-                            <td> <img src="../../../../Public/Images/carla.png" alt="">Toyota</td>
-                            <td> Sedan </td>
-                            <td> 123|ن ص ع </td>
-                            <td>
-                                <p class="status pending">in ride</p>
-                            </td>
-                            <td>Ours</td>
-                            <td> <strong> $128.90 </strong></td>
-                            <td>
-                                <form action=""><button class="status shipped">Show</button></form>
-                            </td>
-                            <td>
-                                <form action=""><button class="status cancelled">Delete</button></form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 2 </td>
-                            <td><img src="../../../../Public/Images/carla.png" alt=""> Toyota </td>
-                            <td> suv </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status delivered">available</p>
-                            </td>
-                            <td>rented</td>
-                            <td> <strong>$5350.50</strong> </td>
-                            <td>
-                                <form action=""><button class="status shipped">Show</button></form>
-                            </td>
-                            <td>
-                                <form action="../../../Pages/Admin/Cars/rentedcarinfo.php"><button
-                                        class="status shipped">Show</button></form>
-                            </td>
-                            <td>
-                                <form action=""><button class="status cancelled">Delete</button></form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 3</td>
-                            <td><img src="../../../../Public/Images/carla.png" alt=""> Mitsubishsi </td>
-                            <td> suv </td>
-                            <td> 154|ت ص غ </td>
-                            <td>
-                                <p class="status shipped">Shipped</p>
-                            </td>
-                            <td>Ours</td>
-                            <td> <strong>$210.40</strong> </td>
-                            <td>
-                                <form action=""><button class="status shipped">Show</button></form>
-                            </td>
-                            <td>
-                                <form action=""><button class="status cancelled">Delete</button></form>
-                            </td>
-                        </tr>
+                        <?php
+                        // Loop through the cars and display them in the table
+                        foreach ($_SESSION['AllCars'] as $car) {
+                            echo "<tr>";
+                            echo "<td>{$car['ID']}</td>";
+                            echo "<td>{$car['Name']}</td>";
+                            echo "<td>{$car['Type']}</td>";
+                            echo "<td>{$car['Plate']}</td>";
+                            echo "<td>{$car['Status']}</td>";
+                            echo "<td>{$car['Category']}</td>";
+                            echo "<td>{$car['TotalProfit']}</td>";
+                            echo "</tr>";
+                        }
+                        ?>
                     </tbody>
-                    <script src="../../../../Public/js/carshowdash.js"></script>
                 </table>
 
             </section>
@@ -124,23 +80,8 @@
 
     </section>
 
-    <script>
-        let arrow = document.querySelectorAll(".arrow");
-        for (var i = 0; i < arrow.length; i++) {
-            arrow[i].addEventListener("click", (e) => {
-                let arrowParent = e.target.parentElement.parentElement;
-                console.log(arrowParent)
-                arrowParent.classList.toggle("showMenu");
-            });
-        }
-        let sidebar = document.querySelector(".sidebar");
-        let sidebarBtn = document.querySelector(".bx-menu");
-        sidebarBtn.addEventListener("click", () => {
-            sidebar.classList.toggle("close")
-        })
-
-
-    </script>
+    <!-- Add your JavaScript file paths here -->
+    <script src="../../../../Public/js/carshowdash.js"></script>
 
 </body>
 

@@ -5,6 +5,7 @@ include_once "../App/Database/db.php";
 
 class Car {
     private $id;
+
     public $CarName;
     public $Cartype;
     public $CarPlate;
@@ -32,9 +33,11 @@ class Car {
     }
 
 
-    public function getColor() {
-        return $this->color;
+
+    public function getStatus() {
+        return $this->Status;
     }
+
 
     public function getCarName() {
         return $this->CarName;
@@ -53,6 +56,7 @@ class Car {
         $this->Status = $details['status'];
         $sql = "INSERT INTO Cars (CarName,CarType,Status,CarPlate,Colour) VALUES ('$this->CarName' ,'$this->Cartype' ,'$this->Status',' $this->CarPlate'
         , '$this->color')";
+
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
             return 'true';

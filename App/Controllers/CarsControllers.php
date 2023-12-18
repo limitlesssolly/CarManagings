@@ -54,59 +54,69 @@ class CarController
 		}
     }
 
-    public function deleteCar($id)
-    {
-        try {
-            $car = new Car($id, '', '', '', ''); // Assuming you only need ID for deletion
-            $car->deleteCar();
-            return ['success' => true, 'message' => 'Car deleted successfully'];
-        } catch (Exception $e) {
-            return ['success' => false, 'message' => $e->getMessage()];
-        }
-    }
+    // public function getCars() {
+    //     try {
+    //         $car = new Car(0, '', '', '', '', '', 0);
+    //         $cars = $car->getCars();
+    //         return ['success' => true, 'cars' => $cars];
+    //     } catch (Exception $e) {
+    //         return ['success' => false, 'message' => $e->getMessage()];
+    //     }
+    // }
 
-    public function editCar($id, $model, $year, $color, $fuelType)
-    {
-        try {
-            $car = new Car($id, $model, $year, $color, $fuelType);
-            $car->editCar();
-            return ['success' => true, 'message' => 'Car edited successfully'];
-        } catch (Exception $e) {
-            return ['success' => false, 'message' => $e->getMessage()];
-        }
-    }
+    // public function deleteCar($id) {
+    //     try {
+    //         $car = new Car($id, '', '', '', '', '', 0);
+    //         $car->deleteCar();
+    //         return ['success' => true, 'message' => 'Car deleted successfully'];
+    //     } catch (Exception $e) {
+    //         return ['success' => false, 'message' => $e->getMessage()];
+    //     }
+    // }
 
-
+    // public function editCar($id, $name, $type, $plate, $status, $category, $totalProfit) {
+    //     try {
+    //         $car = new Car($id, $name, $type, $plate, $status, $category, $totalProfit);
+    //         $car->editCar();
+    //         return ['success' => true, 'message' => 'Car edited successfully'];
+    //     } catch (Exception $e) {
+    //         return ['success' => false, 'message' => $e->getMessage()];
+    //     }
+    // }
 
 }
-    
 
 // Example usage:
 /*
 $carController = new CarController();
 
 // Add a car
-$result = $carController->addCar(1, 'CarModel', 2022, 'Red', 'Petrol');
 if ($result['success']) {
     echo $result['message'];
 } else {
-    echo 'Error: ' . $result['message'];
+
+// Get all cars
+$carsResult = $carController->getCars();
+if ($carsResult['success']) {
+    print_r($carsResult['cars']);
+} else {
+    echo 'Error: ' . $carsResult['message'];
 }
 
 // Delete a car
-$result = $carController->deleteCar(1);
-if ($result['success']) {
-    echo $result['message'];
+$deleteResult = $carController->deleteCar(1);
+if ($deleteResult['success']) {
+    echo $deleteResult['message'];
 } else {
-    echo 'Error: ' . $result['message'];
+    echo 'Error: ' . $deleteResult['message'];
 }
 
 // Edit a car
-$result = $carController->editCar(1, 'UpdatedModel', 2023, 'Blue', 'Diesel');
-if ($result['success']) {
-    echo $result['message'];
+$editResult = $carController->editCar(2, 'UpdatedCar', 'UpdatedType', 'UpdatedPlate', 'UpdatedStatus', 'UpdatedCategory', 700.0);
+if ($editResult['success']) {
+    echo $editResult['message'];
 } else {
-    echo 'Error: ' . $result['message'];
+    echo 'Error: ' . $editResult['message'];
 }
 */
 

@@ -21,7 +21,6 @@ $admin=new AdminController('AdminConttroller');
 
 else if($_GET['action']=='addadminpage'){
     header("Location:../Views/Pages/Admin/addadmins.php");
-
 }
 else if($_GET['action']=='addadmin'){
     $result=$admin->Add($_POST['name'],$_POST['email'],$_POST['phone'],$_POST['pass'], $_POST['confirmpass']);
@@ -49,7 +48,16 @@ else if($_GET['action']=='deleteadmin'){
 
 
 else if($_GET['action']=='editpage'){
-    header("Location:../Views/Pages/Admin/editadmins.php");
+    header("Location:../Views/Pages/Admin/editprofiledash.php");
+}
+else if($_GET['action']=='editadmin'){
+    $result=$admin->Edit($_POST['ID'],$_POST['name'],$_POST['email'],$_POST['phone'],$_POST['pass']);
+    if($result=='successful')
+    {
+        echo 'successful';
+    }else{
+        echo json_encode($result);
+    }
 }
 // else if($_GET['action']=='editdriver'){
 //     $result=$driver->Edit($_POST['id'],$_POST['name'],$_POST['email'],$_POST['phone'],$_POST['photo'], $_POST['status']);

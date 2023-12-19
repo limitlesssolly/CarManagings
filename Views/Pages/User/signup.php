@@ -2,6 +2,7 @@
 require_once( "../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
 $model = new User();
+$dbh = new Dbh();
 $controller = new UsersController($model);
 session_start();
 
@@ -13,21 +14,19 @@ if(isset($_POST['login']))	{
 	$password=$_REQUEST["Password"];
 	if($email===""||$password===""){
 		echo('Please enter both email and password!');
-
 	}else{
 	$sql = "SELECT * FROM users where Email='$email' and Pass='$password'";
-	$dbh = new Dbh();
 	$result = $dbh->query($sql);
-	if ($result){
-		$row = $dbh->fetchRow($result);
+	$row = $dbh->fetchRow($result);
+	if ($row){
 		$_SESSION["id"]=$row["id"];
 		$_SESSION["Name"]=$row["Name"];
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Phone"]=$row["Phone"];
 		$_SESSION["Password"]=$row["Pass"];
 		header("Location:profile.php");
-	}else{
-		echo ("ERRORR");
+	}else {
+		echo ("User not found");
 	}
 }}
 ?>

@@ -72,6 +72,7 @@ class User extends Model {
 		}
 	}
     public function insert($name,$email,$phone,$password) {
+        try {
         $sql = "INSERT INTO users (Name,Email,Phone,Pass) VALUES ('$name','$email','$phone','$password')";
         if($this->db->query($sql) === true){
 			echo "successfull";
@@ -79,7 +80,10 @@ class User extends Model {
 		} else {
             echo "error";
  
+        }}catch (Exception $e) {
+            echo "Error:" . $e->getMessage();
         }
+
     }
         function readUser($id){
 		$id=$_SESSION["id"];
@@ -111,7 +115,6 @@ class User extends Model {
         $sql = "UPDATE `users` SET `Name`='$name', `Email`='$email', `Phone`='$phone', `Pass`='$password' WHERE `id`='$id'";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
-            echo "updated successfully.";
             $this->readUser($id);
 
         } else {
@@ -120,11 +123,10 @@ class User extends Model {
     }
     function deleteUser() {
         $id=$_SESSION["id"];
-        $sql = "delete from users where id=$id;";
+        $sql = "delete from users where `id`='$id'";
         if($this->db->query($sql) === true) {
-            echo "deletet successfully.";
-            header("Location:signup.php");
             session_destroy();
+            header("Location:signup.php");
 
         } else {
             echo "ERROR: Could not able to execute $sql. ";

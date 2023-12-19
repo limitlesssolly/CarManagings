@@ -34,11 +34,16 @@ if ($_GET['action'] == 'customers') {
     } else {
         echo 'failed';
     }
-} else if ($_GET['action'] == 'editcustomerpage') {
+} else if ($_GET['action'] == 'editcustomer') {
     header("Location:../Views/Pages/Admin/Customer/editcustomer.php");
 } else if ($_GET['action'] == 'editcustomer') {
-    // Handle editing customer data
-    // ...
+    $result=$customer->Edit($_POST['ID'],$_POST['name'],$_POST['email'],$_POST['phone'],$_POST['pass']);
+    if($result=='successful')
+    {
+        echo 'successful';
+    }else{
+        echo json_encode($result);
+    }
 }
 
 

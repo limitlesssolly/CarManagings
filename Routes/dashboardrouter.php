@@ -43,7 +43,11 @@ $book=new Booking();
 }else if($_GET["action"]== "assigndrivercar"){
 
     $result= $book->Assigndrivercar( $_POST['rideid'], $_POST['driverid'], $_POST['carid']);
-    if($result=='successful');   
+    if($result=='successful'){
+        echo 'successful';
+    }else {
+        echo $result;
+    }   
 
 
 }

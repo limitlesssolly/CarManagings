@@ -114,7 +114,7 @@ button:hover {
 
                         <div>
                         <label for="fullname">Ride ID</label>
-                            <input type="text" class="field" name="rideid" placeholder="1234" required> <br>
+                            <input type="text" class="field" id="rideid" placeholder="1234" required> <br>
                         </div>  
                          <div class="name">
                             <label for="fullname">Driver ID</label>
@@ -145,6 +145,7 @@ button:hover {
                             <button type="submit" name="submit">Assign </button>
                         </div>
                     </form>
+                    <script src="../../../Public/js/assigndrivercar.js"></script>
                 </div>
             </section>
         </div>

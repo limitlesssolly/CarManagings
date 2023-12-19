@@ -49,5 +49,14 @@ $book=new Booking();
         echo $result;
     }   
 
-
+}else if($_GET["action"]== "cancelride"){
+    $result= $book->CancelRide( $_POST['id']);
+    if($result== 'successful'){
+        echo 'sucessful';
+    }else{
+        echo "error";
+    }
+}
+else if($_GET["action"]== "edittrippage"){
+    header("Location:../Views/Pages/Admin/edittrip.php");
 }

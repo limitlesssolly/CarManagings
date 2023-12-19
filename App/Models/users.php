@@ -146,7 +146,35 @@ class User extends Model {
             echo "Fee Mashakel";
         }
     }
+function history(){
+    $email=$_SESSION["Email"];
+$dbh = new Dbh();
+    $sql = "SELECT `PickupDate`, `pickupTime`, `pickupLocation`, `pickupDestination`,  `DriverID` FROM rides WHERE `UserEmail` = '$email'";
+    $dbh = new Dbh();
+    $result = $dbh->query($sql);
+    $rowsCount = $result->num_rows;
+for ($j = 1; $j <= $rowsCount; $j++) {
+    $row = $dbh->fetchRow($result);
 
+    if ($row) {
+        $driverID = $row["DriverID"];
+        $pickupLoc = $row["pickupLocation"];
+        $Dest = $row["pickupDestination"];
+        $time = $row["pickupTime"];
+        $date = $row["PickupDate"];
+
+        $history[$j] = array(
+          $driverID => $driverID,
+          $pickupLoc => $pickupLoc,
+          $Dest => $Dest,
+          $time => $time,
+          $date => $date
+        );
+    } else {
+        echo "There is no previous ride for you with us.";
+    }
+}
+}
     static function getRatings(){
         $sql = "SELECT * FROM ratings";
         $result = mysqli_query($GLOBALS['conn'], $sql);

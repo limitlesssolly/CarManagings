@@ -17,9 +17,9 @@ if ($_GET['action'] == 'customers') {
         ];
         $i++;
     }
-    header("Location:../Views/Pages/Customers/customers.php");
+    header("Location:../Views/Pages/Admin/Customers/customers.php");
 } else if ($_GET['action'] == 'addcustomerpage') {
-    header("Location:../Views/Pages/Customers/addcustomers.php");
+    header("Location:../Views/Pages/Admin/Customers/addcustomers.php");
 } else if ($_GET['action'] == 'addcustomer') {
     $result = $customer->Add($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['pass'], $_POST['confirmpass']);
     if ($result == 'successful') {
@@ -35,7 +35,7 @@ if ($_GET['action'] == 'customers') {
         echo 'failed';
     }
 } else if ($_GET['action'] == 'editcustomerpage') {
-    header("Location:../Views/Pages/Customer/editcustomer.php");
+    header("Location:../Views/Pages/Admin/Customer/editcustomer.php");
 } else if ($_GET['action'] == 'editcustomer') {
     // Handle editing customer data
     // ...

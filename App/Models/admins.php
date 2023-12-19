@@ -8,7 +8,7 @@ class Admin
     public $Phone;
 
     public function AddAdmin($name,$email, $phone,$password){
-        $sql = "INSERT INTO admin (Name, Email, Phone,Password) VALUES ('$name','$email', '$phone','$password')";
+        $sql = "INSERT INTO employee (Name,Email,Password, Phone,Employee_Type) VALUES ('$name','$email','$password', '$phone','1')";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
             return 0;
@@ -19,7 +19,7 @@ class Admin
     }
 
     public function getAdmins(){
-		$sql = "SELECT * FROM admin";
+		$sql = "SELECT * FROM employee where Employee_Type='1'";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
             return $result;
@@ -44,7 +44,7 @@ class Admin
 
     function removeAdmin($id)
     {
-        $sql = "DELETE FROM admin WHERE id='$id'";
+        $sql = "DELETE FROM employee WHERE id='$id'";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
             return 'sucessful';

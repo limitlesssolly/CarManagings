@@ -14,7 +14,7 @@ $(document).ready(function() {
             type: 'post',
             data: data,
             success:function(response){
- 
+              console.log(response)
               if(response.trim() == "successful"){
                   $('.alert').addClass("show");
                   $('.alert').removeClass("hide");

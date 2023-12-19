@@ -82,9 +82,9 @@ session_start();
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Employes</a></li>
-                        <li><a href="../../Views/Pages/employees.php">Show</a></li>
-                        <li><a href="../../Views/Pages/addemployee.php">Add</a></li>
-                        <li><a href="../../Views/Pages/editemployees.php">Edit</a></li>
+                        <li><a href="../../Admin/Employees/employees.php">Show</a></li>
+                        <li><a href="../../Admin/Employees/addemployee.php">Add</a></li>
+                        <li><a href="../../Admin/Employees/editemployees.php">Edit</a></li>
                     </ul>
 
                 </li>
@@ -101,9 +101,9 @@ session_start();
 
                         <ul class="sub-menu">
                             <li><a class="link_name" href="">Customers</a></li>
-                            <li><a href="../../Views/Pages/Admin/Customers/customers.php">Show</a></li>
-                            <li><a href="/pro/CarManagings-1/Views/Pages/Admin/Customers/addcustomers.php">Add</a></li>
-                            <li><a href="../../Views/Pages/Admin/Customers/editcustomers.php">Edit</a></li>
+                            <li><a href="../../Admin/Customers/customers.php">Show</a></li>
+                            <li><a href="../../Admin/Customers/addcustomers.php">Add</a></li>
+                            <li><a href="../../Admin/Customers/editcustomers.php">Edit</a></li>
                         </ul>
                         
 

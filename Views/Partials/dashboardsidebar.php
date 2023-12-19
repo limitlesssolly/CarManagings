@@ -61,8 +61,6 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Rides</a></li>  
-                        
-                        <li><a href="">Add</a></li>
                         <li><a href="../../../Routes/dashboardrouter.php?action=assigndrivercar">Assign driver and car</a></li>  
                         
                         <li><a href="">Edit</a></li>

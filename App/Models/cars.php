@@ -3,89 +3,80 @@
 require "Model.php";
 include_once "../App/Database/db.php";
 
-class Car extends Model{
+class Car {
     private $id;
-    private $name; // Updated attribute
-    private $type; // Updated attribute
-    private $plate; // Updated attribute
-    private $status; // Updated attribute
-    private $category; // Updated attribute
-    private $totalProfit; // Updated attribute
-    private $cars;
-    private $maintenanceHistory = [];
-    protected $db;
 
-    public function __construct($id, $name, $type, $plate, $status, $category, $totalProfit) {
-        $this->id = $id;
-        $this->name = $name;
-        $this->type = $type;
-        $this->plate = $plate;
-        $this->status = $status;
-        $this->category = $category;
-        $this->totalProfit = $totalProfit;
-        $this->db = new Dbh(); 
+    public $CarName;
+    public $Cartype;
+    public $CarPlate;
+    public $color;
+    public $Status;
+    public $AssignedDriver;
+    public $CarHistory = [];
+    public $relation;
+    public function __construct(){
+
     }
-    // Getters for the updated attributes
-    public function getName() {
-        return $this->name;
+    // public function __construct($id, $model, $year, $color, $fuelType) {
+    //     $this->id = $id;
+    //     $this->model = $model;
+    //     $this->year = $year;
+    //     $this->color = $color;
+    // }
+
+    public function getId() {
+        return $this->id;
     }
 
-    public function getType() {
-        return $this->type;
+    public function getCartype() {
+        return $this->Cartype;
     }
 
-    public function getPlate() {
-        return $this->plate;
-    }
+
 
     public function getStatus() {
-        return $this->status;
+        return $this->Status;
     }
 
-    public function getCategory() {
-        return $this->category;
+
+    public function getCarName() {
+        return $this->CarName;
     }
 
-    public function getTotalProfit() {
-        return $this->totalProfit;
-    }
-
-    public function assignDriver($driver) {
-        $this->driver = $driver;
-    }
-
-    public function recordMaintenance($maintenanceDetails) {
-        $this->maintenanceHistory[] = $maintenanceDetails;
-    }
-
-    public function addCar() {
-        $sql = "INSERT INTO cars (name, type, plate, status, category, totalProfit) VALUES (?, ?, ?, ?, ?, ?)";
-        $params = [$this->name, $this->type, $this->plate, $this->status, $this->category, $this->totalProfit];
-        $this->db->execute($sql, $params);
-    }
-
-    public function deleteCar() {
-        $sql = "DELETE FROM cars WHERE id = ?";
-        $params = [$this->id];
-        $this->db->execute($sql, $params);
-    }
-    public function getCars() {
+    public function getAllCars() {
         $sql = "SELECT * FROM cars";
-        $result = $this->db->query($sql);
-        if (!$result) {
-            die("Error: " . $this->db->getErrorMessage()); // Print the error message
-        }
-        return $result->fetch_all(MYSQLI_ASSOC);
-    }
-    public function editCar() {
-        $sql = "UPDATE cars SET name = ?, type = ?, plate = ?, status = ?, category = ?, totalProfit = ? WHERE id = ?";
-        $params = [$this->name, $this->type, $this->plate, $this->status, $this->category, $this->totalProfit, $this->id];
-        $this->db->execute($sql, $params);
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
     }
 
-    function readcars($id)
+ 
+    public function addCar($details) {
+        $this->CarName = $details['name'];
+        $this->Cartype = $details['type'];
+        $this->CarPlate = $details['plate'];
+        $this->color = $details['color'];
+        $this->Status = $details['status'];
+        $sql = "INSERT INTO Cars (CarName,CarType,Status,CarPlate,Colour) VALUES ('$this->CarName' ,'$this->Cartype' ,'$this->Status',' $this->CarPlate'
+        , '$this->color')";
+
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 'true';
+         }
+         else{
+            echo "error";
+         }
+
+
+    }
+    function readCar($id)
     {
-        $sql = "SELECT * FROM cars where Id=".$id;
+        $sql = "SELECT * FROM Cars where ID=".$id;
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
             return $result;
@@ -95,6 +86,47 @@ class Car extends Model{
          }
 
     }
+    public function deleteCar($id) {
+        $sql = "DELETE FROM Cars WHERE id = '$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
+    }
+
+    public function EditCar($details) {
+        $id=$details["id"];
+        $newname=$details['name'];
+        $newtype=$details['type'];
+        $newplate=$details['plate'];
+        $newcolor=$details['color'];
+        $newstatus=$details['status'];
+
+        $sql = "UPDATE Cars  SET CarName='$newname',CarType='$newtype', CarPlate='$newplate',colour='$newcolor', Status='$newstatus' where ID='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
+    }
+
+    // function readcars($id)
+    // {
+    //     $sql = "SELECT * FROM cars where Id=".$id;
+    //     $result = mysqli_query($GLOBALS['conn'], $sql);
+    //     if ($result) {
+    //         return $result;
+    //      }
+    //      else{
+    //         echo "error";
+    //      }
+
+    // }
 
 
 }

@@ -22,7 +22,8 @@ $book=new Booking();
          'UserName'=>  $row['UserName'] , 
          'UserEmail'=>  $row['UserEmail'] , 
          'UserPhone'=> $row['UserPhone']  , 
-         'Status'=>  $row['Status'],  
+         'Status'=>  $row['Status'],
+         'CarID'=> $row['CarID']  ,  
          'CarPlate'=> $row['CarPlate']  ,
          'CarType'=>   $row['CarType']  ,
          'Comment'=>  $row['Comment'] , 
@@ -36,7 +37,17 @@ $book=new Booking();
  
     header("Location:../Views/Pages/Admin/trips.php");
    
-}else if($_GET['action']=='assigndrivercar'){
+}else if($_GET['action']=='assigndrivercarpage'){
     header("Location:../Views/Pages/Admin/assigntrip.php");
+
+}else if($_GET["action"]== "assigndrivercar"){
+
+    $result= $book->Assigndrivercar( $_POST['rideid'], $_POST['driverid'], $_POST['carid']);
+    if($result=='successful'){
+        echo 'successful';
+    }else {
+        echo $result;
+    }   
+
 
 }

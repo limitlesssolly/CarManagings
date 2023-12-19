@@ -3,6 +3,7 @@ require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
 
 $model = new User();
+$dbh = new Dbh();
 $controller = new UsersController($model);
 session_start();
 
@@ -107,7 +108,7 @@ if (isset($_POST['login'])) {
 				<input type="password" placeholder="Password" name="Password" />
 				<a href="#">Forgot your password?</a>
 
-				<button type="submit" name="login"name="submit" onclick="validateForm()">Sign In</button>
+				<button type="submit" name="login"name="submit" >Sign In</button>
 			</form>
 
 		</div>
@@ -131,18 +132,7 @@ if (isset($_POST['login'])) {
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="../../../Public/js/signup.js"></script>
-<script>
-	  function validateForm() {
-            var email = document.getElementById('Email').value;
-            var password = document.getElementById('Password').value;
-            if (email.trim() === '' || password.trim() === '') {
-                alert('Please enter both email and password.');
-            } else {
-                alert('Sign-in successful!');
-                // document.getElementById('loginForm').submit(); 
-            }
-        }
-	</script>
+
 	</head>
 
 </body>

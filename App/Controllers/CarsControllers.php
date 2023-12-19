@@ -1,47 +1,114 @@
 <?php
 require "Controller.php";
-require_once("../app/models/cars.php");
+require_once("../App/Models/cars.php");
+class CarController
+{
+    public $car;
+    public function __construct() {
+     $this->car=new  Car();
+    }
+    public function addCar($details)
+    {
+        $error=[
+            'name'=>'',
+            'type'=>'',
+            'plate'=>'',
+            'color'=>'',
+			'status'=>'',
 
-class CarController {
-    public function addCar($name, $type, $plate, $status, $category, $totalProfit) {
-        try {
-            $car = new Car(0, $name, $type, $plate, $status, $category, $totalProfit);
-            $car->addCar();
-            return ['success' => true, 'message' => 'Car added successfully'];
-        } catch (Exception $e) {
-            return ['success' => false, 'message' => $e->getMessage()];
+        ];
+       
+        $i=0;
+        if($details['name'] =='' ){
+            $i++;
+            $error['name']='please enter a name';
         }
+        if($details['plate'] =='' ){
+            $i++;
+            $error['plate']='please enter car plate';
+        }
+        if($details['color'] =='' ){
+            $i++;
+            $error['color']='please enter car color';
+        }
+        if($details['status'] =='' ){
+            $i++;
+            $error['status']='please enter car status';
+        }
+
+
+		if($i==0)
+		{
+ 
+                $updatedetails=[
+                    'name'=>$details['name'],
+                    'type'=>$details['type'],
+                    'plate'=>$details['plate'],
+                    'color'=>$details['color'],
+                    'status'=>$details['status']
+                ];
+                $this->car->addCar($updatedetails);
+			return 'successful';
+		}else{
+			return $error;
+		}
     }
 
     public function getCars() {
         try {
-            $car = new Car(0, '', '', '', '', '', 0);
-            $cars = $car->getCars();
-            return ['success' => true, 'cars' => $cars];
+            return $this->car->getAllCars();
         } catch (Exception $e) {
             return ['success' => false, 'message' => $e->getMessage()];
         }
     }
 
     public function deleteCar($id) {
-        try {
-            $car = new Car($id, '', '', '', '', '', 0);
-            $car->deleteCar();
-            return ['success' => true, 'message' => 'Car deleted successfully'];
-        } catch (Exception $e) {
-            return ['success' => false, 'message' => $e->getMessage()];
+        
+            
+                  
+            return  $this->car->deleteCar($id);
+     
+    }
+
+    public function editCar($details) {
+
+        $i=0;
+        if($details['id'] == null)
+        {
+           $i++;
+           return 'please enter id';
+
+        }else{
+        
+
+       $carinfo =$this->car->readCar($details['id']);
+       while ($row = $carinfo->fetch_assoc()) {
+    
+           if($details['name']==''){
+            $details['name']=$row['CarName'];
+           }
+
+           if($details['type']==''){
+            $details['type']=$row['CarType'];
+            }
+
+            if($details['plate']==''){
+                $details['plate']=$row['CarPlate'];
+            }
+
+            if($details['color']==''){
+                $details['color']= $row['Colour'];
+            }
+            if($details['status']==''){
+                $details['status']= $row['Status'];
+            }
+            $this->car->EditCar($details);
+            return	'successful';
+          } 
+         return 'not found';
         }
     }
 
-    public function editCar($id, $name, $type, $plate, $status, $category, $totalProfit) {
-        try {
-            $car = new Car($id, $name, $type, $plate, $status, $category, $totalProfit);
-            $car->editCar();
-            return ['success' => true, 'message' => 'Car edited successfully'];
-        } catch (Exception $e) {
-            return ['success' => false, 'message' => $e->getMessage()];
-        }
-    }
 }
 
 // Example usage:
@@ -49,12 +116,9 @@ class CarController {
 $carController = new CarController();
 
 // Add a car
-$result = $carController->addCar('CarName', 'CarType', 'CarPlate', 'CarStatus', 'CarCategory', 500.0);
 if ($result['success']) {
     echo $result['message'];
 } else {
-    echo 'Error: ' . $result['message'];
-}
 
 // Get all cars
 $carsResult = $carController->getCars();

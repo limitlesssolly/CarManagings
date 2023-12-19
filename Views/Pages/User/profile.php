@@ -180,6 +180,8 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 
                         <div class="input-cont">
                             <input type="password" name="confirm" id="confirmPassword" required />
+                            <span id="passwordValidationMessage"></span>
+
                             <label>Confirm Password</label>
                             <div class="border2"></div>
                         </div>
@@ -205,6 +207,9 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
             userForms.classList.remove('bounceLeft')
             userForms.classList.add('bounceRight')
         }, false)
+
+        // <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     </script>
 
 </body>

@@ -1,6 +1,3 @@
-<?php
-// include_once "../../includes/db.php";
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <link rel="stylesheet" href="../../Public/CSS/adddrivers.css"> -->
     <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../../Public/CSS/alert.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Drivers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <title>Edit-Driver</title>
 </head>
 
 <style>
@@ -24,17 +24,18 @@
     /* margin:2px 0px;  */
     padding:0px;
     text-align:center;
-           
 }
-
+body{
+    overflow: hidden;
+}
 .container {
     position: relative;
     max-width: 500px;
     margin-left: 30%;
-    margin-top: 75px; 
-    margin-bottom: 40px;
-    padding: 30px 40px;
-  
+    /* margin-top: 30px;  */
+    margin-bottom: 30px;
+    padding: 20px 40px;
+   margin-top: -18px;
     background-color: white; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -59,11 +60,11 @@ input[type=email],
 select,
 textarea {
     width: 100%;
-    padding: 13px;
+    padding: 7px;
     border: 1px solid #01051c;
     border-radius: 4px;
     resize: vertical;
-    margin: 3px;
+    margin: 10px;
 }
 
 label {
@@ -79,14 +80,13 @@ button {
     text-decoration: none;
     font-family: 500;
     border: none;
-    padding: 15px 39px;
-    margin-top: 20px;
+    padding: 15px 29px;
     border: 1px solid rgb(1, 5, 28);
     border-radius: 4px;
     transition: 0.9s;
     position: relative;
-    cursor: pointer;
     right: 0%;
+    cursor: pointer;
 }
 
 button:hover {
@@ -106,69 +106,59 @@ button:hover {
             <i class="bx bx-menu"></i>
             <span class="text">Dashboard</span>
         </div>
+        <div class="alert hide"> 
+                        <span class="fas fa-check-circle"></span>
+                        <span class="msg">Updated Successfully!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+        </div>
         <div class="adddrivers">
             <section>
                 <div class="container" >
-                    <h1>Requirements</h1>
-                    <form action="" method="post">
-
-                        <div>
-                        <label for="fullname">Ride ID</label>
-                            <input type="text" class="field" id="rideid" placeholder="1234" required> <br>
-                        </div>  
-                         <div class="name">
-                            <label for="fullname">Driver ID</label>
-                            <input type="text" class="field" id="driverid" placeholder="1234" required> <br>
+                    <h1>Edit Car</h1>
+                    <form action="editdrivers.php?action=edit" method="post">
+                        <div class="id">
+                            <label >Car ID</label>
+                            <input type="text" class="field" name="name" id='id' required> <br>
                         </div>
-                            <!--
-                        <div class="contactinfo">
-                            <label for="contactnumbers">Driver Email</label>
-                            <input type="email" class="field" name="email" placeholder="mail@gmail.com" required> 
+
+                        <div class="name">
+                            <label> Car Name</label>
+                            <input type="text" class="field" name="name" id='name'> <br>
                         </div>
 
                         <div class="contactinfo">
-                            <label for="contactnumbers">Driver Number</label>
-                            <input type="text" class="field" name="phone" placeholder="0123456789" required>  
-                        </div> -->
+                            <label >Car Type</label>
+                            <input type="text" class="field" name="email" id='type' > 
+                        </div>
+
+                        <div class="contactinfo">
+                            <label >Car Plate</label>
+                            <input type="text" class="field" name="phone" id='plate' >  
+                        </div>
+
+                        <div class="phot">
+                            <label >Color</label>
+                            <input type="text" class="field" name="photo"  id='color' >  
+                        </div>
 
                         <div class="status">
-                        <label for="salary">Car Id</label>
-                            <input type="text" class="field" name="carplate" id='carid' placeholder="1234" required>  
-                            <!-- <label for="salary">Car Plate</label>
-                            <input type="text" class="field" name="carplate" placeholder="available,in trip,in vacation " required>                           
-                            <label for="date">Car Name </label>
-                            <input type="text" class="field" name="carname" required> <br> -->
+                            
+                            <label >Status</label>
+                            <input type="text" class="field" name="status" id='status' >                           
 
                         </div>
 
                         <div class="subs">
-                            <button type="submit" name="submit">Assign </button>
+                            <button type="submit" name="submit">edit </button>
                         </div>
                     </form>
-                    <script src="../../../Public/js/assigndrivercar1.js"></script>
+                    <script src="../../../Public/js/editcar.js"></script>
                 </div>
             </section>
         </div>
     </section>
-
-
-    <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-         $name = htmlspecialchars($_POST["name"]);
-         $email = htmlspecialchars($_POST["email"]);
-         $phone = htmlspecialchars($_POST["phone"]);
-         $status = htmlspecialchars($_POST["status"]);
-         $date = htmlspecialchars($_POST["date"]);
-
-         $sql = "insert into drivers(Name,Email,Phone,Status,Dateofemployment) 
-         values('$name','$email','$phone','$status', '$date')";
-         $result = mysqli_query($conn, $sql);
-
-         if ($result) {
-            //  header("Location:drivers.php");
-         }
-     }
-    ?>
 
     <script>
         let arrow = document.querySelectorAll(".arrow");
@@ -187,6 +177,7 @@ button:hover {
 
 
     </script>
+
 </body>
 
 </html>

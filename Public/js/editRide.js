@@ -12,7 +12,7 @@ $(document).ready(function() {
          console.log(data)
   
          $.ajax({
-            url: '/CarManagings/Routes/dashboardrouter.php?action=cancelride',
+            url: '/CarManagings/Routes/dashboardrouter.php?action=editride',
             type: 'post',
             data: data,
             success:function(response){

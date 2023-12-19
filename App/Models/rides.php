@@ -11,6 +11,7 @@ require '../Mail/src/SMTP.php';
 
 interface Observer {
    public function update($infoToBEUpdated);
+   public function cancel($infoToBEUpdated);
 }
 
 class EmailNotificationObserver implements Observer {
@@ -28,6 +29,18 @@ class EmailNotificationObserver implements Observer {
        $this->update_driver_status($infoToBEUpdated['driverid']);
        return  $this->update_car_status($infoToBEUpdated['carid']);
    }
+   public function cancel($infoToBEUpdated) {
+
+      $carid = $infoToBEUpdated['carid'];
+      $driverid = $infoToBEUpdated['driverid'];
+      $sql = "UPDATE Cars  SET  Status='available' where ID='$carid'";
+      $result = mysqli_query($GLOBALS['conn'], $sql);
+      
+      $sql2 = "UPDATE drivers  SET  status='available' where ID='$driverid'";
+      $result2 = mysqli_query($GLOBALS['conn'], $sql2);
+
+      return "successful";
+  }
 
    private function sendEmailNotification($message) {
       $mail = new PHPMailer(true);
@@ -109,10 +122,16 @@ class Rides{
       }
     }
 
-    public function notify($infoToBEUpdated) {
+    public function notify($operation,$infoToBEUpdated) {
+      if($operation=='cancel'){
+         foreach ($this->observers as $observer) {
+            return $observer->cancel($infoToBEUpdated);
+         }
+      }else if($operation== 'assign'){
       foreach ($this->observers as $observer) {
          return $observer->update($infoToBEUpdated);
       }
+   }else if($operation== 'edit'){}
 
   }
   public function setObserver(Observer $observer) {
@@ -190,11 +209,9 @@ class Rides{
           'carcolor'=>$carcolor,
           'useremail' => $UserEmail,
       ];
+      // $this->notify('assign',$infoToBEUpdated);
 
-      
-      $this->notify($infoToBEUpdated);
-
-      return  $this->notify($infoToBEUpdated);
+      return  $this->notify('assign',$infoToBEUpdated);
   } else {
       return "error";
   } 
@@ -203,6 +220,35 @@ class Rides{
       $sql = "SELECT * FROM rides";
       $result = mysqli_query($GLOBALS['conn'], $sql);
       return $result;
+   }
+   public function CancelRide($ID){
+
+      $sql = "SELECT * FROM rides where ID='$ID'";
+      $result = mysqli_query($GLOBALS['conn'], $sql);
+        
+      while ($row = $result->fetch_assoc()) {
+         if($row['CarID']==0){
+            $sql = "UPDATE rides  SET Status='cancelled' where ID='$ID'";
+            $result = mysqli_query($GLOBALS['conn'], $sql);
+         }
+         else{
+
+            $sql = "UPDATE rides  SET CarID='null',DriverId='null' ,Status='cancelled' where ID='$ID'";
+            $result = mysqli_query($GLOBALS['conn'], $sql);
+
+            $emailObserver = new EmailNotificationObserver();
+            $this->attach($emailObserver);
+             
+            $infoToBEUpdated = [
+               'driverid' => $row['DriverID'],
+               'carid' => $row['CarID'],
+           ];
+            if($this->notify('cancel',$infoToBEUpdated)){
+               return 'successful';
+            }
+           
+         }
+        }
    }
 }
 

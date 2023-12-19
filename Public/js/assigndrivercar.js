@@ -4,8 +4,8 @@ $(document).ready(function() {
        event.preventDefault();
              const  data = { 
               rideid:$('#rideid').val(),
-              carid:$('#email').val(),
-              driverid:$('#driver').val(),
+              carid:$('#carid').val(),
+              driverid:$('#driverid').val(),
          };
          console.log(data)
   

@@ -6,7 +6,7 @@ require_once("../../../App/Controllers/UserControllers.php");
 require_once("../../../Views/View.php");
 $model = new User();
 $controller = new UsersController($model);
-session_start();
+// session_start();
 $id=$_SESSION["id"];
 if (isset($_GET['action']) && !empty($_GET['action'])) {
 	$controller->{$_GET['action']}();

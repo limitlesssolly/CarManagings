@@ -20,8 +20,8 @@
                 <button class="navbar-toggler"><i class='fas fa-solid fa-bars'></i></button>
             </div>
 
-            <input type="search" name="search" placeholder="Search..." class="navbar-search" id="search">
-            <i id='icon-search' class="fas fa-regular fa-magnifying-glass"></i>
+            <!-- <input type="search" name="search" placeholder="Search..." class="navbar-search" id="search">
+            <i id='icon-search' class="fas fa-regular fa-magnifying-glass"></i> -->
 
             <ul class="menu-list">
 

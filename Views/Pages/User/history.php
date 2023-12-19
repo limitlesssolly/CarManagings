@@ -60,7 +60,7 @@ $rowsCount = $result->num_rows;
           echo '<p>' . $history[$i]['pickupTime'] . '</p>';
           echo '</div>';
           echo '<div id="wrapper">';
-          echo '<a href="" class="btn red hide-text">';
+          echo '<a href="../bookyourcar.php" class="btn red hide-text">';
           echo '<span>Book Again</span>';
           echo '</a>';
           echo '</div>';

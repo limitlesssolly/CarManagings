@@ -1,6 +1,3 @@
-<?php
-//session_start();    
-?>
 <div class="sidebar ">
             <div class="logo-details">
                 <i class='bx bxs-dashboard'></i>
@@ -150,12 +147,7 @@
 
                     </ul>
 
-                </li>  
-
-
-            
-               
-               
+                </li> 
                 
                 <li>
                   <div class="profile-details">

@@ -1,35 +1,32 @@
 <?php 
     include('../../Partials/sidebar.php');
-
 require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
+session_start();
 $email=$_SESSION["Email"];
-$model = new User();
 $dbh = new Dbh();
-$controller = new UsersController($model);
-    $sql = "SELECT * FROM rides WHERE UserEmail='$email'";
+    $sql = "SELECT `PickupDate`, `pickupTime`, `pickupLocation`, `pickupDestination`,  `DriverID` FROM rides WHERE `UserEmail` = '$email'";
     $dbh = new Dbh();
     $result = $dbh->query($sql);
+    $row = $dbh->fetchRow($result);
     if ($result) {
-      $rows = array();
-      while ($row = $result->fetch_assoc()) {
-          $rows[] = $row;
-          echo("saved");
-      }
+      $rows[] = $row;
+      
     }
-      // foreach ($rows as $row) {
-      //       $history=[$row["DriverID"],$row["pickupLocation"],$row["pickupDestination"],$row["pickupTime"], $row["PickupDate"]];
-      //   } 
-      //   $rowsCount = count($rows);
       $rowsCount = count($rows);
-echo($rowsCount);
-      for($j=1;$j<=$rowsCount;$j++) {
+
+        for($j=1;$j<=$rowsCount;$j++) {
+          $driverID = $row["DriverID"];
+          $pickupLoc = $row["pickupLocation"];
+          $Dest = $row["pickupDestination"];
+          $time = $row["pickupTime"];
+          $date = $row["PickupDate"];
         $history[$j] = array(
-          $row["DriverID"],
-          $row["pickupLocation"],
-          $row["pickupDestination"],
-          $row["pickupTime"],
-          $row["PickupDate"]
+        $driverID=> $row["DriverID"],
+        $pickupLoc=>$row["pickupLocation"],
+        $Dest=> $row["pickupDestination"],
+        $time=> $row["pickupTime"],
+        $date=> $row["PickupDate"]
       );   
      } 
 
@@ -51,15 +48,15 @@ echo($rowsCount);
     for ($i = 1; $i <= $rowsCount; $i++) {
         echo '<li>';
         echo '<div class="image">';
-        echo '<h4>Driver ' . $history[$i]=array( $row["DriverID"] ) . '</h4>';
+        echo '<h4>Driver ' . $history[$i][$driverID] . '</h4>';
         echo '</div>';
         echo '<div class="text-group">';
-        echo '<div style="font-size: 20px;"> Start Point:'.$history[$i]=array( $row["pickupLocation"] ) .'</div>';
-        echo '<div style="font-size: 20px;"> Destination: Cairo</div>';
+        echo '<div style="font-size: 20px;"> Start Point:'.$history[$i][$pickupLoc] .'</div>';
+        echo '<div style="font-size: 20px;"> Destination:'.$history[$i][$Dest] .'</div>';
         echo '</div>';
         echo '<div class="date-group">';
-        echo '<h4>March 13, 2023</h4>';
-        echo '<p>5:00 PM</p>';
+        echo '<h4>'.$history[$i][$date].'</h4>';
+        echo '<p>'.$history[$i][$time].'</p>';
         echo '</div>';
         echo '<div id="wrapper">';
         echo '<a href="" class="btn red hide-text">';

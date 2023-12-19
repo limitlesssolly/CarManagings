@@ -65,7 +65,7 @@ session_start();
                         <li><a class="link_name" href="">Rides</a></li>  
                         <li><a href="../../../Routes/dashboardrouter.php?action=assigndrivercarpage">Assign driver and car</a></li>  
                         
-                        <li><a href="">Edit</a></li>
+                        <li><a href="../../../Routes/dashboardrouter.php?action=edittrippage">Edit</a></li>
                     </ul>
                 </li>
 

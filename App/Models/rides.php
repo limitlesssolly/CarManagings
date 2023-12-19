@@ -16,30 +16,44 @@ interface Observer {
 class EmailNotificationObserver implements Observer {
    public function update($infoToBEUpdated) {
        
-      //  $this->sendEmailNotification($infoToBEUpdated['useremail']);
-      //  $this->update_car_status($infoToBEUpdated['carid']);
+       $message= [
+         'carname' => $infoToBEUpdated['carname'],
+         'carplate' =>$infoToBEUpdated['carplate'],
+         'drivername' => $infoToBEUpdated['drivername'],
+         'driverphone' => $infoToBEUpdated['driverphone'],
+         'useremail' =>$infoToBEUpdated['useremail'],
+         'carcolor'=>$infoToBEUpdated['carcolor']
+     ];
+       $this->sendEmailNotification($message);
        $this->update_driver_status($infoToBEUpdated['driverid']);
        return  $this->update_car_status($infoToBEUpdated['carid']);
    }
 
-   private function sendEmailNotification($to) {
+   private function sendEmailNotification($message) {
       $mail = new PHPMailer(true);
       $mail->isSMTP();
       $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
-      $mail->Username =$to;
+      $mail->Username ='247LimousineOfficial@gmail.com';
       $mail->Password ='buwhpjbrxjdpywaz';
       $mail->SMTPSecure ='ssl';
       $mail->Port = 465;
   
       $mail->setFrom('247LimousineOfficial@gmail.com');
   
-      $mail->addAddress($to);
+      $mail->addAddress($message['useremail']);
   
       $mail->isHTML(true);
   
-      $mail->Subject = "Contacting Mail";
-      $mail->Body = "Your Ride Has Started";
+      $mail->Subject = "Your Ride";
+      $mail->Body = "
+      <p>Car Name: {$message['carname']}</p>
+      <p>Car Plate: {$message['carplate']}</p>
+      <p>Car Color: {$message['carcolor']}</p>
+      <p>Driver Name: {$message['drivername']}</p>
+      <p>Driver Phone: {$message['driverphone']}</p>
+
+      ";
   
       $mail->send();
    }
@@ -57,10 +71,10 @@ class EmailNotificationObserver implements Observer {
       $sql = "UPDATE drivers  SET  status='in trip' where ID='$id'";
       $result = mysqli_query($GLOBALS['conn'], $sql);
       if ($result) {
-          return $result;
+         //  return $result;
        }
        else{
-          echo "error";
+         //  echo "error";
        }
    }
 
@@ -134,6 +148,7 @@ class Rides{
     $carname='';
     $carplate='';
     $cartype='';
+    $carcolor='';
     $UserEmail='';
 
     while ($row = $result1->fetch_assoc()) {
@@ -152,7 +167,7 @@ class Rides{
       $carname=$row['CarName'];
       $cartype=$row['CarType'];
       $carplate=$row['CarPlate'];
-
+      $carcolor=$row['Colour'];
      }
        
            
@@ -172,6 +187,7 @@ class Rides{
           'carplate' => $carplate,
           'drivername' => $DriverName,
           'driverphone' => $DriverPhone,
+          'carcolor'=>$carcolor,
           'useremail' => $UserEmail,
       ];
 

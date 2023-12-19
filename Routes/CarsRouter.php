@@ -52,16 +52,17 @@ if ($_GET['action'] == 'cars') {
 
  }
 
-//  else if ($_GET['action'] == 'editcarpage') {
-//     header("Location: ../Views/Pages/Admin/editcars.php");
-// } else if ($_GET['action'] == 'editcar') {
-//     $result = $carController->Edit($_POST['id'], $_POST['model'], $_POST['year'], $_POST['color'], $_POST['fuelType']);
-//     if ($result['success']) {
-//         echo 'successful';
-//     } else {
-//         echo json_encode($result);
-//     }
-// } else if ($_GET['action'] == 'deletecar') {
+ else if ($_GET['action'] == 'editcarpage') {
+    header("Location: ../Views/Pages/Admin/editCar.php");
+} else if ($_GET['action'] == 'editcar') {
+    $result = $carController->Edit($_POST['id'], $_POST['model'], $_POST['year'], $_POST['color'], $_POST['fuelType']);
+    if ($result['success']) {
+        echo 'successful';
+    } else {
+        echo json_encode($result);
+    }
+}
+//  else if ($_GET['action'] == 'deletecar') {
 //     $result = $carController->Delete($_POST['id']);
 //     if ($result['success']) {
 //         echo 'successful';

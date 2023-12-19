@@ -1,6 +1,10 @@
+<<<<<<< Updated upstream
 <?php
 //session_start();    
 ?>
+=======
+
+>>>>>>> Stashed changes
 <div class="sidebar ">
             <div class="logo-details">
                 <i class='bx bxs-dashboard'></i>

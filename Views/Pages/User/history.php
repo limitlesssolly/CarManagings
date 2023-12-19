@@ -2,25 +2,29 @@
     include('../../Partials/sidebar.php');
 require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
-session_start();
+// session_start();
 $email=$_SESSION["Email"];
 $dbh = new Dbh();
     $sql = "SELECT `PickupDate`, `pickupTime`, `pickupLocation`, `pickupDestination`,  `DriverID` FROM rides WHERE `UserEmail` = '$email'";
     $dbh = new Dbh();
     $result = $dbh->query($sql);
-    $row = $dbh->fetchRow($result);
-    if ($result) {
-      $rows[] = $row;
+    // $row = $dbh->fetchRow($result);
+    // if ($result) {
+    //   $rows[] = $row;
       
-    }
-      $rowsCount = count($rows);
-
+    // }
+      // $rowsCount = count($rows);
+ 
+        $rowsCount =$result->num_rows ;
         for($j=1;$j<=$rowsCount;$j++) {
+          $row = $dbh->fetchRow($result);
+          if($row){
           $driverID = $row["DriverID"];
           $pickupLoc = $row["pickupLocation"];
           $Dest = $row["pickupDestination"];
           $time = $row["pickupTime"];
           $date = $row["PickupDate"];
+
         $history[$j] = array(
         $driverID=> $row["DriverID"],
         $pickupLoc=>$row["pickupLocation"],
@@ -28,6 +32,9 @@ $dbh = new Dbh();
         $time=> $row["pickupTime"],
         $date=> $row["PickupDate"]
       );   
+    }else{
+      echo("There is no previous rides for you with us ");
+    }
      } 
 
 ?>

@@ -146,40 +146,39 @@ class User extends Model {
             echo "Fee Mashakel";
         }
     }
-function history(){
+public function history(){
     $email=$_SESSION["Email"];
-$dbh = new Dbh();
-    $sql = "SELECT `PickupDate`, `pickupTime`, `pickupLocation`, `pickupDestination`,  `DriverID` FROM rides WHERE `UserEmail` = '$email'";
     $dbh = new Dbh();
-    $result = $dbh->query($sql);
-    $rowsCount = $result->num_rows;
-for ($j = 1; $j <= $rowsCount; $j++) {
-    $row = $dbh->fetchRow($result);
-
-    if ($row) {
-        $driverID = $row["DriverID"];
-        $pickupLoc = $row["pickupLocation"];
-        $Dest = $row["pickupDestination"];
-        $time = $row["pickupTime"];
-        $date = $row["PickupDate"];
-
-        $history[$j] = array(
-          $driverID => $driverID,
-          $pickupLoc => $pickupLoc,
-          $Dest => $Dest,
-          $time => $time,
-          $date => $date
-        );
-    } else {
-        echo "There is no previous ride for you with us.";
+    // $row= $dbh->fetchRow($result);
+    for ($j = 1; $j <= 100; $j++) {
+      $sql = "SELECT * FROM rides WHERE `UserEmail` = '$email'";
+      $result = $dbh->query($sql);
+      // $rows = $dbh->fetchAll($result);
+    
+      if ($row= $dbh->fetchRow($result)) {
+            $driverID = $row["DriverID"];
+            $pickupLoc = $row["pickupLocation"];
+            $Dest = $row["pickupDestination"];
+            $time = $row["pickupTime"];
+            $date = $row["PickupDate"];
+    
+            $history[$j] = array(
+              'DriverID' => $driverID,
+              'pickupLocation' => $pickupLoc,
+              'pickupDestination' => $Dest,
+              'pickupTime' => $time,
+              'PickupDate' => $date
+          );
+        } 
     }
+    $rowsCount = $result->num_rows;
 }
-}
+
     static function getRatings(){
         $sql = "SELECT * FROM rates";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         return $result;
      }
 
- }
+}
 ?>

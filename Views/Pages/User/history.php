@@ -2,29 +2,34 @@
     include('../../Partials/sidebar.php');
 require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
+$model = new User();
+$controller = new UsersController($model);
 // session_start();
-$email=$_SESSION["Email"];
-$dbh = new Dbh();
-for ($j = 1; $j <= 100; $j++) {
-  $sql = "SELECT `PickupDate`, `pickupTime`, `pickupLocation`, `pickupDestination`,  `DriverID` FROM rides WHERE `UserEmail` = '$email'";
-  $result = $dbh->query($sql);
-      while ($row= $dbh->fetchRow($result)) {
-        $driverID = $row["DriverID"];
-        $pickupLoc = $row["pickupLocation"];
-        $Dest = $row["pickupDestination"];
-        $time = $row["pickupTime"];
-        $date = $row["PickupDate"];
+// $email=$_SESSION["Email"];
+// $dbh = new Dbh();
+// // $row= $dbh->fetchRow($result);
+// for ($j = 1; $j <= 100; $j++) {
+//   $sql = "SELECT * FROM rides WHERE `UserEmail` = '$email'";
+//   $result = $dbh->query($sql);
+//   // $rows = $dbh->fetchAll($result);
 
-        $history[$j] = array(
-          'DriverID' => $driverID,
-          'pickupLocation' => $pickupLoc,
-          'pickupDestination' => $Dest,
-          'pickupTime' => $time,
-          'PickupDate' => $date
-      );
-    } 
-}
-$rowsCount = $result->num_rows;
+//   if ($row= $dbh->fetchRow($result)) {
+//         $driverID = $row["DriverID"];
+//         $pickupLoc = $row["pickupLocation"];
+//         $Dest = $row["pickupDestination"];
+//         $time = $row["pickupTime"];
+//         $date = $row["PickupDate"];
+
+//         $history[$j] = array(
+//           'DriverID' => $driverID,
+//           'pickupLocation' => $pickupLoc,
+//           'pickupDestination' => $Dest,
+//           'pickupTime' => $time,
+//           'PickupDate' => $date
+//       );
+//     } 
+// }
+// $rowsCount = $result->num_rows;
 
 ?>
 <!DOCTYPE html>

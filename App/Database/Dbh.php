@@ -59,7 +59,12 @@ class DBh{
 		}
 		return $result->fetch_assoc();
 	}
-
+	public function fetchAll($result = "") {
+		if (empty($result)) {
+			$result = $this->result;
+		}
+		return $result->fetch_all(MYSQLI_ASSOC);
+	}
 	function __destruct(){
 		$this->conn->close();
 	}

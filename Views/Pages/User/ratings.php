@@ -88,7 +88,6 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
                     echo '<span class="overlay"></span>';
                     echo '<div class="card-image"></div>';
                     echo '</div>';
-
                     echo '<div class="card-content">';
                     echo '<h2 class="name">'.$_SESSION['AllRatings'][$i]['name'].'</h2>';
                     echo '<p class="description">'.$_SESSION['AllRatings'][$i]['review'].'</p>';

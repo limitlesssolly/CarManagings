@@ -1,66 +1,82 @@
 <?php
+include_once "../App/Database/db.php";
+class Employee
+{
+    public $ID;
+    public $Name;
+    public $Email;
+    public $Phone;
 
-require_once 'Database.php'; 
-
-class Employee {
-    private $employeeId;
-    private $firstName;
-    private $lastName;
-    private $position;
-    private $salary;
-    private $assignedCars = [];
-    private $db;
-
-    public function __construct($employeeId, $firstName, $lastName, $position, $salary) {
-        $this->employeeId = $employeeId;
-        $this->firstName = $firstName;
-        $this->lastName = $lastName;
-        $this->position = $position;
-        $this->salary = $salary;
-        $this->db = new Database(); 
+    public function AddEmployee($name,$email, $phone,$password){
+        $sql = "INSERT INTO employee (Name,Email,Password, Phone,Employee_Type) VALUES ('$name','$email','$password', '$phone','2')";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 0;
+        }
+         else{
+            echo "error";
+        }
     }
 
-    public function getEmployeeId() {
-        return $this->employeeId;
+    public function getEmployees(){
+		$sql = "SELECT * FROM employee where Employee_Type='2'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            return "error";
+         }
+	}
+
+    function editEmployee($id,$name,$email, $phone,$pass)
+    {
+        $sql = "UPDATE employee  SET Name='$name',Email='$email', Phone='$phone', Password='$pass' where ID='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 'true';
+         }
+         else{
+            echo "error";
+         }
+        
     }
 
-    public function getFullName() {
-        return $this->firstName . ' ' . $this->lastName;
-    }
 
-    public function getPosition() {
-        return $this->position;
+    function removeAdmin($id)
+    {
+        $sql = "DELETE FROM employee WHERE id='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return 'sucessful';
+         }
+         else{
+            echo "error";
+         }
     }
-
-    public function getSalary() {
-        return $this->salary;
+    
+    function readEmployee($id)
+    {
+        $sql = "SELECT * FROM employee where ID=".$id;
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            return "notfound";
+         }
     }
-
-    public function assignCar($car) {
-        $this->assignedCars[] = $car;
+    public function if_Emailexists($email)
+    {
+        $sql = "SELECT * FROM employee where Email='$email'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if (mysqli_num_rows($result) == 0) {
+            return $result;
+         }
+         else{
+            return "exists";
+         }
     }
-
-    public function getAssignedCars() {
-        return $this->assignedCars;
-    }
-
-    public function addEmployeeToDatabase($firstName, $lastName, $position, $salary) {
-        $sql = "INSERT INTO employees (first_name, last_name, position, salary) VALUES (?, ?, ?, ?)";
-        $params = [$firstName, $lastName, $position, $salary];
-        $this->db->execute($sql, $params);
-    }
-
-    public function editEmployeeInDatabase($employeeId, $firstName, $lastName, $position, $salary) {
-        $sql = "UPDATE employees SET first_name = ?, last_name = ?, position = ?, salary = ? WHERE employee_id = ?";
-        $params = [$firstName, $lastName, $position, $salary, $employeeId];
-        $this->db->execute($sql, $params);
-    }
-
-    public function deleteEmployeeFromDatabase($employeeId) {
-        $sql = "DELETE FROM employees WHERE employee_id = ?";
-        $params = [$employeeId];
-        $this->db->execute($sql, $params);
-    }
+    
 }
-
 ?>

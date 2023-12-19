@@ -13,11 +13,15 @@
 
     <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../../Public/CSS/carshowdash.css">
+    <link rel="stylesheet" href="../../../Public/CSS/alert.css">
     <style>
+        body{
+            overflow: hidden;
+        }
          td button{
             width: 70px;
         }
-        .status.delivered {
+        .status.request {
     background-color:#cac855;
     color: white;
     width: 89px;
@@ -49,6 +53,13 @@
 
                 </div>
             </section>
+            <div class="alert hide"> 
+                        <span class="fas fa-check-circle"></span>
+                        <span class="msg">Assigned Successfully!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+        </div>
            
                 <section class="table__body">
         <table>
@@ -89,9 +100,11 @@
                         echo "<td>" .  $_SESSION['AllRides'][$i]['DriverID'] . "</td>";
                         echo "<td>" .  $_SESSION['AllRides'][$i]['UserEmail'] . "</td>";
                         echo "<td>" .  $_SESSION['AllRides'][$i]['UserPhone'] . "</td>";
+
                         echo '<td>
-                        <p class="status delivered">' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
+                        <p class="status request">' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
                         </td>';
+
                         echo "<td>" .  $_SESSION['AllRides'][$i]['CarID'] . "</td>"; 
                       echo "<td>" .  $_SESSION['AllRides'][$i]['CarPlate'] . "</td>";
                       echo "<td>" .  $_SESSION['AllRides'][$i]['CarType'] . "</td>";

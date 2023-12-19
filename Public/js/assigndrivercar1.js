@@ -16,10 +16,6 @@ $(document).ready(function() {
             success:function(response){
  
               if(response.trim() == "successful"){
-                $("#nameerror").text(''); 
-                $("#emailerror").text(''); 
-                $("#phoneerror").text(''); 
-                $("#statuserror").text(''); 
                   $('.alert').addClass("show");
                   $('.alert').removeClass("hide");
                   $('.alert').addClass("showAlert");

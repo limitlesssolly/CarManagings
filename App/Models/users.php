@@ -137,8 +137,8 @@ class User extends Model {
         session_destroy();
 
     }
-    function rate($name, $email, $rating, $review) {
-        $sql = "INSERT INTO ratings (name, email, rating, review) VALUES ('$name','$email', '$rating','$review')";
+    function rate($name, $email, $review) {
+        $sql = "INSERT INTO rates (name, email, rate) VALUES ('$name','$email', '$review')";
         if($this->db->query($sql) === true) {
             echo "Rating Saved Successfully.";
             $this->fillArray();
@@ -148,7 +148,7 @@ class User extends Model {
     }
 
     static function getRatings(){
-        $sql = "SELECT * FROM ratings";
+        $sql = "SELECT * FROM rates";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         return $result;
      }

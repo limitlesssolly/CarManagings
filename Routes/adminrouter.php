@@ -43,10 +43,9 @@ else if($_GET['action']=='deleteadmin'){
     }
 
 }
-
-
-
-
+else if ($_GET['action'] == 'showratings') {
+        $admin->displayRatings();
+}
 else if($_GET['action']=='editpage'){
     header("Location:../Views/Pages/Admin/editprofiledash.php");
 }

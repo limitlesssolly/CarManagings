@@ -153,4 +153,8 @@ class AdminController extends Controller{
 
 
 	}
+    public function displayRatings() {
+        $ratings = $this->admin->getRatings();
+        include(__DIR__ . '/../../Views/Pages/Admin/ratingdash.php');
+    }
 }

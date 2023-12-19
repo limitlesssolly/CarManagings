@@ -19,6 +19,13 @@ class Booking{
     public function CancelRide($id){
       return $this->ride->CancelRide($id);
     }
+    public function editRide($rideid,$carid, $driverID, $status){
+
+      return $this->ride->editRide($rideid,$carid, $driverID, $status);
+
+    }
+
+
   }
   
   ?>

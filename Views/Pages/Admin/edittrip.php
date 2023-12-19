@@ -120,16 +120,16 @@ button:hover {
                     <form action="editdrivers.php?action=edit" method="post">
                       <div class="id">
                             <label >Ride ID</label>
-                            <input type="text" class="field" name="name" id='rideid' required> <br>
+                            <input type="text" class="field" name="name" id='rideid' > <br>
                         </div>
 
                         <div class="id">
                             <label >Driver ID</label>
-                            <input type="text" class="field" name="name" id='driverid' required> <br>
+                            <input type="text" class="field" name="name" id='driverid' > <br>
                         </div>
                         <div class="id">
                             <label >Car ID</label>
-                            <input type="text" class="field" name="name" id='carid' required> <br>
+                            <input type="text" class="field" name="name" id='carid' > <br>
                         </div>
                         <div class="status">
                             
@@ -142,7 +142,7 @@ button:hover {
                             <button type="submit" name="submit">edit </button>
                         </div>
                     </form>
-                    <script src="../../../Public/js/editdriver.js"></script>
+                    <script src="../../../Public/js/editRide.js"></script>
                 </div>
             </section>
         </div>

@@ -1,6 +1,3 @@
-<?php
-//session_start();    
-?>
 <div class="sidebar ">
             <div class="logo-details">
                 <i class='bx bxs-dashboard'></i>
@@ -73,7 +70,7 @@
                 <li>
 
                     <div class="iocn_link">
-                    <a href="../Pages/employees.php">
+                    <a href="../../../Routes/EmployeesRouter.php?action=employees">
                         <i class='bx bx-group'></i>
                         <span class="link_name">Employes</span>  
                     </a>
@@ -82,15 +79,14 @@
 
                     <ul class="sub-menu">
                         <li><a class="link_name" href="">Employes</a></li>
-                        <li><a href="../../Admin/Employees/employees.php">Show</a></li>
-                        <li><a href="../../Admin/Employees/addemployee.php">Add</a></li>
-                        <li><a href="../../Admin/Employees/editemployees.php">Edit</a></li>
+                        <li><a href="../../../Routes/EmployeesRouter.php?action=employees">Show</a></li>
+                        <li><a href="../../../Routes/EmployeesRouter.php?action=addemployeepage">Add</a></li>
+                        <li><a href="../../../Routes/EmployeesRouter.php?action=editemployeepage">Edit</a></li>
                     </ul>
 
                 </li>
 
                 <li>
-
                         <div class="iocn_link">
                         <a href="../Pages/customers.php">
                             <i class='bx bx-group'></i>
@@ -105,24 +101,19 @@
                             <li><a href="../../Admin/Customers/addcustomers.php">Add</a></li>
                             <li><a href="../../Admin/Customers/editcustomers.php">Edit</a></li>
                         </ul>
-                        
 
                 </li>
-                <li>
 
+                <li>
                     <div class="iocn_link">
-                    <a href="../../Views/Pages/ratingdash.php">
+                    <a href="../../../Routes/adminrouter.php?action=showratings">
                     <i class='bx bx-star'></i>
                         <span class="link_name">Ratings</span>  
                     </a>
                     </div>
-
-
-
                 </li> 
  
                 <li>
-
                     <div class="iocn_link">
                     <a href="../../../Routes/adminrouter.php?action=admins">
                     <i class='bx bx-group'></i>
@@ -133,11 +124,10 @@
 
                     <ul class="sub-menu">
                     <li><a class="link_name" href="">Admins</a></li>
-                    <li><a href="../../Views/Pages/admins.php">Show</a></li>
+                    <li><a href="../../../Routes/adminrouter.php?action=admins">Show</a></li>
                     <li><a href="../../../Routes/adminrouter.php?action=addadminpage">Add</a></li>
                     <li><a href="../../../Routes/adminrouter.php?action=editpage">Edit</a></li>
                     </ul>
-
 
                 </li>
                
@@ -157,12 +147,7 @@
 
                     </ul>
 
-                </li>  
-
-
-            
-               
-               
+                </li> 
                 
                 <li>
                   <div class="profile-details">

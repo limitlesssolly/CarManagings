@@ -18,7 +18,6 @@ $(document).ready(function() {
             success:function(response){
               console.log(response)  
  
-
                   $('.alert').addClass("show");
                   $('.alert').removeClass("hide");
                   $('.alert').addClass("showAlert");

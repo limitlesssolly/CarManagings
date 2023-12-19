@@ -55,5 +55,9 @@ class UsersController extends Controller
 
 		$this->model->requestContact($name, $email, $phone, $message);
 	}
+	public function history(){
+		$this->model->history();
+
+	}
 }
 ?>

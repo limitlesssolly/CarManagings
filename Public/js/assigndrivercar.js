@@ -14,7 +14,7 @@ $(document).ready(function() {
             type: 'post',
             data: data,
             success:function(response){
-              console.log(response)  
+ 
               if(response.trim() == "successful"){
                 $("#nameerror").text(''); 
                 $("#emailerror").text(''); 
@@ -34,13 +34,7 @@ $(document).ready(function() {
                 });
   
           }else{
-                const error = JSON.parse(response);
-  
-  
-                $("#nameerror").text(error.name); 
-                $("#emailerror").text(error.email); 
-                $("#phoneerror").text(error.phone); 
-                $("#statuserror").text(error.status); 
+ 
               }
             }
           });

@@ -4,18 +4,22 @@
 include_once "../App/Database/db.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require '../../Mail/src/Exception.php';
-require '../../Mail/src/PHPMailer.php';
-require '../../Mail/src/SMTP.php';
+require '../Mail/src/Exception.php';
+require '../Mail/src/PHPMailer.php';
+require '../Mail/src/SMTP.php';
+
+
 interface Observer {
-   public function update( $infoToBEUpdated);
+   public function update($infoToBEUpdated);
 }
 
 class EmailNotificationObserver implements Observer {
    public function update($infoToBEUpdated) {
-       $this->sendEmailNotification($infoToBEUpdated['useremail']);
-       $this->update_car_status($infoToBEUpdated['carid']);
+       
+      //  $this->sendEmailNotification($infoToBEUpdated['useremail']);
+      //  $this->update_car_status($infoToBEUpdated['carid']);
        $this->update_driver_status($infoToBEUpdated['driverid']);
+       return  $this->update_car_status($infoToBEUpdated['carid']);
    }
 
    private function sendEmailNotification($to) {
@@ -35,7 +39,7 @@ class EmailNotificationObserver implements Observer {
       $mail->isHTML(true);
   
       $mail->Subject = "Contacting Mail";
-      $mail->Body = $_POST["message"];
+      $mail->Body = "Your Ride Has Started";
   
       $mail->send();
    }
@@ -43,14 +47,14 @@ class EmailNotificationObserver implements Observer {
       $sql = "UPDATE Cars  SET  Status='in trip' where ID='$id'";
       $result = mysqli_query($GLOBALS['conn'], $sql);
       if ($result) {
-          return $result;
+          return "successful";
        }
        else{
-          echo "error";
+          return "error";
        }
    }
    private function update_driver_status($id) {
-      $sql = "UPDATE drivers  SET  Status='in trip' where ID='$id'";
+      $sql = "UPDATE drivers  SET  status='in trip' where ID='$id'";
       $result = mysqli_query($GLOBALS['conn'], $sql);
       if ($result) {
           return $result;
@@ -79,9 +83,10 @@ class Rides{
    Public $PaymentWay;
    Public $TotalCost;
    private $observers = [];
+   private $observer;
    public function attach(Observer $observer) {
       $this->observers[] = $observer;
-   }
+  }
 
   public function detach(Observer $observer) {
       $key = array_search($observer, $this->observers, true);
@@ -90,11 +95,15 @@ class Rides{
       }
     }
 
-  public function notify( $infoToBEUpdated) {
+    public function notify($infoToBEUpdated) {
       foreach ($this->observers as $observer) {
-          $observer->update( $infoToBEUpdated);
+         return $observer->update($infoToBEUpdated);
       }
+
   }
+  public function setObserver(Observer $observer) {
+   $this->observer = $observer;
+}
    Public function InsertInDB($PickupDate,$pickupTime,$pickupLocation,$pickupDestination,$Status,$CarType,$UserName,$UserEmail,$UserPhone,$Comment,$PaymentWay,$TotalCost){
     
       
@@ -149,25 +158,30 @@ class Rides{
            
      $sql = "UPDATE rides  SET CarID='$CarID',DriverID='$DriverID',status='started' where ID='$Rideid'";
      $result = mysqli_query($GLOBALS['conn'], $sql);
-     if ($result) {
-         return 'true';
-      }
-      else{
-         echo "error";
-      }
 
-     $infoToBEUpdated=[
-      'driverid'=>$DriverID,
-      'carid'=>$CarID,
-      'carname'=> $carname,
-      'carplate'=> $carplate,
-      'drivername'=>$DriverName,
-      'driverphone'=>$DriverPhone,
-      'useremail'=>$UserEmail,
-     ];
 
-     $this->notify( $infoToBEUpdated);
-     return 'successful'; 
+   if ($result) {
+      // Attach the observer before notifying
+      $emailObserver = new EmailNotificationObserver();
+      $this->attach($emailObserver);
+
+      $infoToBEUpdated = [
+          'driverid' => $DriverID,
+          'carid' => $CarID,
+          'carname' => $carname,
+          'carplate' => $carplate,
+          'drivername' => $DriverName,
+          'driverphone' => $DriverPhone,
+          'useremail' => $UserEmail,
+      ];
+
+      
+      $this->notify($infoToBEUpdated);
+
+      return  $this->notify($infoToBEUpdated);
+  } else {
+      return "error";
+  } 
    }
    static function GetAllRides(){
       $sql = "SELECT * FROM rides";

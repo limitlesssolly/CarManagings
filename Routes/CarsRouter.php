@@ -7,7 +7,7 @@ $carController = new CarController();
 if ($_GET['action'] == 'cars') {
     $result = $carController->getCars();
 
-    $_SESSION['Alldrivers']=array(); 
+    $_SESSION['AllCars']=array(); 
  
     $i=0; 
     while ($row =$result->fetch_assoc()) {
@@ -72,11 +72,11 @@ if ($_GET['action'] == 'cars') {
         echo json_encode($result);
     }
 }
-//  else if ($_GET['action'] == 'deletecar') {
-//     $result = $carController->Delete($_POST['id']);
-//     if ($result['success']) {
-//         echo 'successful';
-//     } else {
-//         echo 'failed';
-//     }
-// }
+ else if ($_GET['action'] == 'deletecar') {
+    $result = $carController->deleteCar($_POST['id']);
+    if ($result=='success') {
+        echo 'successful';
+    } else {
+        echo 'failed';
+    }
+}

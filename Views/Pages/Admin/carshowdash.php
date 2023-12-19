@@ -9,10 +9,17 @@
     <title>Our Cars</title>
 
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <!-- Add your CSS file paths here -->
     <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
+    <link rel="stylesheet" href="../../../Public/CSS/alert.css">
     <link rel="stylesheet" href="../../../Public/CSS/carshowdash.css">
+    <style>
+        body{
+            overflow: hidden;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -40,7 +47,13 @@ include('../../Partials/dashboardsidebar.php');
                 </div>
 
             </section>
-
+            <div class="alert hide"> 
+                        <span class="fas fa-check-circle"></span>
+                        <span class="msg">Deleted Successfully!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+        </div>
             <section class="table__body">
 
                 <table>
@@ -55,6 +68,7 @@ include('../../Partials/dashboardsidebar.php');
                             <th>Status</th>
                             <th>Assigned Driver</th>
                             <th>history</th>
+                            <th>-----</th>
                             <th>-----</th>
                         </tr>
                     </thead>
@@ -86,14 +100,21 @@ include('../../Partials/dashboardsidebar.php');
                         }    
                          
                         echo "<td><form action='../Pages/assigntrip.php'> <button class='status shipped'>show</button> </form> </td>";
+                        echo "<td> <button onclick='goToEditCarPage()'  class='status shipped'> edit  </button> </td>";
                         echo "<td><form id='deleteform'>  <button class='status cancelled' id='" . $_SESSION['AllCars'][$i]['ID'] . "'>delete</button> </form> </td>";
                         echo "</tr>";
                         $i++;
                         }
                    ?>
             </tbody>
+            <script src="../../../Public/js/deletecar.js"></script>
                 </table>
-
+                <script>
+                    function goToEditCarPage() {
+                        // Use window.location.href to navigate to the desired path
+                        window.location.href = '../../../Routes/CarsRouter.php?action=editcarpage';
+                    }
+                </script>
             </section>
         </main>
 

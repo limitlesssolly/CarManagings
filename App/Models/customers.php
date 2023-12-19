@@ -8,17 +8,19 @@ class Customer
     public $Email;
     public $Phone;
 
-    public function AddCustomer($name, $email, $Phone, $password)
+    public function AddCustomer($name, $email, $phone, $password)
     {
         $sql = "INSERT INTO customers (Name, Email, Phone, Password) VALUES ('$name', '$email', '$phone', '$password')";
         $result = mysqli_query($GLOBALS['conn'], $sql);
         if ($result) {
             return 0;
         } else {
-            echo "error";
+            echo "error: " . mysqli_error($GLOBALS['conn']);
         }
     }
-
+    
+    
+    
     public function getCustomers()
     {
         $sql = "SELECT * FROM customers";

@@ -63,6 +63,10 @@ else if($_GET["action"]== "edittrippage"){
 
 }else if($_GET["action"]== "editride"){
 
-    header("Location:../Views/Pages/Admin/edittrip.php");
-
+    $result= $book->editRide( $_POST['rideid'],$_POST['carid'],$_POST['driverid'],$_POST['status']);    
+    if($result== 'successful'){
+        echo 'sucessful';
+    }else{
+        echo "error";
+    }
 }

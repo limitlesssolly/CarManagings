@@ -19,7 +19,7 @@ if (isset($_POST["submit"])){
     $mail->Port = 465;
 
     $mail->setFrom($_POST['email']);
-    
+
     $mail->addAddress('247LimousineOfficial@gmail.com');
 
     $mail->isHTML(true);
@@ -29,11 +29,4 @@ if (isset($_POST["submit"])){
 
     $mail->send();
 
-    echo
-    "
-    <script>
-    alert('Sent Successfully');
-    document.location.href='contactus.php';
-    </script>
-    ";
 }

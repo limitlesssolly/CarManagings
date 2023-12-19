@@ -38,10 +38,8 @@ class UsersController extends Controller
 	{
 		$name = $_REQUEST['name'];
 		$email = $_REQUEST['email'];
-		$rating = $_REQUEST['rating'];
-		$review = $_REQUEST['review'];
-
-		$this->model->rate($name, $email, $rating, $review);
+		$rating = $_REQUEST['review'];
+		$this->model->rate($name, $email, $rating);
 	}
 	public function getRatings()
 	{

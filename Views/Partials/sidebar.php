@@ -1,16 +1,4 @@
-<?php
-session_start();
 
-// Check if the user is logged in
-if (!isset($_SESSION["id"])) {
-    // Redirect to the login page or handle the situation accordingly
-    header("Location: ../User/signup.php");
-    exit;
-}
-
-// Get the username from the session
-$username = $_SESSION["Name"];
-?>
 
 <html lang="en">
 
@@ -68,15 +56,7 @@ $username = $_SESSION["Name"];
                 <i class="fas fa-solid fa-user-secret"></i>
                 <div class="user-details">
                     <h3 class="user-name">
-                        <?php 
-                        if (isset($_SESSION["Name"])) {
-                            $username = $_SESSION["Name"];
-                            echo "Welcome, $username!";
-                        } else {
-                            // Handle the case where the user is not logged in
-                            echo "Welcome, Guest!";
-                        }
-                         ?>
+                        
                     </h3>
                 </div>
             </div>

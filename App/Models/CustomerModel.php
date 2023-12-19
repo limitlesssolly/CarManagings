@@ -8,7 +8,7 @@ class Customer
     public $Email;
     public $Phone;
 
-    public function AddCustomer($name, $email, $phone, $password)
+    public function AddCustomer($name, $email, $Phone, $password)
     {
         $sql = "INSERT INTO customers (Name, Email, Phone, Password) VALUES ('$name', '$email', '$phone', '$password')";
         $result = mysqli_query($GLOBALS['conn'], $sql);

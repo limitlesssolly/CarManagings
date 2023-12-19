@@ -58,5 +58,11 @@ $book=new Booking();
     }
 }
 else if($_GET["action"]== "edittrippage"){
+
     header("Location:../Views/Pages/Admin/edittrip.php");
+
+}else if($_GET["action"]== "editride"){
+
+    header("Location:../Views/Pages/Admin/edittrip.php");
+
 }

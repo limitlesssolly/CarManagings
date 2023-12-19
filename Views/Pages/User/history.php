@@ -1,35 +1,35 @@
-<?php 
-    include('../../Partials/sidebar.php');
+<?php
+include('../../Partials/sidebar.php');
 require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
 $model = new User();
 $controller = new UsersController($model);
 // session_start();
-// $email=$_SESSION["Email"];
-// $dbh = new Dbh();
-// // $row= $dbh->fetchRow($result);
-// for ($j = 1; $j <= 100; $j++) {
-//   $sql = "SELECT * FROM rides WHERE `UserEmail` = '$email'";
-//   $result = $dbh->query($sql);
-//   // $rows = $dbh->fetchAll($result);
+$email = $_SESSION["Email"];
+$dbh = new Dbh();
+// $row= $dbh->fetchRow($result);
+for ($j = 1; $j <= 100; $j++) {
+  $sql = "SELECT * FROM rides WHERE `UserEmail` = '$email'";
+  $result = $dbh->query($sql);
+  // $rows = $dbh->fetchAll($result);
 
-//   if ($row= $dbh->fetchRow($result)) {
-//         $driverID = $row["DriverID"];
-//         $pickupLoc = $row["pickupLocation"];
-//         $Dest = $row["pickupDestination"];
-//         $time = $row["pickupTime"];
-//         $date = $row["PickupDate"];
+  if ($row = $dbh->fetchRow($result)) {
+    $driverID = $row["DriverID"];
+    $pickupLoc = $row["pickupLocation"];
+    $Dest = $row["pickupDestination"];
+    $time = $row["pickupTime"];
+    $date = $row["PickupDate"];
 
-//         $history[$j] = array(
-//           'DriverID' => $driverID,
-//           'pickupLocation' => $pickupLoc,
-//           'pickupDestination' => $Dest,
-//           'pickupTime' => $time,
-//           'PickupDate' => $date
-//       );
-//     } 
-// }
-// $rowsCount = $result->num_rows;
+    $history[$j] = array(
+      'DriverID' => $driverID,
+      'pickupLocation' => $pickupLoc,
+      'pickupDestination' => $Dest,
+      'pickupTime' => $time,
+      'PickupDate' => $date
+    );
+  }
+}
+$rowsCount = $result->num_rows;
 
 ?>
 <!DOCTYPE html>
@@ -45,30 +45,30 @@ $controller = new UsersController($model);
   <div class="center">
 
     <ul>
-<?php
-    for ($i = 1; $i <= $rowsCount; $i++) {
-        echo '<li>';
-        echo '<div class="image">';
-        echo '<h4>Driver ' . $history[$i]['DriverID'] . '</h4>';
-        echo '</div>';
-        echo '<div class="text-group">';
-        echo '<div style="font-size: 20px;"> Start Point:'.$history[$i]['pickupLocation'] .'</div>';
-        echo '<div style="font-size: 20px;"> Destination:'.$history[$i]['pickupDestination'] .'</div>';
-        echo '</div>';
-        echo '<div class="date-group">';
-        echo '<h4>'.$history[$i]['PickupDate'].'</h4>';
-        echo '<p>'.$history[$i]['pickupTime' ].'</p>';
-        echo '</div>';
-        echo '<div id="wrapper">';
-        echo '<a href="" class="btn red hide-text">';
-        echo '<span>Book Again</span>';
-        echo '</a>';
-        echo '</div>';
-        echo '</li>';
-    }
-    ?>
+        <?php
+        for ($i = 1; $i <= $rowsCount; $i++) {
+          echo '<li>';
+          echo '<div class="image">';
+          echo '<h4>Driver ' . $history[$i]['DriverID'] . '</h4>';
+          echo '</div>';
+          echo '<div class="text-group">';
+          echo '<div style="font-size: 20px;"> Start Point:' . $history[$i]['pickupLocation'] . '</div>';
+          echo '<div style="font-size: 20px;"> Destination:' . $history[$i]['pickupDestination'] . '</div>';
+          echo '</div>';
+          echo '<div class="date-group">';
+          echo '<h4>' . $history[$i]['PickupDate'] . '</h4>';
+          echo '<p>' . $history[$i]['pickupTime'] . '</p>';
+          echo '</div>';
+          echo '<div id="wrapper">';
+          echo '<a href="" class="btn red hide-text">';
+          echo '<span>Book Again</span>';
+          echo '</a>';
+          echo '</div>';
+          echo '</li>';
+        }
+        ?>
     </ul>
-    
+
   </div>
 </body>
 

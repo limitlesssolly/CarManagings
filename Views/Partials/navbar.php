@@ -5,7 +5,7 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 			header("Location:index.php");
 			break;
 		case 'order':
-			header("Location:bookyourcar.php");
+			header("Location:Views/Pages/bookyourcar.php");
 			break;
 		case 'rent':
 			header("Location:rentyourcar.php");

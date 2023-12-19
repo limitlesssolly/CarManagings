@@ -144,19 +144,7 @@ class Driver extends Model
          else{
             echo "error";
          }
-        // $db = $this->connect();
-        // $result = $db->query($sql);
-        // if ($result->num_rows == 1) {
-        //     $row = $db->fetchRow();
-        //     $this->name = $row["Name"];
-        //     $_SESSION["Name"] = $row["Name"];
-        //     $this->email = $row["Email"];
-        //     $this->phone = $row["Phone"];
-        // } else {
-        //     $this->name = "";
-        //     $this->email = "";
-        //     $this->phone = "";
-        // }
+
     }
 
 }

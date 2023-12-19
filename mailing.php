@@ -3,9 +3,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'Mail/src/Exception.php';
-require 'Mail/src/PHPMailer.php';
-require 'Mail/src/SMTP.php';
+require '../../../Mail/src/Exception.php';
+require '../../../Mail/src/PHPMailer.php';
+require '../../../Mail/src/SMTP.php';
 
 if (isset($_POST["submit"])){
     $mail = new PHPMailer(true);
@@ -19,7 +19,7 @@ if (isset($_POST["submit"])){
     $mail->Port = 465;
 
     $mail->setFrom($_POST['email']);
-
+    
     $mail->addAddress('247LimousineOfficial@gmail.com');
 
     $mail->isHTML(true);

@@ -3,7 +3,6 @@
 require_once("../App/Models/rides.php");
 class Booking{
 
-
     public $ride;
 
     public function __construct() {
@@ -14,13 +13,12 @@ class Booking{
     }
     public function Assigndrivercar($rideID,$driverID, $carID){
 
-      return $this->Assigndrivercar($rideID,$driverID, $carID);      
-
+      return $this->ride->AssignDriverandCar($rideID,$driverID, $carID);      
 
     }
-
-
-
+    public function CancelRide($id){
+      return $this->ride->CancelRide($id);
+    }
   }
   
   ?>

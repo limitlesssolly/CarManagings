@@ -11,35 +11,62 @@ require '../Mail/src/SMTP.php';
 
 interface Observer {
    public function update($infoToBEUpdated);
+   public function cancel($infoToBEUpdated);
 }
 
 class EmailNotificationObserver implements Observer {
    public function update($infoToBEUpdated) {
        
-      //  $this->sendEmailNotification($infoToBEUpdated['useremail']);
-      //  $this->update_car_status($infoToBEUpdated['carid']);
+       $message= [
+         'carname' => $infoToBEUpdated['carname'],
+         'carplate' =>$infoToBEUpdated['carplate'],
+         'drivername' => $infoToBEUpdated['drivername'],
+         'driverphone' => $infoToBEUpdated['driverphone'],
+         'useremail' =>$infoToBEUpdated['useremail'],
+         'carcolor'=>$infoToBEUpdated['carcolor']
+     ];
+       $this->sendEmailNotification($message);
        $this->update_driver_status($infoToBEUpdated['driverid']);
        return  $this->update_car_status($infoToBEUpdated['carid']);
    }
+   public function cancel($infoToBEUpdated) {
 
-   private function sendEmailNotification($to) {
+      $carid = $infoToBEUpdated['carid'];
+      $driverid = $infoToBEUpdated['driverid'];
+      $sql = "UPDATE Cars  SET  Status='available' where ID='$carid'";
+      $result = mysqli_query($GLOBALS['conn'], $sql);
+      
+      $sql2 = "UPDATE drivers  SET  status='available' where ID='$driverid'";
+      $result2 = mysqli_query($GLOBALS['conn'], $sql2);
+
+      return "successful";
+  }
+
+   private function sendEmailNotification($message) {
       $mail = new PHPMailer(true);
       $mail->isSMTP();
       $mail->Host = 'smtp.gmail.com';
       $mail->SMTPAuth = true;
-      $mail->Username =$to;
+      $mail->Username ='247LimousineOfficial@gmail.com';
       $mail->Password ='buwhpjbrxjdpywaz';
       $mail->SMTPSecure ='ssl';
       $mail->Port = 465;
   
       $mail->setFrom('247LimousineOfficial@gmail.com');
   
-      $mail->addAddress($to);
+      $mail->addAddress($message['useremail']);
   
       $mail->isHTML(true);
   
-      $mail->Subject = "Contacting Mail";
-      $mail->Body = "Your Ride Has Started";
+      $mail->Subject = "Your Ride";
+      $mail->Body = "
+      <p>Car Name: {$message['carname']}</p>
+      <p>Car Plate: {$message['carplate']}</p>
+      <p>Car Color: {$message['carcolor']}</p>
+      <p>Driver Name: {$message['drivername']}</p>
+      <p>Driver Phone: {$message['driverphone']}</p>
+
+      ";
   
       $mail->send();
    }
@@ -57,10 +84,10 @@ class EmailNotificationObserver implements Observer {
       $sql = "UPDATE drivers  SET  status='in trip' where ID='$id'";
       $result = mysqli_query($GLOBALS['conn'], $sql);
       if ($result) {
-          return $result;
+         //  return $result;
        }
        else{
-          echo "error";
+         //  echo "error";
        }
    }
 
@@ -95,10 +122,16 @@ class Rides{
       }
     }
 
-    public function notify($infoToBEUpdated) {
+    public function notify($operation,$infoToBEUpdated) {
+      if($operation=='cancel'){
+         foreach ($this->observers as $observer) {
+            return $observer->cancel($infoToBEUpdated);
+         }
+      }else if($operation== 'assign'){
       foreach ($this->observers as $observer) {
          return $observer->update($infoToBEUpdated);
       }
+   }else if($operation== 'edit'){}
 
   }
   public function setObserver(Observer $observer) {
@@ -134,6 +167,7 @@ class Rides{
     $carname='';
     $carplate='';
     $cartype='';
+    $carcolor='';
     $UserEmail='';
 
     while ($row = $result1->fetch_assoc()) {
@@ -152,7 +186,7 @@ class Rides{
       $carname=$row['CarName'];
       $cartype=$row['CarType'];
       $carplate=$row['CarPlate'];
-
+      $carcolor=$row['Colour'];
      }
        
            
@@ -172,13 +206,12 @@ class Rides{
           'carplate' => $carplate,
           'drivername' => $DriverName,
           'driverphone' => $DriverPhone,
+          'carcolor'=>$carcolor,
           'useremail' => $UserEmail,
       ];
+      // $this->notify('assign',$infoToBEUpdated);
 
-      
-      $this->notify($infoToBEUpdated);
-
-      return  $this->notify($infoToBEUpdated);
+      return  $this->notify('assign',$infoToBEUpdated);
   } else {
       return "error";
   } 
@@ -187,6 +220,35 @@ class Rides{
       $sql = "SELECT * FROM rides";
       $result = mysqli_query($GLOBALS['conn'], $sql);
       return $result;
+   }
+   public function CancelRide($ID){
+
+      $sql = "SELECT * FROM rides where ID='$ID'";
+      $result = mysqli_query($GLOBALS['conn'], $sql);
+        
+      while ($row = $result->fetch_assoc()) {
+         if($row['CarID']==0){
+            $sql = "UPDATE rides  SET Status='cancelled' where ID='$ID'";
+            $result = mysqli_query($GLOBALS['conn'], $sql);
+         }
+         else{
+
+            $sql = "UPDATE rides  SET CarID='null',DriverId='null' ,Status='cancelled' where ID='$ID'";
+            $result = mysqli_query($GLOBALS['conn'], $sql);
+
+            $emailObserver = new EmailNotificationObserver();
+            $this->attach($emailObserver);
+             
+            $infoToBEUpdated = [
+               'driverid' => $row['DriverID'],
+               'carid' => $row['CarID'],
+           ];
+            if($this->notify('cancel',$infoToBEUpdated)){
+               return 'successful';
+            }
+           
+         }
+        }
    }
 }
 

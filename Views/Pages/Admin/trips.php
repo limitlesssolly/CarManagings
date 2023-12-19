@@ -9,15 +9,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Our Rides</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <link rel="stylesheet" href="../../../Public/CSS/dashboard.css">
     <link rel="stylesheet" href="../../../Public/CSS/carshowdash.css">
+    <link rel="stylesheet" href="../../../Public/CSS/alert.css">
     <style>
+        body{
+            overflow: hidden;
+        }
          td button{
             width: 70px;
         }
-        .status.delivered {
+        .status.request {
     background-color:#cac855;
     color: white;
     width: 89px;
@@ -45,10 +50,16 @@
                     <img src="../../../Public/Images/search.png" alt="">
                 </div>
                 <div class="export__file">
-
-
                 </div>
             </section>
+
+            <div class="alert hide"> 
+                        <span class="fas fa-check-circle"></span>
+                        <span class="msg">updated Successfully!</span>
+                        <div class="close-btn">
+                            <span class="fas fa-times"></span>
+                        </div>
+           </div>
            
                 <section class="table__body">
         <table>
@@ -69,15 +80,13 @@
                     <th> Car Type </th>
                     <th> Comment </th>
                     <th> PaymentWay </th>
-                    <th> Trip Cost <span class="icon-arrow">&UpArrow;</span></th>
+                    <th > Trip Cost <span class="icon-arrow">&UpArrow;</span></th>
                     <th>not assigned</th>
                     <th>-----</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-             
-                    
                     $i=0;
                     while ( isset( $_SESSION['AllRides'][$i]['ID']) ){
                         echo "<tr>";
@@ -89,24 +98,72 @@
                         echo "<td>" .  $_SESSION['AllRides'][$i]['DriverID'] . "</td>";
                         echo "<td>" .  $_SESSION['AllRides'][$i]['UserEmail'] . "</td>";
                         echo "<td>" .  $_SESSION['AllRides'][$i]['UserPhone'] . "</td>";
-                        echo '<td>
-                        <p class="status delivered">' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
-                        </td>';
-                        echo "<td>" .  $_SESSION['AllRides'][$i]['CarID'] . "</td>"; 
+
+                        if(  $_SESSION['AllRides'][$i]['Status']=="started"){
+                            echo '<td>
+                            <p class="status shipped" style="color: white;">' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
+                            </td>';                            
+                        }else if($_SESSION['AllRides'][$i]['Status']=='requested'){
+
+                            echo '<td>
+                            <p class="status request"  >' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
+                            </td>';
+    
+                        }else if($_SESSION['AllRides'][$i]['Status']=='finished'){
+
+                            echo '<td>
+                            <p class="status request"  >' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
+                            </td>';
+    
+                        }
+                        else{
+                            echo '<td>
+                            <p class="status cancelled" style="color: white;">' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
+                            </td>';
+    
+                        }
+                        
+
+                      echo "<td>" .  $_SESSION['AllRides'][$i]['CarID'] . "</td>"; 
                       echo "<td>" .  $_SESSION['AllRides'][$i]['CarPlate'] . "</td>";
                       echo "<td>" .  $_SESSION['AllRides'][$i]['CarType'] . "</td>";
                       echo "<td>" .  $_SESSION['AllRides'][$i]['Comment'] . "</td>";
                       echo "<td>" .  $_SESSION['AllRides'][$i]['PaymentWay'] . "</td>";
                       echo "<td>" .  $_SESSION['AllRides'][$i]['TotalCost'] . "</td>";
-                      echo "<td><form action='../Pages/assigntrip.php'> <button class='status shipped'>assign</button> </form> </td>";
-                      echo "<td><form id='deleteform'>  <button class='status cancelled' id='" . $_SESSION['AllRides'][$i]['ID'] . "'>Cancel</button> </form> </td>";
+                      echo "<td> <button class='status shipped' onclick='goToEditCarPage()'>assign</button> </td>";
+
+                       
+                      if(  $_SESSION['AllRides'][$i]['Status']=="started"){                           
+                        echo "<td><form >  <button class='status shipped' id='" . $_SESSION['AllRides'][$i]['ID'] . "'>Cancel</button> </form> </td>";
+                        
+                    }else if($_SESSION['AllRides'][$i]['Status']=='requested'){
+
+                        echo "<td><form >  <button class='status cancelled' id='" . $_SESSION['AllRides'][$i]['ID'] . "'>Cancel</button> </form> </td>";
+
+
+                    }else if($_SESSION['AllRides'][$i]['Status']=='finished'){
+                        echo '<td>
+                        <p class="status delivered" style="color: white;">' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
+                        </td>';
+                    }else{
+                        echo '<td>
+                        <p class="status cancelled" style="color: white;">' .  $_SESSION['AllRides'][$i]['Status'] . '</p>
+                        </td>';
+
+                    }
                       echo "</tr>";
                       $i++;
                     }
                 ?>
             </tbody>
+            <script>
+                    function goToEditCarPage() {
+                        // Use window.location.href to navigate to the desired path
+                        window.location.href = '/CarManagings/Routes/dashboardrouter.php?action=assigndrivercarpage';
+                    }
+            </script>
             <script src="../../../Public/js/carshowdash.js"></script>
-            <script src="../../../Public/js/deleteride.js"></script>
+            <script src="../../../Public/js/deleteride1.js"></script>
         </table>
     
             </section>

@@ -11,6 +11,10 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 if(isset($_POST['login']))	{
 	$email=$_REQUEST["Email"];
 	$password=$_REQUEST["Password"];
+	if($email===""||$password===""){
+		echo('Please enter both email and password!');
+
+	}else{
 	$sql = "SELECT * FROM users where Email='$email' and Pass='$password'";
 	$dbh = new Dbh();
 	$result = $dbh->query($sql);
@@ -25,7 +29,7 @@ if(isset($_POST['login']))	{
 	}else{
 		echo ("ERRORR");
 	}
-}
+}}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -87,7 +91,7 @@ if(isset($_POST['login']))	{
 				<input type="password" placeholder="Password" name="Password" />
 				<a href="#">Forgot your password?</a>
 
-				<button type="submit" name="login"name="submit" onclick="validateForm()">Sign In</button>
+				<button type="submit" name="login"name="submit" >Sign In</button>
 			</form>
 
 		</div>
@@ -111,18 +115,7 @@ if(isset($_POST['login']))	{
 	</div>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="../../../Public/js/signup.js"></script>
-<script>
-	  function validateForm() {
-            var email = document.getElementById('Email').value;
-            var password = document.getElementById('Password').value;
-            if (email.trim() === '' || password.trim() === '') {
-                alert('Please enter both email and password.');
-            } else {
-                alert('Sign-in successful!');
-                // document.getElementById('loginForm').submit(); 
-            }
-        }
-	</script>
+
 	</head>
 
 </body>

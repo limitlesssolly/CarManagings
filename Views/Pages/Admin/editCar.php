@@ -35,7 +35,7 @@ body{
     /* margin-top: 30px;  */
     margin-bottom: 30px;
     padding: 20px 40px;
-   
+   margin-top: -18px;
     background-color: white; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
@@ -119,7 +119,7 @@ button:hover {
                     <h1>Edit Car</h1>
                     <form action="editdrivers.php?action=edit" method="post">
                         <div class="id">
-                            <label >Driver ID</label>
+                            <label >Car ID</label>
                             <input type="text" class="field" name="name" id='id' required> <br>
                         </div>
 
@@ -130,7 +130,7 @@ button:hover {
 
                         <div class="contactinfo">
                             <label >Car Type</label>
-                            <input type="email" class="field" name="email" id=type' > 
+                            <input type="text" class="field" name="email" id='type' > 
                         </div>
 
                         <div class="contactinfo">
@@ -140,7 +140,7 @@ button:hover {
 
                         <div class="phot">
                             <label >Color</label>
-                            <input type="file" class="field" name="photo"  id='color' >  
+                            <input type="text" class="field" name="photo"  id='color' >  
                         </div>
 
                         <div class="status">
@@ -154,7 +154,7 @@ button:hover {
                             <button type="submit" name="submit">edit </button>
                         </div>
                     </form>
-                    <script src="../../../Public/js/editdriver.js"></script>
+                    <script src="../../../Public/js/editcar.js"></script>
                 </div>
             </section>
         </div>

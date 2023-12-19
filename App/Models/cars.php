@@ -74,18 +74,41 @@ class Car {
 
 
     }
+    function readCar($id)
+    {
+        $sql = "SELECT * FROM Cars where ID=".$id;
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
 
+    }
     // public function deleteCar() {
     //     $sql = "DELETE FROM cars WHERE id = ?";
     //     $params = [$this->id];
     //     $this->db->execute($sql, $params);
     // }
 
-    // public function editCar() {
-    //     $sql = "UPDATE cars SET model = ?, year = ?, color = ?, fuelType = ? WHERE id = ?";
-    //     $params = [$this->model, $this->year, $this->color, $this->fuelType, $this->id];
-    //     $this->db->execute($sql, $params);
-    // }
+    public function EditCar($details) {
+        $id=$details["id"];
+        $newname=$details['name'];
+        $newtype=$details['type'];
+        $newplate=$details['plate'];
+        $newcolor=$details['color'];
+        $newstatus=$details['status'];
+
+        $sql = "UPDATE Cars  SET CarName='$newname',CarType='$newtype', CarPlate='$newplate',colour='$newcolor', Status='$newstatus' where ID='$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
+    }
 
     // function readcars($id)
     // {

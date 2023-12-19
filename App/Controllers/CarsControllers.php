@@ -72,15 +72,44 @@ class CarController
     //     }
     // }
 
-    // public function editCar($id, $name, $type, $plate, $status, $category, $totalProfit) {
-    //     try {
-    //         $car = new Car($id, $name, $type, $plate, $status, $category, $totalProfit);
-    //         $car->editCar();
-    //         return ['success' => true, 'message' => 'Car edited successfully'];
-    //     } catch (Exception $e) {
-    //         return ['success' => false, 'message' => $e->getMessage()];
-    //     }
-    // }
+    public function editCar($details) {
+
+        $i=0;
+        if($details['id'] == null)
+        {
+           $i++;
+           return 'please enter id';
+
+        }else{
+        
+
+       $carinfo =$this->car->readCar($details['id']);
+       while ($row = $carinfo->fetch_assoc()) {
+    
+           if($details['name']==''){
+            $details['name']=$row['CarName'];
+           }
+
+           if($details['type']==''){
+            $details['type']=$row['CarType'];
+            }
+
+            if($details['plate']==''){
+                $details['plate']=$row['CarPlate'];
+            }
+
+            if($details['color']==''){
+                $details['color']= $row['Colour'];
+            }
+            if($details['status']==''){
+                $details['status']= $row['Status'];
+            }
+            $this->car->EditCar($details);
+            return	'successful';
+          } 
+         return 'not found';
+        }
+    }
 
 }
 

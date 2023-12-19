@@ -55,8 +55,18 @@ if ($_GET['action'] == 'cars') {
  else if ($_GET['action'] == 'editcarpage') {
     header("Location: ../Views/Pages/Admin/editCar.php");
 } else if ($_GET['action'] == 'editcar') {
-    $result = $carController->Edit($_POST['id'], $_POST['model'], $_POST['year'], $_POST['color'], $_POST['fuelType']);
-    if ($result['success']) {
+
+    $details=[
+        'id'=>$_POST['id'],
+        'name'=>$_POST['name'],
+        'type'=>$_POST['type'],
+        'plate'=>$_POST['plate'],
+        'color'=>$_POST['color'],
+        'status'=>$_POST['status']
+    ];
+
+    $result = $carController->editCar($details);
+    if ($result=='successful') {
         echo 'successful';
     } else {
         echo json_encode($result);

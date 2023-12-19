@@ -76,6 +76,20 @@ class Admin
             return "exists";
          }
     }
+
+    public function getRatings() {
+        $sql = "SELECT * FROM rates";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
     
+        $ratings = array();
+    
+        if ($result && mysqli_num_rows($result) > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $ratings[] = $row;
+            }
+        }
+    
+        return $ratings;
+    }
 }
 ?>

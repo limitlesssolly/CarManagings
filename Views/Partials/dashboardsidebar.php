@@ -1,10 +1,6 @@
-<<<<<<< Updated upstream
 <?php
 //session_start();    
 ?>
-=======
-
->>>>>>> Stashed changes
 <div class="sidebar ">
             <div class="logo-details">
                 <i class='bx bxs-dashboard'></i>
@@ -115,7 +111,7 @@
                 <li>
 
                     <div class="iocn_link">
-                    <a href="../../Views/Pages/ratingdash.php">
+                    <a href="../../../Routes/adminrouter.php?action=showratings">
                     <i class='bx bx-star'></i>
                         <span class="link_name">Ratings</span>  
                     </a>

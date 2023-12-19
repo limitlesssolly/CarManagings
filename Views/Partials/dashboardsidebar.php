@@ -41,7 +41,7 @@
                         <li><a href="../../../Routes/CarsRouter.php?action=cars">Show</a></li>
                         <!-- <li><a href="../../Views/Pages/requestedcars.php">Requested Cars</a></li>  -->
                         <li><a href="../../../Routes/CarsRouter.php?action=addcarpage">Add</a></li>
-                        <li><a href="../Pages/editCar.php">Edit</a></li>
+                        <li><a href="../../../Routes/CarsRouter.php?action=editcarpage">Edit</a></li>
  
                 
                     </ul>

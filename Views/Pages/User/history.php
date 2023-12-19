@@ -16,12 +16,12 @@ for ($j = 1; $j <= 100; $j++) {
         $date = $row["PickupDate"];
 
         $history[$j] = array(
-          $driverID => $driverID,
-          $pickupLoc => $pickupLoc,
-          $Dest => $Dest,
-          $time => $time,
-          $date => $date
-        );
+          'DriverID' => $driverID,
+          'pickupLocation' => $pickupLoc,
+          'pickupDestination' => $Dest,
+          'pickupTime' => $time,
+          'PickupDate' => $date
+      );
     } 
 }
 $rowsCount = $result->num_rows;
@@ -44,15 +44,15 @@ $rowsCount = $result->num_rows;
     for ($i = 1; $i <= $rowsCount; $i++) {
         echo '<li>';
         echo '<div class="image">';
-        echo '<h4>Driver ' . $history[$i][$driverID] . '</h4>';
+        echo '<h4>Driver ' . $history[$i]['DriverID'] . '</h4>';
         echo '</div>';
         echo '<div class="text-group">';
-        echo '<div style="font-size: 20px;"> Start Point:'.$history[$i][$pickupLoc] .'</div>';
-        echo '<div style="font-size: 20px;"> Destination:'.$history[$i][$Dest] .'</div>';
+        echo '<div style="font-size: 20px;"> Start Point:'.$history[$i]['pickupLocation'] .'</div>';
+        echo '<div style="font-size: 20px;"> Destination:'.$history[$i]['pickupDestination'] .'</div>';
         echo '</div>';
         echo '<div class="date-group">';
-        echo '<h4>'.$history[$i][$date].'</h4>';
-        echo '<p>'.$history[$i][$time].'</p>';
+        echo '<h4>'.$history[$i]['PickupDate'].'</h4>';
+        echo '<p>'.$history[$i]['pickupTime' ].'</p>';
         echo '</div>';
         echo '<div id="wrapper">';
         echo '<a href="" class="btn red hide-text">';

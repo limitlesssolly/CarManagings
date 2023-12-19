@@ -67,7 +67,7 @@
                 </div>
 
             </form>
-            <!-- <script src="js/contactus.js"></script> -->
+            <script src="../../../../Public/js/addcustomer.js"></script>
         </div>
         <!-- end of form -->
     </section>

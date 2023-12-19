@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("../App/Controllers/EmployeeController.php");
+require_once("../App/Controllers/EmployeesControllers.php");
 
 $employee = new EmployeeController('EmployeeController');
 
@@ -17,9 +17,9 @@ if ($_GET['action'] == 'employees') {
         ];
         $i++;
     }
-    header("Location:../Views/Pages/Employee/employees.php");
+    header("Location:../Views/Pages/Admin/Employees/employees.php");
 } else if ($_GET['action'] == 'addemployeepage') {
-    header("Location:../Views/Pages/Employee/addemployees.php");
+    header("Location:../Views/Pages/Admin/Employees/addemployee.php");
 } else if ($_GET['action'] == 'addemployee') {
     $result = $employee->Add($_POST['name'], $_POST['email'], $_POST['phone'], $_POST['pass'], $_POST['confirmpass']);
     if ($result == 'successful') {

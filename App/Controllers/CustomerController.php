@@ -1,14 +1,14 @@
 <?php
 
 require "Controller.php";
-require_once("../App/Models/customers.php");
+require_once("../App/Models/CustomerModel.php");
 
 class CustomerController extends Controller {
 
     public $customer;
 
     public function __construct() {
-        $this->customer = new Customer(); // Assuming you have a Customer model
+        $this->customer = new Customer(); 
     }
 
     public function Add($name, $email, $phone, $pass, $confirmpass) {
@@ -20,7 +20,7 @@ class CustomerController extends Controller {
             'confirmpass' => '',
         ];
 
-        // Validation logic for adding a customer
+      
 
         if ($i == 0) {
             $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
@@ -42,7 +42,7 @@ class CustomerController extends Controller {
     public function Edit($id, $name, $email, $phone, $pass, $confirmpass) {
         $i = 0;
 
-        // Validation logic for editing a customer
+        
 
         if ($i == 0) {
             $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);

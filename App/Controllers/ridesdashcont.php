@@ -5,9 +5,13 @@ class Booking{
 
     public function getrides(){
      $rides=new Rides();
-     
     return $rides->GetAllRides(); 
     }
+    public function Assigndrivercar($rideID,$driverID, $carID){
+
+    }
+
+
 
   }
   

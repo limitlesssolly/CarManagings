@@ -22,8 +22,8 @@ class Rides{
    Public $TotalCost;
 
    Public function InsertInDB($PickupDate,$pickupTime,$pickupLocation,$pickupDestination,$Status,$CarType,$UserName,$UserEmail,$UserPhone,$Comment,$PaymentWay,$TotalCost){
-    $sql = "insert into rides(PickupDate,pickupTime,pickupLocation,pickupDestination,Status,CarPlate,CarType,DriverID,UserName,UserEmail,UserPhone,Comment,PaymentWay,TotalCost) 
-    values('$PickupDate','$pickupTime','$pickupLocation', '$pickupDestination','$Status','null',
+    $sql = "insert into rides(PickupDate,pickupTime,pickupLocation,pickupDestination,Status,CarID,CarPlate,CarType,DriverID,UserName,UserEmail,UserPhone,Comment,PaymentWay,TotalCost) 
+    values('$PickupDate','$pickupTime','$pickupLocation', '$pickupDestination','$Status','null','null',
     '$CarType','null','$UserName','$UserEmail','$UserPhone','$Comment','$PaymentWay','$TotalCost')";
     $result = mysqli_query($GLOBALS['conn'], $sql);
     if ($result) {
@@ -35,9 +35,12 @@ class Rides{
    }  
 
 
-   static function AssignDriverandCar($rideID,$DriverID,$CarID){
-    $query = "SELECT * FROM drivers where ID='$DriverID'";
+   static function AssignDriverandCar($DriverID,$CarID){
+    $query1 = "SELECT * FROM drivers where ID='$DriverID'";
     $query2 = "SELECT * FROM cars where ID='$CarID'";
+    
+
+    
    }
    static function GetAllRides(){
       $sql = "SELECT * FROM rides";

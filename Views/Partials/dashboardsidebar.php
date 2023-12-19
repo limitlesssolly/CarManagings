@@ -1,4 +1,6 @@
-
+<?php
+session_start();    
+?>
 <div class="sidebar ">
             <div class="logo-details">
                 <i class='bx bxs-dashboard'></i>
@@ -175,10 +177,17 @@
 
              
                        <div class="name-job">
-                          <div class="profile_name">Saher Amr</div>
+                          <div class="profile_name"><?php 
+        if (isset($_SESSION["Name"])) {
+            $username = $_SESSION["Name"];
+            echo " $username";
+        } else {
+            echo " Guest!";
+        }
+        ?></div>
                           <div class="job">Admin</div>
                        </div>
-                       <i class='bx bx-log-out'></i> 
+                       <a href="../../../App/Controllers/logout.php"><i class='bx bx-log-out'></i></a>
                     </div>
                 </li>   
             </ul>  

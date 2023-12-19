@@ -1,32 +1,52 @@
 <?php
-require_once( "../../../App/Models/users.php");
+require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
+
 $model = new User();
 $controller = new UsersController($model);
 session_start();
 
 if (isset($_GET['action']) && !empty($_GET['action'])) {
-	$controller->{$_GET['action']}();
+    $controller->{$_GET['action']}();
 }
-if(isset($_POST['login']))	{
-	$email=$_REQUEST["Email"];
-	$password=$_REQUEST["Password"];
-	$sql = "SELECT * FROM users where Email='$email' and Pass='$password'";
-	$dbh = new Dbh();
-	$result = $dbh->query($sql);
-	if ($result){
-		$row = $dbh->fetchRow($result);
-		$_SESSION["id"]=$row["id"];
-		$_SESSION["Name"]=$row["Name"];
-		$_SESSION["Email"]=$row["Email"];
-		$_SESSION["Phone"]=$row["Phone"];
-		$_SESSION["Password"]=$row["Pass"];
-		header("Location:profile.php");
-	}else{
-		echo ("ERRORR");
-	}
+
+if (isset($_POST['login'])) {
+    $email = $_REQUEST["Email"];
+    $password = $_REQUEST["Password"];
+    $sql = "SELECT * FROM users WHERE Email='$email' AND Pass='$password'";
+    $dbh = new Dbh();
+    $result = $dbh->query($sql);
+
+    if ($result) {
+        $row = $dbh->fetchRow($result);
+
+        // Check if the user type is 'admin'
+        if ($row["Type"] === 'admin') {
+            // Admin can access both the dashboard and normal pages
+            $_SESSION["id"] = $row["id"];
+            $_SESSION["Name"] = $row["Name"];
+            $_SESSION["Email"] = $row["Email"];
+            $_SESSION["Phone"] = $row["Phone"];
+            $_SESSION["Password"] = $row["Pass"];
+            header("Location: ../Admin/dashboard.php");
+            exit;
+        } else {
+            // For other user types, you can handle different redirects or logic
+            $_SESSION["id"] = $row["id"];
+            $_SESSION["Name"] = $row["Name"];
+            $_SESSION["Email"] = $row["Email"];
+            $_SESSION["Phone"] = $row["Phone"];
+            $_SESSION["Password"] = $row["Pass"];
+            header("Location: profile.php");
+            exit;
+        }
+    } else {
+        echo "ERROR";
+    }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 

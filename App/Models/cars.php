@@ -86,11 +86,16 @@ class Car {
          }
 
     }
-    // public function deleteCar() {
-    //     $sql = "DELETE FROM cars WHERE id = ?";
-    //     $params = [$this->id];
-    //     $this->db->execute($sql, $params);
-    // }
+    public function deleteCar($id) {
+        $sql = "DELETE FROM Cars WHERE id = '$id'";
+        $result = mysqli_query($GLOBALS['conn'], $sql);
+        if ($result) {
+            return $result;
+         }
+         else{
+            echo "error";
+         }
+    }
 
     public function EditCar($details) {
         $id=$details["id"];

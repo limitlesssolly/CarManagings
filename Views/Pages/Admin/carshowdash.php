@@ -36,7 +36,7 @@ include('../../Partials/dashboardsidebar.php');
                 <h1>Our Cars</h1>
                 <div class="input-group">
                     <input type="search" placeholder="Search Data...">
-                    <img src="../../../../Public/Images/search.png" alt="">
+                    <img src="../../../Public/Images/search.png" alt="">
                 </div>
 
             </section>

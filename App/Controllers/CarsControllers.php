@@ -62,15 +62,13 @@ class CarController
         }
     }
 
-    // public function deleteCar($id) {
-    //     try {
-    //         $car = new Car($id, '', '', '', '', '', 0);
-    //         $car->deleteCar();
-    //         return ['success' => true, 'message' => 'Car deleted successfully'];
-    //     } catch (Exception $e) {
-    //         return ['success' => false, 'message' => $e->getMessage()];
-    //     }
-    // }
+    public function deleteCar($id) {
+        
+            
+                  
+            return  $this->car->deleteCar($id);
+     
+    }
 
     public function editCar($details) {
 

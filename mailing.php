@@ -18,9 +18,9 @@ if (isset($_POST["submit"])){
     $mail->SMTPSecure ='ssl';
     $mail->Port = 465;
 
-    $mail->setFrom($_POST['email']);
+    $mail->setFrom('247LimousineOfficial@gmail.com');
 
-    $mail->addAddress('247LimousineOfficial@gmail.com');
+    $mail->addAddress($_POST['email']);
 
     $mail->isHTML(true);
 

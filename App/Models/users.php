@@ -172,6 +172,7 @@ public function history(){
         } 
     }
     $rowsCount = $result->num_rows;
+    return $rowsCount;
 }
 
     static function getRatings(){

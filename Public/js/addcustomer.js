@@ -8,7 +8,7 @@ $(document).ready(function() {
           pass: $('#pass').val(),
           confirmpass: $('#confirmpass').val(),
        };
-       
+       console.log(data)
        $.ajax({
           url: '/CarManagings/Routes/customerrouter.php?action=addcustomer', // Adjust the URL to your customer route
           type: 'post',

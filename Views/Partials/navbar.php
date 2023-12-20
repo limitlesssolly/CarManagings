@@ -1,36 +1,4 @@
-<?php 
-if (isset($_GET['action']) && !empty($_GET['action'])) {
-	switch($_GET['action']){
-		case 'home':
-			header("Location:index.php");
-			break;
-		case 'order':
-			header("Location:Views/Pages/bookyourcar.php");
-			break;
-		case 'rent':
-			header("Location:rentyourcar.php");
-			break;
-		case 'about':
-			header("Location:aboutus.php");
-			break;
-		case 'rate':
-			header("Location:ratings.php");
-			break;
-		case 'contact':
-			header("Location:Views/Pages/User/contactus.php");
-			break;
-		case 'profile':
-			header("Location:Views/Pages/User/profile.php");
-			break;
-		case 'signups':
-			header("Location:Views/Pages/User/signup.php");
-			break;
-		case 'admin':
-			header("Location:Views/Pages/Admin/dashboard.php");
-			break;
-	}
-}
-?>
+
 <!-- <link rel="stylesheet" href="../../Public/CSS/navbar.css"> -->
 <header class="header">
 
@@ -47,12 +15,11 @@ if (isset($_GET['action']) && !empty($_GET['action'])) {
 
     <nav class="navbar">
 
-        <a href="?action=home" id="home">Home</a>
-        <a href="?action=order" id="book">Book your ride</a>
-        <a href="?action=rent" id="rent"> Rent your car</a>
-        <a href="?action=about" id="about">About Us</a>
-        <a href="?action=rate" id="ratings">Rate Us</a>
-        <a href="?action=contact" id="contactus">Contact Us</a>
+        <a href="../../../Routes/navbar.php?action=home" id="home">Home</a>
+        <a href="../../../Routes/navbar.php?action=book" id="book">Book your ride</a>
+        <a href="../../../Routes/navbar.php?action=about" id="about">About Us</a>
+        <a href="../../../Routes/navbar.php?action=ratings" id="ratings">Rate Us</a>
+        <a href="../../../Routes/navbar.php?action=contactus" id="contactus">Contact Us</a>
         <a href="?action=signups" id="fb"> <i class='fa fa-user-circle' style="font-size:22px"></i></a>
 
     </nav>

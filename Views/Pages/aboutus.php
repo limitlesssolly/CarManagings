@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="../../../Public/CSS/navbar.css">
-    <link rel="stylesheet" href="../../../Public/CSS/footer.css">
-    <link rel="stylesheet" href="../../../Public/CSS/aboutus2.css">
+    <link rel="stylesheet" href="../../Public/CSS/navbar.css">
+    <link rel="stylesheet" href="../../Public/CSS/footer.css">
+    <link rel="stylesheet" href="../../Public/CSS/aboutus2.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
     <script src="https://code.jquery.com/jquery-3.7.0.js"
@@ -19,11 +19,11 @@
 <body>
 
 <?php
-    include "../../Partials/navbar.php";
-  ?>
+    include "../Partials/navbar.php";
+?>
 
     <div class="bodyimage">
-        <img src="../../../Public/Images/orangecar1.jpg" alt="">
+        <img src="../../Public/Images/orangecar1.jpg" alt="">
     </div>
 
     <center>
@@ -31,7 +31,7 @@
             <div class="about">
 
                 <div class="hero-image">
-                    <img style="float: right; margin: 0px 0px 15px 15px;" src="../../../Public/Images/blackcar.jpg"
+                    <img style="float: right; margin: 0px 0px 15px 15px;" src="../../Public/Images/blackcar.jpg"
                         class="pic">
                 </div>
 
@@ -118,7 +118,7 @@
     </div>
 
     <?php
-        include "../../Partials/footer.php";
+        include "../Partials/footer.php";
     ?>
 
 </body>

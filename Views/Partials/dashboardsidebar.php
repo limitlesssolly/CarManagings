@@ -126,13 +126,13 @@
                     <li><a class="link_name" href="">Admins</a></li>
                     <li><a href="../../../Routes/adminrouter.php?action=admins">Show</a></li>
                     <li><a href="../../../Routes/adminrouter.php?action=addadminpage">Add</a></li>
-                    <li><a href="../../../Routes/adminrouter.php?action=editpage">Edit</a></li>
+                    <!-- <li><a href="../../../Routes/adminrouter.php?action=editpage">Edit</a></li> -->
                     </ul>
 
                 </li>
                
+                
                 <li>
-
                     <div class="iocn_link">
                     <a href="../../Views/Pages/editprofiledash.php">
                         <i class='bx bx-cog'></i>
@@ -147,8 +147,13 @@
 
                     </ul>
 
+<<<<<<< Updated upstream
                 </li> 
                 
+=======
+                </li>  
+    
+>>>>>>> Stashed changes
                 <li>
                   <div class="profile-details">
                        <div class="profile-content">

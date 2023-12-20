@@ -4,15 +4,11 @@ require_once("../../../App/Models/users.php");
 require_once("../../../App/Controllers/UserControllers.php");
 $model = new User();
 $controller = new UsersController($model);
-// session_start();
 $email = $_SESSION["Email"];
 $dbh = new Dbh();
-// $row= $dbh->fetchRow($result);
 for ($j = 1; $j <= 100; $j++) {
   $sql = "SELECT * FROM rides WHERE `UserEmail` = '$email'";
   $result = $dbh->query($sql);
-  // $rows = $dbh->fetchAll($result);
-
   if ($row = $dbh->fetchRow($result)) {
     $driverID = $row["DriverID"];
     $pickupLoc = $row["pickupLocation"];

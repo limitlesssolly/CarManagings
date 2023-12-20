@@ -59,5 +59,12 @@ class UsersController extends Controller
 		$this->model->history();
 
 	}
+	public function LogUser()
+	{
+		$email = $_POST['Email'];
+		$password = $_POST['Password'];
+
+		$this->model->LogUser($email, $password);
+	}
 }
 ?>

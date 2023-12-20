@@ -152,7 +152,7 @@
                 <li>
                   <div class="profile-details">
                        <div class="profile-content">
-                         <img src="../../../Public/Images/flag.png" alt="">
+                         <img src="../../../../Public/Images/flag.png" alt="">
                        </div>
 
              

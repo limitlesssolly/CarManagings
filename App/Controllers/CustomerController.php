@@ -26,18 +26,18 @@ class CustomerController extends Controller {
             $i++;
             $error['name']='please enter name';
         }
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        // if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-            $result= $this->admin->if_Emailexists($email);
-            if($result=='exists'){
-                $i++;
-                $error['email']='please choose antoher email address'; 
-            }
+        //     $result= $this->admin->if_Emailexists($email);
+        //     if($result=='exists'){
+        //         $i++;
+        //         $error['email']='please choose antoher email address'; 
+        //     }
 
-        } else {
-            $i++;
-            $error['email']='please enter a valid email address';
-        }
+        // } else {
+        //     $i++;
+        //     $error['email']='please enter a valid email address';
+        // }
         $string = $phone;
         $phonel='';
         for ($y = 0; $y < strlen($string); $y++) {
@@ -94,7 +94,7 @@ class CustomerController extends Controller {
 		if($i==0)
 		{
             $hashedPassword = password_hash($pass, PASSWORD_DEFAULT);
-			$this->admin->AddCustomer($name,$email,$phone,$hashedPassword);
+			$this->customer->AddCustomer($name,$email,$phone,$hashedPassword);
 			return 'successful';
 		}else{
 			return $error;

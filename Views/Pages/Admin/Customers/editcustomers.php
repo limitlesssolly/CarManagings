@@ -59,7 +59,7 @@
                 </div>
 
             </form>
-            <!-- <script src="js/contactus.js"></script> -->
+            <script src="../../../../Public/js/editcustomer.js"></script>
         </div>
         <!-- end of form -->
     </section>

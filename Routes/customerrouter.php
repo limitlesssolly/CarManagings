@@ -35,7 +35,7 @@ if ($_GET['action'] == 'customers') {
         echo 'failed';
     }
 } else if ($_GET['action'] == 'editcustomer') {
-    header("Location:../Views/Pages/Admin/Customer/editcustomer.php");
+    header("Location:../Views/Pages/Admin/Customers/editcustomers.php");
 } else if ($_GET['action'] == 'editcustomer') {
     $result=$customer->Edit($_POST['ID'],$_POST['name'],$_POST['email'],$_POST['phone'],$_POST['pass']);
     if($result=='successful')

@@ -47,12 +47,12 @@
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="password" id="password">
+                    <input type="text" name="password" id="pass">
                     <span>Password</span>
                 </div>
 
                 <div class="inputBox">
-                    <input type="text" name="password" id="confirmpassword">
+                    <input type="text" name="password" id="confirmpass">
                     <span> Confirm Password</span>
                 </div>
 
